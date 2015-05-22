@@ -1,9 +1,12 @@
+DROP TABLE IF EXISTS question;
+DROP TABLE IF EXISTS reponses;
 DROP TABLE IF EXISTS categorie;
+DROP TABLE IF EXISTS scores;
+
 CREATE TABLE categorie (
 	nom_cat		VARCHAR(30) PRIMARY KEY
 ) ENGINE=INNODB;
 
-DROP TABLE IF EXISTS reponses;
 CREATE TABLE reponses (
 	reponse1	VARCHAR(50),
 	reponse2	VARCHAR(50),
@@ -12,7 +15,6 @@ CREATE TABLE reponses (
 	FOREIGN KEY(nom_cat) REFERENCES categorie(nom_cat) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=INNODB;
 
-DROP TABLE IF EXISTS question;
 CREATE TABLE question (
 	intitule	VARCHAR(120),
 	reponse1	VARCHAR(50),
@@ -22,7 +24,6 @@ CREATE TABLE question (
 	FOREIGN KEY(reponse1, reponse2) REFERENCES reponses(reponse1, reponse2) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=INNODB;
 
-DROP TABLE IF EXISTS scores;
 CREATE TABLE scores (
 	login		VARCHAR(50) PRIMARY KEY,
 	score		INTEGER NOT NULL
