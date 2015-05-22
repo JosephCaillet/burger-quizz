@@ -1,7 +1,4 @@
-/**
- * Created by joseph on 22/05/15.
- */
 public class Categorie
 {
-
+    protected String nom;
 }
