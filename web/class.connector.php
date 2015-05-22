@@ -68,7 +68,9 @@ class Connector {
 			}
 		}
 
-		if($stmt = $this->bdd->prepare($request)->execute($arrayVerif)) {
+		$stmt = $this->bdd->prepare($request);
+
+		if($stmt->execute($arrayVerif)) {
 			return $stmt->fetchAll();
 		} else {
 			return null;
