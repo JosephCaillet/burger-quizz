@@ -68,6 +68,12 @@ class Connector {
 			}
 		}
 
-		return $bdd->prepare($request)->execute($arrayVerif)->fetchAll();
+		$stmt = $this->bdd->prepare($request);
+
+		if($stmt->execute($arrayVerif)) {
+			return $stmt->fetchAll();
+		} else {
+			return null;
+		}
 	}
 }
