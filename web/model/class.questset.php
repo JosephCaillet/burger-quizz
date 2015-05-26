@@ -40,4 +40,8 @@ class Questset {
 	function getQuestions() {
 		return $this->questions;
 	}
+
+	function getLength() {
+		return sizeof($this->questions);
+	}
 }

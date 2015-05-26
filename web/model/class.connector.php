@@ -26,7 +26,7 @@ class Connector {
 			"limit" => array(0, 10) // Ou array(10)
 		);
 	*/
-	function Select($fields, $tables, $options) {
+	function Select($fields, $tables, $options = array()) {
 		$request = "SELECT $fields FROM $tables ";
 		$arrayVerif = array();
 		foreach($options as $name=>$value) {
