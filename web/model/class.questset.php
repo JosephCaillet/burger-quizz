@@ -1,7 +1,6 @@
 <?php
 
 class Questset {
-	private $categorie;
 	private $reponse1;
 	private $reponse2;
 	private $questions;
@@ -27,11 +26,9 @@ class Questset {
 					array_push($this->questions, new Question($question['intitule']));
 				}
 
-				$this->categorie = $bdd->Select('*', 'reponses', $options)[0]['nom_cat'];
 			} catch(Exception $e) {
 				throw $e;
 			}
-			echo "Initialized\n";
 		} else {
 			throw new Exception('Un tableau de réponses est attendu dans le constructeur.');
 		}
@@ -43,5 +40,13 @@ class Questset {
 
 	function getLength() {
 		return sizeof($this->questions);
+	}
+
+	function getArray() {
+		$return = array();
+		foreach($this->questions as $question) {
+			array_push($return, $question->getArray())
+		}
+		return $return;
 	}
 }

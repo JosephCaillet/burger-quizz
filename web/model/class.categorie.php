@@ -44,8 +44,16 @@ class Categorie {
 		$arrayCat = $bdd->Select("*", "categorie");
 		$return = array();
 		for($i = 0; $i < 2; $i++) {
-			$catIndex = rand(0, sizeof($arrayCat));
+			$catIndex = rand(0, sizeof($arrayCat)-1);
 			array_push($return, new Categorie($arrayCat[$catIndex]['nom_cat']));
+		}
+		return $return;
+	}
+
+	public function getArray() {
+		$return = array();
+		foreach($this->questsets as $questset) {
+			array_push($return, $questset->getArray());
 		}
 		return $return;
 	}
