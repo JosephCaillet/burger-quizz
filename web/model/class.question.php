@@ -42,4 +42,11 @@ class Question {
 	function getBonneReponse() {
 		return $this->bonneReponse;
 	}
+
+	function getArray() {
+		return array(
+			"intitule" => $this->intitule,
+			"bonneReponse" => $this->bonneReponse
+		);
+	}
 }

@@ -51,10 +51,13 @@ class Categorie {
 	}
 
 	public function getArray() {
-		$return = array();
+		$questsets = array();
 		foreach($this->questsets as $questset) {
-			array_push($return, $questset->getArray());
+			array_push($questsets, $questset->getArray());
 		}
-		return $return;
+		return array(
+			"nom_cat" => $this->nomCat,
+			"themes" => $questsets
+		);
 	}
 }
