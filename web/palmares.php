@@ -9,7 +9,11 @@ $options = array(
 	"limit" => array(0, 10) // Ou array(10)
 );
 
-$res = $bdd->Select("*", "scores", $options);
+try {
+	$res = $bdd->Select("*", "scores", $options);
+} catch(Exception $e) {
+	echo("Erreur : ".$e->getMessage());
+}
 
 echo("<ol>");
 
