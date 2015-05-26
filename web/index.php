@@ -1,6 +1,6 @@
 <?php
 
-require_once('classes.php');
+require_once('model/classes.php');
 
 header("Content-Type:application/json");
 
