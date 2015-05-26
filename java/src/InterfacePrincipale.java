@@ -1,6 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
 
+import static java.lang.Thread.sleep;
 import static javax.swing.BoxLayout.*;
 
 public class InterfacePrincipale extends JFrame
@@ -37,6 +38,7 @@ public class InterfacePrincipale extends JFrame
 	{
 		setTitle("Administration base de données de l'aplication BurgerQuizz");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setLayout(new BorderLayout(10,10));
 
 		loadImgBouton();
 		createPanelCategories();
@@ -47,6 +49,23 @@ public class InterfacePrincipale extends JFrame
 		pack();
 		setLocationRelativeTo(null);
 		setVisible(true);
+		//modem56k();
+	}
+
+	private void modem56k()
+	{
+		int i =0;
+		while(i != 500)
+		{
+			this.setSize(1000, i);
+			try
+			{
+				sleep(100);
+			}
+			catch(InterruptedException e)
+			{}
+			i++;
+		}
 	}
 
 	private void loadImgBouton()
@@ -71,14 +90,19 @@ public class InterfacePrincipale extends JFrame
 
 
 		panCategories.setLayout(new BoxLayout(panCategories,Y_AXIS));
+		panCategories.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 		addC.setAlignmentX(CENTER_ALIGNMENT);
 		delC.setAlignmentX(CENTER_ALIGNMENT);
 		editC.setAlignmentX(CENTER_ALIGNMENT);
+		addC.setMaximumSize(new Dimension(208,34));
+		delC.setMaximumSize(new Dimension(208,34));
+		editC.setMaximumSize(new Dimension(208,34));
 
 		panCategories.add(addC);
 		panCategories.add(delC);
 		panCategories.add(sp);
 		panCategories.add(editC);
+
 		getContentPane().add(panCategories, BorderLayout.WEST);
 	}
 
@@ -98,15 +122,20 @@ public class InterfacePrincipale extends JFrame
 
 
 		panReponses.setLayout(new BoxLayout(panReponses,Y_AXIS));
+		panReponses.setBorder(BorderFactory.createEmptyBorder(10,10,10,10));
 		addR.setAlignmentX(CENTER_ALIGNMENT);
 		delR.setAlignmentX(CENTER_ALIGNMENT);
 		editR.setAlignmentX(CENTER_ALIGNMENT);
+		addR.setMaximumSize(new Dimension(300,34));
+		delR.setMaximumSize(new Dimension(300,34));
+		editR.setMaximumSize(new Dimension(300,34));
 
 		panReponses.add(addR);
 		panReponses.add(delR);
 		panReponses.add(sp);
-		panReponses.add(editR);
 		panReponses.add(comboRepCat);
+		panReponses.add(editR);
+
 		getContentPane().add(panReponses, BorderLayout.CENTER);
 	}
 
@@ -126,15 +155,19 @@ public class InterfacePrincipale extends JFrame
 
 
 		panQuestions.setLayout(new BoxLayout(panQuestions,Y_AXIS));
+		panQuestions.setBorder(BorderFactory.createEmptyBorder(10,10,10,10));
 		addQ.setAlignmentX(CENTER_ALIGNMENT);
 		delQ.setAlignmentX(CENTER_ALIGNMENT);
 		editQ.setAlignmentX(CENTER_ALIGNMENT);
+		addQ.setMaximumSize(new Dimension(208,34));
+		delQ.setMaximumSize(new Dimension(208,34));
+		editQ.setMaximumSize(new Dimension(208,34));
 
 		panQuestions.add(addQ);
 		panQuestions.add(delQ);
 		panQuestions.add(sp);
-		panQuestions.add(editQ);
 		panQuestions.add(comboQueRep);
+		panQuestions.add(editQ);
 		getContentPane().add(panQuestions, BorderLayout.EAST);
 	}
 }
