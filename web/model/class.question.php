@@ -42,4 +42,11 @@ class Question {
 	function getBonneReponse() {
 		return $this->bonneReponse;
 	}
+
+	function getArray() {
+		return array(
+			"intitule" => utf8_encode($this->intitule),
+			"bonneReponse" => utf8_encode($this->bonneReponse)
+		);
+	}
 }

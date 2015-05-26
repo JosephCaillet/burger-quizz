@@ -47,7 +47,7 @@ class Connector {
 					throw new Exception('Problème lors de la création du substring');
 				}
 			} else if(($upName = strtoupper($name)) == "ORDER BY") {
-				if(sizeof($value) != 2) {
+				if(sizeof($value) != 2 && substr($value[0], -2) != "()") { 
 					throw new Exception('Nombre de paramètres incorrects (ORDER BY). Les paramètres passés sont : '
 						.implode(',', $value));
 				}

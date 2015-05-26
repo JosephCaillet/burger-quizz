@@ -43,10 +43,15 @@ class Questset {
 	}
 
 	function getArray() {
-		$return = array();
+		$questions = array();
 		foreach($this->questions as $question) {
-			array_push($return, $question->getArray())
+			array_push($questions, $question->getArray());
 		}
-		return $return;
+
+		return array(
+			"reponse1" => utf8_encode($this->reponse1),
+			"reponse2" => utf8_encode($this->reponse2),
+			"questions" => $questions
+		);
 	}
 }
