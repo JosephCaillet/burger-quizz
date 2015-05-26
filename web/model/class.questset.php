@@ -8,16 +8,16 @@ class Questset {
 
 	function __construct($reponses) {
 		if(is_array($reponses)) {
-			$this->intitules = array();
-			$this->reponse1 = $reponse[0];
-			$this->reponse2 = $reponse[1];
+			$this->questions = array();
+			$this->reponse1 = $reponses[0];
+			$this->reponse2 = $reponses[1];
 			try {
 				$bdd = new Connector();
 
 				$options = array(
 					"where" => array(
-						array("reponse1", "=", $reponse1),
-						array("reponse2", "=", $reponse2)
+						array("reponse1", "=", $this->reponse1),
+						array("reponse2", "=", $this->reponse2)
 					)
 				);
 
@@ -27,10 +27,11 @@ class Questset {
 					array_push($this->questions, new Question($question['intitule']));
 				}
 
-				$this->categorie = $bdd->Select('*', 'reponses', $options)['nom_cat'];
+				$this->categorie = $bdd->Select('*', 'reponses', $options)[0]['nom_cat'];
 			} catch(Exception $e) {
 				throw $e;
 			}
+			echo "Initialized\n";
 		} else {
 			throw new Exception('Un tableau de réponses est attendu dans le constructeur.');
 		}

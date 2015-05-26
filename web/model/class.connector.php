@@ -11,7 +11,7 @@ class Connector {
 		$pass = "chabat";
 
 		$this->bdd = new PDO("mysql:host=$host;dbname=$db", $user, $pass);
-		$dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		$this->bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	}
 
 	/*

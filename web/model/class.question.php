@@ -8,7 +8,7 @@ class Question {
 
 	function __construct($intitule) {
 		try{
-			$this->intitule;
+			$this->intitule = $intitule;
 
 			$bdd = new Connector();
 
