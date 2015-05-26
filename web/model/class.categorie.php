@@ -30,7 +30,9 @@ class Categorie {
 		$options = array(
 			"where" => array(
 				array("nom_cat", "=", $this->nomCat)
-			)
+			),
+			"order by" => array("rand()"),
+			"limit" => array("2")
 		);
 
 		$resp = $this->bdd->Select('*', 'reponses', $options);
@@ -56,7 +58,7 @@ class Categorie {
 			array_push($questsets, $questset->getArray());
 		}
 		return array(
-			"nom_cat" => $this->nomCat,
+			"nom_cat" => utf8_encode($this->nomCat),
 			"themes" => $questsets
 		);
 	}

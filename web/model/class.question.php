@@ -45,8 +45,8 @@ class Question {
 
 	function getArray() {
 		return array(
-			"intitule" => $this->intitule,
-			"bonneReponse" => $this->bonneReponse
+			"intitule" => utf8_encode($this->intitule),
+			"bonneReponse" => utf8_encode($this->bonneReponse)
 		);
 	}
 }

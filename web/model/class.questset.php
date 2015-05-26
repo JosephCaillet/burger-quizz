@@ -45,12 +45,12 @@ class Questset {
 	function getArray() {
 		$questions = array();
 		foreach($this->questions as $question) {
-			array_push($questions, $question->getArray())
+			array_push($questions, $question->getArray());
 		}
 
 		return array(
-			"reponse1" => $this->reponse1,
-			"reponse2" => $this->reponse2,
+			"reponse1" => utf8_encode($this->reponse1),
+			"reponse2" => utf8_encode($this->reponse2),
 			"questions" => $questions
 		);
 	}
