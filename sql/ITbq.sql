@@ -70,11 +70,16 @@ INSERT INTO `reponses` (`reponse1`, `reponse2`, `nom_cat`) VALUES
 --
 
 INSERT INTO `scores` (`login`, `score`) VALUES
-('Jean', 85),
-('kikou37', 14),
-('Micheline', 85),
+('azerty', 28),
+('David', 19),
+('Dragavnir', 666),
+('Finistère', 29),
+('Joseph', 42),
+('K.S.', 20),
+('Loic', 10),
+('Marc F.', 0),
 ('Patrick', 24),
-('thefifou', 56);
+('Thomas', 33);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
