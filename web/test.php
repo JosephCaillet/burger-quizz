@@ -5,8 +5,8 @@
 require_once('model/classes.php');
 
 try{
-	$questset = new Questset(array("Les CSI", "Les CIR"));
-	var_dump($questset);
+	$categories = Categorie::randSelect();
+	var_dump($categories);
 }catch(Exception $e) {
 	echo("<strong>Erreur : </strong>".$e->getMessage());
 }

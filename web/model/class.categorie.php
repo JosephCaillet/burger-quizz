@@ -19,7 +19,7 @@ class Categorie {
 			)
 		);
 
-		if(!is_null($this->bdd->Select('*', 'categorie', $options)) {
+		if(!is_null($this->bdd->Select('*', 'categorie', $options))) {
 			$this->nomCat = $nomCat;
 		} else {
 			throw new Exception('Catégorie introuvable');
@@ -39,14 +39,13 @@ class Categorie {
 		}
 	}
 
-	public static randSelect() {
+	public static function randSelect() {
 		$bdd = new Connector();
 		$arrayCat = $bdd->Select("*", "categorie");
-		$count = $bdd->Select("COUNT(*)", "categorie")[0];
 		$return = array();
 		for($i = 0; $i < 2; $i++) {
-			$catIndex = rand(0, $count);
-			array_push($return, new Categorie($arrayCat[$catIndex-1]['nom_cat']));
+			$catIndex = rand(0, sizeof($arrayCat));
+			array_push($return, new Categorie($arrayCat[$catIndex]['nom_cat']));
 		}
 		return $return;
 	}
