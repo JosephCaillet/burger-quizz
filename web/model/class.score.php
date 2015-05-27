@@ -45,6 +45,13 @@ class Score {
   }
 
   public static function add($login, $score) {
-    
+    $bdd = new Connector();
+
+    $values = array(
+      "login" => $login,
+      "score" => $score
+    );
+
+    $bdd->Insert("score", $values);
   }
 }

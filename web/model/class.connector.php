@@ -1,9 +1,9 @@
-<?php 
+<?php
 
 class Connector {
 
 	private $bdd;
-	
+
 	function __construct() {
 		$host = "localhost";
 		$db = "burgerquizz";
@@ -47,7 +47,7 @@ class Connector {
 					throw new Exception('Problème lors de la création du substring');
 				}
 			} else if(($upName = strtoupper($name)) == "ORDER BY") {
-				if(sizeof($value) != 2 && substr($value[0], -2) != "()") { 
+				if(sizeof($value) != 2 && substr($value[0], -2) != "()") {
 					throw new Exception('Nombre de paramètres incorrects (ORDER BY). Les paramètres passés sont : '
 						.implode(',', $value));
 				}
@@ -76,6 +76,18 @@ class Connector {
 		} else {
 			return null;
 		}
+	}
+
+	function Insert($table, $values) {
+		$request = "INSERT INTO $table(";
+		$values = "VALUES(";
+		$params = array();
+		foreach($values as $name=>$values) {
+			$request += $name.",";
+			$values += ":".$name.",";
+		}
+		$request = substr($request, 0, -1).") ".substr($values, 0, -1).")";
+		echo $request;
 	}
 
 	function beginTransaction() {
