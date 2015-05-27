@@ -10,13 +10,13 @@ class Score {
 
     $options = array(
       "where" => array(
-        array("login", "=", $login);
+        array("login", "=", $login)
       )
     );
 
-    $data = $bdd->Select("*", "scores", $options);
-    $this->login = $data['login'];
-    $this->score = $data['score'];
+    $data = $this->bdd->Select("*", "scores", $options);
+    $this->login = $data[0]['login'];
+    $this->score = $data[0]['score'];
   }
 
   function getLogin() {
@@ -47,11 +47,29 @@ class Score {
   public static function add($login, $score) {
     $bdd = new Connector();
 
-    $values = array(
-      "login" => $login,
-      "score" => $score
+    $options = array(
+      "where" => array(
+        array("login", "=", $login)
+      )
     );
 
-    $bdd->Insert("score", $values);
+    if(!$scores = $bdd->Select("*", "scores", $options)) {
+      $values = array(
+        "login" => $login,
+        "score" => $score
+      );
+
+      $bdd->Insert("scores", $values);
+    } else {
+      if($score > $scores[0]['score']) {
+        $update = array(
+          "where" => array(
+            array("login", "=", $login)
+          ),
+          "set" => array("score" => $score)
+        );
+        $bdd->Update("scores", $update);
+      }
+    }
   }
 }

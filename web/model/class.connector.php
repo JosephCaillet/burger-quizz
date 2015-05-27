@@ -41,11 +41,7 @@ class Connector {
 					$whereClause .= $array[0]." ".$array[1]." :".$array[0]." AND ";
 					$arrayVerif[":".$array[0]] = $array[2];
 				}
-				if($substring = substr($whereClause, 0, -5)) {
-					$request .= $substring;
-				} else {
-					throw new Exception('Problème lors de la création du substring');
-				}
+				$request .= substr($whereClause, 0, -5);
 			} else if(($upName = strtoupper($name)) == "ORDER BY") {
 				if(sizeof($value) != 2 && substr($value[0], -2) != "()") {
 					throw new Exception('Nombre de paramètres incorrects (ORDER BY). Les paramètres passés sont : '
@@ -80,14 +76,38 @@ class Connector {
 
 	function Insert($table, $values) {
 		$request = "INSERT INTO $table(";
-		$values = "VALUES(";
-		$params = array();
-		foreach($values as $name=>$values) {
-			$request += $name.",";
-			$values += ":".$name.",";
+		$valeurs = "VALUES(";
+		$arrayVerif = array();
+		foreach($values as $name=>$value) {
+			$request .= $name.",";
+			$valeurs .= "?,";
+				array_push($arrayVerif, $value);
 		}
-		$request = substr($request, 0, -1).") ".substr($values, 0, -1).")";
-		echo $request;
+
+		$request = substr($request, 0, -1).") ".substr($valeurs, 0, -1).")";
+
+		$stmt = $this->bdd->prepare($request);
+
+		$stmt->execute($arrayVerif);
+	}
+
+	function Update($table, $update) {
+		$request = "UPDATE $table SET ";
+		$arrayVerif = array();
+		foreach($update['set'] as $name=>$value) {
+			$request .= $name."=?,";
+			array_push($arrayVerif, $value);
+		}
+		$request = substr($request, 0, -1)." WHERE ";
+		var_dump($request);
+		foreach($update['where'] as $value) {
+			$request .= $value[0].$value[1]."? AND ";
+			array_push($arrayVerif, $value[2]);			
+		}
+		$request = substr($request, 0, -5);
+
+		$stmt = $this->bdd->prepare($request);
+		$stmt->execute($arrayVerif);
 	}
 
 	function beginTransaction() {
