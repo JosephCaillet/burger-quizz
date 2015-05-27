@@ -47,7 +47,7 @@ public class InterfacePrincipale extends JFrame
 
 	public InterfacePrincipale()
 	{
-		ConnexionBDD  bdd = new ConnexionBDD("burgerquizz", 3306, "localhost", "alain", "chabat");
+		bdd = new ConnexionBDD("burgerquizz", 3306, "localhost", "alain", "chabat");
 
 		setTitle("Administration base de données de l'aplication BurgerQuizz");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -116,7 +116,7 @@ public class InterfacePrincipale extends JFrame
 		editC = new Bouton("Modifier la catégorie", editImg);
 
 		String tab[] = {"a","b","c","d","e","f"};
-		listC = new JList(tab);
+		listC = new JList(bdd.getListeCategorie().toArray());
 		JScrollPane sp = new JScrollPane(listC,
 				JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,
 				JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);

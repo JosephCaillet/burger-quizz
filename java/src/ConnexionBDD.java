@@ -29,6 +29,10 @@ public class ConnexionBDD
 		{
 			String url = "jdbc:mysql://" + ip + ":" + port + "/" + nomBdd;
 			connexionbdd = DriverManager.getConnection(url, login, password);
+
+			gestionCategories = new GestionCategories(connexionbdd);
+			gestionReponses = new GestionReponses(connexionbdd);
+			gestionQuestions = new GestionQuestions(connexionbdd);
 		}
 		catch(SQLException e)
 		{
@@ -36,5 +40,12 @@ public class ConnexionBDD
 			System.out.println("Erreur de conexion à la base de données");
 			System.exit(1);
 		}
+	}
+
+	//Gestion catégorie
+	public ArrayList<Categorie> getListeCategorie()
+	{
+		gestionCategories.selectCategorie();
+		return gestionCategories.getListCategories();
 	}
 }

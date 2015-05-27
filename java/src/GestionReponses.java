@@ -1,11 +1,12 @@
+import java.sql.Connection;
 import java.util.ArrayList;
 
 public class GestionReponses
 {
-	private ConnexionBDD bdd;
+	private Connection bdd;
 	private ArrayList<Reponses> listReponses;
 
-	public GestionReponses(ConnexionBDD bdd)
+	public GestionReponses(Connection bdd)
 	{
 		this.bdd = bdd;
 	}
