@@ -45,8 +45,13 @@ class Categorie {
 		$bdd = new Connector();
 		$arrayCat = $bdd->Select("*", "categorie");
 		$return = array();
+		$catIndex = -1;
+		$previousIndex = -1;
 		for($i = 0; $i < 2; $i++) {
-			$catIndex = rand(0, sizeof($arrayCat)-1);
+			do {
+				$previousIndex = $catIndex;
+				$catIndex = rand(0, sizeof($arrayCat)-1);
+			} while($catIndex == $previousIndex);
 			array_push($return, new Categorie($arrayCat[$catIndex]['nom_cat']));
 		}
 		return $return;
