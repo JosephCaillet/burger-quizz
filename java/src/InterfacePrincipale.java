@@ -1,4 +1,6 @@
 import javax.swing.*;
+import javax.swing.border.BevelBorder;
+import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -36,39 +38,54 @@ public class InterfacePrincipale extends JFrame
 	private ImageIcon delImg;
 	private ImageIcon editImg;
 
+	//barre de statut
+	private JPanel statusBar;
+	private JLabel statusText;
+
+	//objet bdd
+	private ConnexionBDD bdd;
+
 	public InterfacePrincipale()
 	{
+		ConnexionBDD  bdd = new ConnexionBDD("burgerquizz", 3306, "localhost", "alain", "chabat");
+
 		setTitle("Administration base de données de l'aplication BurgerQuizz");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setLayout(new BorderLayout(10,10));
+		setLayout(new BorderLayout());
 
 		loadImgBouton();
 		createPanelCategories();
 		createPanelReponses();
 		createPanelQuestion();
+		createStatusBar();
 
-		getContentPane().add(new JLabel(new ImageIcon("rsc/burgerquizz.png")), BorderLayout.NORTH);
 
-		JSplitPane sp1 = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT,panReponses,panQuestions);
-		JSplitPane sp2 = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT,panCategories,sp1);
-		sp1.setBorder(BorderFactory.createEmptyBorder());
-		sp2.setBorder(BorderFactory.createLineBorder(new Color(238,238,238),5));
+		JSplitPane sp2 = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT,true,panReponses,panQuestions);
+		JSplitPane sp1 = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT,true,panCategories,sp2);
+		sp1.setBorder(BorderFactory.createLineBorder(new Color(238,238,238),5));
+		sp2.setBorder(BorderFactory.createEmptyBorder());
 		sp1.setDividerSize(10);
 		sp2.setDividerSize(10);
 
 		JPanel conteneur = new JPanel();
 		conteneur.setLayout(new BorderLayout());
-		conteneur.setBorder(BorderFactory.createEmptyBorder(0,5,5,5));
-		conteneur.add(sp2, BorderLayout.CENTER);
+		conteneur.setBorder(BorderFactory.createEmptyBorder(0,5,0,5));
+		conteneur.add(sp1, BorderLayout.CENTER);
 
 		Color bg = new Color(220,220,220);
 		panQuestions.setBackground(bg);
 		panReponses.setBackground(bg);
 		panCategories.setBackground(bg);
 
+		getContentPane().add(new JLabel(new ImageIcon("rsc/burgerquizz.png")), BorderLayout.NORTH);
 		getContentPane().add(conteneur, BorderLayout.CENTER);
+		getContentPane().add(statusBar, BorderLayout.SOUTH);
 
 		pack();
+
+		sp1.setDividerLocation(0.30);
+		sp2.setDividerLocation(0.50);
+
 		setLocationRelativeTo(null);
 		setVisible(true);
 	}
@@ -78,6 +95,17 @@ public class InterfacePrincipale extends JFrame
 		plusImg = new ImageIcon("rsc/plus.png");
 		delImg = new ImageIcon("rsc/del.png");
 		editImg = new ImageIcon("rsc/edit.png");
+	}
+
+	private void createStatusBar()
+	{
+		statusBar = new JPanel();
+		statusText = new JLabel("La licorne magique mange une tomate");
+
+		Border border = BorderFactory.createMatteBorder(3,0,0,0, new Color(220,220,220));
+		statusBar.setBorder(BorderFactory.createCompoundBorder(BorderFactory.createEmptyBorder(10,70,5,70),border));
+
+		statusBar.add(statusText);
 	}
 
 	private void createPanelCategories()
@@ -225,7 +253,6 @@ public class InterfacePrincipale extends JFrame
 		BorderLayout bl = (BorderLayout)getContentPane().getLayout();
 		JLabel l = (JLabel)bl.getLayoutComponent(BorderLayout.NORTH);
 		l.setIcon(new ImageIcon("rsc/nyan.gif"));
-		//getContentPane().add(new JLabel(new ImageIcon("rsc/nyan.gif")), BorderLayout.SOUTH);
 		setLocationRelativeTo(null);
 		pack();
 	}
@@ -237,15 +264,15 @@ public class InterfacePrincipale extends JFrame
 		{
 			if(e.getSource() == addC)
 			{
-				System.out.println("Ajout de catégorie");
+				statusText.setText("Ajout de catégorie");
 			}
 			else if(e.getSource() == delC)
 			{
-				System.out.println("Supression de catégorie");
+				statusText.setText("Supression de catégorie");
 			}
 			else if(e.getSource() == editC)
 			{
-				System.out.println("Modification de catégorie");
+				statusText.setText("Modification de catégorie");
 			}
 		}
 	}
@@ -256,15 +283,15 @@ public class InterfacePrincipale extends JFrame
 		{
 			if(e.getSource() == addR)
 			{
-				System.out.println("Création de réponses");
+				statusText.setText("Création de réponses");
 			}
 			else if(e.getSource() == delR)
 			{
-				System.out.println("Supression de réponses");
+				statusText.setText("Supression de réponses");
 			}
 			else if(e.getSource() == editR)
 			{
-				System.out.println("Modification de réponses");
+				statusText.setText("Modification de réponses");
 			}
 		}
 	}
@@ -275,15 +302,15 @@ public class InterfacePrincipale extends JFrame
 		{
 			if(e.getSource() == addQ)
 			{
-				System.out.println("Création de question");
+				statusText.setText("Création de question");
 			}
 			else if(e.getSource() == delQ)
 			{
-				System.out.println("Supression de question");
+				statusText.setText("Supression de question");
 			}
 			else if(e.getSource() == editQ)
 			{
-				System.out.println("Modification de question");
+				statusText.setText("Modification de question");
 			}
 		}
 	}
