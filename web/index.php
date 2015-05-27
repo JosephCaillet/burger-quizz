@@ -2,7 +2,7 @@
 
 require_once('model/classes.php');
 
-//header("Content-Type:application/json");
+header("Content-Type:application/json");
 
 if(!empty($_GET['page'])) {
   if($_GET['page'] == "palmares") {
