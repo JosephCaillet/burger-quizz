@@ -11,7 +11,6 @@ try{
 	foreach($categoriesObj as $categorie) {
 		array_push($categories, $categorie->getArray());
 	}
-	echo json_encode($categories);
 }catch(Exception $e) {
-	echo("<strong>Erreur : </strong>".$e->getMessage());
+	echo json_encode(array("erreur" => $e->getMessage()));
 }

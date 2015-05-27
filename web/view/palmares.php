@@ -1,18 +1,14 @@
 <?php
 
-require_once('../model/classes.php');
-
-$bdd = new Connector();
-
-$options = array(
-	"order by" => array("score", "desc"),
-	"limit" => array(10)
-);
-
 try {
-	$res = $bdd->Select("*", "scores", $options);
-} catch(Exception $e) {
-	echo("Erreur : ".$e->getMessage());
+	$scores = Score::getScores(10);
+	$scArray = array();
+	for($i = 0; $i < sizeof($scores); $i++) {
+		array_push($scArray, array(
+			"login" => utf8_encode($scores[$i]->getLogin()),
+			"score" => $scores[$i]->getScore()
+		));
+	}
+}catch(Exception $e) {
+	echo json_encode(array("erreur" => $e->getMessage()));
 }
-
-// $res contient les résultats
