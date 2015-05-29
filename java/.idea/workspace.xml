@@ -4,11 +4,6 @@
     <list default="true" id="a647cb6a-4230-4101-a652-d7cfd0c21e24" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/java/ConnexionBDD.class" afterPath="$PROJECT_DIR$/out/production/java/ConnexionBDD.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/java/GestionCategories.class" afterPath="$PROJECT_DIR$/out/production/java/GestionCategories.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/java/InterfacePrincipale$PanCategoriesListener.class" afterPath="$PROJECT_DIR$/out/production/java/InterfacePrincipale$PanCategoriesListener.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/java/InterfacePrincipale$PanQuestionsListener.class" afterPath="$PROJECT_DIR$/out/production/java/InterfacePrincipale$PanQuestionsListener.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/java/InterfacePrincipale$PanReponsesListener.class" afterPath="$PROJECT_DIR$/out/production/java/InterfacePrincipale$PanReponsesListener.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/java/InterfacePrincipale.class" afterPath="$PROJECT_DIR$/out/production/java/InterfacePrincipale.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/InterfacePrincipale.java" afterPath="$PROJECT_DIR$/src/InterfacePrincipale.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="java.iws" />
@@ -631,7 +626,13 @@
       <option name="project" value="LOCAL" />
       <updated>1432891735205</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="java: gestion categorie operationelle et ergonomique">
+      <created>1432894050823</created>
+      <option name="number" value="00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1432894050823</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TodoView">
@@ -695,7 +696,8 @@
     <MESSAGE value="conexion bdd operationelle et avance classe de base" />
     <MESSAGE value="selection categorie fonctionelle" />
     <MESSAGE value="java: gestion categorie operationelle" />
-    <option name="LAST_COMMIT_MESSAGE" value="java: gestion categorie operationelle" />
+    <MESSAGE value="java: gestion categorie operationelle et ergonomique" />
+    <option name="LAST_COMMIT_MESSAGE" value="java: gestion categorie operationelle et ergonomique" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
