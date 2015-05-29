@@ -279,6 +279,7 @@ public class InterfacePrincipale extends JFrame
 
 	private class PanCategoriesListener implements ActionListener, ListSelectionListener
 	{
+		private boolean b;
 		public void actionPerformed(ActionEvent e)
 		{
 			if(e.getSource() == addC)
@@ -371,7 +372,10 @@ public class InterfacePrincipale extends JFrame
 
 		public void valueChanged(ListSelectionEvent e)
 		{
-			listR.setListData(bdd.getListeReponses(listC.getSelectedValue().toString()).toArray());
+			if(!listC.isSelectionEmpty())
+			{
+				listR.setListData(bdd.getListeReponses(listC.getSelectedValue().toString()).toArray());
+			}
 		}
 	}
 
