@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+  <head>
+    <title>fqsdhgfqjlsghoesf</title>
+    <meta charset="utf-8" />
+    <script src="jquery-1.11.3.min.js"></script>
+  </head>
+  <body>
+    <div id="yolo"></div>
+    <input type="submit" id="refresh" value="Refresh" />
+    <script type="text/javascript">
+      $("#refresh").click(function() {
+        $.ajax({
+          url: "./api/",
+          dataType: 'json',
+          success: function(data) {
+            $("#yolo").html(JSON.stringify(data));
+          }
+        });
+      });
+/*      $(document).ready(function() {
+        $.ajax({
+          url: "./api/",
+          dataType: 'json',
+          success: function(data) {
+            //cat
+            var array = [];
+            array[data.cat1.nom_cat] = [];
+            data.cat1.themes.forEach(function(row) {
+              array[data.cat1.nom_cat].push(row);
+            });
+            array.forEach(function(row) {
+              $("#yolo").append("<strong>"+row);
+            });
+            $("#yolo").html(JSON.stringify(data));
+          }
+        });
+      });*/
+    </script>
+  </body>
+</html>

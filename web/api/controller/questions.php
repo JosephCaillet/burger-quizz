@@ -2,6 +2,8 @@
 
 $categoriesObj = Categorie::randSelect();
 $categories = array();
+$i = 0;
 foreach($categoriesObj as $categorie) {
-	array_push($categories, $categorie->getArray());
+	$i++;
+	$categories["cat$i"] = $categorie->getArray();
 }
