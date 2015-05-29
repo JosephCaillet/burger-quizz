@@ -63,4 +63,11 @@ public class ConnexionBDD
 	{
 		gestionCategories.updateCategorie(oldCategorieName, newCategorieName);
 	}
+
+	//Gestion réponses
+	public ArrayList<Reponses> getListeReponses(String catName)
+	{
+		gestionReponses.readReponses(catName);
+		return gestionReponses.getListReponses();
+	}
 }

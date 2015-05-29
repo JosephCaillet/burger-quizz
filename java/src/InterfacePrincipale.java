@@ -1,6 +1,8 @@
 import javax.swing.*;
 import javax.swing.border.BevelBorder;
 import javax.swing.border.Border;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -103,7 +105,7 @@ public class InterfacePrincipale extends JFrame
 	private void createStatusBar()
 	{
 		statusBar = new JPanel();
-		statusText = new JLabel("La licorne magique mange une tomate");
+		statusText = new JLabel("Application demarrée, connexion à la base de donné effective. ");
 
 		Border border = BorderFactory.createMatteBorder(3,0,0,0, new Color(220,220,220));
 		statusBar.setBorder(BorderFactory.createCompoundBorder(BorderFactory.createEmptyBorder(10,70,5,70),border));
@@ -118,7 +120,6 @@ public class InterfacePrincipale extends JFrame
 		delC = new Bouton("Supprimer la catégorie", delImg);
 		editC = new Bouton("Modifier la catégorie", editImg);
 
-		String tab[] = {"a","b","c","d","e","f"};
 		listC = new JList(bdd.getListeCategorie().toArray());
 		JScrollPane sp = new JScrollPane(listC,
 				JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,
@@ -134,6 +135,11 @@ public class InterfacePrincipale extends JFrame
 		delC.setMaximumSize(new Dimension(208,34));
 		editC.setMaximumSize(new Dimension(208,34));
 
+		JLabel labC = new JLabel("Catégories");
+		labC.setAlignmentX(Component.CENTER_ALIGNMENT);
+		labC.setBorder(BorderFactory.createEmptyBorder(0,0,10,0));
+
+		panCategories.add(labC);
 		panCategories.add(addC);
 		panCategories.add(Box.createRigidArea(new Dimension(1,5)));
 		panCategories.add(delC);
@@ -147,6 +153,7 @@ public class InterfacePrincipale extends JFrame
 		addC.addActionListener(pcl);
 		delC.addActionListener(pcl);
 		editC.addActionListener(pcl);
+		listC.addListSelectionListener(pcl);
 	}
 
 	private void createPanelReponses()
@@ -157,8 +164,7 @@ public class InterfacePrincipale extends JFrame
 		editR = new Bouton("Modifier le jeu de réponse", editImg);
 		comboRepCat = new JComboBox();
 
-		String tab[] = {"a","b","c","d","e","f"};
-		listR = new JList(tab);
+		listR = new JList();
 		JScrollPane sp = new JScrollPane(listR,
 				JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,
 				JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
@@ -176,6 +182,11 @@ public class InterfacePrincipale extends JFrame
 		editR.setMaximumSize(new Dimension(300,34));
 		comboRepCat.setMaximumSize(new Dimension(1000,34));
 
+		JLabel labR = new JLabel("Réponses");
+		labR.setAlignmentX(Component.CENTER_ALIGNMENT);
+		labR.setBorder(BorderFactory.createEmptyBorder(0,0,10,0));
+
+		panReponses.add(labR);
 		panReponses.add(addR);
 		panReponses.add(Box.createRigidArea(new Dimension(1,5)));
 		panReponses.add(delR);
@@ -218,6 +229,11 @@ public class InterfacePrincipale extends JFrame
 		editQ.setMaximumSize(new Dimension(208,34));
 		comboQueRep.setMaximumSize(new Dimension(1000,34));
 
+		JLabel labQ = new JLabel("Questions");
+		labQ.setAlignmentX(Component.CENTER_ALIGNMENT);
+		labQ.setBorder(BorderFactory.createEmptyBorder(0,0,10,0));
+
+		panQuestions.add(labQ);
 		panQuestions.add(addQ);
 		panQuestions.add(Box.createRigidArea(new Dimension(1,5)));
 		panQuestions.add(delQ);
@@ -261,7 +277,7 @@ public class InterfacePrincipale extends JFrame
 	}
 
 
-	private class PanCategoriesListener implements ActionListener
+	private class PanCategoriesListener implements ActionListener, ListSelectionListener
 	{
 		public void actionPerformed(ActionEvent e)
 		{
@@ -352,6 +368,11 @@ public class InterfacePrincipale extends JFrame
 				}
 			}
 		}
+
+		public void valueChanged(ListSelectionEvent e)
+		{
+			listR.setListData(bdd.getListeReponses(listC.getSelectedValue().toString()).toArray());
+		}
 	}
 
 	private class PanReponsesListener implements ActionListener
@@ -361,6 +382,8 @@ public class InterfacePrincipale extends JFrame
 			if(e.getSource() == addR)
 			{
 				statusText.setText("Création de réponses");
+				NouvelleReponseDialog n = new NouvelleReponseDialog("rr","r","uuu",null);
+				n.afficher();
 			}
 			else if(e.getSource() == delR)
 			{
