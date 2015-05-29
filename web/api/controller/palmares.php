@@ -1,6 +1,12 @@
 <?php
 
-try {
+if(!empty($_GET['login']) && !empty($_GET['score'])) {
+	Score::add($_GET['login'], $_GET['score']);
+	$scArray = array(
+		"status" => 1,
+		"message" => "score_add_success"
+	);
+} else {
 	$scores = Score::getScores(10);
 	$scArray = array();
 	for($i = 0; $i < sizeof($scores); $i++) {
@@ -9,6 +15,4 @@ try {
 			"score" => $scores[$i]->getScore()
 		));
 	}
-}catch(Exception $e) {
-	echo json_encode(array("erreur" => $e->getMessage()));
 }

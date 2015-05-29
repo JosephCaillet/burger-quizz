@@ -69,6 +69,8 @@ class Score {
           "set" => array("score" => $score)
         );
         $bdd->Update("scores", $update);
+      } else {
+        throw new Exception('higher_score_present');
       }
     }
   }

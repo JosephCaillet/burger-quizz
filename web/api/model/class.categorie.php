@@ -4,7 +4,7 @@ class Categorie {
 	private $bdd;
 	private $nomCat;
 	private $questsets;
-	
+
 	function __construct($nomCat) {
 		$this->bdd = new Connector();
 		$this->selectCat($nomCat);

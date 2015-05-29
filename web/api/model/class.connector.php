@@ -34,8 +34,7 @@ class Connector {
 				$whereClause = " $upName ";
 				foreach($value as $array) {
 					if(sizeof($array) != 3) {
-						throw new Exception('Nombre de paramètres incorrect (WHERE). Les paramètres passés sont : '
-							.implode(',',$array));
+						throw new Exception('wrong_arg_nmbr_where');
 					}
 
 					$whereClause .= $array[0]." ".$array[1]." :".$array[0]." AND ";
@@ -44,8 +43,7 @@ class Connector {
 				$request .= substr($whereClause, 0, -5);
 			} else if(($upName = strtoupper($name)) == "ORDER BY") {
 				if(sizeof($value) != 2 && substr($value[0], -2) != "()") {
-					throw new Exception('Nombre de paramètres incorrects (ORDER BY). Les paramètres passés sont : '
-						.implode(',', $value));
+					throw new Exception('wrong_arg_nmbr_order_by');
 				}
 
 				$request .= " ".$upName." ".implode(' ', $value);
@@ -57,11 +55,10 @@ class Connector {
 					// La colonne "limit" contient un index de départ et un nombre de champs
 					$request .= " $upName ".$value[0].",".$value[1];
 				} else {
-					throw new Exception('Nombre de paramètres incorrects (LIMIT). Les paramètres passés sont : '
-						.implode(',', $value));
+					throw new Exception('wrong_arg_numbr_limit');
 				}
 			} else {
-				throw new Exception('Argument '.strtoupper($name).' inconnu');
+				throw new Exception('unknown_arg');
 			}
 		}
 
@@ -99,10 +96,9 @@ class Connector {
 			array_push($arrayVerif, $value);
 		}
 		$request = substr($request, 0, -1)." WHERE ";
-		var_dump($request);
 		foreach($update['where'] as $value) {
 			$request .= $value[0].$value[1]."? AND ";
-			array_push($arrayVerif, $value[2]);			
+			array_push($arrayVerif, $value[2]);
 		}
 		$request = substr($request, 0, -5);
 
