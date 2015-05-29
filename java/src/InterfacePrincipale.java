@@ -4,6 +4,8 @@ import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.lang.reflect.Array;
+import java.util.Arrays;
 
 import static java.lang.Thread.currentThread;
 import static java.lang.Thread.sleep;
@@ -335,7 +337,19 @@ public class InterfacePrincipale extends JFrame
 				}
 
 				bdd.renameCategorie(oldCatName, newCatName);
-				listC.setListData(bdd.getListeCategorie().toArray());
+
+				Object[] tabObject = bdd.getListeCategorie().toArray();
+				Categorie[] tabCategorie = Arrays.copyOf(tabObject, tabObject.length, Categorie[].class);
+				listC.setListData(tabCategorie);
+
+				for(int i=0; i<tabCategorie.length; i++)
+				{
+					if(tabCategorie[i].getNom().equals(newCatName))
+					{
+						listC.setSelectedValue(tabCategorie[i], true);
+						break;
+					}
+				}
 			}
 		}
 	}
