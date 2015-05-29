@@ -45,7 +45,22 @@ public class ConnexionBDD
 	//Gestion catégorie
 	public ArrayList<Categorie> getListeCategorie()
 	{
-		gestionCategories.selectCategorie();
+		gestionCategories.readCategorie();
 		return gestionCategories.getListCategories();
+	}
+
+	public void createCategorie(String categorieName)
+	{
+		gestionCategories.insertCategorie(categorieName);
+	}
+
+	public void deleteCategorie(String categorieName)
+	{
+		gestionCategories.deleteCategorie(categorieName);
+	}
+
+	public void renameCategorie(String oldCategorieName, String newCategorieName)
+	{
+		gestionCategories.updateCategorie(oldCategorieName, newCategorieName);
 	}
 }

@@ -5,6 +5,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import static java.lang.Thread.currentThread;
 import static java.lang.Thread.sleep;
 import static javax.swing.BoxLayout.*;
 
@@ -264,15 +265,77 @@ public class InterfacePrincipale extends JFrame
 		{
 			if(e.getSource() == addC)
 			{
-				statusText.setText("Ajout de catégorie");
+				JOptionPane jop = new JOptionPane();
+
+				String catName = jop.showInputDialog(null,
+						"Nom de la nouvelle categorie:",
+						"Nouvelle catégorie",
+						JOptionPane.QUESTION_MESSAGE);
+
+				if(catName == null)
+				{
+					return ;
+				}
+				else if(catName.isEmpty())
+				{
+					statusText.setText("Une categorie ne peut porter un nom vide.");
+					return ;
+				}
+
+				bdd.createCategorie(catName);
+				listC.setListData(bdd.getListeCategorie().toArray());
 			}
 			else if(e.getSource() == delC)
 			{
-				statusText.setText("Supression de catégorie");
+				JOptionPane jop = new JOptionPane();
+
+				Categorie c = (Categorie) listC.getSelectedValue();
+
+				if(c == null)
+				{
+					statusText.setText("Veuiller d'abord selectionner une categorie.");
+					return;
+				}
+
+				String categorieName = c.getNom();
+
+				if(jop.showConfirmDialog(null,"Voulez vous vraiment supprimer la catégorie " + categorieName + " ?\nCela supprimera aussi toute les reponses et questions associé à cette catégorie.", "Supression de catégorie", JOptionPane.OK_CANCEL_OPTION) == JOptionPane.OK_OPTION)
+				{
+					bdd.deleteCategorie(categorieName);
+					listC.setListData(bdd.getListeCategorie().toArray());
+				}
 			}
 			else if(e.getSource() == editC)
 			{
-				statusText.setText("Modification de catégorie");
+				Categorie c = (Categorie) listC.getSelectedValue();
+
+				if(c == null)
+				{
+					statusText.setText("Veuiller d'abord selectionner une categorie.");
+					return;
+				}
+
+				JOptionPane jop = new JOptionPane();
+
+				String oldCatName = c.getNom();
+
+				String newCatName = jop.showInputDialog(null,
+						"Nouveau nom pour la categorie " + oldCatName + ":",
+						"Renomer catégorie",
+						JOptionPane.QUESTION_MESSAGE);
+
+				if(newCatName == null)
+				{
+					return ;
+				}
+				else if(newCatName.isEmpty())
+				{
+					statusText.setText("Une categorie ne peut porter un nom vide.");
+					return ;
+				}
+
+				bdd.renameCategorie(oldCatName, newCatName);
+				listC.setListData(bdd.getListeCategorie().toArray());
 			}
 		}
 	}
