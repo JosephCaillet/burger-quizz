@@ -17,7 +17,8 @@ class Questset {
 					"where" => array(
 						array("reponse1", "=", $this->reponse1),
 						array("reponse2", "=", $this->reponse2)
-					)
+					),
+					"order by" => array("rand()")
 				);
 
 				$questions = $bdd->Select('*', 'questions', $options);
