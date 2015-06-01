@@ -42,7 +42,7 @@ public class GestionCategories
 		}
 	}
 
-	public void insertCategorie(String categorieName)
+	public void createCategorie(String categorieName)
 	{
 		String rq ="INSERT INTO categorie(nom_cat)" +
 				" VALUES(?)";

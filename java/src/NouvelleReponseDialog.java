@@ -27,6 +27,9 @@ public class NouvelleReponseDialog extends JDialog implements ActionListener
 		rep1 = new JTextField(defRep1,15);
 		rep2 = new JTextField(defRep2,15);
 
+		rep1.setBackground(Color.WHITE);
+		rep2.setBackground(Color.WHITE);
+
 		ok = new JButton("OK");
 		annuler = new JButton("Annuler");
 		ok.addActionListener(this);
@@ -56,12 +59,16 @@ public class NouvelleReponseDialog extends JDialog implements ActionListener
 		if(e.getSource() == annuler)
 		{
 			mofidEffectues = false;
+			setVisible(false);
 		}
 		else if(e.getSource() == ok) {
+			if(rep1.getText().isEmpty() || rep2.getText().isEmpty())
+			{
+				return;
+			}
 			mofidEffectues = true;
+			setVisible(false);
 		}
-
-		setVisible(false);
 	}
 
 	public String getRep2() {

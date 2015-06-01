@@ -1,15 +1,13 @@
 import javax.swing.*;
-import javax.swing.border.BevelBorder;
 import javax.swing.border.Border;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.lang.reflect.Array;
 import java.util.Arrays;
+import java.util.Vector;
 
-import static java.lang.Thread.currentThread;
 import static java.lang.Thread.sleep;
 import static javax.swing.BoxLayout.*;
 
@@ -175,8 +173,8 @@ public class InterfacePrincipale extends JFrame
 		addR.setAlignmentX(CENTER_ALIGNMENT);
 		delR.setAlignmentX(CENTER_ALIGNMENT);
 		editR.setAlignmentX(CENTER_ALIGNMENT);
+		comboRepCat.setOpaque(false);
 
-		comboRepCat.setAlignmentX(CENTER_ALIGNMENT);
 		addR.setMaximumSize(new Dimension(300,34));
 		delR.setMaximumSize(new Dimension(300,34));
 		editR.setMaximumSize(new Dimension(300,34));
@@ -202,6 +200,8 @@ public class InterfacePrincipale extends JFrame
 		addR.addActionListener(prl);
 		delR.addActionListener(prl);
 		editR.addActionListener(prl);
+		listR.addListSelectionListener(prl);
+		comboRepCat.addActionListener(prl);
 	}
 
 	private void createPanelQuestion()
@@ -224,6 +224,8 @@ public class InterfacePrincipale extends JFrame
 		addQ.setAlignmentX(CENTER_ALIGNMENT);
 		delQ.setAlignmentX(CENTER_ALIGNMENT);
 		editQ.setAlignmentX(CENTER_ALIGNMENT);
+		comboQueRep.setOpaque(false);
+
 		addQ.setMaximumSize(new Dimension(208,34));
 		delQ.setMaximumSize(new Dimension(208,34));
 		editQ.setMaximumSize(new Dimension(208,34));
@@ -276,10 +278,40 @@ public class InterfacePrincipale extends JFrame
 		pack();
 	}
 
+	private void reSelectCategorie(String newCatName)
+	{
+		Object[] tabObject = bdd.getListeCategorie().toArray();
+		Categorie[] tabCategorie = Arrays.copyOf(tabObject, tabObject.length, Categorie[].class);
+		listC.setListData(tabCategorie);
+
+		for(int i=0; i<tabCategorie.length; i++)
+		{
+			if(tabCategorie[i].getNom().equals(newCatName))
+			{
+				listC.setSelectedValue(tabCategorie[i], true);
+				break;
+			}
+		}
+	}
+
+	private void reSelectReponses(String rep1, String rep2)
+	{
+		Object[] tabObject = bdd.getListeReponses(listC.getSelectedValue().toString()).toArray();
+		Reponses[] tabReponses = Arrays.copyOf(tabObject, tabObject.length, Reponses[].class);
+		listR.setListData(tabReponses);
+
+		for(int i=0; i<tabReponses.length; i++)
+		{
+			if(tabReponses[i].getReponse1().equals(rep1) && tabReponses[i].getReponse2().equals(rep2))
+			{
+				listR.setSelectedValue(tabReponses[i], true);
+				break;
+			}
+		}
+	}
 
 	private class PanCategoriesListener implements ActionListener, ListSelectionListener
 	{
-		private boolean b;
 		public void actionPerformed(ActionEvent e)
 		{
 			if(e.getSource() == addC)
@@ -303,6 +335,7 @@ public class InterfacePrincipale extends JFrame
 
 				bdd.createCategorie(catName);
 				listC.setListData(bdd.getListeCategorie().toArray());
+				reSelectCategorie(catName);
 			}
 			else if(e.getSource() == delC)
 			{
@@ -322,6 +355,7 @@ public class InterfacePrincipale extends JFrame
 				{
 					bdd.deleteCategorie(categorieName);
 					listC.setListData(bdd.getListeCategorie().toArray());
+					listR.setListData(new Vector(0));
 				}
 			}
 			else if(e.getSource() == editC)
@@ -354,19 +388,7 @@ public class InterfacePrincipale extends JFrame
 				}
 
 				bdd.renameCategorie(oldCatName, newCatName);
-
-				Object[] tabObject = bdd.getListeCategorie().toArray();
-				Categorie[] tabCategorie = Arrays.copyOf(tabObject, tabObject.length, Categorie[].class);
-				listC.setListData(tabCategorie);
-
-				for(int i=0; i<tabCategorie.length; i++)
-				{
-					if(tabCategorie[i].getNom().equals(newCatName))
-					{
-						listC.setSelectedValue(tabCategorie[i], true);
-						break;
-					}
-				}
+				reSelectCategorie(newCatName);
 			}
 		}
 
@@ -375,27 +397,97 @@ public class InterfacePrincipale extends JFrame
 			if(!listC.isSelectionEmpty())
 			{
 				listR.setListData(bdd.getListeReponses(listC.getSelectedValue().toString()).toArray());
+				comboRepCat.removeAllItems();
 			}
 		}
 	}
 
-	private class PanReponsesListener implements ActionListener
+	private class PanReponsesListener implements ActionListener, ListSelectionListener
 	{
 		public void actionPerformed(ActionEvent e)
 		{
+			if(listC.isSelectionEmpty())
+			{
+				statusText.setText("Veuillez selectioner une catégorie.");
+				return;
+			}
+
 			if(e.getSource() == addR)
 			{
-				statusText.setText("Création de réponses");
-				NouvelleReponseDialog n = new NouvelleReponseDialog("rr","r","uuu",null);
-				n.afficher();
+				NouvelleReponseDialog nrd = new NouvelleReponseDialog("Nouveau jeu de réponses","","",null);
+				if(nrd.afficher() == true)
+				{
+					String catName = listC.getSelectedValue().toString();
+					bdd.createReponses(catName, nrd.getRep1(), nrd.getRep2());
+					listR.setListData(bdd.getListeReponses(catName).toArray());
+					reSelectReponses(nrd.getRep1(), nrd.getRep2());
+				}
 			}
 			else if(e.getSource() == delR)
 			{
-				statusText.setText("Supression de réponses");
+				JOptionPane jop = new JOptionPane();
+
+				Reponses r = (Reponses) listR.getSelectedValue();
+
+				if(r == null)
+				{
+					statusText.setText("Veuiller d'abord selectionner un jeu de réponses.");
+					return;
+				}
+
+				String reponse1 = r.getReponse1();
+				String reponse2 = r.getReponse2();
+
+				if(jop.showConfirmDialog(null,"Voulez vous vraiment supprimer le jeu de réponses " + reponse1 + ", " + reponse2 + " ?\nCela supprimera aussi toutes les questions associé à cette catégorie.", "Supression de réponses", JOptionPane.OK_CANCEL_OPTION) == JOptionPane.OK_OPTION)
+				{
+					bdd.deleteReponses(reponse1, reponse2);
+					listR.setListData(bdd.getListeReponses(listC.getSelectedValue().toString()).toArray());
+					listQ.setListData(new Vector(0));
+				}
 			}
 			else if(e.getSource() == editR)
 			{
-				statusText.setText("Modification de réponses");
+				Reponses r = (Reponses) listR.getSelectedValue();
+
+				if(r == null)
+				{
+					statusText.setText("Veuiller d'abord selectionner un jeu de réponses.");
+					return;
+				}
+
+				String reponse1 = r.getReponse1();
+				String reponse2 = r.getReponse2();
+
+				NouvelleReponseDialog nrd = new NouvelleReponseDialog("Modification jeu de réponses", reponse1, reponse2, null);
+				if(nrd.afficher() == true)
+				{
+					String catName = listC.getSelectedValue().toString();
+					bdd.modifyReponsesReponses(reponse1, reponse2, nrd.getRep1(), nrd.getRep2());
+					listR.setListData(bdd.getListeReponses(catName).toArray());
+					reSelectReponses(nrd.getRep1(), nrd.getRep2());
+				}
+			}
+			else if(e.getSource() == comboRepCat)
+			{
+				System.out.println("éLOL");
+			}
+		}
+
+		public void valueChanged(ListSelectionEvent listSelectionEvent)
+		{
+			ListModel model = listC.getModel();
+			comboRepCat.removeAllItems();
+
+			String cat = listC.getSelectedValue().toString();
+
+			for(int i=0; i < model.getSize(); i++)
+			{
+				Categorie c =  (Categorie)model.getElementAt(i);
+				comboRepCat.addItem(c.getNom());
+				if(cat.equals(c.getNom()))
+				{
+					comboRepCat.setSelectedItem(c.getNom());
+				}
 			}
 		}
 	}
@@ -404,6 +496,12 @@ public class InterfacePrincipale extends JFrame
 	{
 		public void actionPerformed(ActionEvent e)
 		{
+			if(listR.isSelectionEmpty())
+			{
+				statusText.setText("Veuillez selectioner une catégorie.");
+				return;
+			}
+
 			if(e.getSource() == addQ)
 			{
 				statusText.setText("Création de question");

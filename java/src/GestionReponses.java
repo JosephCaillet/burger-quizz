@@ -20,6 +20,7 @@ public class GestionReponses
 		String rq = "SELECT *" +
 				" FROM reponses" +
 				" WHERE nom_cat = ?";
+
 		try
 		{
 			PreparedStatement preparedStatement = bdd.prepareStatement(rq);
@@ -36,6 +37,78 @@ public class GestionReponses
 			resultat.close();
 			preparedStatement.close();
 
+		}
+		catch (SQLException e)
+		{
+			e.printStackTrace();
+		}
+	}
+
+	public void createReponses(String nomCategorie, String reponse1, String reponse2)
+	{
+		String rq = "INSERT INTO reponses(nom_cat,reponse1,reponse2)" +
+				" VALUES(?,?,?)";
+		try
+		{
+			PreparedStatement preparedStatement = bdd.prepareStatement(rq);
+			preparedStatement.setString(1, nomCategorie);
+			preparedStatement.setString(2, reponse1);
+			preparedStatement.setString(3, reponse2);
+			preparedStatement.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void deleteReponses(String rep1, String rep2)
+	{
+		String rq ="DELETE FROM reponses" +
+				" WHERE reponse1 = ? AND reponse2 = ?";
+		try
+		{
+			PreparedStatement preparedStatement = bdd.prepareStatement(rq);
+			preparedStatement.setString(1, rep1);
+			preparedStatement.setString(2, rep2);
+			preparedStatement.executeUpdate();
+		}
+		catch (SQLException e)
+		{
+			e.printStackTrace();
+		}
+	}
+
+	public void updateReponsesReponses(String oldRep1, String oldRep2, String newRep1, String newRep2)
+	{
+		String rq ="UPDATE reponses" +
+				" SET reponse1 = ?, reponse2 = ?" +
+				" WHERE reponse1 = ? AND reponse2 = ?";
+		try
+		{
+			PreparedStatement preparedStatement = bdd.prepareStatement(rq);
+			preparedStatement.setString(1, newRep1);
+			preparedStatement.setString(2, newRep2);
+			preparedStatement.setString(3, oldRep1);
+			preparedStatement.setString(4, oldRep2);
+			preparedStatement.executeUpdate();
+		}
+		catch (SQLException e)
+		{
+			e.printStackTrace();
+		}
+	}
+
+	public void updateReponsesCategorie(String rep1, String rep2, String newCategorie)
+	{
+		String rq ="UPDATE reponses" +
+				" SET nom_cat = ?" +
+				" WHERE reponse1 = ? AND reponse2 = ?";
+		try
+		{
+			PreparedStatement preparedStatement = bdd.prepareStatement(rq);
+			preparedStatement.setString(1, newCategorie);
+			preparedStatement.setString(2, rep1);
+			preparedStatement.setString(3, rep2);
+			preparedStatement.executeUpdate();
 		}
 		catch (SQLException e)
 		{

@@ -51,7 +51,7 @@ public class ConnexionBDD
 
 	public void createCategorie(String categorieName)
 	{
-		gestionCategories.insertCategorie(categorieName);
+		gestionCategories.createCategorie(categorieName);
 	}
 
 	public void deleteCategorie(String categorieName)
@@ -69,5 +69,25 @@ public class ConnexionBDD
 	{
 		gestionReponses.readReponses(catName);
 		return gestionReponses.getListReponses();
+	}
+
+	public void createReponses(String nomCategorie, String reponse1, String reponse2)
+	{
+		gestionReponses.createReponses(nomCategorie, reponse1, reponse2);
+	}
+
+	public void deleteReponses(String reponse1, String reponse2)
+	{
+		gestionReponses.deleteReponses(reponse1, reponse2);
+	}
+
+	public void modifyReponsesReponses(String oldRep1, String oldRep2, String newRep1, String newRep2)
+	{
+		gestionReponses.updateReponsesReponses(oldRep1, oldRep2, newRep1, newRep2);
+	}
+
+	public void modifyReponsesCategorie(String reponse1, String reponses2, String newCategorie)
+	{
+		gestionReponses.updateReponsesCategorie(reponse1, reponses2, newCategorie);
 	}
 }
