@@ -92,4 +92,9 @@ public class ConnexionBDD
 		gestionQuestions.readQuestions(reponse1, reponse2);
 		return gestionQuestions.getListeQuestions();
 	}
+
+	public void createQuestion(String intitule, String reponse1, String reponse2, int num_reponse)
+	{
+		gestionQuestions.createQuestion(intitule, reponse1, reponse2, num_reponse);
+	}
 }

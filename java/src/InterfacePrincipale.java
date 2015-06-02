@@ -302,6 +302,23 @@ public class InterfacePrincipale extends JFrame
 		}
 	}
 
+	private void reSelectQuestion(String intitule)
+	{
+		Reponses r = (Reponses) listR.getSelectedValue();
+		Object[] tabObject = bdd.getListeQuestions(r.getReponse1(), r.getReponse2()).toArray();
+		Question[] tabQuestions = Arrays.copyOf(tabObject, tabObject.length, Question[].class);
+		listQ.setListData(tabQuestions);
+
+		for(int i=0; i<tabQuestions.length; i++)
+		{
+			if(tabQuestions[i].getIntitule().equals(intitule))
+			{
+				listQ.setSelectedValue(tabQuestions[i], true);
+				break;
+			}
+		}
+	}
+
 	private String[] getCategorieList()
 	{
 		ListModel model = listC.getModel();
@@ -339,7 +356,7 @@ public class InterfacePrincipale extends JFrame
 				}
 
 				bdd.createCategorie(catName);
-				listC.setListData(bdd.getListeCategorie().toArray());
+				//listC.setListData(bdd.getListeCategorie().toArray());
 				reSelectCategorie(catName);
 				listQ.setListData(new Vector(0));
 			}
@@ -426,7 +443,7 @@ public class InterfacePrincipale extends JFrame
 				{
 					String catName = listC.getSelectedValue().toString();
 					bdd.createReponses(catName, nrd.getRep1(), nrd.getRep2());
-					listR.setListData(bdd.getListeReponses(catName).toArray());
+					//listR.setListData(bdd.getListeReponses(catName).toArray());
 					reSelectReponses(nrd.getRep1(), nrd.getRep2());
 				}
 			}
@@ -470,7 +487,7 @@ public class InterfacePrincipale extends JFrame
 				if(nrd.afficher() == true)
 				{
 					bdd.modifyReponsesReponses(nrd.getCat(), reponse1, reponse2, nrd.getRep1(), nrd.getRep2());
-					listR.setListData(bdd.getListeReponses(catName).toArray());
+					//listR.setListData(bdd.getListeReponses(catName).toArray());
 					reSelectCategorie(nrd.getCat());
 					reSelectReponses(nrd.getRep1(), nrd.getRep2());
 				}
@@ -499,7 +516,16 @@ public class InterfacePrincipale extends JFrame
 
 			if(e.getSource() == addQ)
 			{
-				statusText.setText("Création de question");
+				Reponses r = (Reponses) listR.getSelectedValue();
+				NouvelleQuestionDialog nqd = new NouvelleQuestionDialog("Nouvelle question", "",
+						0, r.getReponse1(),r.getReponse2(), null);
+
+				if(nqd.afficher() == true)
+				{
+					bdd.createQuestion(nqd.getIntitule(), r.getReponse1(), r.getReponse2(), nqd.getReponse());
+					//listQ.setListData(bdd.getListeQuestions(r.getReponse1(), r.getReponse2()));
+					reSelectQuestion(nqd.getIntitule());
+				}
 			}
 			else if(e.getSource() == delQ)
 			{

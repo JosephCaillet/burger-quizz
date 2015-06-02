@@ -45,6 +45,26 @@ public class GestionQuestions
 		}
 	}
 
+	public void createQuestion(String intitule, String reponse1, String reponse2, int num_reponse)
+	{
+		String rq = "INSERT INTO reponses(intitule, reponse1, reponse2, num_reponse)" +
+				" VALUES(?, ?, ?, ?)";
+		try
+		{
+			PreparedStatement preparedStatement = bdd.prepareStatement(rq);
+			preparedStatement.setString(1, intitule);
+			preparedStatement.setString(2, reponse1);
+			preparedStatement.setString(3, reponse2);
+			preparedStatement.setInt(4, num_reponse);
+			preparedStatement.executeUpdate();
+
+			preparedStatement.close();
+		}
+		catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+
 	public ArrayList<Question> getListeQuestions() {
 		return listeQuestions;
 	}

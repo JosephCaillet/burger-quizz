@@ -20,7 +20,7 @@ public class NouvelleReponseDialog extends JDialog implements ActionListener
 		setLocationRelativeTo(null);
 	}
 
-	private void createInterface(String defRep1, String defRep2, String defCategorie, String[] tabCatrgorie)
+	private void createInterface(String defRep1, String defRep2, String defCategorie, String[] tabCategorie)
 	{
 		JPanel champs = new JPanel();
 		JPanel boutons = new JPanel();
@@ -47,10 +47,10 @@ public class NouvelleReponseDialog extends JDialog implements ActionListener
 		{
 			comboCat = new JComboBox();
 			comboCat.setOpaque(true);
-			for(int i=0; i<tabCatrgorie.length; i++)
+			for(int i=0; i< tabCategorie.length; i++)
 			{
-				comboCat.addItem(tabCatrgorie[i]);
-				if(tabCatrgorie[i].equals(defCategorie))
+				comboCat.addItem(tabCategorie[i]);
+				if(tabCategorie[i].equals(defCategorie))
 				{
 					comboCat.setSelectedIndex(i);
 				}
