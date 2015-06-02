@@ -1,7 +1,7 @@
 <?php
 
-if(!empty($_GET['login']) && !empty($_GET['score'])) {
-	Score::add($_GET['login'], $_GET['score']);
+if(!empty($_POST['login']) && !empty($_POST['score'])) {
+	Score::add($_POST['login'], $_POST['score']);
 	$scArray = array(
 		"status" => 1,
 		"message" => "score_add_success"

@@ -3,7 +3,8 @@ var id_cat = 0, id_theme = 0, id_quest = 0;
 // Shortcuts
 var json, category, theme;
 // Timer
-var timing = 5, secRestantes;
+var timing = 5, secRestantes, timer;
+var baseWidth;
 
 var score = 0;
 var reponseUser = -1, bonneReponse;
@@ -25,6 +26,8 @@ function loadCat(id) {
   console.log(category);
   $("#game").html("<p id=\"category\">Catégorie : "+category.nom_cat+"</p>");
   $("#game").append("<div id=\"theme\"></div>");
+  $("#game").append("<div id=\"timer\" style=\"width:100%;height:20px;background:green\"></div>");
+  $("#game").append("<div id=\"score\"></div>");
   loadTheme(id_theme);
 }
 
@@ -33,7 +36,6 @@ function loadTheme(id) {
   $("#theme").html("<p id=\"question\"></p>");
   $("#theme").append("<ul id=\"answers\"><li id=\"rep1\">"+theme.reponse1+"</li>"
     +"<li id=\"rep2\">"+theme.reponse2+"</li><li id=\"both\">Les deux</li></ul>");
-  $("#theme").append("<div id=\"timer\" style=\"width:100%\"></p>");
   quest(id_quest);
 }
 
@@ -56,6 +58,7 @@ function checkAnswer() {
   if(reponseUser == bonneReponse) {
     score += secRestantes+1;
   }
+  $("#score").html("Score : "+score);
   switch(bonneReponse) {
     case 0:   $("#rep1").addClass("wrong-answer");
               $("#rep2").addClass("wrong-answer");
@@ -108,15 +111,65 @@ function play() {
 }
 
 function startTimer() {
-  $("#timer").animate('{width : 0%}', timing*1000);
-  window.setTimeout(checkAnswer, timing*1000);
+  $("#timer").css("width", "100%");
+  baseWidth = $("#timer").width();
+  $("#timer").animate({'width' : '0%'}, timing*1000);
+  timer = window.setTimeout(checkAnswer, timing*1000);
 }
 
 function stopTimer() {
-  secRestantes = Math.round($("#timer").width/100*timing);
-  console.log(secRestantes);
+  window.clearTimeout(timer);
+  $("#timer").stop();
+  secRestantes = Math.round($("#timer").width()/baseWidth*timing);
 }
 
 function endGame() {
-  $("#game").html("End of line. Score : "+score);
+  $("#game").html("<h2 id=\"score\">Vous avez marqué "+score+" miams</h2>"
+  +"<p id=\"registerScore\">Enregistrez votre score : <input type=\"text\" id=\"login\" placeholder=\"Nom ou pseudonyme\" />"
+  +"<input type=\"submit\" id=\"sendScore\" value=\"Valider\" /></p>");
+  $("#sendScore").click(function() {
+    addScore($("#login").val(), score);
+    var message = json.message;
+    $("#registerScore").fadeOut();
+    console.log(message);
+    if(message == "score_add_success") {
+      $("#registerScore").addClass("success");
+      $("#registerScore").html("Votre score a bien été enregistré<br />"+
+      "<a href=\"palmares.htm\">Voir les meilleurs scores</a>");
+    } else {
+      $("#registerScore").addClass("error");
+      if(message === "higher_score_present") {
+        $("#registerScore").html("Un score supérieur ou égal existe déjà avec ce pseudonyme<br />"+
+        "<a href=\"palmares.htm\">Voir les meilleurs scores</a>");
+      } else {
+        $("#registerScore").html("Une erreur est survenue ("+status.message+")<br />"+
+        "<a href=\"palmares.htm\">Voir les meilleurs scores</a>");
+      }
+    }
+    $("#registerScore").fadeIn();
+  });
+}
+
+function addScore(userLogin, userScore) {
+  $.ajax({
+    async: false,
+    url: "./api/?page=palmares",
+    type: "POST",
+    dataType: 'json',
+    data: {login: userLogin, score: userScore},
+    success: function(data) {
+      json = data;
+    }
+  });
+}
+
+function displayScores() {
+  $.get("./api/?page=palmares", function(data) {
+    var list = "<ol>";
+    for(var i = 0; i < 10; i++) {
+      list += "<li>"+data[i].login+" - "+data[i].score+"</li>";
+    }
+    list += "</ol>";
+    $("#palmares").html(list);
+  });
 }
