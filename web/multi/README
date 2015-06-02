@@ -1,0 +1,21 @@
+Installation de nodejs :
+https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager
+
+Installation du servveur temps réel :
+	+ Créer un répertoire
+	+ Copier les fichiers server/server.js et server/package.json
+	+ Se placer dans le répertoire
+	+ Taper la commande : # npm install
+	+ C'est tout !!
+
+Lancer le serveur temps réel :
+	+ Se placer dans le répertoire du serveur
+	+ Taper la commande : # node server.js
+
+
+Côté client :
+	+ Copier le contenu du répertoire "client" à la racine de votre serveur web ou dans un répertoire
+	+ Le client sera accessible avec l'URL http://127.0.0.1 ou http://127.0.0.1/repertoire si vous avez opté pour la seconde solution
+	+ Lancer deux clients pour comprendre le fonctionnement du serveur temps réel (et donc des websockets mise en oeuvre avec socket.io)
+
+La base de la communication est mise en oeuvre dans l'exemple.
