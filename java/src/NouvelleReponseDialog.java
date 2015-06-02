@@ -10,16 +10,17 @@ public class NouvelleReponseDialog extends JDialog implements ActionListener
 	private JButton ok;
 	private JButton annuler;
 	private boolean mofidEffectues;
+	private JComboBox comboCat;
 
-	public NouvelleReponseDialog(String title, String defRep1, String defRep2, JFrame parent)
+	public NouvelleReponseDialog(String title, String defRep1, String defRep2, String defCategorie, String[] tabCategorie,JFrame parent)
 	{
 		super(parent,title,true);
-		createInterface(defRep1,defRep2);
+		createInterface(defRep1, defRep2, defCategorie, tabCategorie);
 		pack();
 		setLocationRelativeTo(null);
 	}
 
-	private void createInterface(String defRep1, String defRep2)
+	private void createInterface(String defRep1, String defRep2, String defCategorie, String[] tabCatrgorie)
 	{
 		JPanel champs = new JPanel();
 		JPanel boutons = new JPanel();
@@ -35,11 +36,30 @@ public class NouvelleReponseDialog extends JDialog implements ActionListener
 		ok.addActionListener(this);
 		annuler.addActionListener(this);
 
-		champs.setLayout(new GridLayout(2,2));
+		GridLayout gridLayout = new GridLayout(2, 2);
+		champs.setLayout(gridLayout);
 		champs.add(new JLabel("Réponse 1:"));
 		champs.add(rep1);
 		champs.add(new JLabel("Réponse 2:"));
 		champs.add(rep2);
+
+		if(defCategorie == null)
+		{
+			comboCat = new JComboBox();
+			comboCat.setOpaque(true);
+			for(int i=0; i<tabCatrgorie.length; i++)
+			{
+				comboCat.addItem(tabCatrgorie[i]);
+				if(tabCatrgorie[i].equals(defCategorie))
+				{
+					comboCat.setSelectedIndex(i);
+				}
+			}
+			gridLayout.setRows(3);
+			champs.add(new JLabel("Catégorie:"));
+			champs.add(comboCat);
+		}
+
 		boutons.add(annuler);
 		boutons.add(ok);
 
@@ -77,5 +97,9 @@ public class NouvelleReponseDialog extends JDialog implements ActionListener
 
 	public String getRep1() {
 		return rep1.getText();
+	}
+
+	public String getCat() {
+		return comboCat.getSelectedItem().toString();
 	}
 }

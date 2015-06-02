@@ -55,7 +55,10 @@ public class GestionReponses
 			preparedStatement.setString(2, reponse1);
 			preparedStatement.setString(3, reponse2);
 			preparedStatement.executeUpdate();
-		} catch (SQLException e) {
+
+			preparedStatement.close();
+		}
+		catch (SQLException e) {
 			e.printStackTrace();
 		}
 	}
@@ -70,6 +73,8 @@ public class GestionReponses
 			preparedStatement.setString(1, rep1);
 			preparedStatement.setString(2, rep2);
 			preparedStatement.executeUpdate();
+
+			preparedStatement.close();
 		}
 		catch (SQLException e)
 		{
@@ -77,38 +82,22 @@ public class GestionReponses
 		}
 	}
 
-	public void updateReponsesReponses(String oldRep1, String oldRep2, String newRep1, String newRep2)
+	public void updateReponsesReponses(String categorie, String oldRep1, String oldRep2, String newRep1, String newRep2)
 	{
 		String rq ="UPDATE reponses" +
-				" SET reponse1 = ?, reponse2 = ?" +
+				" SET nom_cat = ?, reponse1 = ?, reponse2 = ?" +
 				" WHERE reponse1 = ? AND reponse2 = ?";
 		try
 		{
 			PreparedStatement preparedStatement = bdd.prepareStatement(rq);
-			preparedStatement.setString(1, newRep1);
-			preparedStatement.setString(2, newRep2);
-			preparedStatement.setString(3, oldRep1);
-			preparedStatement.setString(4, oldRep2);
+			preparedStatement.setString(1, categorie);
+			preparedStatement.setString(2, newRep1);
+			preparedStatement.setString(3, newRep2);
+			preparedStatement.setString(4, oldRep1);
+			preparedStatement.setString(5, oldRep2);
 			preparedStatement.executeUpdate();
-		}
-		catch (SQLException e)
-		{
-			e.printStackTrace();
-		}
-	}
 
-	public void updateReponsesCategorie(String rep1, String rep2, String newCategorie)
-	{
-		String rq ="UPDATE reponses" +
-				" SET nom_cat = ?" +
-				" WHERE reponse1 = ? AND reponse2 = ?";
-		try
-		{
-			PreparedStatement preparedStatement = bdd.prepareStatement(rq);
-			preparedStatement.setString(1, newCategorie);
-			preparedStatement.setString(2, rep1);
-			preparedStatement.setString(3, rep2);
-			preparedStatement.executeUpdate();
+			preparedStatement.close();
 		}
 		catch (SQLException e)
 		{

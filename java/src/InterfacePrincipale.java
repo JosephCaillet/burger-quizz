@@ -25,7 +25,6 @@ public class InterfacePrincipale extends JFrame
 	private Bouton addR;
 	private Bouton delR;
 	private Bouton editR;
-	private JComboBox comboRepCat;
 	private JList listR;
 
 	//Panel des questions
@@ -160,7 +159,6 @@ public class InterfacePrincipale extends JFrame
 		addR = new Bouton("Ajouter un jeu de réponses", plusImg);
 		delR = new Bouton("Supprimer le jeu de réponses", delImg);
 		editR = new Bouton("Modifier le jeu de réponse", editImg);
-		comboRepCat = new JComboBox();
 
 		listR = new JList();
 		JScrollPane sp = new JScrollPane(listR,
@@ -173,12 +171,10 @@ public class InterfacePrincipale extends JFrame
 		addR.setAlignmentX(CENTER_ALIGNMENT);
 		delR.setAlignmentX(CENTER_ALIGNMENT);
 		editR.setAlignmentX(CENTER_ALIGNMENT);
-		comboRepCat.setOpaque(false);
 
 		addR.setMaximumSize(new Dimension(300,34));
 		delR.setMaximumSize(new Dimension(300,34));
 		editR.setMaximumSize(new Dimension(300,34));
-		comboRepCat.setMaximumSize(new Dimension(1000,34));
 
 		JLabel labR = new JLabel("Réponses");
 		labR.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -190,8 +186,6 @@ public class InterfacePrincipale extends JFrame
 		panReponses.add(delR);
 		panReponses.add(Box.createRigidArea(new Dimension(1, 10)));
 		panReponses.add(sp);
-		panReponses.add(Box.createRigidArea(new Dimension(1, 10)));
-		panReponses.add(comboRepCat);
 		panReponses.add(Box.createRigidArea(new Dimension(1, 5)));
 		panReponses.add(editR);
 
@@ -201,7 +195,6 @@ public class InterfacePrincipale extends JFrame
 		delR.addActionListener(prl);
 		editR.addActionListener(prl);
 		listR.addListSelectionListener(prl);
-		comboRepCat.addActionListener(prl);
 	}
 
 	private void createPanelQuestion()
@@ -310,6 +303,19 @@ public class InterfacePrincipale extends JFrame
 		}
 	}
 
+	private String[] getCategorieList()
+	{
+		ListModel model = listC.getModel();
+		String[] tabCategories = new String[model.getSize()];
+
+		for(int i=0; i < model.getSize(); i++)
+		{
+			Categorie c =  (Categorie)model.getElementAt(i);
+			tabCategories[i] = c.getNom();
+		}
+		return tabCategories;
+	}
+
 	private class PanCategoriesListener implements ActionListener, ListSelectionListener
 	{
 		public void actionPerformed(ActionEvent e)
@@ -397,7 +403,6 @@ public class InterfacePrincipale extends JFrame
 			if(!listC.isSelectionEmpty())
 			{
 				listR.setListData(bdd.getListeReponses(listC.getSelectedValue().toString()).toArray());
-				comboRepCat.removeAllItems();
 			}
 		}
 	}
@@ -414,7 +419,7 @@ public class InterfacePrincipale extends JFrame
 
 			if(e.getSource() == addR)
 			{
-				NouvelleReponseDialog nrd = new NouvelleReponseDialog("Nouveau jeu de réponses","","",null);
+				NouvelleReponseDialog nrd = new NouvelleReponseDialog("Nouveau jeu de réponses", "", "", null, null, null);
 				if(nrd.afficher() == true)
 				{
 					String catName = listC.getSelectedValue().toString();
@@ -457,38 +462,22 @@ public class InterfacePrincipale extends JFrame
 
 				String reponse1 = r.getReponse1();
 				String reponse2 = r.getReponse2();
+				String catName = listC.getSelectedValue().toString();
 
-				NouvelleReponseDialog nrd = new NouvelleReponseDialog("Modification jeu de réponses", reponse1, reponse2, null);
+				NouvelleReponseDialog nrd = new NouvelleReponseDialog("Modification jeu de réponses", reponse1, reponse2, catName, getCategorieList(), null);
 				if(nrd.afficher() == true)
 				{
-					String catName = listC.getSelectedValue().toString();
-					bdd.modifyReponsesReponses(reponse1, reponse2, nrd.getRep1(), nrd.getRep2());
+					bdd.modifyReponsesReponses(nrd.getCat(), reponse1, reponse2, nrd.getRep1(), nrd.getRep2());
 					listR.setListData(bdd.getListeReponses(catName).toArray());
+					reSelectCategorie(nrd.getCat());
 					reSelectReponses(nrd.getRep1(), nrd.getRep2());
 				}
-			}
-			else if(e.getSource() == comboRepCat)
-			{
-				System.out.println("éLOL");
 			}
 		}
 
 		public void valueChanged(ListSelectionEvent listSelectionEvent)
 		{
-			ListModel model = listC.getModel();
-			comboRepCat.removeAllItems();
 
-			String cat = listC.getSelectedValue().toString();
-
-			for(int i=0; i < model.getSize(); i++)
-			{
-				Categorie c =  (Categorie)model.getElementAt(i);
-				comboRepCat.addItem(c.getNom());
-				if(cat.equals(c.getNom()))
-				{
-					comboRepCat.setSelectedItem(c.getNom());
-				}
-			}
 		}
 	}
 
