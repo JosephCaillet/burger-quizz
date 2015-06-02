@@ -32,7 +32,6 @@ public class InterfacePrincipale extends JFrame
 	private Bouton addQ;
 	private Bouton delQ;
 	private Bouton editQ;
-	private JComboBox comboQueRep;
 	private JList listQ;
 
 	//image pour les boutons
@@ -186,7 +185,7 @@ public class InterfacePrincipale extends JFrame
 		panReponses.add(delR);
 		panReponses.add(Box.createRigidArea(new Dimension(1, 10)));
 		panReponses.add(sp);
-		panReponses.add(Box.createRigidArea(new Dimension(1, 5)));
+		panReponses.add(Box.createRigidArea(new Dimension(1, 10)));
 		panReponses.add(editR);
 
 
@@ -203,10 +202,8 @@ public class InterfacePrincipale extends JFrame
 		addQ = new Bouton("Ajouter une question", plusImg);
 		delQ = new Bouton("Supprimer la question", delImg);
 		editQ = new Bouton("Modifier la question", editImg);
-		comboQueRep = new JComboBox();
 
-		String tab[] = {"a","b","c","d","e","f"};
-		listQ = new JList(tab);
+		listQ = new JList();
 		JScrollPane sp = new JScrollPane(listQ,
 				JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,
 				JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
@@ -217,12 +214,10 @@ public class InterfacePrincipale extends JFrame
 		addQ.setAlignmentX(CENTER_ALIGNMENT);
 		delQ.setAlignmentX(CENTER_ALIGNMENT);
 		editQ.setAlignmentX(CENTER_ALIGNMENT);
-		comboQueRep.setOpaque(false);
 
 		addQ.setMaximumSize(new Dimension(208,34));
 		delQ.setMaximumSize(new Dimension(208,34));
 		editQ.setMaximumSize(new Dimension(208,34));
-		comboQueRep.setMaximumSize(new Dimension(1000,34));
 
 		JLabel labQ = new JLabel("Questions");
 		labQ.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -235,8 +230,6 @@ public class InterfacePrincipale extends JFrame
 		panQuestions.add(Box.createRigidArea(new Dimension(1, 10)));
 		panQuestions.add(sp);
 		panQuestions.add(Box.createRigidArea(new Dimension(1, 10)));
-		panQuestions.add(comboQueRep);
-		panQuestions.add(Box.createRigidArea(new Dimension(1, 5)));
 		panQuestions.add(editQ);
 
 
@@ -303,6 +296,23 @@ public class InterfacePrincipale extends JFrame
 		}
 	}
 
+	private void reSelectQuestion(String intitule)
+	{
+		Reponses r = (Reponses) listR.getSelectedValue();
+		Object[] tabObject = bdd.getListeQuestions(r.getReponse1(), r.getReponse2()).toArray();
+		Question[] tabQuestions = Arrays.copyOf(tabObject, tabObject.length, Question[].class);
+		listQ.setListData(tabQuestions);
+
+		for(int i=0; i<tabQuestions.length; i++)
+		{
+			if(tabQuestions[i].getIntitule().equals(intitule))
+			{
+				listQ.setSelectedValue(tabQuestions[i], true);
+				break;
+			}
+		}
+	}
+
 	private String[] getCategorieList()
 	{
 		ListModel model = listC.getModel();
@@ -340,8 +350,9 @@ public class InterfacePrincipale extends JFrame
 				}
 
 				bdd.createCategorie(catName);
-				listC.setListData(bdd.getListeCategorie().toArray());
+				//listC.setListData(bdd.getListeCategorie().toArray());
 				reSelectCategorie(catName);
+				listQ.setListData(new Vector(0));
 			}
 			else if(e.getSource() == delC)
 			{
@@ -362,6 +373,7 @@ public class InterfacePrincipale extends JFrame
 					bdd.deleteCategorie(categorieName);
 					listC.setListData(bdd.getListeCategorie().toArray());
 					listR.setListData(new Vector(0));
+					listQ.setListData(new Vector(0));
 				}
 			}
 			else if(e.getSource() == editC)
@@ -403,6 +415,7 @@ public class InterfacePrincipale extends JFrame
 			if(!listC.isSelectionEmpty())
 			{
 				listR.setListData(bdd.getListeReponses(listC.getSelectedValue().toString()).toArray());
+				listQ.setListData(new Vector(0));
 			}
 		}
 	}
@@ -424,7 +437,7 @@ public class InterfacePrincipale extends JFrame
 				{
 					String catName = listC.getSelectedValue().toString();
 					bdd.createReponses(catName, nrd.getRep1(), nrd.getRep2());
-					listR.setListData(bdd.getListeReponses(catName).toArray());
+					//listR.setListData(bdd.getListeReponses(catName).toArray());
 					reSelectReponses(nrd.getRep1(), nrd.getRep2());
 				}
 			}
@@ -467,8 +480,8 @@ public class InterfacePrincipale extends JFrame
 				NouvelleReponseDialog nrd = new NouvelleReponseDialog("Modification jeu de réponses", reponse1, reponse2, catName, getCategorieList(), null);
 				if(nrd.afficher() == true)
 				{
-					bdd.modifyReponsesReponses(nrd.getCat(), reponse1, reponse2, nrd.getRep1(), nrd.getRep2());
-					listR.setListData(bdd.getListeReponses(catName).toArray());
+					bdd.modifyReponses(nrd.getCat(), reponse1, reponse2, nrd.getRep1(), nrd.getRep2());
+					//listR.setListData(bdd.getListeReponses(catName).toArray());
 					reSelectCategorie(nrd.getCat());
 					reSelectReponses(nrd.getRep1(), nrd.getRep2());
 				}
@@ -477,7 +490,11 @@ public class InterfacePrincipale extends JFrame
 
 		public void valueChanged(ListSelectionEvent listSelectionEvent)
 		{
-
+			if(!listR.isSelectionEmpty())
+			{
+				Reponses r = (Reponses) listR.getSelectedValue();
+				listQ.setListData(bdd.getListeQuestions(r.getReponse1(), r.getReponse2()).toArray());
+			}
 		}
 	}
 
@@ -487,21 +504,59 @@ public class InterfacePrincipale extends JFrame
 		{
 			if(listR.isSelectionEmpty())
 			{
-				statusText.setText("Veuillez selectioner une catégorie.");
+				statusText.setText("Veuillez selectioner une sous-catégorie.");
 				return;
 			}
 
 			if(e.getSource() == addQ)
 			{
-				statusText.setText("Création de question");
+				Reponses r = (Reponses) listR.getSelectedValue();
+				NouvelleQuestionDialog nqd = new NouvelleQuestionDialog("Nouvelle question", "",
+						0, r.getReponse1(),r.getReponse2(), null);
+
+				if(nqd.afficher() == true)
+				{
+					bdd.createQuestion(nqd.getIntitule(), r.getReponse1(), r.getReponse2(), nqd.getReponse());
+					//listQ.setListData(bdd.getListeQuestions(r.getReponse1(), r.getReponse2()));
+					reSelectQuestion(nqd.getIntitule());
+				}
 			}
 			else if(e.getSource() == delQ)
 			{
-				statusText.setText("Supression de question");
+				JOptionPane jop = new JOptionPane();
+
+				Question q = (Question) listQ.getSelectedValue();
+
+				if(q == null)
+				{
+					statusText.setText("Veuiller d'abord selectionner une question.");
+					return;
+				}
+
+				if(jop.showConfirmDialog(null,"Voulez vous vraiment supprimer la question " + q.getIntitule() + " ?", "Supression de question", JOptionPane.OK_CANCEL_OPTION) == JOptionPane.OK_OPTION)
+				{
+					bdd.deleteQuestion(q.getIntitule(), q.getReponse1(), q.getReponse2());
+					listQ.setListData(bdd.getListeQuestions(q.getReponse1(), q.getReponse2()).toArray());
+				}
 			}
 			else if(e.getSource() == editQ)
 			{
-				statusText.setText("Modification de question");
+				Question q = (Question) listQ.getSelectedValue();
+				if(q == null)
+				{
+					statusText.setText("Veuiller d'abord selectionner une question.");
+					return;
+				}
+
+				NouvelleQuestionDialog nqd = new NouvelleQuestionDialog("Modification question", q.getIntitule(),
+						q.getReponse(), q.getReponse1(), q.getReponse2(), null);
+
+				if(nqd.afficher() == true)
+				{
+					bdd.modifyQuestion(q.getIntitule(), nqd.getIntitule(),
+							q.getReponse1(), q.getReponse2(), nqd.getReponse());
+					reSelectQuestion(nqd.getIntitule());
+				}
 			}
 		}
 	}

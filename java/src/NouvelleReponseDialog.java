@@ -14,13 +14,14 @@ public class NouvelleReponseDialog extends JDialog implements ActionListener
 
 	public NouvelleReponseDialog(String title, String defRep1, String defRep2, String defCategorie, String[] tabCategorie,JFrame parent)
 	{
-		super(parent,title,true);
+		super(parent, title, true);
 		createInterface(defRep1, defRep2, defCategorie, tabCategorie);
 		pack();
 		setLocationRelativeTo(null);
+		setResizable(false);
 	}
 
-	private void createInterface(String defRep1, String defRep2, String defCategorie, String[] tabCatrgorie)
+	private void createInterface(String defRep1, String defRep2, String defCategorie, String[] tabCategorie)
 	{
 		JPanel champs = new JPanel();
 		JPanel boutons = new JPanel();
@@ -43,14 +44,14 @@ public class NouvelleReponseDialog extends JDialog implements ActionListener
 		champs.add(new JLabel("Réponse 2:"));
 		champs.add(rep2);
 
-		if(defCategorie == null)
+		if(defCategorie != null)
 		{
 			comboCat = new JComboBox();
 			comboCat.setOpaque(true);
-			for(int i=0; i<tabCatrgorie.length; i++)
+			for(int i=0; i< tabCategorie.length; i++)
 			{
-				comboCat.addItem(tabCatrgorie[i]);
-				if(tabCatrgorie[i].equals(defCategorie))
+				comboCat.addItem(tabCategorie[i]);
+				if(tabCategorie[i].equals(defCategorie))
 				{
 					comboCat.setSelectedIndex(i);
 				}

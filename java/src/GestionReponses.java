@@ -82,7 +82,7 @@ public class GestionReponses
 		}
 	}
 
-	public void updateReponsesReponses(String categorie, String oldRep1, String oldRep2, String newRep1, String newRep2)
+	public void updateReponses(String categorie, String oldRep1, String oldRep2, String newRep1, String newRep2)
 	{
 		String rq ="UPDATE reponses" +
 				" SET nom_cat = ?, reponse1 = ?, reponse2 = ?" +

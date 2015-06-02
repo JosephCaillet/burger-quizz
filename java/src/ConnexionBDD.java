@@ -81,8 +81,30 @@ public class ConnexionBDD
 		gestionReponses.deleteReponses(reponse1, reponse2);
 	}
 
-	public void modifyReponsesReponses(String categorie, String oldRep1, String oldRep2, String newRep1, String newRep2)
+	public void modifyReponses(String categorie, String oldRep1, String oldRep2, String newRep1, String newRep2)
 	{
-		gestionReponses.updateReponsesReponses(categorie, oldRep1, oldRep2, newRep1, newRep2);
+		gestionReponses.updateReponses(categorie, oldRep1, oldRep2, newRep1, newRep2);
+	}
+
+	//Gestion questions
+	public ArrayList<Question> getListeQuestions(String reponse1, String reponse2)
+	{
+		gestionQuestions.readQuestions(reponse1, reponse2);
+		return gestionQuestions.getListeQuestions();
+	}
+
+	public void createQuestion(String intitule, String reponse1, String reponse2, int num_reponse)
+	{
+		gestionQuestions.createQuestion(intitule, reponse1, reponse2, num_reponse);
+	}
+
+	public void deleteQuestion(String intitule, String reponse1, String reponse2)
+	{
+		gestionQuestions.deleteQuestion(intitule, reponse1, reponse2);
+	}
+
+	public void modifyQuestion(String oldIntitule, String newIntitule, String reponse1, String reponse2, int newNum_reponse)
+	{
+		gestionQuestions.updateQuestion(oldIntitule, newIntitule, reponse1, reponse2, newNum_reponse);
 	}
 }
