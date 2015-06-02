@@ -510,7 +510,7 @@ public class InterfacePrincipale extends JFrame
 		{
 			if(listR.isSelectionEmpty())
 			{
-				statusText.setText("Veuillez selectioner une catégorie.");
+				statusText.setText("Veuillez selectioner une sous-catégorie.");
 				return;
 			}
 
@@ -529,7 +529,21 @@ public class InterfacePrincipale extends JFrame
 			}
 			else if(e.getSource() == delQ)
 			{
-				statusText.setText("Supression de question");
+				JOptionPane jop = new JOptionPane();
+
+				Question q = (Question) listQ.getSelectedValue();
+
+				if(q == null)
+				{
+					statusText.setText("Veuiller d'abord selectionner une question.");
+					return;
+				}
+
+				if(jop.showConfirmDialog(null,"Voulez vous vraiment supprimer la question " + q.getIntitule() + " ?", "Supression de question", JOptionPane.OK_CANCEL_OPTION) == JOptionPane.OK_OPTION)
+				{
+					bdd.deleteQuestion(q.getIntitule(), q.getReponse1(), q.getReponse2());
+					listQ.setListData(bdd.getListeQuestions(q.getReponse1(), q.getReponse2()).toArray());
+				}
 			}
 			else if(e.getSource() == editQ)
 			{

@@ -47,7 +47,7 @@ public class GestionQuestions
 
 	public void createQuestion(String intitule, String reponse1, String reponse2, int num_reponse)
 	{
-		String rq = "INSERT INTO reponses(intitule, reponse1, reponse2, num_reponse)" +
+		String rq = "INSERT INTO questions(intitule, reponse1, reponse2, num_reponse)" +
 				" VALUES(?, ?, ?, ?)";
 		try
 		{
@@ -61,6 +61,49 @@ public class GestionQuestions
 			preparedStatement.close();
 		}
 		catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void deleteQuestion(String intitule, String reponse1, String reponse2)
+	{
+		String rq ="DELETE FROM questions" +
+				" WHERE reponse1 = ? AND reponse2 = ? AND intitule = ?";
+		try
+		{
+			PreparedStatement preparedStatement = bdd.prepareStatement(rq);
+			preparedStatement.setString(1, reponse1);
+			preparedStatement.setString(2, reponse2);
+			preparedStatement.setString(3, intitule);
+			preparedStatement.executeUpdate();
+
+			preparedStatement.close();
+		}
+		catch (SQLException e)
+		{
+			e.printStackTrace();
+		}
+	}
+
+	public void updateReponsesReponses(String intitule, String reponse1, String reponse2, int num_reponse)
+	{
+		String rq ="UPDATE reponses" +
+				" SET nom_cat = ?, reponse1 = ?, reponse2 = ?" +
+				" WHERE reponse1 = ? AND reponse2 = ?";
+		try
+		{
+			PreparedStatement preparedStatement = bdd.prepareStatement(rq);
+			preparedStatement.setString(1, categorie);
+			preparedStatement.setString(2, newRep1);
+			preparedStatement.setString(3, newRep2);
+			preparedStatement.setString(4, oldRep1);
+			preparedStatement.setString(5, oldRep2);
+			preparedStatement.executeUpdate();
+
+			preparedStatement.close();
+		}
+		catch (SQLException e)
+		{
 			e.printStackTrace();
 		}
 	}
