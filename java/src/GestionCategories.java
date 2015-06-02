@@ -51,6 +51,8 @@ public class GestionCategories
 			PreparedStatement preparedStatement = bdd.prepareStatement(rq);
 			preparedStatement.setString(1,categorieName);
 			preparedStatement.executeUpdate();
+
+			preparedStatement.close();
 		}
 		catch (SQLException e)
 		{
@@ -67,6 +69,8 @@ public class GestionCategories
 			PreparedStatement preparedStatement = bdd.prepareStatement(rq);
 			preparedStatement.setString(1,categorieName);
 			preparedStatement.executeUpdate();
+
+			preparedStatement.close();
 		}
 		catch (SQLException e)
 		{
@@ -86,6 +90,8 @@ public class GestionCategories
 			preparedStatement.setString(1, newCategorieName);
 			preparedStatement.setString(2, oldCategorieName);
 			preparedStatement.executeUpdate();
+
+			preparedStatement.close();
 		}
 		catch (SQLException e)
 		{
