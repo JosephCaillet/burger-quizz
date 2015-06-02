@@ -32,7 +32,6 @@ public class InterfacePrincipale extends JFrame
 	private Bouton addQ;
 	private Bouton delQ;
 	private Bouton editQ;
-	private JComboBox comboQueRep;
 	private JList listQ;
 
 	//image pour les boutons
@@ -203,7 +202,6 @@ public class InterfacePrincipale extends JFrame
 		addQ = new Bouton("Ajouter une question", plusImg);
 		delQ = new Bouton("Supprimer la question", delImg);
 		editQ = new Bouton("Modifier la question", editImg);
-		comboQueRep = new JComboBox();
 
 		listQ = new JList();
 		JScrollPane sp = new JScrollPane(listQ,
@@ -216,12 +214,10 @@ public class InterfacePrincipale extends JFrame
 		addQ.setAlignmentX(CENTER_ALIGNMENT);
 		delQ.setAlignmentX(CENTER_ALIGNMENT);
 		editQ.setAlignmentX(CENTER_ALIGNMENT);
-		comboQueRep.setOpaque(false);
 
 		addQ.setMaximumSize(new Dimension(208,34));
 		delQ.setMaximumSize(new Dimension(208,34));
 		editQ.setMaximumSize(new Dimension(208,34));
-		comboQueRep.setMaximumSize(new Dimension(1000,34));
 
 		JLabel labQ = new JLabel("Questions");
 		labQ.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -234,8 +230,6 @@ public class InterfacePrincipale extends JFrame
 		panQuestions.add(Box.createRigidArea(new Dimension(1, 10)));
 		panQuestions.add(sp);
 		panQuestions.add(Box.createRigidArea(new Dimension(1, 10)));
-		panQuestions.add(comboQueRep);
-		panQuestions.add(Box.createRigidArea(new Dimension(1, 5)));
 		panQuestions.add(editQ);
 
 
@@ -486,7 +480,7 @@ public class InterfacePrincipale extends JFrame
 				NouvelleReponseDialog nrd = new NouvelleReponseDialog("Modification jeu de réponses", reponse1, reponse2, catName, getCategorieList(), null);
 				if(nrd.afficher() == true)
 				{
-					bdd.modifyReponsesReponses(nrd.getCat(), reponse1, reponse2, nrd.getRep1(), nrd.getRep2());
+					bdd.modifyReponses(nrd.getCat(), reponse1, reponse2, nrd.getRep1(), nrd.getRep2());
 					//listR.setListData(bdd.getListeReponses(catName).toArray());
 					reSelectCategorie(nrd.getCat());
 					reSelectReponses(nrd.getRep1(), nrd.getRep2());
@@ -547,7 +541,22 @@ public class InterfacePrincipale extends JFrame
 			}
 			else if(e.getSource() == editQ)
 			{
-				statusText.setText("Modification de question");
+				Question q = (Question) listQ.getSelectedValue();
+				if(q == null)
+				{
+					statusText.setText("Veuiller d'abord selectionner une question.");
+					return;
+				}
+
+				NouvelleQuestionDialog nqd = new NouvelleQuestionDialog("Modification question", q.getIntitule(),
+						q.getReponse(), q.getReponse1(), q.getReponse2(), null);
+
+				if(nqd.afficher() == true)
+				{
+					bdd.modifyQuestion(q.getIntitule(), nqd.getIntitule(),
+							q.getReponse1(), q.getReponse2(), nqd.getReponse());
+					reSelectQuestion(nqd.getIntitule());
+				}
 			}
 		}
 	}

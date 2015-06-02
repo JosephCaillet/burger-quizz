@@ -85,19 +85,19 @@ public class GestionQuestions
 		}
 	}
 
-	public void updateReponsesReponses(String intitule, String reponse1, String reponse2, int num_reponse)
+	public void updateQuestion(String oldIntitule, String newIntitule, String reponse1, String reponse2, int newNum_reponse)
 	{
-		String rq ="UPDATE reponses" +
-				" SET nom_cat = ?, reponse1 = ?, reponse2 = ?" +
-				" WHERE reponse1 = ? AND reponse2 = ?";
+		String rq ="UPDATE questions" +
+				" SET intitule = ?, num_reponse = ?" +
+				" WHERE intitule = ? AND reponse1 = ? AND reponse2 = ?";
 		try
 		{
 			PreparedStatement preparedStatement = bdd.prepareStatement(rq);
-			preparedStatement.setString(1, categorie);
-			preparedStatement.setString(2, newRep1);
-			preparedStatement.setString(3, newRep2);
-			preparedStatement.setString(4, oldRep1);
-			preparedStatement.setString(5, oldRep2);
+			preparedStatement.setString(1, newIntitule);
+			preparedStatement.setInt(2, newNum_reponse);
+			preparedStatement.setString(3, oldIntitule);
+			preparedStatement.setString(4, reponse1);
+			preparedStatement.setString(5, reponse2);
 			preparedStatement.executeUpdate();
 
 			preparedStatement.close();

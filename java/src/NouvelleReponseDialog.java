@@ -18,6 +18,7 @@ public class NouvelleReponseDialog extends JDialog implements ActionListener
 		createInterface(defRep1, defRep2, defCategorie, tabCategorie);
 		pack();
 		setLocationRelativeTo(null);
+		setResizable(false);
 	}
 
 	private void createInterface(String defRep1, String defRep2, String defCategorie, String[] tabCategorie)

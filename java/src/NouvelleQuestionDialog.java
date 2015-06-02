@@ -17,6 +17,7 @@ public class NouvelleQuestionDialog extends JDialog implements ActionListener
 		createInterface(defIntitule, defReponse, reponse1, reponse2);
 		pack();
 		setLocationRelativeTo(null);
+		setResizable(false);
 	}
 
 	private void createInterface(String defIntitule, int defReponse, String reponse1, String reponse2)
@@ -24,7 +25,7 @@ public class NouvelleQuestionDialog extends JDialog implements ActionListener
 		JPanel champs = new JPanel();
 		JPanel boutons = new JPanel();
 
-		intitule = new JTextField(defIntitule, 15);
+		intitule = new JTextField(defIntitule, 20);
 		intitule.setBackground(Color.WHITE);
 
 		ok = new JButton("OK");

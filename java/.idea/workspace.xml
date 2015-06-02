@@ -7,10 +7,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a647cb6a-4230-4101-a652-d7cfd0c21e24" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/java/ConnexionBDD.class" afterPath="$PROJECT_DIR$/out/production/java/ConnexionBDD.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/java/GestionQuestions.class" afterPath="$PROJECT_DIR$/out/production/java/GestionQuestions.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/java/InterfacePrincipale$PanQuestionsListener.class" afterPath="$PROJECT_DIR$/out/production/java/InterfacePrincipale$PanQuestionsListener.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/java/InterfacePrincipale$PanReponsesListener.class" afterPath="$PROJECT_DIR$/out/production/java/InterfacePrincipale$PanReponsesListener.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ConnexionBDD.java" afterPath="$PROJECT_DIR$/src/ConnexionBDD.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GestionQuestions.java" afterPath="$PROJECT_DIR$/src/GestionQuestions.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GestionReponses.java" afterPath="$PROJECT_DIR$/src/GestionReponses.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/InterfacePrincipale.java" afterPath="$PROJECT_DIR$/src/InterfacePrincipale.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/NouvelleQuestionDialog.java" afterPath="$PROJECT_DIR$/src/NouvelleQuestionDialog.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/NouvelleReponseDialog.java" afterPath="$PROJECT_DIR$/src/NouvelleReponseDialog.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="java.iws" />
@@ -37,7 +42,7 @@
         <entry file="file://$PROJECT_DIR$/src/InterfacePrincipale.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="543" column="90" selection-start-line="543" selection-start-column="90" selection-end-line="543" selection-end-column="90" />
+              <caret line="231" column="68" selection-start-line="231" selection-start-column="68" selection-end-line="231" selection-end-column="68" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#InterfacePrincipale#0;class#InterfacePrincipale#0" expanded="false" />
@@ -54,7 +59,7 @@
         <entry file="file://$PROJECT_DIR$/src/ConnexionBDD.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="102" column="57" selection-start-line="102" selection-start-column="57" selection-end-line="102" selection-end-column="57" />
+              <caret line="83" column="30" selection-start-line="83" selection-start-column="30" selection-end-line="83" selection-end-column="30" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1239#1240#0" expanded="true" />
@@ -68,10 +73,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GestionReponses.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GestionReponses.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GestionReponses.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.619403">
+            <state vertical-scroll-proportion="0.0">
               <caret line="84" column="28" selection-start-line="84" selection-start-column="28" selection-end-line="84" selection-end-column="28" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -86,12 +91,11 @@
         <entry file="file://$PROJECT_DIR$/src/GestionQuestions.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="87" column="106" selection-start-line="87" selection-start-column="106" selection-end-line="87" selection-end-column="106" />
+              <caret line="89" column="36" selection-start-line="89" selection-start-column="36" selection-end-line="89" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2947#2948#0" expanded="true" />
-                <element signature="e#2975#2976#0" expanded="true" />
-                <marker date="1433256883202" expanded="true" signature="2334:2897" placeholder="{...}" />
+                <element signature="e#2985#2986#0" expanded="true" />
+                <element signature="e#3013#3014#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -101,23 +105,23 @@
         <entry file="file://$PROJECT_DIR$/src/NouvelleQuestionDialog.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="78" column="18" selection-start-line="78" selection-start-column="18" selection-end-line="78" selection-end-column="18" />
+              <caret line="19" column="8" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="28" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1953#1954#0" expanded="true" />
-                <element signature="e#1985#1986#0" expanded="true" />
-                <element signature="e#2013#2014#0" expanded="true" />
-                <element signature="e#2053#2054#0" expanded="true" />
+                <element signature="e#1976#1977#0" expanded="true" />
+                <element signature="e#2008#2009#0" expanded="true" />
+                <element signature="e#2036#2037#0" expanded="true" />
+                <element signature="e#2076#2077#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NouvelleReponseDialog.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="NouvelleReponseDialog.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/NouvelleReponseDialog.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="48" column="37" selection-start-line="48" selection-start-column="37" selection-end-line="48" selection-end-column="37" />
+            <state vertical-scroll-proportion="0.5635359">
+              <caret line="20" column="28" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -156,12 +160,12 @@
         <option value="$PROJECT_DIR$/src/GestionCategories.java" />
         <option value="$PROJECT_DIR$/src/MainAdminBddBurgerQuizz.java" />
         <option value="$PROJECT_DIR$/src/Question.java" />
-        <option value="$PROJECT_DIR$/src/NouvelleReponseDialog.java" />
-        <option value="$PROJECT_DIR$/src/NouvelleQuestionDialog.java" />
-        <option value="$PROJECT_DIR$/src/ConnexionBDD.java" />
-        <option value="$PROJECT_DIR$/src/InterfacePrincipale.java" />
-        <option value="$PROJECT_DIR$/src/GestionQuestions.java" />
         <option value="$PROJECT_DIR$/src/GestionReponses.java" />
+        <option value="$PROJECT_DIR$/src/ConnexionBDD.java" />
+        <option value="$PROJECT_DIR$/src/GestionQuestions.java" />
+        <option value="$PROJECT_DIR$/src/InterfacePrincipale.java" />
+        <option value="$PROJECT_DIR$/src/NouvelleQuestionDialog.java" />
+        <option value="$PROJECT_DIR$/src/NouvelleReponseDialog.java" />
       </list>
     </option>
   </component>
@@ -735,7 +739,13 @@
       <option name="project" value="LOCAL" />
       <updated>1433253655646</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="++ gestion reponsesV5">
+      <created>1433256920732</created>
+      <option name="number" value="00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1433256920732</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TodoView">
@@ -756,6 +766,7 @@
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32864675" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32864675" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3996479" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32922536" sideWeight="0.5030441" order="9" side_tool="true" content_ui="tabs" />
@@ -767,10 +778,9 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16717325" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30579966" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30579966" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -806,7 +816,8 @@
     <MESSAGE value="++ gestion reponsesV2" />
     <MESSAGE value="++ gestion reponsesV3" />
     <MESSAGE value="++ gestion reponsesV4" />
-    <option name="LAST_COMMIT_MESSAGE" value="++ gestion reponsesV4" />
+    <MESSAGE value="++ gestion reponsesV5" />
+    <option name="LAST_COMMIT_MESSAGE" value="++ gestion reponsesV5" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1165,16 +1176,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/NouvelleReponseDialog.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="48" column="37" selection-start-line="48" selection-start-column="37" selection-end-line="48" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Question.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.46082088">
@@ -1183,10 +1184,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/GestionReponses.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="84" column="28" selection-start-line="84" selection-start-column="28" selection-end-line="84" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2627#2628#0" expanded="true" />
+            <element signature="e#2653#2654#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/ConnexionBDD.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="102" column="57" selection-start-line="102" selection-start-column="57" selection-end-line="102" selection-end-column="57" />
+          <caret line="83" column="30" selection-start-line="83" selection-start-column="30" selection-end-line="83" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1239#1240#0" expanded="true" />
@@ -1199,10 +1212,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/GestionQuestions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="89" column="36" selection-start-line="89" selection-start-column="36" selection-end-line="89" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2985#2986#0" expanded="true" />
+            <element signature="e#3013#3014#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/InterfacePrincipale.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="543" column="90" selection-start-line="543" selection-start-column="90" selection-end-line="543" selection-end-column="90" />
+          <caret line="231" column="68" selection-start-line="231" selection-start-column="68" selection-end-line="231" selection-end-column="68" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#InterfacePrincipale#0;class#InterfacePrincipale#0" expanded="false" />
@@ -1217,38 +1242,23 @@
     <entry file="file://$PROJECT_DIR$/src/NouvelleQuestionDialog.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="78" column="18" selection-start-line="78" selection-start-column="18" selection-end-line="78" selection-end-column="18" />
+          <caret line="19" column="8" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1953#1954#0" expanded="true" />
-            <element signature="e#1985#1986#0" expanded="true" />
-            <element signature="e#2013#2014#0" expanded="true" />
-            <element signature="e#2053#2054#0" expanded="true" />
+            <element signature="e#1976#1977#0" expanded="true" />
+            <element signature="e#2008#2009#0" expanded="true" />
+            <element signature="e#2036#2037#0" expanded="true" />
+            <element signature="e#2076#2077#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GestionQuestions.java">
+    <entry file="file://$PROJECT_DIR$/src/NouvelleReponseDialog.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="87" column="106" selection-start-line="87" selection-start-column="106" selection-end-line="87" selection-end-column="106" />
+        <state vertical-scroll-proportion="0.5635359">
+          <caret line="20" column="28" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2947#2948#0" expanded="true" />
-            <element signature="e#2975#2976#0" expanded="true" />
-            <marker date="1433256883202" expanded="true" signature="2334:2897" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GestionReponses.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.619403">
-          <caret line="84" column="28" selection-start-line="84" selection-start-column="28" selection-end-line="84" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2627#2628#0" expanded="true" />
-            <element signature="e#2653#2654#0" expanded="true" />
           </folding>
         </state>
       </provider>
