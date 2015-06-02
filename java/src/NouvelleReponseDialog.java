@@ -14,7 +14,7 @@ public class NouvelleReponseDialog extends JDialog implements ActionListener
 
 	public NouvelleReponseDialog(String title, String defRep1, String defRep2, String defCategorie, String[] tabCategorie,JFrame parent)
 	{
-		super(parent,title,true);
+		super(parent, title, true);
 		createInterface(defRep1, defRep2, defCategorie, tabCategorie);
 		pack();
 		setLocationRelativeTo(null);
@@ -43,7 +43,7 @@ public class NouvelleReponseDialog extends JDialog implements ActionListener
 		champs.add(new JLabel("Réponse 2:"));
 		champs.add(rep2);
 
-		if(defCategorie == null)
+		if(defCategorie != null)
 		{
 			comboCat = new JComboBox();
 			comboCat.setOpaque(true);

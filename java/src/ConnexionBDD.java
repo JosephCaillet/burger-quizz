@@ -85,4 +85,11 @@ public class ConnexionBDD
 	{
 		gestionReponses.updateReponsesReponses(categorie, oldRep1, oldRep2, newRep1, newRep2);
 	}
+
+	//Gestion questions
+	public ArrayList<Question> getListeQuestions(String reponse1, String reponse2)
+	{
+		gestionQuestions.readQuestions(reponse1, reponse2);
+		return gestionQuestions.getListeQuestions();
+	}
 }

@@ -1,4 +1,7 @@
 import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class GestionQuestions
@@ -9,5 +12,40 @@ public class GestionQuestions
 	public GestionQuestions(Connection bdd)
 	{
 		this.bdd = bdd;
+		this.listeQuestions = new ArrayList<Question>();
+	}
+
+	public void readQuestions(String reponse1, String reponse2)
+	{
+		String rq = "SELECT *" +
+				" FROM questions" +
+				" WHERE reponse1 = ? AND reponse2 = ?";
+
+		try
+		{
+			PreparedStatement preparedStatement = bdd.prepareStatement(rq);
+			preparedStatement.setString(1, reponse1);
+			preparedStatement.setString(2, reponse2);
+			ResultSet resultat = preparedStatement.executeQuery();
+
+			listeQuestions.clear();
+
+			while(resultat.next())
+			{
+				listeQuestions.add(new Question(resultat.getString("intitule"), resultat.getString("reponse1"), resultat.getString("reponse2"), resultat.getInt("num_reponse")));
+			}
+
+			resultat.close();
+			preparedStatement.close();
+
+		}
+		catch (SQLException e)
+		{
+			e.printStackTrace();
+		}
+	}
+
+	public ArrayList<Question> getListeQuestions() {
+		return listeQuestions;
 	}
 }

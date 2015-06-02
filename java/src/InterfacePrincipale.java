@@ -186,7 +186,7 @@ public class InterfacePrincipale extends JFrame
 		panReponses.add(delR);
 		panReponses.add(Box.createRigidArea(new Dimension(1, 10)));
 		panReponses.add(sp);
-		panReponses.add(Box.createRigidArea(new Dimension(1, 5)));
+		panReponses.add(Box.createRigidArea(new Dimension(1, 10)));
 		panReponses.add(editR);
 
 
@@ -205,8 +205,7 @@ public class InterfacePrincipale extends JFrame
 		editQ = new Bouton("Modifier la question", editImg);
 		comboQueRep = new JComboBox();
 
-		String tab[] = {"a","b","c","d","e","f"};
-		listQ = new JList(tab);
+		listQ = new JList();
 		JScrollPane sp = new JScrollPane(listQ,
 				JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,
 				JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
@@ -342,6 +341,7 @@ public class InterfacePrincipale extends JFrame
 				bdd.createCategorie(catName);
 				listC.setListData(bdd.getListeCategorie().toArray());
 				reSelectCategorie(catName);
+				listQ.setListData(new Vector(0));
 			}
 			else if(e.getSource() == delC)
 			{
@@ -362,6 +362,7 @@ public class InterfacePrincipale extends JFrame
 					bdd.deleteCategorie(categorieName);
 					listC.setListData(bdd.getListeCategorie().toArray());
 					listR.setListData(new Vector(0));
+					listQ.setListData(new Vector(0));
 				}
 			}
 			else if(e.getSource() == editC)
@@ -403,6 +404,7 @@ public class InterfacePrincipale extends JFrame
 			if(!listC.isSelectionEmpty())
 			{
 				listR.setListData(bdd.getListeReponses(listC.getSelectedValue().toString()).toArray());
+				listQ.setListData(new Vector(0));
 			}
 		}
 	}
@@ -477,7 +479,11 @@ public class InterfacePrincipale extends JFrame
 
 		public void valueChanged(ListSelectionEvent listSelectionEvent)
 		{
-
+			if(!listR.isSelectionEmpty())
+			{
+				Reponses r = (Reponses) listR.getSelectedValue();
+				listQ.setListData(bdd.getListeQuestions(r.getReponse1(), r.getReponse2()).toArray());
+			}
 		}
 	}
 
