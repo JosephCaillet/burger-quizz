@@ -7,12 +7,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a647cb6a-4230-4101-a652-d7cfd0c21e24" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/java/InterfacePrincipale$1.class" afterPath="$PROJECT_DIR$/out/production/java/InterfacePrincipale$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/java/InterfacePrincipale$PanQuestionsListener.class" afterPath="$PROJECT_DIR$/out/production/java/InterfacePrincipale$PanQuestionsListener.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/java/InterfacePrincipale$PanReponsesListener.class" afterPath="$PROJECT_DIR$/out/production/java/InterfacePrincipale$PanReponsesListener.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ConnexionBddDialog.java" afterPath="$PROJECT_DIR$/src/ConnexionBddDialog.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/InterfacePrincipale.java" afterPath="$PROJECT_DIR$/src/InterfacePrincipale.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/NouvelleQuestionDialog.java" afterPath="$PROJECT_DIR$/src/NouvelleQuestionDialog.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/NouvelleReponseDialog.java" afterPath="$PROJECT_DIR$/src/NouvelleReponseDialog.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="java.iws" />
@@ -38,15 +37,22 @@
       <file leaf-file-name="InterfacePrincipale.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/InterfacePrincipale.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.660221">
-              <caret line="118" column="55" selection-start-line="118" selection-start-column="55" selection-end-line="118" selection-end-column="55" />
+            <state vertical-scroll-proportion="0.61049724">
+              <caret line="86" column="8" selection-start-line="86" selection-start-column="8" selection-end-line="86" selection-end-column="8" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#loadImgBouton#0;class#InterfacePrincipale#0" expanded="false" />
-                <element signature="method#createPanelCategories#0;class#InterfacePrincipale#0" expanded="false" />
-                <element signature="method#modem56k#0;class#InterfacePrincipale#0" expanded="false" />
-                <element signature="method#nyan#0;class#InterfacePrincipale#0" expanded="false" />
+                <element signature="e#3561#3779#0" expanded="true" />
+                <element signature="e#3778#3779#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainAdminBddBurgerQuizz.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/MainAdminBddBurgerQuizz.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="7" column="8" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -55,9 +61,19 @@
         <entry file="file://$PROJECT_DIR$/src/ConnexionBddDialog.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+              <caret line="96" column="8" selection-start-line="96" selection-start-column="8" selection-end-line="96" selection-end-column="8" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#2720#2721#0" expanded="true" />
+                <element signature="e#2750#2751#0" expanded="true" />
+                <element signature="e#2775#2776#0" expanded="true" />
+                <element signature="e#2810#2811#0" expanded="true" />
+                <element signature="e#2836#2837#0" expanded="true" />
+                <element signature="e#2862#2863#0" expanded="true" />
+                <element signature="e#2891#2892#0" expanded="true" />
+                <element signature="e#2920#2921#0" expanded="true" />
+                <element signature="e#2952#2953#0" expanded="true" />
+                <element signature="e#3004#3005#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -116,11 +132,9 @@
         <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/Interface.java" />
         <option value="$PROJECT_DIR$/src/ConnectDialog.java" />
-        <option value="$PROJECT_DIR$/src/Bouton.java" />
         <option value="$PROJECT_DIR$/src/Categorie.java" />
         <option value="$PROJECT_DIR$/src/Reponses.java" />
         <option value="$PROJECT_DIR$/src/GestionCategories.java" />
-        <option value="$PROJECT_DIR$/src/MainAdminBddBurgerQuizz.java" />
         <option value="$PROJECT_DIR$/src/Question.java" />
         <option value="$PROJECT_DIR$/src/GestionReponses.java" />
         <option value="$PROJECT_DIR$/src/ConnexionBDD.java" />
@@ -128,6 +142,8 @@
         <option value="$PROJECT_DIR$/src/NouvelleQuestionDialog.java" />
         <option value="$PROJECT_DIR$/src/NouvelleReponseDialog.java" />
         <option value="$PROJECT_DIR$/src/ConnexionBddDialog.java" />
+        <option value="$PROJECT_DIR$/src/Bouton.java" />
+        <option value="$PROJECT_DIR$/src/MainAdminBddBurgerQuizz.java" />
         <option value="$PROJECT_DIR$/src/InterfacePrincipale.java" />
       </list>
     </option>
@@ -247,6 +263,8 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -282,8 +300,6 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -310,121 +326,6 @@
     <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="" />
     </key>
-  </component>
-  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
-    <UpdatedFiles>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Updated from server" />
-        <option name="myStatusName" value="Changed on server" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="CHANGED_ON_SERVER" />
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Updated" />
-          <option name="myStatusName" value="Changed" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="UPDATED" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Created" />
-          <option name="myStatusName" value="Created" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="CREATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../web/multi/README</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../web/multi/client/index.html</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../web/multi/client/js/game.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../web/multi/server/npm-debug.log</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../web/multi/server/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../web/multi/server/server.js</PATH>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Deleted" />
-          <option name="myStatusName" value="Deleted" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="true" />
-          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Restored" />
-          <option name="myStatusName" value="Will be restored" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="RESTORED" />
-        </FILE-GROUP>
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Modified" />
-        <option name="myStatusName" value="Modified" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MODIFIED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Skipped" />
-        <option name="myStatusName" value="Skipped" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SKIPPED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with conflicts" />
-        <option name="myStatusName" value="Will be merged with conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_CONFLICTS" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with tree conflicts" />
-        <option name="myStatusName" value="Merged with tree conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with property conflicts" />
-        <option name="myStatusName" value="Will be merged with property conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged" />
-        <option name="myStatusName" value="Will be merged" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Not in repository" />
-        <option name="myStatusName" value="Not in repository" />
-        <option name="mySupportsDeletion" value="true" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="UNKNOWN" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally added" />
-        <option name="myStatusName" value="Locally added" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_ADDED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally removed" />
-        <option name="myStatusName" value="Locally removed" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_REMOVED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Switched" />
-        <option name="myStatusName" value="Switched" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SWITCHED" />
-      </FILE-GROUP>
-    </UpdatedFiles>
   </component>
   <component name="RunManager" selected="Application.Main">
     <configuration default="false" name="Main" type="Application" factoryName="Application" temporary="true">
@@ -737,7 +638,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="27" width="1368" height="712" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -760,8 +661,8 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32864675" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -838,11 +739,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#loadImgBouton#0;class#InterfacePrincipale#0" expanded="false" />
-            <element signature="method#createPanelCategories#0;class#InterfacePrincipale#0" expanded="false" />
-            <element signature="method#modem56k#0;class#InterfacePrincipale#0" expanded="false" />
-            <element signature="method#nyan#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="e#3561#3779#0" expanded="true" />
+            <element signature="e#3778#3779#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -876,11 +774,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#loadImgBouton#0;class#InterfacePrincipale#0" expanded="false" />
-            <element signature="method#createPanelCategories#0;class#InterfacePrincipale#0" expanded="false" />
-            <element signature="method#modem56k#0;class#InterfacePrincipale#0" expanded="false" />
-            <element signature="method#nyan#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="e#3561#3779#0" expanded="true" />
+            <element signature="e#3778#3779#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -914,11 +809,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#loadImgBouton#0;class#InterfacePrincipale#0" expanded="false" />
-            <element signature="method#createPanelCategories#0;class#InterfacePrincipale#0" expanded="false" />
-            <element signature="method#modem56k#0;class#InterfacePrincipale#0" expanded="false" />
-            <element signature="method#nyan#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="e#3561#3779#0" expanded="true" />
+            <element signature="e#3778#3779#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -952,11 +844,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#loadImgBouton#0;class#InterfacePrincipale#0" expanded="false" />
-            <element signature="method#createPanelCategories#0;class#InterfacePrincipale#0" expanded="false" />
-            <element signature="method#modem56k#0;class#InterfacePrincipale#0" expanded="false" />
-            <element signature="method#nyan#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="e#3561#3779#0" expanded="true" />
+            <element signature="e#3778#3779#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -990,11 +879,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#loadImgBouton#0;class#InterfacePrincipale#0" expanded="false" />
-            <element signature="method#createPanelCategories#0;class#InterfacePrincipale#0" expanded="false" />
-            <element signature="method#modem56k#0;class#InterfacePrincipale#0" expanded="false" />
-            <element signature="method#nyan#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="e#3561#3779#0" expanded="true" />
+            <element signature="e#3778#3779#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1049,11 +935,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="21" selection-start-line="0" selection-start-column="21" selection-end-line="0" selection-end-column="21" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#loadImgBouton#0;class#InterfacePrincipale#0" expanded="false" />
-            <element signature="method#createPanelCategories#0;class#InterfacePrincipale#0" expanded="false" />
-            <element signature="method#modem56k#0;class#InterfacePrincipale#0" expanded="false" />
-            <element signature="method#nyan#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="e#3561#3779#0" expanded="true" />
+            <element signature="e#3778#3779#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1084,13 +967,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Bouton.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5719626">
-          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Categorie.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1098,23 +974,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MainAdminBddBurgerQuizz.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.51657456">
-          <caret line="11" column="44" selection-start-line="11" selection-start-column="44" selection-end-line="11" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/GestionCategories.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="2.4738805">
           <caret line="93" column="38" selection-start-line="93" selection-start-column="38" selection-end-line="93" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#2160#2161#0" expanded="false" />
-            <element signature="e#2188#2189#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1142,11 +1005,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="84" column="28" selection-start-line="84" selection-start-column="28" selection-end-line="84" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#2627#2628#0" expanded="false" />
-            <element signature="e#2653#2654#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1154,11 +1012,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="89" column="36" selection-start-line="89" selection-start-column="36" selection-end-line="89" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#2985#2986#0" expanded="false" />
-            <element signature="e#3013#3014#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1197,7 +1050,35 @@
     <entry file="file://$PROJECT_DIR$/src/ConnexionBddDialog.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+          <caret line="96" column="8" selection-start-line="96" selection-start-column="8" selection-end-line="96" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2720#2721#0" expanded="true" />
+            <element signature="e#2750#2751#0" expanded="true" />
+            <element signature="e#2775#2776#0" expanded="true" />
+            <element signature="e#2810#2811#0" expanded="true" />
+            <element signature="e#2836#2837#0" expanded="true" />
+            <element signature="e#2862#2863#0" expanded="true" />
+            <element signature="e#2891#2892#0" expanded="true" />
+            <element signature="e#2920#2921#0" expanded="true" />
+            <element signature="e#2952#2953#0" expanded="true" />
+            <element signature="e#3004#3005#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MainAdminBddBurgerQuizz.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="7" column="8" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Bouton.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.20165746">
+          <caret line="6" column="40" selection-start-line="6" selection-start-column="40" selection-end-line="6" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1206,14 +1087,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/InterfacePrincipale.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.660221">
-          <caret line="118" column="55" selection-start-line="118" selection-start-column="55" selection-end-line="118" selection-end-column="55" />
+        <state vertical-scroll-proportion="0.61049724">
+          <caret line="86" column="8" selection-start-line="86" selection-start-column="8" selection-end-line="86" selection-end-column="8" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#loadImgBouton#0;class#InterfacePrincipale#0" expanded="false" />
-            <element signature="method#createPanelCategories#0;class#InterfacePrincipale#0" expanded="false" />
-            <element signature="method#modem56k#0;class#InterfacePrincipale#0" expanded="false" />
-            <element signature="method#nyan#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="e#3561#3779#0" expanded="true" />
+            <element signature="e#3778#3779#0" expanded="true" />
           </folding>
         </state>
       </provider>

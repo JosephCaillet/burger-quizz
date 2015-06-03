@@ -80,9 +80,40 @@ public class ConnexionBddDialog extends JDialog implements ActionListener
 		return modifEffectuees;
 	}
 
-	public void actionPerformed(ActionEvent actionEvent)
+	public void actionPerformed(ActionEvent e)
 	{
-		modifEffectuees = false;
-		setVisible(false);
+		if(e.getSource() == defParams)
+		{
+			nomBdd.setText("burgerquizz");
+			port.setValue(3306);
+			ip.setText("localhost");
+			login.setText("alain");
+			password.setText("chabat");
+		}
+		else
+		{
+			modifEffectuees = false;
+			setVisible(false);
+		}
+	}
+
+	public String getNomBdd() {
+		return nomBdd.getText();
+	}
+
+	public int getPort() {
+		return (int) port.getValue();
+	}
+
+	public String getIp() {
+		return ip.getText();
+	}
+
+	public String getLogin() {
+		return login.getText();
+	}
+
+	public String getPassword() {
+		return String.valueOf(password.getPassword());
 	}
 }
