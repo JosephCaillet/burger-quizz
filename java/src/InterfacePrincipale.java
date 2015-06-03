@@ -38,6 +38,7 @@ public class InterfacePrincipale extends JFrame
 	private ImageIcon plusImg;
 	private ImageIcon delImg;
 	private ImageIcon editImg;
+	private ImageIcon setupImg;
 
 	//barre de statut
 	private JPanel statusBar;
@@ -48,6 +49,7 @@ public class InterfacePrincipale extends JFrame
 
 	public InterfacePrincipale()
 	{
+		ConnexionBddDialog cbddd = new ConnexionBddDialog("efr",85,"42:42:42:42","eflgr","fmr,grgerge",null);
 		bdd = new ConnexionBDD("burgerquizz", 3306, "localhost", "alain", "chabat");
 
 		setTitle("Administration base de données de l'aplication BurgerQuizz");
@@ -96,6 +98,7 @@ public class InterfacePrincipale extends JFrame
 		plusImg = new ImageIcon("rsc/plus.png");
 		delImg = new ImageIcon("rsc/del.png");
 		editImg = new ImageIcon("rsc/edit.png");
+		setupImg = new ImageIcon("rsc/cle.png");
 	}
 
 	private void createStatusBar()
