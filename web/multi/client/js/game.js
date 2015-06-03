@@ -7,6 +7,11 @@ var gameInfos;
 /**************************************************
 ** GAME INITIALISATION
 **************************************************/
+
+var disconnect = true;
+var scoreAdversaire = 0;
+var pseudo ='';
+
 function init() {
 
     // Connexion à socket.io
@@ -18,7 +23,8 @@ function init() {
     // On demande le pseudo a l'utilisateur, on l'envoie au serveur et on l'affiche dans le titre
     $("#game").html("<input type=\"text\" id=\"pseudo\" /><input type=\"submit\" id=\"start\" value=\"Valider\" />");
     $("#start").on("click", function() {
-      socket.emit('nouveau', $("#pseudo").val());
+      pseudo = $("#pseudo").val();
+      socket.emit('nouveau', pseudo);
       document.title = $("#pseudo").val() + ' - ' + document.title;
       $("#game").html("Recherche d'un adversare...");
     });
@@ -32,7 +38,15 @@ var setEventHandlers = function() {
 	socket.on("autres", onAutres);
   socket.on("game", onGame);
   socket.on("questions", play);
+  socket.on("lolheded", endGame);
+  socket.on("end", onEnd);
 };
+
+function onEnd(score) {
+  disconnect = false;
+  scoreAdversaire = score;
+  endGame();
+}
 
 function onGame(game) {
   gameInfos = game;
@@ -136,13 +150,14 @@ function nextQuestion() {
   $("#rep1").removeClass();
   $("#rep2").removeClass();
   $("#both").removeClass();
-  // Dernière question du thème en cours
+  pauseGame();
+  /*// Dernière question du thème en cours
   if((id_quest+1) == theme.questions.length)  {
     // Dernier thème de la catégorie en cours
     if((id_theme+1) == category.themes.length) {
       // Dernière catégorie
       if((id_cat+1) == 2) {
-        endGame();
+        pauseGame();
       } else {
         id_quest = 0;
         id_theme = 0;
@@ -157,7 +172,7 @@ function nextQuestion() {
   } else {
     id_quest++;
     quest(id_quest);
-  }
+  }*/
 }
 
 function play(questions) {
@@ -179,31 +194,31 @@ function stopTimer() {
   secRestantes = Math.round($("#timer").width()/baseWidth*timing);
 }
 
-function endGame() {
+function pauseGame() {
   $("#game").html("<h2 id=\"score\">Vous avez marqué "+score+" miams</h2>"
-  +"<p id=\"registerScore\">Enregistrez votre score : <input type=\"text\" id=\"login\" placeholder=\"Nom ou pseudonyme\" />"
-  +"<input type=\"submit\" id=\"sendScore\" value=\"Valider\" /></p>");
-  $("#sendScore").click(function() {
-    addScore($("#login").val(), score);
-    var message = json.message;
-    $("#registerScore").fadeOut();
-    console.log(message);
-    if(message == "score_add_success") {
-      $("#registerScore").addClass("success");
-      $("#registerScore").html("Votre score a bien été enregistré<br />"+
-      "<a href=\"palmares.htm\">Voir les meilleurs scores</a>");
+  +"<p id=\"registerScore\">En attente de l'adversaire...</p>");
+  // On indique au serveur qu'on a fini
+  var options = [gameInfos[1], score];
+  socket.emit('findugame', options);
+}
+
+function endGame() {
+  stopTimer();
+  $("#game").html("<h2 id=\"score\">Vous avez marqué "+score+" miams</h2>"
+  +"<p id=\"registerScore\">");
+  if(disconnect) {
+    $("#game").append(gameInfos[0]+" s'est déconnecté.");
+  } else {
+    $("#game").append("Votre adversaire a marqué "+scoreAdversaire+" miams.<br />Le gagnant est... ");
+    if(score > scoreAdversaire) {
+      $("#game").append(pseudo+" (vous).");
+    } else if(score < scoreAdversaire) {
+      $("#game").append(gameInfos[0]+".");
     } else {
-      $("#registerScore").addClass("error");
-      if(message === "higher_score_present") {
-        $("#registerScore").html("Un score supérieur ou égal existe déjà avec ce pseudonyme<br />"+
-        "<a href=\"palmares.htm\">Voir les meilleurs scores</a>");
-      } else {
-        $("#registerScore").html("Une erreur est survenue ("+status.message+")<br />"+
-        "<a href=\"palmares.htm\">Voir les meilleurs scores</a>");
-      }
+      $("#game").append("personne (égalité).");
     }
-    $("#registerScore").fadeIn();
-  });
+  }
+  $("#game").append("</p>");
 }
 
 function addScore(userLogin, userScore) {
