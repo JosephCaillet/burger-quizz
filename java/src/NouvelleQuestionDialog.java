@@ -14,6 +14,7 @@ public class NouvelleQuestionDialog extends JDialog implements ActionListener
 	public NouvelleQuestionDialog(String title, String defIntitule, int defReponse, String reponse1, String reponse2, JFrame parent)
 	{
 		super(parent, title, true);
+		mofidEffectues = false;
 		createInterface(defIntitule, defReponse, reponse1, reponse2);
 		pack();
 		setLocationRelativeTo(null);

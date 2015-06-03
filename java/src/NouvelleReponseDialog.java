@@ -15,6 +15,7 @@ public class NouvelleReponseDialog extends JDialog implements ActionListener
 	public NouvelleReponseDialog(String title, String defRep1, String defRep2, String defCategorie, String[] tabCategorie,JFrame parent)
 	{
 		super(parent, title, true);
+		mofidEffectues = false;
 		createInterface(defRep1, defRep2, defCategorie, tabCategorie);
 		pack();
 		setLocationRelativeTo(null);

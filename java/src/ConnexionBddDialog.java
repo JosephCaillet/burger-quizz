@@ -18,9 +18,10 @@ public class ConnexionBddDialog extends JDialog implements ActionListener
 	private JButton defParams;
 	private boolean modifEffectuees;
 
-	public ConnexionBddDialog(String nomBdd, int port, String ip, String login, String password, Dialog owner)
+	public ConnexionBddDialog(String nomBdd, int port, String ip, String login, String password, JFrame parent)
 	{
-		super(owner, "Paramétres BDD", true);
+		super(parent, "Paramétres BDD", true);
+		modifEffectuees = false;
 		createInterface(nomBdd, port, ip, login, password);
 		pack();
 		setLocationRelativeTo(null);
@@ -29,16 +30,26 @@ public class ConnexionBddDialog extends JDialog implements ActionListener
 
 	private void createInterface(String defNomBdd, int defPort, String defIP, String defLogin, String defPassword)
 	{
-		nomBdd = new JTextField(defNomBdd, 40);
+		nomBdd = new JTextField(defNomBdd, 30);
 		port = new JFormattedTextField(NumberFormat.getInstance());
 		port.setValue(defPort);
-		ip = new JTextField(defIP, 40);
-		login = new JTextField(defLogin, 40);
-		password = new JPasswordField(defPassword, 40);
+		ip = new JTextField(defIP, 30);
+		login = new JTextField(defLogin, 30);
+		password = new JPasswordField(defPassword, 30);
+
+		nomBdd.setBackground(Color.WHITE);
+		port.setBackground(Color.WHITE);
+		ip.setBackground(Color.WHITE);
+		login.setBackground(Color.WHITE);
+		password.setBackground(Color.WHITE);
 
 		ok = new JButton("OK");
 		annuler = new JButton("Annuler");
 		defParams = new JButton("Paramétres de connexion par défault");
+
+		ok.addActionListener(this);
+		annuler.addActionListener(this);
+		defParams.addActionListener(this);
 
 		JPanel fieldPanel = new JPanel();
 		JPanel boutons = new JPanel();

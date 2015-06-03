@@ -43,13 +43,15 @@ public class InterfacePrincipale extends JFrame
 	//barre de statut
 	private JPanel statusBar;
 	private JLabel statusText;
+	private Bouton config;
 
 	//objet bdd
 	private ConnexionBDD bdd;
 
 	public InterfacePrincipale()
 	{
-		ConnexionBddDialog cbddd = new ConnexionBddDialog("efr",85,"42:42:42:42","eflgr","fmr,grgerge",null);
+		ConnexionBddDialog cbddd = new ConnexionBddDialog("efr",85,"42:42:42:42","eflgr","fmr,grgerge", null);
+		cbddd.afficher();
 		bdd = new ConnexionBDD("burgerquizz", 3306, "localhost", "alain", "chabat");
 
 		setTitle("Administration base de données de l'aplication BurgerQuizz");
@@ -103,13 +105,21 @@ public class InterfacePrincipale extends JFrame
 
 	private void createStatusBar()
 	{
-		statusBar = new JPanel();
+		statusBar = new JPanel(new BorderLayout());
 		statusText = new JLabel("Application demarrée, connexion à la base de donné effective. ");
 
 		Border border = BorderFactory.createMatteBorder(3,0,0,0, new Color(220,220,220));
 		statusBar.setBorder(BorderFactory.createCompoundBorder(BorderFactory.createEmptyBorder(10,70,5,70),border));
 
-		statusBar.add(statusText);
+		config = new Bouton("Configuration", setupImg);
+		config.setPreferredSize(new Dimension(250, 34));
+		JPanel p = new JPanel();
+		p.setBorder(BorderFactory.createEmptyBorder(0, 0, 0, 0));
+
+		statusBar.add(statusText, BorderLayout.CENTER);
+		p.add(config, BorderLayout.EAST);
+		statusBar.add(p, BorderLayout.EAST);
+		//statusBar.add(config, BorderLayout.EAST);
 	}
 
 	private void createPanelCategories()
