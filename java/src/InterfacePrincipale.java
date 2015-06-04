@@ -47,10 +47,23 @@ public class InterfacePrincipale extends JFrame
 
 	//objet bdd
 	private ConnexionBDD bdd;
+	private ConfigBDD configBDD;
 
 	public InterfacePrincipale()
 	{
-		bdd = new ConnexionBDD("burgerquizz", 3306, "localhost", "alain", "chabat");
+		configBDD = new ConfigBDD();
+		configBDD.loadConf();
+		bdd = new ConnexionBDD();
+
+		boolean conOK = false;
+		do
+		{
+			conOK = bdd.connect(configBDD.getNomBdd(), configBDD.getPort(), configBDD.getIp(), configBDD.getLogin(), configBDD.getPassword());
+			if(conOK == false)
+			{
+				configureBDD(true);
+			}
+		}while(!conOK);
 
 		setTitle("Administration base de données de l'aplication BurgerQuizz");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -123,8 +136,7 @@ public class InterfacePrincipale extends JFrame
 
 		config.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent actionEvent) {
-				ConnexionBddDialog cbddd = new ConnexionBddDialog("efr",85,"42:42:42:42","eflgr","fmr,grgerge", null);
-				cbddd.afficher();
+				configureBDD(false);
 			}
 		});
 	}
@@ -282,6 +294,23 @@ public class InterfacePrincipale extends JFrame
 		l.setIcon(new ImageIcon("rsc/nyan.gif"));
 		setLocationRelativeTo(null);
 		pack();
+	}
+
+	public void configureBDD(boolean showExitButton)
+	{
+		ConnexionBddDialog cbddd = new ConnexionBddDialog(configBDD.getNomBdd(), configBDD.getPort(),
+				configBDD.getIp(), configBDD.getLogin(),
+				configBDD.getPassword(), null, showExitButton);
+		if(cbddd.afficher() == true)
+		{
+			configBDD.setNomBdd(cbddd.getNomBdd());
+			configBDD.setIp(cbddd.getIp());
+			configBDD.setPort(cbddd.getPort());
+			configBDD.setLogin(cbddd.getLogin());
+			configBDD.setPassword(cbddd.getPassword());
+
+			configBDD.saveConf();
+		}
 	}
 
 	private void reSelectCategorie(String newCatName)

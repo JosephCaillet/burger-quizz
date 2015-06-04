@@ -16,19 +16,20 @@ public class ConnexionBddDialog extends JDialog implements ActionListener
 	private JButton ok;
 	private JButton annuler;
 	private JButton defParams;
+	private JButton quitter;
 	private boolean modifEffectuees;
 
-	public ConnexionBddDialog(String nomBdd, int port, String ip, String login, String password, JFrame parent)
+	public ConnexionBddDialog(String nomBdd, int port, String ip, String login, String password, JFrame parent, boolean showExitButton)
 	{
 		super(parent, "Paramétres BDD", true);
 		modifEffectuees = false;
-		createInterface(nomBdd, port, ip, login, password);
+		createInterface(nomBdd, port, ip, login, password, showExitButton);
 		pack();
 		setLocationRelativeTo(null);
 		setResizable(false);
 	}
 
-	private void createInterface(String defNomBdd, int defPort, String defIP, String defLogin, String defPassword)
+	private void createInterface(String defNomBdd, int defPort, String defIP, String defLogin, String defPassword, boolean showExitButton)
 	{
 		nomBdd = new JTextField(defNomBdd, 30);
 		port = new JFormattedTextField(NumberFormat.getInstance());
@@ -46,10 +47,12 @@ public class ConnexionBddDialog extends JDialog implements ActionListener
 		ok = new JButton("OK");
 		annuler = new JButton("Annuler");
 		defParams = new JButton("Paramétres de connexion par défault");
+		quitter = new JButton("Quitter l'aplication");
 
 		ok.addActionListener(this);
 		annuler.addActionListener(this);
 		defParams.addActionListener(this);
+		quitter.addActionListener(this);
 
 		JPanel fieldPanel = new JPanel();
 		JPanel boutons = new JPanel();
@@ -66,9 +69,10 @@ public class ConnexionBddDialog extends JDialog implements ActionListener
 		fieldPanel.add(new JLabel("Mot de passe utilisateur:"));
 		fieldPanel.add(password);
 
-		boutons.add(annuler);
+		if(!showExitButton)boutons.add(annuler);
 		boutons.add(defParams);
 		boutons.add(ok);
+		if(showExitButton)boutons.add(quitter);
 
 		getContentPane().add(fieldPanel, BorderLayout.CENTER);
 		getContentPane().add(boutons, BorderLayout.SOUTH);
@@ -90,10 +94,19 @@ public class ConnexionBddDialog extends JDialog implements ActionListener
 			login.setText("alain");
 			password.setText("chabat");
 		}
-		else
+		else if(e.getSource() == annuler)
 		{
 			modifEffectuees = false;
 			setVisible(false);
+		}
+		else if(e.getSource() == ok)
+		{
+			modifEffectuees = true;
+			setVisible(false);
+		}
+		else if(e.getSource() == quitter)
+		{
+			System.exit(0);
 		}
 	}
 
