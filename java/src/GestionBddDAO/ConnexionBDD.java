@@ -1,3 +1,12 @@
+package GestionBddDAO;
+
+import GestionBddDAO.GestionCategories;
+import GestionBddDAO.GestionQuestions;
+import GestionBddDAO.GestionReponses;
+import Modele.Categorie;
+import Modele.Question;
+import Modele.Reponses;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -18,7 +27,7 @@ public class ConnexionBDD
 		}
 		catch(ClassNotFoundException e)
 		{
-			e.printStackTrace();
+			System.out.println(e.getMessage());
 			System.exit(1);
 		}
 	}
@@ -38,10 +47,9 @@ public class ConnexionBDD
 		}
 		catch(SQLException e)
 		{
-			e.printStackTrace();
+			System.out.println(e.getMessage());
 			System.out.println("Erreur de conexion à la base de données: " + e.getMessage());
 			return false;
-			//System.exit(1);
 		}
 	}
 

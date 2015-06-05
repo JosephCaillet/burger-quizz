@@ -1,4 +1,7 @@
-import java.beans.Statement;
+package GestionBddDAO;
+
+import Modele.Categorie;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -38,7 +41,7 @@ public class GestionCategories
 		}
 		catch (SQLException e)
 		{
-			e.printStackTrace();
+			System.out.println(e.getMessage());
 		}
 	}
 
@@ -56,7 +59,7 @@ public class GestionCategories
 		}
 		catch (SQLException e)
 		{
-			e.printStackTrace();
+			System.out.println(e.getMessage());
 		}
 	}
 
@@ -74,7 +77,7 @@ public class GestionCategories
 		}
 		catch (SQLException e)
 		{
-			e.printStackTrace();
+			System.out.println(e.getMessage());
 		}
 	}
 
@@ -95,7 +98,7 @@ public class GestionCategories
 		}
 		catch (SQLException e)
 		{
-			e.printStackTrace();
+			System.out.println(e.getMessage());
 		}
 	}
 

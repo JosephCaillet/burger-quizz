@@ -1,22 +1,20 @@
+import InterfaceGraphique.InterfacePrincipale;
+
 import javax.swing.*;
-import java.util.Enumeration;
 
 public class MainAdminBddBurgerQuizz
 {
-	public static void main(String args[])
+	public static void main(String[] args)
 	{
 		//https://docs.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
-		try {
+		try
+		{
 			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
-		} catch (InstantiationException e) {
-			e.printStackTrace();
-		} catch (IllegalAccessException e) {
-			e.printStackTrace();
-		} catch (UnsupportedLookAndFeelException e) {
-			e.printStackTrace();
 		}
+		catch (ClassNotFoundException e) {}
+		catch (InstantiationException e) {}
+		catch (IllegalAccessException e) {}
+		catch (UnsupportedLookAndFeelException e) {}
 
 		InterfacePrincipale alain_chabat = new InterfacePrincipale();
 

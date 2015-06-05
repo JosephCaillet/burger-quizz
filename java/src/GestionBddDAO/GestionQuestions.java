@@ -1,3 +1,7 @@
+package GestionBddDAO;
+
+import Modele.Question;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -41,7 +45,7 @@ public class GestionQuestions
 		}
 		catch (SQLException e)
 		{
-			e.printStackTrace();
+			System.out.println(e.getMessage());
 		}
 	}
 
@@ -61,7 +65,7 @@ public class GestionQuestions
 			preparedStatement.close();
 		}
 		catch (SQLException e) {
-			e.printStackTrace();
+			System.out.println(e.getMessage());
 		}
 	}
 
@@ -81,7 +85,7 @@ public class GestionQuestions
 		}
 		catch (SQLException e)
 		{
-			e.printStackTrace();
+			System.out.println(e.getMessage());
 		}
 	}
 
@@ -104,7 +108,7 @@ public class GestionQuestions
 		}
 		catch (SQLException e)
 		{
-			e.printStackTrace();
+			System.out.println(e.getMessage());
 		}
 	}
 

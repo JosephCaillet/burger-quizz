@@ -1,3 +1,5 @@
+package GestionBddDAO;
+
 import java.io.*;
 import java.util.Properties;
 
@@ -20,7 +22,7 @@ public class ConfigBDD
 		{
 			loadDefaultConf();
 			saveConf();
-			e.printStackTrace();
+			System.out.println(e.getMessage());
 			return false;
 		}
 	}
@@ -34,7 +36,7 @@ public class ConfigBDD
 		}
 		catch (IOException e)
 		{
-			e.printStackTrace();
+			System.out.println(e.getMessage());
 			return false;
 		}
 	}

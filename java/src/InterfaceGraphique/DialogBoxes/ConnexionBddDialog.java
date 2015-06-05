@@ -1,10 +1,10 @@
+package InterfaceGraphique.DialogBoxes;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.NumberFormat;
-
-import static javax.swing.BoxLayout.Y_AXIS;
 
 public class ConnexionBddDialog extends JDialog implements ActionListener
 {
@@ -21,7 +21,7 @@ public class ConnexionBddDialog extends JDialog implements ActionListener
 
 	public ConnexionBddDialog(String nomBdd, int port, String ip, String login, String password, JFrame parent, boolean showExitButton)
 	{
-		super(parent, "Paramètres de connexion à la  base de données", true);
+		super(parent, "Paramètres de connexion à la base de données", true);
 		modifEffectuees = false;
 		createInterface(nomBdd, port, ip, login, password, showExitButton);
 		pack();
@@ -69,10 +69,12 @@ public class ConnexionBddDialog extends JDialog implements ActionListener
 		fieldPanel.add(new JLabel("Mot de passe utilisateur:"));
 		fieldPanel.add(password);
 
-		if(!showExitButton)boutons.add(annuler);
+		if(!showExitButton)
+			{boutons.add(annuler);}
 		boutons.add(defParams);
 		boutons.add(ok);
-		if(showExitButton)boutons.add(quitter);
+		if(showExitButton)
+			{boutons.add(quitter);}
 
 		getContentPane().add(fieldPanel, BorderLayout.CENTER);
 		getContentPane().add(boutons, BorderLayout.SOUTH);
