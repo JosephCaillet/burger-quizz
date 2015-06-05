@@ -71,6 +71,7 @@ public class NouvelleQuestionDialog extends JDialog implements ActionListener
 		else if(e.getSource() == ok) {
 			if(intitule.getText().isEmpty())
 			{
+				JOptionPane.showMessageDialog(this, "Les champs ne doivent pas être vide.", "Champs non remplis", JOptionPane.WARNING_MESSAGE);
 				return;
 			}
 			mofidEffectues = true;
