@@ -1,3 +1,5 @@
+package Modele;
+
 public class Question
 {
 	protected String intitule;

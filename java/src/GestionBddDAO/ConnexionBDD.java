@@ -1,3 +1,12 @@
+package GestionBddDAO;
+
+import GestionBddDAO.GestionCategories;
+import GestionBddDAO.GestionQuestions;
+import GestionBddDAO.GestionReponses;
+import Modele.Categorie;
+import Modele.Question;
+import Modele.Reponses;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;

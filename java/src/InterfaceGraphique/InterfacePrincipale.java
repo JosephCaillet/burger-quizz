@@ -1,3 +1,14 @@
+package InterfaceGraphique;
+
+import InterfaceGraphique.DialogBoxes.ConnexionBddDialog;
+import InterfaceGraphique.DialogBoxes.NouvelleQuestionDialog;
+import InterfaceGraphique.DialogBoxes.NouvelleReponseDialog;
+import GestionBddDAO.ConnexionBDD;
+import Modele.Categorie;
+import GestionBddDAO.ConfigBDD;
+import Modele.Question;
+import Modele.Reponses;
+
 import javax.swing.*;
 import javax.swing.border.Border;
 import javax.swing.event.ListSelectionEvent;

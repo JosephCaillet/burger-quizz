@@ -1,3 +1,5 @@
+package Modele;
+
 public class Reponses
 {
 	protected String reponse1;

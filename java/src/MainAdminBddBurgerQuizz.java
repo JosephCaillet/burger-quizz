@@ -1,5 +1,6 @@
+import InterfaceGraphique.InterfacePrincipale;
+
 import javax.swing.*;
-import java.util.Enumeration;
 
 public class MainAdminBddBurgerQuizz
 {
