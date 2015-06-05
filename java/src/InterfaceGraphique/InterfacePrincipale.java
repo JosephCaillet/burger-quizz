@@ -418,7 +418,6 @@ public class InterfacePrincipale extends JFrame
 				}
 
 				bdd.createCategorie(catName);
-				//listC.setListData(bdd.getListeCategorie().toArray());
 				reSelectCategorie(catName);
 				listQ.setListData(new Vector(0));
 			}
@@ -501,7 +500,6 @@ public class InterfacePrincipale extends JFrame
 				{
 					String catName = listC.getSelectedValue().toString();
 					bdd.createReponses(catName, nrd.getRep1(), nrd.getRep2());
-					//listR.setListData(bdd.getListeReponses(catName).toArray());
 					reSelectReponses(nrd.getRep1(), nrd.getRep2());
 				}
 			}
@@ -543,7 +541,6 @@ public class InterfacePrincipale extends JFrame
 				if(nrd.afficher() == true)
 				{
 					bdd.modifyReponses(nrd.getCat(), reponse1, reponse2, nrd.getRep1(), nrd.getRep2());
-					//listR.setListData(bdd.getListeReponses(catName).toArray());
 					reSelectCategorie(nrd.getCat());
 					reSelectReponses(nrd.getRep1(), nrd.getRep2());
 				}
@@ -579,7 +576,6 @@ public class InterfacePrincipale extends JFrame
 				if(nqd.afficher() == true)
 				{
 					bdd.createQuestion(nqd.getIntitule(), r.getReponse1(), r.getReponse2(), nqd.getReponse());
-					//listQ.setListData(bdd.getListeQuestions(r.getReponse1(), r.getReponse2()));
 					reSelectQuestion(nqd.getIntitule());
 				}
 			}

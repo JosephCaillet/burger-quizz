@@ -44,7 +44,7 @@ public class GestionReponses
 		}
 		catch (SQLException e)
 		{
-			e.printStackTrace();
+			System.out.println(e.getMessage());
 		}
 	}
 
@@ -63,7 +63,7 @@ public class GestionReponses
 			preparedStatement.close();
 		}
 		catch (SQLException e) {
-			e.printStackTrace();
+			System.out.println(e.getMessage());
 		}
 	}
 
@@ -82,7 +82,7 @@ public class GestionReponses
 		}
 		catch (SQLException e)
 		{
-			e.printStackTrace();
+			System.out.println(e.getMessage());
 		}
 	}
 
@@ -105,7 +105,7 @@ public class GestionReponses
 		}
 		catch (SQLException e)
 		{
-			e.printStackTrace();
+			System.out.println(e.getMessage());
 		}
 	}
 

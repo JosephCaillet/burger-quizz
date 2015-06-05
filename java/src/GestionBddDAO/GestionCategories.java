@@ -41,7 +41,7 @@ public class GestionCategories
 		}
 		catch (SQLException e)
 		{
-			e.printStackTrace();
+			System.out.println(e.getMessage());
 		}
 	}
 
@@ -59,7 +59,7 @@ public class GestionCategories
 		}
 		catch (SQLException e)
 		{
-			e.printStackTrace();
+			System.out.println(e.getMessage());
 		}
 	}
 
@@ -77,7 +77,7 @@ public class GestionCategories
 		}
 		catch (SQLException e)
 		{
-			e.printStackTrace();
+			System.out.println(e.getMessage());
 		}
 	}
 
@@ -98,7 +98,7 @@ public class GestionCategories
 		}
 		catch (SQLException e)
 		{
-			e.printStackTrace();
+			System.out.println(e.getMessage());
 		}
 	}
 

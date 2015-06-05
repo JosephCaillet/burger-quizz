@@ -27,7 +27,7 @@ public class ConnexionBDD
 		}
 		catch(ClassNotFoundException e)
 		{
-			e.printStackTrace();
+			System.out.println(e.getMessage());
 			System.exit(1);
 		}
 	}
@@ -47,10 +47,9 @@ public class ConnexionBDD
 		}
 		catch(SQLException e)
 		{
-			e.printStackTrace();
+			System.out.println(e.getMessage());
 			System.out.println("Erreur de conexion à la base de données: " + e.getMessage());
 			return false;
-			//System.exit(1);
 		}
 	}
 

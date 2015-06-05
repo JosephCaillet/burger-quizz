@@ -69,10 +69,12 @@ public class ConnexionBddDialog extends JDialog implements ActionListener
 		fieldPanel.add(new JLabel("Mot de passe utilisateur:"));
 		fieldPanel.add(password);
 
-		if(!showExitButton)boutons.add(annuler);
+		if(!showExitButton)
+			{boutons.add(annuler);}
 		boutons.add(defParams);
 		boutons.add(ok);
-		if(showExitButton)boutons.add(quitter);
+		if(showExitButton)
+			{boutons.add(quitter);}
 
 		getContentPane().add(fieldPanel, BorderLayout.CENTER);
 		getContentPane().add(boutons, BorderLayout.SOUTH);
