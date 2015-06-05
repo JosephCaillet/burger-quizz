@@ -31,7 +31,7 @@ class Questset {
 				throw $e;
 			}
 		} else {
-			throw new Exception('Un tableau de réponses est attendu dans le constructeur.');
+			throw new Exception('expected_questset_array');
 		}
 	}
 

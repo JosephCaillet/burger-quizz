@@ -22,7 +22,7 @@ class Categorie {
 		if(!is_null($this->bdd->Select('*', 'categorie', $options))) {
 			$this->nomCat = $nomCat;
 		} else {
-			throw new Exception('Catégorie introuvable');
+			throw new Exception('cant_find_cat');
 		}
 	}
 
@@ -49,9 +49,20 @@ class Categorie {
 		$previousIndex = -1;
 		for($i = 0; $i < 2; $i++) {
 			do {
+				$filled = true;
 				$previousIndex = $catIndex;
 				$catIndex = rand(0, sizeof($arrayCat)-1);
-			} while($catIndex == $previousIndex);
+				$category = new Categorie($arrayCat[$catIndex]['nom_cat']);
+				if(sizeof($category->getArray()['themes']) >=2) {
+					foreach($category->getArray()['themes'] as $theme) {
+						if(sizeof($theme['questions']) < 3) {
+							$filled = false;
+						}
+					}
+				} else {
+					$filled = false;
+				}
+			} while(($catIndex == $previousIndex) || !$filled);
 			array_push($return, new Categorie($arrayCat[$catIndex]['nom_cat']));
 		}
 		return $return;

@@ -79,12 +79,12 @@ function onSocketConnection(client) {
     });
 
     client.on('disconnect', function() {
-      console.log("Joueur déconnecté.");
-      console.log(client.id);
       games.forEach(function(row) {
         if(row.joueur1.socket.id === client.id) {
+          console.log("Joueur déconnecté ("+row.joueur1.login+") ; socket id : "+client.id);
           row.joueur2.socket.emit('lolheded');
         } else if(row.joueur2.socket.id === client.id) {
+          console.log("Joueur déconnecté ("+row.joueur2.login+") ; socket id : "+client.id);
           row.joueur1.socket.emit('lolheded');
         }
       });

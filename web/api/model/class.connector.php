@@ -33,12 +33,15 @@ class Connector {
 			if(($upName = strtoupper($name)) == "WHERE") {
 				$whereClause = " $upName ";
 				foreach($value as $array) {
-					if(sizeof($array) != 3) {
+					if(sizeof($array) != 3 && sizeof($array) != 4) {
 						throw new Exception('wrong_arg_nmbr_where');
 					}
-
-					$whereClause .= $array[0]." ".$array[1]." :".$array[0]." AND ";
-					$arrayVerif[":".$array[0]] = $array[2];
+					if(sizeof($array) == 3) {
+						$whereClause .= $array[0]." ".$array[1]." ? AND ";
+						array_push($arrayVerif, $array[2]);
+					} else {
+						$whereClause .= $array[0]." ".$array[1]." ".$array[2]." AND ";
+					}
 				}
 				$request .= substr($whereClause, 0, -5);
 			} else if(($upName = strtoupper($name)) == "ORDER BY") {

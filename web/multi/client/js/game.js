@@ -15,7 +15,7 @@ var pseudo ='';
 function init() {
 
     // Connexion à socket.io
-    socket = io.connect('http://localhost:8000');
+    socket = io.connect('http://172.17.7.66:8000');
 
     // Gestion des evenements
     setEventHandlers();
@@ -27,6 +27,14 @@ function init() {
       socket.emit('nouveau', pseudo);
       document.title = $("#pseudo").val() + ' - ' + document.title;
       $("#game").html("Recherche d'un adversare...");
+    });
+    $("#pseudo").on('keypress', function(event) {
+      if(event.which == 13) {
+        pseudo = $("#pseudo").val();
+        socket.emit('nouveau', pseudo);
+        document.title = $("#pseudo").val() + ' - ' + document.title;
+        $("#game").html("Recherche d'un adversare...");
+      }
     });
 };
 
@@ -78,6 +86,7 @@ var baseWidth;
 
 var score = 0;
 var reponseUser = -1, bonneReponse;
+var canClick = true;
 
 function apiReq() {
   $.ajax({
@@ -115,15 +124,21 @@ function quest(id) {
   bonneReponse = parseInt(theme.questions[id].bonneReponse);
   console.info('Question ' + (id_quest + 1) + '/' + theme.questions.length + ' : '
     +theme.questions[id].intitule);
-  $("#rep1").off('click');
-  $("#rep1").on("click", function() { reponseUser = 1; checkAnswer(); });
-  $("#rep2").off('click');
-  $("#rep2").on("click", function() { reponseUser = 2; checkAnswer(); });
-  $("#both").off('click');
-  $("#both").on("click", function() { reponseUser = 0; checkAnswer(); });
+  if(canClick) {
+    $("#rep1").off('click');
+    $("#rep1").one("click", function() { reponseUser = 1; checkAnswer(); });
+    $("#rep2").off('click');
+    $("#rep2").one("click", function() { reponseUser = 2; checkAnswer(); });
+    $("#both").off('click');
+    $("#both").one("click", function() { reponseUser = 0; checkAnswer(); });
+  }
 }
 
 function checkAnswer() {
+  canClick = false;
+  $("#rep1").off('click');
+  $("#rep2").off('click');
+  $("#both").off('click');
   stopTimer();
   if(reponseUser == bonneReponse) {
     score += secRestantes+1;
@@ -150,8 +165,8 @@ function nextQuestion() {
   $("#rep1").removeClass();
   $("#rep2").removeClass();
   $("#both").removeClass();
-  pauseGame();
-  /*// Dernière question du thème en cours
+  canClick = true;
+  // Dernière question du thème en cours
   if((id_quest+1) == theme.questions.length)  {
     // Dernier thème de la catégorie en cours
     if((id_theme+1) == category.themes.length) {
@@ -172,7 +187,7 @@ function nextQuestion() {
   } else {
     id_quest++;
     quest(id_quest);
-  }*/
+  }
 }
 
 function play(questions) {

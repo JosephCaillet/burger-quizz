@@ -1,6 +1,6 @@
 <?php
 
-if(!empty($_POST['login']) && !empty($_POST['score'])) {
+if(!empty($_POST['login']) && isset($_POST['score'])) {
 	Score::add($_POST['login'], $_POST['score']);
 	$scArray = array(
 		"status" => 1,

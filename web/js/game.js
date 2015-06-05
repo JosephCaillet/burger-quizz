@@ -8,6 +8,7 @@ var baseWidth;
 
 var score = 0;
 var reponseUser = -1, bonneReponse;
+var canClick = true;
 
 function apiReq() {
   $.ajax({
@@ -27,7 +28,7 @@ function loadCat(id) {
   $("#game").html("<p id=\"category\">Catégorie : "+category.nom_cat+"</p>");
   $("#game").append("<div id=\"theme\"></div>");
   $("#game").append("<div id=\"timer\" style=\"width:100%;height:20px;background:green\"></div>");
-  $("#game").append("<div id=\"score\"></div>");
+  $("#game").append("<div id=\"score\">Score : "+score+"</div>");
   loadTheme(id_theme);
 }
 
@@ -45,15 +46,21 @@ function quest(id) {
   bonneReponse = parseInt(theme.questions[id].bonneReponse);
   console.info('Question ' + (id_quest + 1) + '/' + theme.questions.length + ' : '
     +theme.questions[id].intitule);
-  $("#rep1").off('click');
-  $("#rep1").on("click", function() { reponseUser = 1; checkAnswer(); });
-  $("#rep2").off('click');
-  $("#rep2").on("click", function() { reponseUser = 2; checkAnswer(); });
-  $("#both").off('click');
-  $("#both").on("click", function() { reponseUser = 0; checkAnswer(); });
+  if(canClick) {
+    $("#rep1").off('click');
+    $("#rep1").one("click", function() { reponseUser = 1; checkAnswer(); });
+    $("#rep2").off('click');
+    $("#rep2").one("click", function() { reponseUser = 2; checkAnswer(); });
+    $("#both").off('click');
+    $("#both").one("click", function() { reponseUser = 0; checkAnswer(); });
+  }
 }
 
 function checkAnswer() {
+  canClick = false;
+  $("#rep1").off('click');
+  $("#rep2").off('click');
+  $("#both").off('click');
   stopTimer();
   if(reponseUser == bonneReponse) {
     score += secRestantes+1;
@@ -80,6 +87,7 @@ function nextQuestion() {
   $("#rep1").removeClass();
   $("#rep2").removeClass();
   $("#both").removeClass();
+  canClick = true;
   // Dernière question du thème en cours
   if((id_quest+1) == theme.questions.length)  {
     // Dernier thème de la catégorie en cours
@@ -127,27 +135,49 @@ function endGame() {
   $("#game").html("<h2 id=\"score\">Vous avez marqué "+score+" miams</h2>"
   +"<p id=\"registerScore\">Enregistrez votre score : <input type=\"text\" id=\"login\" placeholder=\"Nom ou pseudonyme\" />"
   +"<input type=\"submit\" id=\"sendScore\" value=\"Valider\" /></p>");
-  $("#sendScore").click(function() {
-    addScore($("#login").val(), score);
-    var message = json.message;
-    $("#registerScore").fadeOut();
-    console.log(message);
-    if(message == "score_add_success") {
+  $("#sendScore").on('click', scoreConfirm);
+  $("#login").on('keypress', function(event) {
+    if(event.which == 13) {
+      scoreConfirm();
+    }
+  });
+}
+
+function scoreConfirm() {
+  addScore($("#login").val(), score);
+  var message = json.message;
+  $("#registerScore").fadeOut();
+  console.log(message);
+  if(message == "score_add_success") {
+    window.setTimeout(function() {
       $("#registerScore").addClass("success");
       $("#registerScore").html("Votre score a bien été enregistré<br />"+
       "<a href=\"palmares.htm\">Voir les meilleurs scores</a>");
+    }, 400);
+  } else {
+    if(message === "higher_score_present") {
+      window.setTimeout(function() {
+        $("#registerScore").addClass("error");
+        $("#registerScore").html("Un score supérieur ou égal existe déjà avec ce pseudonyme<br />"
+        +"Essayez avec un autre pseudonyme : <input type=\"text\" id=\"login\" placeholder=\"Nom ou pseudonyme\" />"
+        +"<input type=\"submit\" id=\"sendScore\" value=\"Valider\" /><br />"
+        +"<a href=\"palmares.htm\">Voir les meilleurs scores</a>");
+      }, 400);
+      $("#sendScore").on('click', scoreConfirm);
+      $("#login").on('keypress', function(event) {
+        if(event.which == 13) {
+          scoreConfirm();
+        }
+      });
     } else {
-      $("#registerScore").addClass("error");
-      if(message === "higher_score_present") {
-        $("#registerScore").html("Un score supérieur ou égal existe déjà avec ce pseudonyme<br />"+
-        "<a href=\"palmares.htm\">Voir les meilleurs scores</a>");
-      } else {
+      window.setTimeout(function() {
+        $("#registerScore").addClass("error");
         $("#registerScore").html("Une erreur est survenue ("+status.message+")<br />"+
         "<a href=\"palmares.htm\">Voir les meilleurs scores</a>");
-      }
+      }, 400);
     }
-    $("#registerScore").fadeIn();
-  });
+  }
+  $("#registerScore").fadeIn();
 }
 
 function addScore(userLogin, userScore) {
