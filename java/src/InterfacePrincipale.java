@@ -55,15 +55,7 @@ public class InterfacePrincipale extends JFrame
 		configBDD.loadConf();
 		bdd = new ConnexionBDD();
 
-		boolean conOK = false;
-		do
-		{
-			conOK = bdd.connect(configBDD.getNomBdd(), configBDD.getPort(), configBDD.getIp(), configBDD.getLogin(), configBDD.getPassword());
-			if(conOK == false)
-			{
-				configureBDD(true);
-			}
-		}while(!conOK);
+		tryToConnect();
 
 		setTitle("Administration base de données de l'aplication BurgerQuizz");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -137,6 +129,10 @@ public class InterfacePrincipale extends JFrame
 		config.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent actionEvent) {
 				configureBDD(false);
+				tryToConnect();
+				listC.setListData(bdd.getListeCategorie().toArray());
+				listR.setListData(new Vector(0));
+				listQ.setListData(new Vector(0));
 			}
 		});
 	}
@@ -313,6 +309,20 @@ public class InterfacePrincipale extends JFrame
 		}
 	}
 
+	private void tryToConnect()
+	{
+		boolean conOK = false;
+		do
+		{
+			conOK = bdd.connect(configBDD.getNomBdd(), configBDD.getPort(), configBDD.getIp(), configBDD.getLogin(), configBDD.getPassword());
+			if(conOK == false)
+			{
+				JOptionPane.showMessageDialog(this, "Impossible d'établir la connexion à la base de données.", "Erreur conexion base de données", JOptionPane.ERROR_MESSAGE);
+				configureBDD(true);
+			}
+		}while(!conOK);
+	}
+
 	private void reSelectCategorie(String newCatName)
 	{
 		Object[] tabObject = bdd.getListeCategorie().toArray();
@@ -381,9 +391,7 @@ public class InterfacePrincipale extends JFrame
 		{
 			if(e.getSource() == addC)
 			{
-				JOptionPane jop = new JOptionPane();
-
-				String catName = jop.showInputDialog(null,
+				String catName = JOptionPane.showInputDialog(null,
 						"Nom de la nouvelle categorie:",
 						"Nouvelle catégorie",
 						JOptionPane.QUESTION_MESSAGE);
@@ -405,8 +413,6 @@ public class InterfacePrincipale extends JFrame
 			}
 			else if(e.getSource() == delC)
 			{
-				JOptionPane jop = new JOptionPane();
-
 				Categorie c = (Categorie) listC.getSelectedValue();
 
 				if(c == null)
@@ -417,7 +423,7 @@ public class InterfacePrincipale extends JFrame
 
 				String categorieName = c.getNom();
 
-				if(jop.showConfirmDialog(null,"Voulez vous vraiment supprimer la catégorie " + categorieName + " ?\nCela supprimera aussi toute les reponses et questions associé à cette catégorie.", "Supression de catégorie", JOptionPane.OK_CANCEL_OPTION) == JOptionPane.OK_OPTION)
+				if(JOptionPane.showConfirmDialog(null, "Voulez vous vraiment supprimer la catégorie " + categorieName + " ?\nCela supprimera aussi toute les reponses et questions associé à cette catégorie.", "Supression de catégorie", JOptionPane.OK_CANCEL_OPTION) == JOptionPane.OK_OPTION)
 				{
 					bdd.deleteCategorie(categorieName);
 					listC.setListData(bdd.getListeCategorie().toArray());
@@ -435,11 +441,9 @@ public class InterfacePrincipale extends JFrame
 					return;
 				}
 
-				JOptionPane jop = new JOptionPane();
-
 				String oldCatName = c.getNom();
 
-				String newCatName = jop.showInputDialog(null,
+				String newCatName = JOptionPane.showInputDialog(null,
 						"Nouveau nom pour la categorie " + oldCatName + ":",
 						"Renomer catégorie",
 						JOptionPane.QUESTION_MESSAGE);
@@ -492,8 +496,6 @@ public class InterfacePrincipale extends JFrame
 			}
 			else if(e.getSource() == delR)
 			{
-				JOptionPane jop = new JOptionPane();
-
 				Reponses r = (Reponses) listR.getSelectedValue();
 
 				if(r == null)
@@ -505,7 +507,7 @@ public class InterfacePrincipale extends JFrame
 				String reponse1 = r.getReponse1();
 				String reponse2 = r.getReponse2();
 
-				if(jop.showConfirmDialog(null,"Voulez vous vraiment supprimer le jeu de réponses " + reponse1 + ", " + reponse2 + " ?\nCela supprimera aussi toutes les questions associé à cette catégorie.", "Supression de réponses", JOptionPane.OK_CANCEL_OPTION) == JOptionPane.OK_OPTION)
+				if(JOptionPane.showConfirmDialog(null,"Voulez vous vraiment supprimer le jeu de réponses " + reponse1 + ", " + reponse2 + " ?\nCela supprimera aussi toutes les questions associé à cette catégorie.", "Supression de réponses", JOptionPane.OK_CANCEL_OPTION) == JOptionPane.OK_OPTION)
 				{
 					bdd.deleteReponses(reponse1, reponse2);
 					listR.setListData(bdd.getListeReponses(listC.getSelectedValue().toString()).toArray());
@@ -572,8 +574,6 @@ public class InterfacePrincipale extends JFrame
 			}
 			else if(e.getSource() == delQ)
 			{
-				JOptionPane jop = new JOptionPane();
-
 				Question q = (Question) listQ.getSelectedValue();
 
 				if(q == null)
@@ -582,7 +582,7 @@ public class InterfacePrincipale extends JFrame
 					return;
 				}
 
-				if(jop.showConfirmDialog(null,"Voulez vous vraiment supprimer la question " + q.getIntitule() + " ?", "Supression de question", JOptionPane.OK_CANCEL_OPTION) == JOptionPane.OK_OPTION)
+				if(JOptionPane.showConfirmDialog(null, "Voulez vous vraiment supprimer la question " + q.getIntitule() + " ?", "Supression de question", JOptionPane.OK_CANCEL_OPTION) == JOptionPane.OK_OPTION)
 				{
 					bdd.deleteQuestion(q.getIntitule(), q.getReponse1(), q.getReponse2());
 					listQ.setListData(bdd.getListeQuestions(q.getReponse1(), q.getReponse2()).toArray());

@@ -33,7 +33,7 @@ public class NouvelleReponseDialog extends JDialog implements ActionListener
 		rep1.setBackground(Color.WHITE);
 		rep2.setBackground(Color.WHITE);
 
-		ok = new JButton("OK");
+		ok = new JButton("OK",  UIManager.getIcon("OptionPane.errorIcon"));
 		annuler = new JButton("Annuler");
 		ok.addActionListener(this);
 		annuler.addActionListener(this);
@@ -86,6 +86,7 @@ public class NouvelleReponseDialog extends JDialog implements ActionListener
 		else if(e.getSource() == ok) {
 			if(rep1.getText().isEmpty() || rep2.getText().isEmpty())
 			{
+				JOptionPane.showMessageDialog(this, "Les champs ne doivent pas être vide.", "Champs non remplis", JOptionPane.WARNING_MESSAGE);
 				return;
 			}
 			mofidEffectues = true;

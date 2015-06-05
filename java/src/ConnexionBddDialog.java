@@ -21,7 +21,7 @@ public class ConnexionBddDialog extends JDialog implements ActionListener
 
 	public ConnexionBddDialog(String nomBdd, int port, String ip, String login, String password, JFrame parent, boolean showExitButton)
 	{
-		super(parent, "Paramétres BDD", true);
+		super(parent, "Paramètres de connexion à la  base de données", true);
 		modifEffectuees = false;
 		createInterface(nomBdd, port, ip, login, password, showExitButton);
 		pack();
@@ -46,7 +46,7 @@ public class ConnexionBddDialog extends JDialog implements ActionListener
 
 		ok = new JButton("OK");
 		annuler = new JButton("Annuler");
-		defParams = new JButton("Paramétres de connexion par défault");
+		defParams = new JButton("Paramètres de connexion par défaut");
 		quitter = new JButton("Quitter l'aplication");
 
 		ok.addActionListener(this);
@@ -101,6 +101,11 @@ public class ConnexionBddDialog extends JDialog implements ActionListener
 		}
 		else if(e.getSource() == ok)
 		{
+			if(getNomBdd().isEmpty() || getIp().isEmpty() || getLogin().isEmpty())
+			{
+				JOptionPane.showMessageDialog(this, "Les champs ne doivent pas être vide.", "Champs non remplis", JOptionPane.WARNING_MESSAGE);
+				return;
+			}
 			modifEffectuees = true;
 			setVisible(false);
 		}

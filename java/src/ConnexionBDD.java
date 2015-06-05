@@ -39,7 +39,7 @@ public class ConnexionBDD
 		catch(SQLException e)
 		{
 			e.printStackTrace();
-			System.out.println("Erreur de conexion à la base de données");
+			System.out.println("Erreur de conexion à la base de données: " + e.getMessage());
 			return false;
 			//System.exit(1);
 		}
