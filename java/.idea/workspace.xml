@@ -6,48 +6,9 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a647cb6a-4230-4101-a652-d7cfd0c21e24" name="Default" comment="boite de dialogue plus ergonomique">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/InterfaceGraphique/Bouton.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Modele/Categorie.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/GestionBddDAO/ConfigBDD.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/GestionBddDAO/ConnexionBDD.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/InterfaceGraphique/DialogBoxes/ConnexionBddDialog.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/GestionBddDAO/GestionCategories.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/GestionBddDAO/GestionQuestions.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/GestionBddDAO/GestionReponses.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/InterfaceGraphique/InterfacePrincipale.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/InterfaceGraphique/DialogBoxes/NouvelleQuestionDialog.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/InterfaceGraphique/DialogBoxes/NouvelleReponseDialog.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Modele/Question.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Modele/Reponses.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/java/Bouton.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/java/Categorie.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/java/ConnectDialog.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/java/ConnexionBDD.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/java/GestionCategories.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/java/GestionQuestions.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/java/GestionReponses.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/java/InterfacePrincipale$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/java/InterfacePrincipale$PanQuestionsListener.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/java/InterfacePrincipale$PanReponsesListener.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/java/Question.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/java/Reponses.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Bouton.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Categorie.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ConfigBDD.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ConnectDialog.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ConnexionBDD.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ConnexionBddDialog.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/GestionCategories.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/GestionQuestions.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/GestionReponses.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/InterfacePrincipale.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/NouvelleQuestionDialog.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/NouvelleReponseDialog.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Question.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Reponses.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/java/MainAdminBddBurgerQuizz.class" afterPath="$PROJECT_DIR$/out/production/java/MainAdminBddBurgerQuizz.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MainAdminBddBurgerQuizz.java" afterPath="$PROJECT_DIR$/src/MainAdminBddBurgerQuizz.java" />
+    <list default="true" id="a647cb6a-4230-4101-a652-d7cfd0c21e24" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rsc/burgerquizz.png" afterPath="$PROJECT_DIR$/rsc/burgerquizz.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/InterfaceGraphique/DialogBoxes/ConnexionBddDialog.java" afterPath="$PROJECT_DIR$/src/InterfaceGraphique/DialogBoxes/ConnexionBddDialog.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="java.iws" />
@@ -70,11 +31,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="InterfacePrincipale.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="InterfacePrincipale.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/InterfaceGraphique/InterfacePrincipale.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.317164">
-              <caret line="81" column="28" selection-start-line="81" selection-start-column="28" selection-end-line="81" selection-end-column="28" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="86" column="31" selection-start-line="86" selection-start-column="31" selection-end-line="86" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -82,25 +43,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Categorie.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Modele/Categorie.java">
+      <file leaf-file-name="ConnexionBddDialog.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/InterfaceGraphique/DialogBoxes/ConnexionBddDialog.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
+            <state vertical-scroll-proportion="0.44751382">
+              <caret line="23" column="51" selection-start-line="23" selection-start-column="51" selection-end-line="23" selection-end-column="51" />
               <folding>
-                <element signature="e#97#98#0" expanded="true" />
-                <element signature="e#118#119#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Reponses.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Modele/Reponses.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -114,18 +64,6 @@
                 <element signature="method#loadConf#0;class#ConfigBDD#0" expanded="false" />
                 <element signature="method#saveConf#0;class#ConfigBDD#0" expanded="false" />
                 <element signature="method#loadDefaultConf#0;class#ConfigBDD#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Bouton.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/InterfaceGraphique/Bouton.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="15" column="22" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
-              <folding>
-                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -171,16 +109,6 @@
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NouvelleQuestionDialog.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/InterfaceGraphique/DialogBoxes/NouvelleQuestionDialog.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="75" column="143" selection-start-line="75" selection-start-column="143" selection-end-line="75" selection-end-column="143" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -231,6 +159,7 @@
         <option value="$PROJECT_DIR$/src/InterfaceGraphique/Bouton.java" />
         <option value="$PROJECT_DIR$/src/GestionBddDAO/GestionReponses.java" />
         <option value="$PROJECT_DIR$/src/InterfaceGraphique/InterfacePrincipale.java" />
+        <option value="$PROJECT_DIR$/src/InterfaceGraphique/DialogBoxes/ConnexionBddDialog.java" />
       </list>
     </option>
   </component>
@@ -349,7 +278,8 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -460,8 +390,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -494,125 +423,6 @@
       <recent name="Modele" />
       <recent name="DialogBoxes" />
     </key>
-  </component>
-  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
-    <UpdatedFiles>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Updated from server" />
-        <option name="myStatusName" value="Changed on server" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="CHANGED_ON_SERVER" />
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Updated" />
-          <option name="myStatusName" value="Changed" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../web/api/controller/palmares.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../web/api/model/class.categorie.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../web/api/model/class.connector.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../web/api/model/class.questset.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../web/js/game.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../web/multi/client/index.html</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../web/multi/client/js/game.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../web/multi/server/server.js</PATH>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Created" />
-          <option name="myStatusName" value="Created" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="CREATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../web/test.php</PATH>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Deleted" />
-          <option name="myStatusName" value="Deleted" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="true" />
-          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../web/api/tests.php</PATH>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Restored" />
-          <option name="myStatusName" value="Will be restored" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="RESTORED" />
-        </FILE-GROUP>
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Modified" />
-        <option name="myStatusName" value="Modified" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MODIFIED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Skipped" />
-        <option name="myStatusName" value="Skipped" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SKIPPED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with conflicts" />
-        <option name="myStatusName" value="Will be merged with conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_CONFLICTS" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with tree conflicts" />
-        <option name="myStatusName" value="Merged with tree conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with property conflicts" />
-        <option name="myStatusName" value="Will be merged with property conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged" />
-        <option name="myStatusName" value="Will be merged" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Not in repository" />
-        <option name="myStatusName" value="Not in repository" />
-        <option name="mySupportsDeletion" value="true" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="UNKNOWN" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally added" />
-        <option name="myStatusName" value="Locally added" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_ADDED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally removed" />
-        <option name="myStatusName" value="Locally removed" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_REMOVED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Switched" />
-        <option name="myStatusName" value="Switched" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SWITCHED" />
-      </FILE-GROUP>
-    </UpdatedFiles>
   </component>
   <component name="RunManager" selected="Application.Main">
     <configuration default="false" name="Main" type="Application" factoryName="Application" temporary="true">
@@ -935,7 +745,13 @@
       <option name="project" value="LOCAL" />
       <updated>1433508006053</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="PATATTE ET MAYONAISE!!!!!!!!! (+ cornichon et emental sinon c'est pas bon)&#10;NE PAS OUBLIER LA SOUPE AU POTIRON!!!!! (À MELANGER AVEC AMOUR BIEN SUR.)">
+      <created>1433516680268</created>
+      <option name="number" value="00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1433516680268</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TodoView">
@@ -966,14 +782,14 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26291794" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30579966" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14893617" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30579966" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32864675" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -1011,7 +827,8 @@
     <MESSAGE value="amelioration diverse concernant la boite de dialogue des parametres" />
     <MESSAGE value="modification parametre operationelle" />
     <MESSAGE value="boite de dialogue plus ergonomique" />
-    <option name="LAST_COMMIT_MESSAGE" value="boite de dialogue plus ergonomique" />
+    <MESSAGE value="PATATTE ET MAYONAISE!!!!!!!!! (+ cornichon et emental sinon c'est pas bon)&#10;NE PAS OUBLIER LA SOUPE AU POTIRON!!!!! (À MELANGER AVEC AMOUR BIEN SUR.)" />
+    <option name="LAST_COMMIT_MESSAGE" value="PATATTE ET MAYONAISE!!!!!!!!! (+ cornichon et emental sinon c'est pas bon)&#10;NE PAS OUBLIER LA SOUPE AU POTIRON!!!!! (À MELANGER AVEC AMOUR BIEN SUR.)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1300,16 +1117,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/InterfaceGraphique/DialogBoxes/ConnexionBddDialog.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="107" column="143" selection-start-line="107" selection-start-column="143" selection-end-line="107" selection-end-column="143" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/InterfaceGraphique/DialogBoxes/NouvelleQuestionDialog.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1397,8 +1204,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/InterfaceGraphique/InterfacePrincipale.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.317164">
-          <caret line="81" column="28" selection-start-line="81" selection-start-column="28" selection-end-line="81" selection-end-column="28" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="86" column="31" selection-start-line="86" selection-start-column="31" selection-end-line="86" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/InterfaceGraphique/DialogBoxes/ConnexionBddDialog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.44751382">
+          <caret line="23" column="51" selection-start-line="23" selection-start-column="51" selection-end-line="23" selection-end-column="51" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

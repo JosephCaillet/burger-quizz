@@ -21,7 +21,7 @@ public class ConnexionBddDialog extends JDialog implements ActionListener
 
 	public ConnexionBddDialog(String nomBdd, int port, String ip, String login, String password, JFrame parent, boolean showExitButton)
 	{
-		super(parent, "Paramètres de connexion à la  base de données", true);
+		super(parent, "Paramètres de connexion à la base de données", true);
 		modifEffectuees = false;
 		createInterface(nomBdd, port, ip, login, password, showExitButton);
 		pack();
