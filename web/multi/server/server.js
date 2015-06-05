@@ -88,6 +88,16 @@ function onSocketConnection(client) {
           row.joueur1.socket.emit('lolheded');
         }
       });
+    });
+
+    client.on('nextQuestion', function() {
+      games.forEach(function(row) {
+        if(row.joueur1.socket.id === client.id) {
+          row.joueur2.socket.emit('qpass');
+        } else if(row.joueur2.socket.id === client.id) {
+          row.joueur1.socket.emit('qpass');
+        }
+      });
     })
 };
 

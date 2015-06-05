@@ -114,6 +114,7 @@ function nextQuestion() {
 
 function play() {
   $("#play").remove();
+  $("#multi").remove();
   apiReq();
   loadCat(id_cat);
 }
@@ -144,6 +145,7 @@ function endGame() {
 }
 
 function scoreConfirm() {
+  console.log("qsfd");
   addScore($("#login").val(), score);
   var message = json.message;
   $("#registerScore").fadeOut();
@@ -162,13 +164,13 @@ function scoreConfirm() {
         +"Essayez avec un autre pseudonyme : <input type=\"text\" id=\"login\" placeholder=\"Nom ou pseudonyme\" />"
         +"<input type=\"submit\" id=\"sendScore\" value=\"Valider\" /><br />"
         +"<a href=\"palmares.htm\">Voir les meilleurs scores</a>");
+        $("#sendScore").on('click', scoreConfirm);
+        $("#login").on('keypress', function(event) {
+          if(event.which == 13) {
+            scoreConfirm();
+          }
+        });
       }, 400);
-      $("#sendScore").on('click', scoreConfirm);
-      $("#login").on('keypress', function(event) {
-        if(event.which == 13) {
-          scoreConfirm();
-        }
-      });
     } else {
       window.setTimeout(function() {
         $("#registerScore").addClass("error");

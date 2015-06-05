@@ -5,12 +5,14 @@ class Connector {
 	private $bdd;
 
 	function __construct() {
-		$host = "localhost";
-		$db = "burgerquizz";
-		$user = "alain";
-		$pass = "chabat";
+		$params = file_get_contents("../params.cfg");
+		preg_match_all('/db_(.+)\: (.+)/', $params, $matches);
+		$dbconnect = array();
+		for($i = 0; $i < sizeof($matches[0]); $i++) {
+			$dbconnect[$matches[1][$i]] = $matches[2][$i];
+		}
 
-		$this->bdd = new PDO("mysql:host=$host;dbname=$db", $user, $pass);
+		$this->bdd = new PDO("mysql:host=".$dbconnect["host"].";dbname=".$dbconnect["dbname"], $dbconnect["user"], $dbconnect["pass"]);
 		$this->bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	}
 

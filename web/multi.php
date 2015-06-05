@@ -12,20 +12,19 @@
           }
         </style>
     </head>
-
     <body>
-        <h1>Burger temps réel !</h1>
-
         <div id="game">
           Connexion au serveur...
         </div>
-
         <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-        <script src="http://172.17.7.66:8000/socket.io/socket.io.js"></script>
-        <script src="js/game.js"></script>
-        <script>
-            init();
-
-        </script>
+        <?php
+          $params = file_get_contents("./params.cfg");
+    		  preg_match_all('/node_host\: (.+)/', $params, $matches);
+          echo '<script src="http://'.$matches[1][0].':8000/socket.io/socket.io.js"></script>';
+         ?>
+         <script src="js/multi.js"></script>
+         <script>
+          init();
+          </script>
     </body>
 </html>

@@ -11,29 +11,32 @@ var gameInfos;
 var disconnect = true;
 var scoreAdversaire = 0;
 var pseudo ='';
+var reponseUser = -1, bonneReponse;
 
 function init() {
 
+    var hostname = $('script')[1]['src'].match(/http:\/\/(.+)\:/)[1];
+
     // Connexion à socket.io
-    socket = io.connect('http://172.17.7.66:8000');
+    socket = io.connect('http://'+hostname+':8000');
 
     // Gestion des evenements
     setEventHandlers();
 
     // On demande le pseudo a l'utilisateur, on l'envoie au serveur et on l'affiche dans le titre
-    $("#game").html("<input type=\"text\" id=\"pseudo\" /><input type=\"submit\" id=\"start\" value=\"Valider\" />");
+    $("#game").html("<input type=\"text\" id=\"pseudo\" placeholder=\"Nom ou pseudonyme\" /><input type=\"submit\" id=\"start\" value=\"Valider\" />");
     $("#start").on("click", function() {
       pseudo = $("#pseudo").val();
       socket.emit('nouveau', pseudo);
       document.title = $("#pseudo").val() + ' - ' + document.title;
-      $("#game").html("Recherche d'un adversare...");
+      $("#game").html("Recherche d'un adversaire...");
     });
     $("#pseudo").on('keypress', function(event) {
       if(event.which == 13) {
         pseudo = $("#pseudo").val();
         socket.emit('nouveau', pseudo);
         document.title = $("#pseudo").val() + ' - ' + document.title;
-        $("#game").html("Recherche d'un adversare...");
+        $("#game").html("Recherche d'un adversaire...");
       }
     });
 };
@@ -48,6 +51,10 @@ var setEventHandlers = function() {
   socket.on("questions", play);
   socket.on("lolheded", endGame);
   socket.on("end", onEnd);
+  socket.on("qpass", function() {
+    reponseUser = -1;
+    checkAnswer();
+  })
 };
 
 function onEnd(score) {
@@ -85,7 +92,6 @@ var timing = 5, secRestantes, timer;
 var baseWidth;
 
 var score = 0;
-var reponseUser = -1, bonneReponse;
 var canClick = true;
 
 function apiReq() {
@@ -126,11 +132,11 @@ function quest(id) {
     +theme.questions[id].intitule);
   if(canClick) {
     $("#rep1").off('click');
-    $("#rep1").one("click", function() { reponseUser = 1; checkAnswer(); });
+    $("#rep1").one("click", function() { reponseUser = 1; checkAnswer(); socket.emit('nextQuestion'); });
     $("#rep2").off('click');
-    $("#rep2").one("click", function() { reponseUser = 2; checkAnswer(); });
+    $("#rep2").one("click", function() { reponseUser = 2; checkAnswer(); socket.emit('nextQuestion'); });
     $("#both").off('click');
-    $("#both").one("click", function() { reponseUser = 0; checkAnswer(); });
+    $("#both").one("click", function() { reponseUser = 0; checkAnswer(); socket.emit('nextQuestion'); });
   }
 }
 
@@ -191,7 +197,6 @@ function nextQuestion() {
 }
 
 function play(questions) {
-  console.log(questions);
   json = questions;
   loadCat(id_cat);
 }
