@@ -14,7 +14,7 @@ Cette application a été conçue pour fonctionner avec PHP 5.6, MySQL 5.5 et No
 
 Sous Debian (et ses dérivés), la commande permettant l'installation de ces pré-requis est :
 
-`# apt-get install apache2 php5 mysql nodejs`
+`# apt-get install apache2 php5 mysql nodejs npm`
 
 ### Installation de l'application
 
@@ -33,6 +33,10 @@ En fonction de vos besoins, exécutez l'un des scripts sur votre serveur MySQL (
 ### Installation du mode multijoueur
 
 Si vous souhaitez héberger le serveur Node.js permettant le mode de jeu multijoueur sur un autre hébergement, ou à un autre emplacement sur l'hébergement courant, il vous suffit d'y déplacer le dossier `multi/` présent à la racine du présent dossier.
+
+Pour l'installation des composants nécessaires au mode multijoueur, ouvrez un terminal et placez-vous dans le dossier contenant le serveur multijoueur (par défaut, `multi/server/`) puis exécutez la commande :
+
+`# npm install`
 
 Configuration
 -------------

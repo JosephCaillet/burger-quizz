@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Burger Quizz - Jouer</title>
+    <meta charset="utf-8" />
+    <script src="jquery-2.1.4.min.js"></script>
+    <script src="js/game.js"></script>
+    <style type="text/css">
+      .good-answer {
+        color:green;
+      }
+      .wrong-answer {
+        color:red;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="game"></div>
+    <input type="submit" id="play" value="Solo (un joueur)" /><br />
+    <form action="multi.php"><input type="submit" id="multi" value="Multi (deux joueurs)" /></form>
+    <script type="text/javascript">
+      $("#play").click(function() {
+        play();
+      });
+    </script>
+  </body>
+</html>

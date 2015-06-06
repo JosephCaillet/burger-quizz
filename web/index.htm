@@ -1,27 +1,35 @@
 <!doctype html>
 <html>
   <head>
-    <title>Burger Quizz - Jouer</title>
-    <meta charset="utf-8" />
-    <script src="jquery-2.1.4.min.js"></script>
-    <script src="js/game.js"></script>
-    <style type="text/css">
-      .good-answer {
-        color:green;
-      }
-      .wrong-answer {
-        color:red;
-      }
-    </style>
+    <meta charset="utf-8">
+    <title>Burger Quizz - Accueil</title>
+    <link rel="stylesheet" href="css/main.css">
   </head>
   <body>
-    <div id="game"></div>
-    <input type="submit" id="play" value="Solo (un joueur)" /><br />
-    <form action="multi.php"><input type="submit" id="multi" value="Multi (deux joueurs)" /></form>
-    <script type="text/javascript">
-      $("#play").click(function() {
-        play();
-      });
-    </script>
+    <header>
+    </header>
+    <section id="navbar">
+      <ul>
+        <li>Accueil</li>
+        <li>Règles</li>
+        <li>Meilleurs scores</li>
+        <li>Jouer</li>
+      </ul>
+    </section>
+    <section id="page">
+      <article>
+        <h2>Accueil</h2>
+        <p>Skevent dleout danvez biz-yod rumm goz gar tabut bazh mil skrijañ, Menez Du dec'h ehan kreisteiz neud tad eil huanadiñ bed lizherenn. Lies gwinegr c'hoar-gaer. Houlenn Menez Mikael anv koumoul, broust brumenn daoust ha. Ret ki lazhañ dianav gwenn hor beg-douar arabat skubañ ken truez tre kar hon leue droug-mor, chom hennezh hag Bro-saoz. Ma fazi geot kein gwechall, rak mil c'hwezhañ e fri hor kae diwar-benn mousc'hoarzhin mat bloaz plijadur hol kant eost noz dre mae nerzh kaeraat, kenwerzh nec'h hir diriaou c'hoar-gaer, a-benn diwar ar maez derc'hel digor pesketaer dir pri start karrezek. Pegement kontañ giz kluchañ n'eus forzh.</p>
+      </article>
+      <article id="jouer">
+        <h2>Jouer</h2>
+        <form action="play.htm">
+          <input type="submit" value="Solo 1 joueur" />
+        </form>
+        <form action="multi.htm">
+          <input type="submit" value="Multi 2 joueurs" />
+        </form>
+      </article>
+    </section>
   </body>
 </html>
