@@ -4,13 +4,14 @@
     <meta charset="utf-8">
     <title>Burger Quizz - Accueil</title>
     <link rel="stylesheet" href="css/main.css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
   </head>
   <body>
     <header>
     </header>
     <section id="navbar">
       <ul>
-        <li>Accueil</li>
+        <li class="current"><a href="#">Accueil</a></li>
         <li>Règles</li>
         <li>Meilleurs scores</li>
         <li>Jouer</li>
@@ -23,13 +24,22 @@
       </article>
       <article id="jouer">
         <h2>Jouer</h2>
-        <form action="play.htm">
-          <input type="submit" value="Solo 1 joueur" />
-        </form>
-        <form action="multi.htm">
-          <input type="submit" value="Multi 2 joueurs" />
-        </form>
-      </article>
+        <div class="button">
+          <a href="play.htm">
+            <div class="firstword">
+              Solo
+            </div>
+            1 joueur
+          </a>
+        </div>
+        <div class="button">
+          <a href="multi.php">
+            <div class="firstword">
+              Multi
+            </div>
+            2 joueurs
+          </a>
+        </div>
     </section>
   </body>
 </html>

@@ -1,15 +1,27 @@
 body {
   padding:0px;
   margin:0px;
+  font-family:'Open Sans';
+  background: #fffdc6;
+}
+
+a, a:visited {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 header {
   height: 100px;
+  background-color: white;
   background-image: url("../assets/burgerquizz.png");
   background-size: 400px;
   background-repeat: no-repeat;
   background-position: center;
-  margin-bottom: 10px;
+  padding-bottom: 10px;
 }
 
 section#navbar {
@@ -25,13 +37,23 @@ section#navbar ul {
   vertical-align: middle;
 }
 
+section#navbar li:first-child {
+  margin-left:20px;
+}
+
 section#navbar li {
   display: block;
   float:left;
-  margin-left:50px;
-  margin-right:50px;
-  height: 100%;
+  padding-top:17px;
+  padding-left:50px;
+  padding-right:50px;
+  padding-bottom: ;
+  height: 53px;
   vertical-align:middle;
+}
+
+section#navbar li:hover, section#navbar li.current {
+  background: #9556f9;
 }
 
 section#navbar li:last-child {
@@ -41,5 +63,48 @@ section#navbar li:last-child {
   margin-right:0px;
   padding-right:70px;
   padding-left:70px;
+  background: #ff9619;
+}
+
+section#navbar li:last-child:hover {
   background: #ffab19;
+}
+
+section#page {
+  width: 60%;
+  margin: auto;
+}
+
+section#page h2 {
+  text-align: center;
+  font-size: 200%;
+}
+
+section#page p {
+  text-indent: 30px;
+}
+
+.button {
+  display:inline-block;
+  background: #09b22b;
+  color: white;
+  border: none;
+  height: 70px;
+  width: 200px;
+  margin:auto;
+  margin-right:15px;
+  margin-left:15px;
+  text-align:center;
+}
+
+.firstword {
+  font-size:200%;
+}
+
+input[type="submit"]:hover {
+  cursor: pointer;
+}
+
+div#buttons {
+  margin:auto;
 }
