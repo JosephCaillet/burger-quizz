@@ -1,5 +1,6 @@
 package GestionBddDAO;
 
+import GestionErreurs.BDDException;
 import Modele.Categorie;
 
 import java.sql.Connection;
@@ -19,14 +20,16 @@ public class GestionCategories
 		listCategories = new ArrayList<Categorie>();
 	}
 
-	public void readCategorie()
+	public void readCategorie() throws SQLException
 	{
+		PreparedStatement preparedStatement = null;
+		ResultSet resultat = null;
 		String rq = "SELECT *" +
 				"FROM categorie";
 		try
 		{
-			PreparedStatement preparedStatement = bdd.prepareStatement(rq);
-			ResultSet resultat = preparedStatement.executeQuery();
+			preparedStatement = bdd.prepareStatement(rq);
+			resultat = preparedStatement.executeQuery();
 
 			listCategories.clear();
 
@@ -34,71 +37,94 @@ public class GestionCategories
 			{
 				listCategories.add(new Categorie(resultat.getString("nom_cat")));
 			}
-
-			resultat.close();
-			preparedStatement.close();
-
 		}
 		catch (SQLException e)
 		{
-			System.out.println(e.getMessage());
+			throw e;
+		}
+		finally
+		{
+			if(resultat != null)
+			{
+				resultat.close();
+			}
+			if(preparedStatement != null) {
+				preparedStatement.close();
+			}
 		}
 	}
 
-	public void createCategorie(String categorieName)
+	public void createCategorie(String categorieName) throws SQLException
 	{
+		PreparedStatement preparedStatement = null;
 		String rq ="INSERT INTO categorie(nom_cat)" +
 				" VALUES(?)";
 		try
 		{
-			PreparedStatement preparedStatement = bdd.prepareStatement(rq);
+			preparedStatement = bdd.prepareStatement(rq);
 			preparedStatement.setString(1,categorieName);
 			preparedStatement.executeUpdate();
-
-			preparedStatement.close();
 		}
 		catch (SQLException e)
 		{
-			System.out.println(e.getMessage());
+			throw e;
+		}
+		finally
+		{
+			if(preparedStatement != null)
+			{
+				preparedStatement.close();
+			}
 		}
 	}
 
-	public void deleteCategorie(String categorieName)
+	public void deleteCategorie(String categorieName) throws SQLException
 	{
+		PreparedStatement preparedStatement = null;
 		String rq ="DELETE FROM categorie" +
 				" WHERE nom_cat = ?";
 		try
 		{
-			PreparedStatement preparedStatement = bdd.prepareStatement(rq);
+			preparedStatement = bdd.prepareStatement(rq);
 			preparedStatement.setString(1,categorieName);
 			preparedStatement.executeUpdate();
-
-			preparedStatement.close();
 		}
 		catch (SQLException e)
 		{
-			System.out.println(e.getMessage());
+			throw e;
+		}
+		finally
+		{
+			if(preparedStatement != null)
+			{
+				preparedStatement.close();
+			}
 		}
 	}
 
-	public void updateCategorie(String oldCategorieName, String newCategorieName)
+	public void updateCategorie(String oldCategorieName, String newCategorieName) throws SQLException
 	{
-
+		PreparedStatement preparedStatement = null;
 		String rq ="UPDATE categorie" +
 				" SET nom_cat = ?" +
 				" WHERE nom_cat = ?";
 		try
 		{
-			PreparedStatement preparedStatement = bdd.prepareStatement(rq);
+			preparedStatement = bdd.prepareStatement(rq);
 			preparedStatement.setString(1, newCategorieName);
 			preparedStatement.setString(2, oldCategorieName);
 			preparedStatement.executeUpdate();
-
-			preparedStatement.close();
 		}
 		catch (SQLException e)
 		{
-			System.out.println(e.getMessage());
+			throw e;
+		}
+		finally
+		{
+			if(preparedStatement != null)
+			{
+				preparedStatement.close();
+			}
 		}
 	}
 

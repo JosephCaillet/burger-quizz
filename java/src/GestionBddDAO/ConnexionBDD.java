@@ -3,6 +3,7 @@ package GestionBddDAO;
 import GestionBddDAO.GestionCategories;
 import GestionBddDAO.GestionQuestions;
 import GestionBddDAO.GestionReponses;
+import GestionErreurs.BDDException;
 import Modele.Categorie;
 import Modele.Question;
 import Modele.Reponses;
@@ -47,75 +48,158 @@ public class ConnexionBDD
 		}
 		catch(SQLException e)
 		{
-			System.out.println(e.getMessage());
 			System.out.println("Erreur de conexion à la base de données: " + e.getMessage());
 			return false;
 		}
 	}
 
 	//Gestion catégorie
-	public ArrayList<Categorie> getListeCategorie()
+	public ArrayList<Categorie> getListeCategorie() throws BDDException
 	{
-		gestionCategories.readCategorie();
+		try
+		{
+			gestionCategories.readCategorie();
+		}
+		catch(SQLException e)
+		{
+			throw new BDDException("Impossible de charger la liste des catégories. La bdd indique: " + e.getMessage());
+		}
 		return gestionCategories.getListCategories();
 	}
 
-	public void createCategorie(String categorieName)
+	public void createCategorie(String categorieName) throws BDDException
 	{
-		gestionCategories.createCategorie(categorieName);
+		try
+		{
+			gestionCategories.createCategorie(categorieName);
+		}
+		catch(SQLException e)
+		{
+			throw new BDDException("Impossible de créer une nouvelle catégorie. La bdd indique: " + e.getMessage());
+		}
 	}
 
-	public void deleteCategorie(String categorieName)
+	public void deleteCategorie(String categorieName) throws BDDException
 	{
-		gestionCategories.deleteCategorie(categorieName);
+		try
+		{
+			gestionCategories.deleteCategorie(categorieName);
+		}
+		catch(SQLException e)
+		{
+			throw new BDDException("Impossible de suprimer la catégorie. La bdd indique: " + e.getMessage());
+		}
 	}
 
-	public void renameCategorie(String oldCategorieName, String newCategorieName)
+	public void renameCategorie(String oldCategorieName, String newCategorieName) throws BDDException
 	{
-		gestionCategories.updateCategorie(oldCategorieName, newCategorieName);
+		try
+		{
+			gestionCategories.updateCategorie(oldCategorieName, newCategorieName);
+		}
+		catch(SQLException e)
+		{
+			throw new BDDException("Impossible de renommer catégorie. La bdd indique: " + e.getMessage());
+		}
 	}
 
 	//Gestion réponses
-	public ArrayList<Reponses> getListeReponses(String catName)
+	public ArrayList<Reponses> getListeReponses(String catName) throws BDDException
 	{
-		gestionReponses.readReponses(catName);
+		try
+		{
+			gestionReponses.readReponses(catName);
+		}
+		catch(SQLException e)
+		{
+			throw new BDDException("Impossible de charger la liste des réponses. La bdd indique: " + e.getMessage());
+		}
 		return gestionReponses.getListReponses();
 	}
 
-	public void createReponses(String nomCategorie, String reponse1, String reponse2)
+	public void createReponses(String nomCategorie, String reponse1, String reponse2) throws BDDException
 	{
-		gestionReponses.createReponses(nomCategorie, reponse1, reponse2);
+		try
+		{
+			gestionReponses.createReponses(nomCategorie, reponse1, reponse2);
+		}
+		catch(SQLException e)
+		{
+			throw new BDDException("Impossible de créer une nouvelle réponse. La bdd indique: " + e.getMessage());
+		}
 	}
 
-	public void deleteReponses(String reponse1, String reponse2)
+	public void deleteReponses(String reponse1, String reponse2) throws BDDException
 	{
-		gestionReponses.deleteReponses(reponse1, reponse2);
+		try
+		{
+			gestionReponses.deleteReponses(reponse1, reponse2);
+		}
+		catch(SQLException e)
+		{
+			throw new BDDException("Impossible de suprimmer la réponse. La bdd indique: " + e.getMessage());
+		}
 	}
 
-	public void modifyReponses(String categorie, String oldRep1, String oldRep2, String newRep1, String newRep2)
+	public void modifyReponses(String categorie, String oldRep1, String oldRep2, String newRep1, String newRep2) throws BDDException
 	{
-		gestionReponses.updateReponses(categorie, oldRep1, oldRep2, newRep1, newRep2);
+		try
+		{
+			gestionReponses.updateReponses(categorie, oldRep1, oldRep2, newRep1, newRep2);
+		}
+		catch(SQLException e)
+		{
+			throw new BDDException("Impossible de modifier la réponse. La bdd indique: " + e.getMessage());
+		}
 	}
 
 	//Gestion questions
-	public ArrayList<Question> getListeQuestions(String reponse1, String reponse2)
+	public ArrayList<Question> getListeQuestions(String reponse1, String reponse2) throws BDDException
 	{
-		gestionQuestions.readQuestions(reponse1, reponse2);
+		try
+		{
+			gestionQuestions.readQuestions(reponse1, reponse2);
+		}
+		catch(SQLException e)
+		{
+			throw new BDDException("Impossible de charger la liste des questions. La bdd indique: " + e.getMessage());
+		}
 		return gestionQuestions.getListeQuestions();
 	}
 
-	public void createQuestion(String intitule, String reponse1, String reponse2, int num_reponse)
+	public void createQuestion(String intitule, String reponse1, String reponse2, int num_reponse) throws BDDException
 	{
-		gestionQuestions.createQuestion(intitule, reponse1, reponse2, num_reponse);
+		try
+		{
+			gestionQuestions.createQuestion(intitule, reponse1, reponse2, num_reponse);
+		}
+		catch(SQLException e)
+		{
+			throw new BDDException("Impossible de créer une nouvelle question. La bdd indique: " + e.getMessage());
+		}
 	}
 
-	public void deleteQuestion(String intitule, String reponse1, String reponse2)
+	public void deleteQuestion(String intitule, String reponse1, String reponse2) throws BDDException
 	{
-		gestionQuestions.deleteQuestion(intitule, reponse1, reponse2);
+		try
+		{
+			gestionQuestions.deleteQuestion(intitule, reponse1, reponse2);
+		}
+		catch(SQLException e)
+		{
+			throw new BDDException("Impossible de suprimer la question. La bdd indique: " + e.getMessage());
+		}
 	}
 
-	public void modifyQuestion(String oldIntitule, String newIntitule, String reponse1, String reponse2, int newNum_reponse)
+	public void modifyQuestion(String oldIntitule, String newIntitule, String reponse1, String reponse2, int newNum_reponse) throws BDDException
 	{
-		gestionQuestions.updateQuestion(oldIntitule, newIntitule, reponse1, reponse2, newNum_reponse);
+		try
+		{
+			gestionQuestions.updateQuestion(oldIntitule, newIntitule, reponse1, reponse2, newNum_reponse);
+		}
+		catch(SQLException e)
+		{
+			throw new BDDException("Impossible de modifier la question. La bdd indique: " + e.getMessage());
+		}
 	}
 }

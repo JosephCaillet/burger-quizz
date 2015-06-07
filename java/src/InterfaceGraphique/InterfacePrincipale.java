@@ -334,6 +334,12 @@ public class InterfacePrincipale extends JFrame
 		}while(!conOK);
 	}
 
+	private void setStatusText(String message, Color color)
+	{
+		statusText.setForeground(color);
+		statusText.setText(message);
+	}
+
 	private void reSelectCategorie(String newCatName)
 	{
 		Object[] tabObject = bdd.getListeCategorie().toArray();
