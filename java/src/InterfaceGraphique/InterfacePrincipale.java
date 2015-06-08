@@ -1,5 +1,6 @@
 package InterfaceGraphique;
 
+import GestionErreurs.BDDException;
 import InterfaceGraphique.DialogBoxes.ConnexionBddDialog;
 import InterfaceGraphique.DialogBoxes.NouvelleQuestionDialog;
 import InterfaceGraphique.DialogBoxes.NouvelleReponseDialog;
@@ -60,6 +61,11 @@ public class InterfacePrincipale extends JFrame
 	private ConnexionBDD bdd;
 	private ConfigBDD configBDD;
 
+	//cst couleur
+	private static final Color ERROR_COLOR = Color.RED;
+	private static final Color INFO_COLOR = Color.CYAN;
+	private static final Color NORMAL_COLOR = Color.BLACK;
+
 	public InterfacePrincipale()
 	{
 		configBDD = new ConfigBDD();
@@ -73,10 +79,10 @@ public class InterfacePrincipale extends JFrame
 		setLayout(new BorderLayout());
 
 		loadImgBouton();
+		createStatusBar();
 		createPanelCategories();
 		createPanelReponses();
 		createPanelQuestion();
-		createStatusBar();
 
 
 		JSplitPane sp2 = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT,true,panReponses,panQuestions);
@@ -120,7 +126,6 @@ public class InterfacePrincipale extends JFrame
 	private void createStatusBar()
 	{
 		statusBar = new JPanel(new BorderLayout(0,0));
-		statusText = new JLabel("Application demarrée, connexion à la base de donné effective. ");
 
 		Border border = BorderFactory.createMatteBorder(3,0,0,0, new Color(220,220,220));
 		statusBar.setBorder(BorderFactory.createCompoundBorder(BorderFactory.createEmptyBorder(10,70,5,70),border));
@@ -141,9 +146,17 @@ public class InterfacePrincipale extends JFrame
 			public void actionPerformed(ActionEvent actionEvent) {
 				configureBDD(false);
 				tryToConnect();
-				listC.setListData(bdd.getListeCategorie().toArray());
-				listR.setListData(new Vector(0));
-				listQ.setListData(new Vector(0));
+				try
+				{
+					listC.setListData(bdd.getListeCategorie().toArray());
+					listR.setListData(new Vector(0));
+					listQ.setListData(new Vector(0));
+					setStatusText("Connexion à la base de données établie.");
+				}
+				catch (BDDException e)
+				{
+					setStatusText(e.getMessage(), ERROR_COLOR);
+				}
 			}
 		});
 	}
@@ -155,7 +168,16 @@ public class InterfacePrincipale extends JFrame
 		delC = new Bouton("Supprimer la catégorie", delImg);
 		editC = new Bouton("Modifier la catégorie", editImg);
 
-		listC = new JList(bdd.getListeCategorie().toArray());
+		try
+		{
+			listC = new JList(bdd.getListeCategorie().toArray());
+			setStatusText("Application demarrée, connexion à la base de données initiée.");
+		}
+		catch (BDDException e)
+		{
+			setStatusText(e.getMessage(), ERROR_COLOR);
+		}
+
 		JScrollPane sp = new JScrollPane(listC,
 				JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,
 				JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
@@ -340,7 +362,13 @@ public class InterfacePrincipale extends JFrame
 		statusText.setText(message);
 	}
 
-	private void reSelectCategorie(String newCatName)
+	private void setStatusText(String message)
+	{
+		statusText.setForeground(NORMAL_COLOR);
+		statusText.setText(message);
+	}
+
+	private void reSelectCategorie(String newCatName) throws BDDException
 	{
 		Object[] tabObject = bdd.getListeCategorie().toArray();
 		Categorie[] tabCategorie = Arrays.copyOf(tabObject, tabObject.length, Categorie[].class);
@@ -356,7 +384,7 @@ public class InterfacePrincipale extends JFrame
 		}
 	}
 
-	private void reSelectReponses(String rep1, String rep2)
+	private void reSelectReponses(String rep1, String rep2) throws BDDException
 	{
 		Object[] tabObject = bdd.getListeReponses(listC.getSelectedValue().toString()).toArray();
 		Reponses[] tabReponses = Arrays.copyOf(tabObject, tabObject.length, Reponses[].class);
@@ -372,7 +400,7 @@ public class InterfacePrincipale extends JFrame
 		}
 	}
 
-	private void reSelectQuestion(String intitule)
+	private void reSelectQuestion(String intitule) throws BDDException
 	{
 		Reponses r = (Reponses) listR.getSelectedValue();
 		Object[] tabObject = bdd.getListeQuestions(r.getReponse1(), r.getReponse2()).toArray();
@@ -419,13 +447,21 @@ public class InterfacePrincipale extends JFrame
 				}
 				else if(catName.isEmpty())
 				{
-					statusText.setText("Une categorie ne peut porter un nom vide.");
+					setStatusText("Une categorie ne peut porter un nom vide.", INFO_COLOR);
 					return ;
 				}
 
-				bdd.createCategorie(catName);
-				reSelectCategorie(catName);
-				listQ.setListData(new Vector(0));
+				try
+				{
+					bdd.createCategorie(catName);
+					reSelectCategorie(catName);
+					listQ.setListData(new Vector(0));
+					setStatusText("La catégorie " + catName + " à bien été créée.");
+				}
+				catch (BDDException ex)
+				{
+					setStatusText(ex.getMessage(), ERROR_COLOR);
+				}
 			}
 			else if(e.getSource() == delC)
 			{
@@ -433,7 +469,7 @@ public class InterfacePrincipale extends JFrame
 
 				if(c == null)
 				{
-					statusText.setText("Veuiller d'abord selectionner une categorie.");
+					setStatusText("Veuiller d'abord selectionner une categorie.", INFO_COLOR);
 					return;
 				}
 
@@ -441,10 +477,18 @@ public class InterfacePrincipale extends JFrame
 
 				if(JOptionPane.showConfirmDialog(null, "Voulez vous vraiment supprimer la catégorie " + categorieName + " ?\nCela supprimera aussi toute les reponses et questions associé à cette catégorie.", "Supression de catégorie", JOptionPane.OK_CANCEL_OPTION) == JOptionPane.OK_OPTION)
 				{
-					bdd.deleteCategorie(categorieName);
-					listC.setListData(bdd.getListeCategorie().toArray());
-					listR.setListData(new Vector(0));
-					listQ.setListData(new Vector(0));
+					try
+					{
+						bdd.deleteCategorie(categorieName);
+						listC.setListData(bdd.getListeCategorie().toArray());
+						listR.setListData(new Vector(0));
+						listQ.setListData(new Vector(0));
+						setStatusText("La catégorie " + categorieName + "à bien été suprimée.");
+					}
+					catch (BDDException ex)
+					{
+						setStatusText(ex.getMessage(), ERROR_COLOR);
+					}
 				}
 			}
 			else if(e.getSource() == editC)
@@ -453,7 +497,7 @@ public class InterfacePrincipale extends JFrame
 
 				if(c == null)
 				{
-					statusText.setText("Veuiller d'abord selectionner une categorie.");
+					setStatusText("Veuiller d'abord selectionner une categorie.", INFO_COLOR);
 					return;
 				}
 
@@ -470,12 +514,20 @@ public class InterfacePrincipale extends JFrame
 				}
 				else if(newCatName.isEmpty())
 				{
-					statusText.setText("Une categorie ne peut porter un nom vide.");
+					setStatusText("Une categorie ne peut porter un nom vide.", INFO_COLOR);
 					return ;
 				}
 
-				bdd.renameCategorie(oldCatName, newCatName);
-				reSelectCategorie(newCatName);
+				try
+				{
+					bdd.renameCategorie(oldCatName, newCatName);
+					reSelectCategorie(newCatName);
+					setStatusText("La catégorie " + oldCatName + " à bien été renomée en " + newCatName + ".");
+				}
+				catch (BDDException ex)
+				{
+					setStatusText(ex.getMessage(), ERROR_COLOR);
+				}
 			}
 		}
 
@@ -483,8 +535,15 @@ public class InterfacePrincipale extends JFrame
 		{
 			if(!listC.isSelectionEmpty())
 			{
-				listR.setListData(bdd.getListeReponses(listC.getSelectedValue().toString()).toArray());
-				listQ.setListData(new Vector(0));
+				try
+				{
+					listR.setListData(bdd.getListeReponses(listC.getSelectedValue().toString()).toArray());
+					listQ.setListData(new Vector(0));
+				}
+				catch (BDDException ex)
+				{
+					setStatusText(ex.getMessage(), ERROR_COLOR);
+				}
 			}
 		}
 	}
@@ -495,7 +554,7 @@ public class InterfacePrincipale extends JFrame
 		{
 			if(listC.isSelectionEmpty())
 			{
-				statusText.setText("Veuillez selectioner une catégorie.");
+				setStatusText("Veuillez selectioner une catégorie.", INFO_COLOR);
 				return;
 			}
 
@@ -505,8 +564,16 @@ public class InterfacePrincipale extends JFrame
 				if(nrd.afficher() == true)
 				{
 					String catName = listC.getSelectedValue().toString();
-					bdd.createReponses(catName, nrd.getRep1(), nrd.getRep2());
-					reSelectReponses(nrd.getRep1(), nrd.getRep2());
+					try
+					{
+						bdd.createReponses(catName, nrd.getRep1(), nrd.getRep2());
+						reSelectReponses(nrd.getRep1(), nrd.getRep2());
+						setStatusText("Le jeu de réponse à bien été créé.");
+					}
+					catch (BDDException ex)
+					{
+						setStatusText(ex.getMessage(), ERROR_COLOR);
+					}
 				}
 			}
 			else if(e.getSource() == delR)
@@ -515,7 +582,7 @@ public class InterfacePrincipale extends JFrame
 
 				if(r == null)
 				{
-					statusText.setText("Veuiller d'abord selectionner un jeu de réponses.");
+					setStatusText("Veuiller d'abord selectionner un jeu de réponses.", INFO_COLOR);
 					return;
 				}
 
@@ -524,9 +591,17 @@ public class InterfacePrincipale extends JFrame
 
 				if(JOptionPane.showConfirmDialog(null,"Voulez vous vraiment supprimer le jeu de réponses " + reponse1 + ", " + reponse2 + " ?\nCela supprimera aussi toutes les questions associé à cette catégorie.", "Supression de réponses", JOptionPane.OK_CANCEL_OPTION) == JOptionPane.OK_OPTION)
 				{
-					bdd.deleteReponses(reponse1, reponse2);
-					listR.setListData(bdd.getListeReponses(listC.getSelectedValue().toString()).toArray());
-					listQ.setListData(new Vector(0));
+					try
+					{
+						bdd.deleteReponses(reponse1, reponse2);
+						listR.setListData(bdd.getListeReponses(listC.getSelectedValue().toString()).toArray());
+						listQ.setListData(new Vector(0));
+						setStatusText("Le jeu de réponse à bien été suprimé.");
+					}
+					catch (BDDException ex)
+					{
+						setStatusText(ex.getMessage(), ERROR_COLOR);
+					}
 				}
 			}
 			else if(e.getSource() == editR)
@@ -535,7 +610,7 @@ public class InterfacePrincipale extends JFrame
 
 				if(r == null)
 				{
-					statusText.setText("Veuiller d'abord selectionner un jeu de réponses.");
+					setStatusText("Veuiller d'abord selectionner un jeu de réponses.", INFO_COLOR);
 					return;
 				}
 
@@ -546,9 +621,17 @@ public class InterfacePrincipale extends JFrame
 				NouvelleReponseDialog nrd = new NouvelleReponseDialog("Modification jeu de réponses", reponse1, reponse2, catName, getCategorieList(), null);
 				if(nrd.afficher() == true)
 				{
-					bdd.modifyReponses(nrd.getCat(), reponse1, reponse2, nrd.getRep1(), nrd.getRep2());
-					reSelectCategorie(nrd.getCat());
-					reSelectReponses(nrd.getRep1(), nrd.getRep2());
+					try
+					{
+						bdd.modifyReponses(nrd.getCat(), reponse1, reponse2, nrd.getRep1(), nrd.getRep2());
+						reSelectCategorie(nrd.getCat());
+						reSelectReponses(nrd.getRep1(), nrd.getRep2());
+						setStatusText("Le jeu de réponse à bien été modifié.");
+					}
+					catch (BDDException ex)
+					{
+						setStatusText(ex.getMessage(), ERROR_COLOR);
+					}
 				}
 			}
 		}
@@ -558,7 +641,14 @@ public class InterfacePrincipale extends JFrame
 			if(!listR.isSelectionEmpty())
 			{
 				Reponses r = (Reponses) listR.getSelectedValue();
-				listQ.setListData(bdd.getListeQuestions(r.getReponse1(), r.getReponse2()).toArray());
+				try
+				{
+					listQ.setListData(bdd.getListeQuestions(r.getReponse1(), r.getReponse2()).toArray());
+				}
+				catch (BDDException e)
+				{
+					setStatusText(e.getMessage(), ERROR_COLOR);
+				}
 			}
 		}
 	}
@@ -569,7 +659,7 @@ public class InterfacePrincipale extends JFrame
 		{
 			if(listR.isSelectionEmpty())
 			{
-				statusText.setText("Veuillez selectioner une sous-catégorie.");
+				setStatusText("Veuillez selectioner une sous-catégorie.", INFO_COLOR);
 				return;
 			}
 
@@ -581,8 +671,16 @@ public class InterfacePrincipale extends JFrame
 
 				if(nqd.afficher() == true)
 				{
-					bdd.createQuestion(nqd.getIntitule(), r.getReponse1(), r.getReponse2(), nqd.getReponse());
-					reSelectQuestion(nqd.getIntitule());
+					try
+					{
+						bdd.createQuestion(nqd.getIntitule(), r.getReponse1(), r.getReponse2(), nqd.getReponse());
+						reSelectQuestion(nqd.getIntitule());
+						setStatusText("La question à bien été créée.");
+					}
+					catch (BDDException ex)
+					{
+						setStatusText(ex.getMessage(), ERROR_COLOR);
+					}
 				}
 			}
 			else if(e.getSource() == delQ)
@@ -591,14 +689,22 @@ public class InterfacePrincipale extends JFrame
 
 				if(q == null)
 				{
-					statusText.setText("Veuiller d'abord selectionner une question.");
+					setStatusText("Veuiller d'abord selectionner une question.", INFO_COLOR);
 					return;
 				}
 
 				if(JOptionPane.showConfirmDialog(null, "Voulez vous vraiment supprimer la question " + q.getIntitule() + " ?", "Supression de question", JOptionPane.OK_CANCEL_OPTION) == JOptionPane.OK_OPTION)
 				{
-					bdd.deleteQuestion(q.getIntitule(), q.getReponse1(), q.getReponse2());
-					listQ.setListData(bdd.getListeQuestions(q.getReponse1(), q.getReponse2()).toArray());
+					try
+					{
+						bdd.deleteQuestion(q.getIntitule(), q.getReponse1(), q.getReponse2());
+						listQ.setListData(bdd.getListeQuestions(q.getReponse1(), q.getReponse2()).toArray());
+						setStatusText("La question à bien été suprimée.");
+					}
+					catch (BDDException ex)
+					{
+						setStatusText(ex.getMessage(), ERROR_COLOR);
+					}
 				}
 			}
 			else if(e.getSource() == editQ)
@@ -606,7 +712,7 @@ public class InterfacePrincipale extends JFrame
 				Question q = (Question) listQ.getSelectedValue();
 				if(q == null)
 				{
-					statusText.setText("Veuiller d'abord selectionner une question.");
+					setStatusText("Veuiller d'abord selectionner une question.", INFO_COLOR);
 					return;
 				}
 
@@ -615,9 +721,17 @@ public class InterfacePrincipale extends JFrame
 
 				if(nqd.afficher() == true)
 				{
-					bdd.modifyQuestion(q.getIntitule(), nqd.getIntitule(),
-							q.getReponse1(), q.getReponse2(), nqd.getReponse());
-					reSelectQuestion(nqd.getIntitule());
+					try
+					{
+						bdd.modifyQuestion(q.getIntitule(), nqd.getIntitule(),
+								q.getReponse1(), q.getReponse2(), nqd.getReponse());
+						reSelectQuestion(nqd.getIntitule());
+						setStatusText("La question à bien été modifiée.");
+					}
+					catch (BDDException ex)
+					{
+						setStatusText(ex.getMessage(), ERROR_COLOR);
+					}
 				}
 			}
 		}
