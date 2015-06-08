@@ -10,8 +10,8 @@ a, a:visited {
   text-decoration: none;
 }
 
-a:hover {
-  text-decoration: underline;
+section#navbar a:hover {
+  text-decoration:none;
 }
 
 header {
@@ -37,36 +37,43 @@ section#navbar ul {
   vertical-align: middle;
 }
 
-section#navbar li:first-child {
+section#navbar li:first-child a {
   margin-left:20px;
+}
+
+section#navbar a {
+  padding-top:17px;
+  padding-left:50px;
+  padding-right:50px;
+  padding-bottom:18px;
+  margin-right: 10px;
 }
 
 section#navbar li {
   display: block;
   float:left;
   padding-top:17px;
-  padding-left:50px;
-  padding-right:50px;
-  padding-bottom: ;
   height: 53px;
-  vertical-align:middle;
 }
 
-section#navbar li:hover, section#navbar li.current {
+section#navbar li:hover a, section#navbar li.current a {
   background: #9556f9;
+}
+
+section#navbar li:last-child a {
+  margin-right:0px;
+  padding-right:70px;
+  padding-left:70px;
 }
 
 section#navbar li:last-child {
   display: block;
   float: right;
   text-align:right;
-  margin-right:0px;
-  padding-right:70px;
-  padding-left:70px;
   background: #ff9619;
 }
 
-section#navbar li:last-child:hover {
+section#navbar li:last-child:hover a {
   background: #ffab19;
 }
 
@@ -84,8 +91,8 @@ section#page p {
   text-indent: 30px;
 }
 
-.button {
-  display:inline-block;
+.button a {
+  display:block;
   background: #09b22b;
   color: white;
   border: none;
@@ -95,16 +102,13 @@ section#page p {
   margin-right:15px;
   margin-left:15px;
   text-align:center;
+  float: left;
 }
 
 .firstword {
   font-size:200%;
 }
 
-input[type="submit"]:hover {
-  cursor: pointer;
-}
-
-div#buttons {
+article#jouer {
   margin:auto;
 }

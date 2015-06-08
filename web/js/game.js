@@ -10,6 +10,53 @@ var score = 0;
 var reponseUser = -1, bonneReponse;
 var canClick = true;
 
+function play() {
+  $("#play").remove();
+  $("#multi").remove();
+  apiReq();
+  if(json.status != 1) {
+    var message;
+    switch(json.source) {
+      case 'PDO':
+        message = "Erreur lors de la connexion à la base de donnée : "+json.message;
+        break;
+      case 'Connector':
+        message = "Erreur de requête SQL : "
+        switch(json.message) {
+          case 'wrong_arg_nmbr_where':
+            message += "Mauvais nombre d'arguments dans la clause WHERE.";
+            break;
+          case 'wrong_arg_nmbr_order_by':
+            message += "Mauvais nombre d'arguments dans la clause ORDER BY.";
+            break;
+          case 'wrong_arg_numbr_limit':
+            message += "Mauvais nombre d'arguments dans la clause LIMIT.";
+            break;
+          case 'unknown_arg':
+            message += "Argument inconnu détecté.";
+            break;
+        }
+        break;
+      case 'Questset':
+        message = "Erreur dans le chargement du jeu de questions : "
+        if(json.message == 'expected_questset_array') {
+          message += "Un tableau de réponses est attendu."
+        }
+        break;
+      case 'Categorie':
+        if(json.message == 'cant_find_cat') {
+          message = "Erreur dans le chargement de la catégorie : Impossible de trouver la catégorie.";
+        }
+        break;
+    }
+
+    $("#game").addClass("error");
+    $("#game").html(message);
+  } else {
+    loadCat(id_cat);
+  }
+}
+
 function apiReq() {
   $.ajax({
     async: false,
@@ -110,13 +157,6 @@ function nextQuestion() {
     id_quest++;
     quest(id_quest);
   }
-}
-
-function play() {
-  $("#play").remove();
-  $("#multi").remove();
-  apiReq();
-  loadCat(id_cat);
 }
 
 function startTimer() {
