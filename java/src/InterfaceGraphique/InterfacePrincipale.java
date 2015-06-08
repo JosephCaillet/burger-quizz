@@ -63,8 +63,8 @@ public class InterfacePrincipale extends JFrame
 
 	//cst couleur
 	private static final Color ERROR_COLOR = Color.RED;
-	private static final Color INFO_COLOR = Color.CYAN;
-	private static final Color NORMAL_COLOR = Color.BLACK;
+	private static final Color INFO_COLOR = new Color(50,50,255);
+	private static final Color NORMAL_COLOR = new Color(50,50,50);
 
 	public InterfacePrincipale()
 	{
@@ -130,6 +130,7 @@ public class InterfacePrincipale extends JFrame
 		Border border = BorderFactory.createMatteBorder(3,0,0,0, new Color(220,220,220));
 		statusBar.setBorder(BorderFactory.createCompoundBorder(BorderFactory.createEmptyBorder(10,70,5,70),border));
 
+		statusText = new JLabel();
 		statusText.setHorizontalAlignment(SwingConstants.CENTER);
 
 		config = new Bouton("Configuration", setupImg);
@@ -149,8 +150,8 @@ public class InterfacePrincipale extends JFrame
 				try
 				{
 					listC.setListData(bdd.getListeCategorie().toArray());
-					listR.setListData(new Vector(0));
-					listQ.setListData(new Vector(0));
+					setQuestionsPanelEnabled(false);
+					setReponsesPanelEnabled(false);
 					setStatusText("Connexion à la base de données établie.");
 				}
 				catch (BDDException e)
@@ -255,6 +256,8 @@ public class InterfacePrincipale extends JFrame
 		delR.addActionListener(prl);
 		editR.addActionListener(prl);
 		listR.addListSelectionListener(prl);
+
+		setReponsesPanelEnabled(false);
 	}
 
 	private void createPanelQuestion()
@@ -298,6 +301,8 @@ public class InterfacePrincipale extends JFrame
 		addQ.addActionListener(pql);
 		delQ.addActionListener(pql);
 		editQ.addActionListener(pql);
+
+		setQuestionsPanelEnabled(false);
 	}
 
 	public void modem56k()
@@ -366,6 +371,24 @@ public class InterfacePrincipale extends JFrame
 	{
 		statusText.setForeground(NORMAL_COLOR);
 		statusText.setText(message);
+	}
+
+	private void setReponsesPanelEnabled(boolean active)
+	{
+		addR.setEnabled(active);
+		delR.setEnabled(active);
+		editR.setEnabled(active);
+		listR.setEnabled(active);
+		listR.setListData(new Vector(0));
+	}
+
+	private void setQuestionsPanelEnabled(boolean active)
+	{
+		addQ.setEnabled(active);
+		delQ.setEnabled(active);
+		editQ.setEnabled(active);
+		listQ.setEnabled(active);
+		listQ.setListData(new Vector(0));
 	}
 
 	private void reSelectCategorie(String newCatName) throws BDDException
@@ -455,7 +478,7 @@ public class InterfacePrincipale extends JFrame
 				{
 					bdd.createCategorie(catName);
 					reSelectCategorie(catName);
-					listQ.setListData(new Vector(0));
+					setQuestionsPanelEnabled(false);
 					setStatusText("La catégorie " + catName + " à bien été créée.");
 				}
 				catch (BDDException ex)
@@ -481,8 +504,8 @@ public class InterfacePrincipale extends JFrame
 					{
 						bdd.deleteCategorie(categorieName);
 						listC.setListData(bdd.getListeCategorie().toArray());
-						listR.setListData(new Vector(0));
-						listQ.setListData(new Vector(0));
+						setQuestionsPanelEnabled(false);
+						setReponsesPanelEnabled(false);
 						setStatusText("La catégorie " + categorieName + "à bien été suprimée.");
 					}
 					catch (BDDException ex)
@@ -537,8 +560,11 @@ public class InterfacePrincipale extends JFrame
 			{
 				try
 				{
-					listR.setListData(bdd.getListeReponses(listC.getSelectedValue().toString()).toArray());
-					listQ.setListData(new Vector(0));
+					Object[] tabRep = bdd.getListeReponses(listC.getSelectedValue().toString()).toArray();
+					setReponsesPanelEnabled(true);
+					listR.setListData(tabRep);
+					setQuestionsPanelEnabled(false);
+					setStatusText("Récupération des jeux de questions effectuée");
 				}
 				catch (BDDException ex)
 				{
@@ -594,8 +620,10 @@ public class InterfacePrincipale extends JFrame
 					try
 					{
 						bdd.deleteReponses(reponse1, reponse2);
-						listR.setListData(bdd.getListeReponses(listC.getSelectedValue().toString()).toArray());
-						listQ.setListData(new Vector(0));
+						Object[] tabRep = bdd.getListeReponses(listC.getSelectedValue().toString()).toArray();
+						setReponsesPanelEnabled(true);
+						listR.setListData(tabRep);
+						setQuestionsPanelEnabled(false);
 						setStatusText("Le jeu de réponse à bien été suprimé.");
 					}
 					catch (BDDException ex)
@@ -643,7 +671,10 @@ public class InterfacePrincipale extends JFrame
 				Reponses r = (Reponses) listR.getSelectedValue();
 				try
 				{
-					listQ.setListData(bdd.getListeQuestions(r.getReponse1(), r.getReponse2()).toArray());
+					Object[] tabQue = bdd.getListeQuestions(r.getReponse1(), r.getReponse2()).toArray();
+					setQuestionsPanelEnabled(true);
+					listQ.setListData(tabQue);
+					setStatusText("Récupération des questions effectuée");
 				}
 				catch (BDDException e)
 				{
@@ -699,6 +730,7 @@ public class InterfacePrincipale extends JFrame
 					{
 						bdd.deleteQuestion(q.getIntitule(), q.getReponse1(), q.getReponse2());
 						listQ.setListData(bdd.getListeQuestions(q.getReponse1(), q.getReponse2()).toArray());
+						setQuestionsPanelEnabled(true);
 						setStatusText("La question à bien été suprimée.");
 					}
 					catch (BDDException ex)

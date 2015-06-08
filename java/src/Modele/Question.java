@@ -61,6 +61,6 @@ public class Question
 			bonneReponse = reponse2;
 		}
 
-		return intitule + " " + bonneReponse;
+		return intitule + " | " + bonneReponse;
 	}
 }
