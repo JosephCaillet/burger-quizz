@@ -6,9 +6,9 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a647cb6a-4230-4101-a652-d7cfd0c21e24" name="Default" comment="barre de statut opérationelle">
+    <list default="true" id="a647cb6a-4230-4101-a652-d7cfd0c21e24" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/InterfaceGraphique/SplashScreen.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/InterfaceGraphique/InterfacePrincipale.java" afterPath="$PROJECT_DIR$/src/InterfaceGraphique/InterfacePrincipale.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Modele/Question.java" afterPath="$PROJECT_DIR$/src/Modele/Question.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="java.iws" />
@@ -34,64 +34,43 @@
       <file leaf-file-name="InterfacePrincipale.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/InterfaceGraphique/InterfacePrincipale.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.9117646">
-              <caret line="479" column="24" selection-start-line="479" selection-start-column="20" selection-end-line="479" selection-end-column="24" />
+            <state vertical-scroll-proportion="-4.5882354">
+              <caret line="81" column="8" selection-start-line="81" selection-start-column="8" selection-end-line="81" selection-end-column="8" />
               <folding>
-                <element signature="method#InterfacePrincipale#0;class#InterfacePrincipale#0" expanded="false" />
                 <element signature="method#loadImgBouton#0;class#InterfacePrincipale#0" expanded="false" />
+                <element signature="method#createStatusBar#0;class#InterfacePrincipale#0" expanded="false" />
                 <element signature="method#createPanelCategories#0;class#InterfacePrincipale#0" expanded="false" />
                 <element signature="method#createPanelReponses#0;class#InterfacePrincipale#0" expanded="false" />
                 <element signature="method#createPanelQuestion#0;class#InterfacePrincipale#0" expanded="false" />
-                <element signature="method#modem56k#0;class#InterfacePrincipale#0" expanded="false" />
                 <element signature="method#nyan#0;class#InterfacePrincipale#0" expanded="false" />
                 <element signature="method#configureBDD#0;class#InterfacePrincipale#0" expanded="false" />
                 <element signature="method#tryToConnect#0;class#InterfacePrincipale#0" expanded="false" />
                 <element signature="method#setStatusText#0;class#InterfacePrincipale#0" expanded="false" />
                 <element signature="method#setStatusText#1;class#InterfacePrincipale#0" expanded="false" />
+                <element signature="method#setReponsesPanelEnabled#0;class#InterfacePrincipale#0" expanded="false" />
+                <element signature="method#setQuestionsPanelEnabled#0;class#InterfacePrincipale#0" expanded="false" />
+                <element signature="method#reSelectCategorie#0;class#InterfacePrincipale#0" expanded="false" />
+                <element signature="method#reSelectReponses#0;class#InterfacePrincipale#0" expanded="false" />
+                <element signature="method#reSelectQuestion#0;class#InterfacePrincipale#0" expanded="false" />
                 <element signature="method#getCategorieList#0;class#InterfacePrincipale#0" expanded="false" />
+                <element signature="class#PanCategoriesListener#0;class#InterfacePrincipale#0" expanded="false" />
+                <element signature="method#actionPerformed#0;class#PanCategoriesListener#0;class#InterfacePrincipale#0" expanded="false" />
+                <element signature="method#valueChanged#0;class#PanCategoriesListener#0;class#InterfacePrincipale#0" expanded="false" />
+                <element signature="class#PanReponsesListener#0;class#InterfacePrincipale#0" expanded="false" />
+                <element signature="method#actionPerformed#0;class#PanReponsesListener#0;class#InterfacePrincipale#0" expanded="false" />
+                <element signature="method#valueChanged#0;class#PanReponsesListener#0;class#InterfacePrincipale#0" expanded="false" />
+                <element signature="class#PanQuestionsListener#0;class#InterfacePrincipale#0" expanded="false" />
+                <element signature="method#actionPerformed#0;class#PanQuestionsListener#0;class#InterfacePrincipale#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Question.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Modele/Question.java">
+      <file leaf-file-name="SplashScreen.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/InterfaceGraphique/SplashScreen.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6243094">
-              <caret line="63" column="30" selection-start-line="63" selection-start-column="30" selection-end-line="63" selection-end-column="30" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BDDException.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/GestionErreurs/BDDException.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
-              <folding>
-                <element signature="e#109#110#0" expanded="true" />
-                <element signature="e#130#131#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ConnexionBDD.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/GestionBddDAO/ConnexionBDD.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GestionCategories.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/GestionBddDAO/GestionCategories.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="83" column="44" selection-start-line="83" selection-start-column="44" selection-end-line="83" selection-end-column="44" />
+            <state vertical-scroll-proportion="0.08563536">
+              <caret line="32" column="67" selection-start-line="32" selection-start-column="67" selection-end-line="32" selection-end-column="67" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -143,7 +122,6 @@
         <option value="$PROJECT_DIR$/src/Modele/ConfigBDD.java" />
         <option value="$PROJECT_DIR$/src/InterfaceGraphique/DialogBoxes/ConnexionBddDialog.java" />
         <option value="$PROJECT_DIR$/src/InterfaceGraphique/Bouton.java" />
-        <option value="$PROJECT_DIR$/src/MainAdminBddBurgerQuizz.java" />
         <option value="$PROJECT_DIR$/src/GestionBddDAO/ConfigBDD.java" />
         <option value="$PROJECT_DIR$/src/InterfaceGraphique/BDDException.java" />
         <option value="$PROJECT_DIR$/src/BDDException.java" />
@@ -153,8 +131,10 @@
         <option value="$PROJECT_DIR$/src/GestionBddDAO/GestionReponses.java" />
         <option value="$PROJECT_DIR$/src/GestionErreurs/BDDException.java" />
         <option value="$PROJECT_DIR$/src/GestionBddDAO/ConnexionBDD.java" />
-        <option value="$PROJECT_DIR$/src/InterfaceGraphique/InterfacePrincipale.java" />
         <option value="$PROJECT_DIR$/src/Modele/Question.java" />
+        <option value="$PROJECT_DIR$/src/MainAdminBddBurgerQuizz.java" />
+        <option value="$PROJECT_DIR$/src/InterfaceGraphique/InterfacePrincipale.java" />
+        <option value="$PROJECT_DIR$/src/InterfaceGraphique/SplashScreen.java" />
       </list>
     </option>
   </component>
@@ -914,7 +894,13 @@
       <option name="project" value="LOCAL" />
       <updated>1433777166215</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="grisgae panneaux opérationel">
+      <created>1433790020713</created>
+      <option name="number" value="00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1433790020713</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TodoView">
@@ -935,21 +921,21 @@
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32864675" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32864675" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.427065" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32922536" sideWeight="0.5030441" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30579966" sideWeight="0.5045593" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32864675" sideWeight="0.49695587" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32864675" sideWeight="0.49695587" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32688928" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32922536" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32864675" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2006079" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30579966" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30579966" sideWeight="0.49544072" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32864675" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -967,7 +953,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="+mieux l'interface et easter egg ajouté" />
     <MESSAGE value="fin de journé" />
     <MESSAGE value="nyan cat operationel + look n felle susteme ajouté + chgm couleur" />
     <MESSAGE value="les boutons ecoutent" />
@@ -992,14 +977,15 @@
     <MESSAGE value="Si tu lis ce message, c'est que tu sait lire." />
     <MESSAGE value="f,ekgfnje" />
     <MESSAGE value="barre de statut opérationelle" />
-    <option name="LAST_COMMIT_MESSAGE" value="barre de statut opérationelle" />
+    <MESSAGE value="grisgae panneaux opérationel" />
+    <option name="LAST_COMMIT_MESSAGE" value="grisgae panneaux opérationel" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="35" />
+      <option name="time" value="36" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1008,13 +994,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/InterfaceGraphique/DialogBoxes/ConnexionBddDialog.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="107" column="143" selection-start-line="107" selection-start-column="143" selection-end-line="107" selection-end-column="143" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mcd.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -1030,18 +1009,30 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="method#InterfacePrincipale#0;class#InterfacePrincipale#0" expanded="false" />
             <element signature="method#loadImgBouton#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="method#createStatusBar#0;class#InterfacePrincipale#0" expanded="false" />
             <element signature="method#createPanelCategories#0;class#InterfacePrincipale#0" expanded="false" />
             <element signature="method#createPanelReponses#0;class#InterfacePrincipale#0" expanded="false" />
             <element signature="method#createPanelQuestion#0;class#InterfacePrincipale#0" expanded="false" />
-            <element signature="method#modem56k#0;class#InterfacePrincipale#0" expanded="false" />
             <element signature="method#nyan#0;class#InterfacePrincipale#0" expanded="false" />
             <element signature="method#configureBDD#0;class#InterfacePrincipale#0" expanded="false" />
             <element signature="method#tryToConnect#0;class#InterfacePrincipale#0" expanded="false" />
             <element signature="method#setStatusText#0;class#InterfacePrincipale#0" expanded="false" />
             <element signature="method#setStatusText#1;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="method#setReponsesPanelEnabled#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="method#setQuestionsPanelEnabled#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="method#reSelectCategorie#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="method#reSelectReponses#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="method#reSelectQuestion#0;class#InterfacePrincipale#0" expanded="false" />
             <element signature="method#getCategorieList#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="class#PanCategoriesListener#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="method#actionPerformed#0;class#PanCategoriesListener#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="method#valueChanged#0;class#PanCategoriesListener#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="class#PanReponsesListener#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="method#actionPerformed#0;class#PanReponsesListener#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="method#valueChanged#0;class#PanReponsesListener#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="class#PanQuestionsListener#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="method#actionPerformed#0;class#PanQuestionsListener#0;class#InterfacePrincipale#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1075,18 +1066,30 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="method#InterfacePrincipale#0;class#InterfacePrincipale#0" expanded="false" />
             <element signature="method#loadImgBouton#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="method#createStatusBar#0;class#InterfacePrincipale#0" expanded="false" />
             <element signature="method#createPanelCategories#0;class#InterfacePrincipale#0" expanded="false" />
             <element signature="method#createPanelReponses#0;class#InterfacePrincipale#0" expanded="false" />
             <element signature="method#createPanelQuestion#0;class#InterfacePrincipale#0" expanded="false" />
-            <element signature="method#modem56k#0;class#InterfacePrincipale#0" expanded="false" />
             <element signature="method#nyan#0;class#InterfacePrincipale#0" expanded="false" />
             <element signature="method#configureBDD#0;class#InterfacePrincipale#0" expanded="false" />
             <element signature="method#tryToConnect#0;class#InterfacePrincipale#0" expanded="false" />
             <element signature="method#setStatusText#0;class#InterfacePrincipale#0" expanded="false" />
             <element signature="method#setStatusText#1;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="method#setReponsesPanelEnabled#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="method#setQuestionsPanelEnabled#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="method#reSelectCategorie#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="method#reSelectReponses#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="method#reSelectQuestion#0;class#InterfacePrincipale#0" expanded="false" />
             <element signature="method#getCategorieList#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="class#PanCategoriesListener#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="method#actionPerformed#0;class#PanCategoriesListener#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="method#valueChanged#0;class#PanCategoriesListener#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="class#PanReponsesListener#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="method#actionPerformed#0;class#PanReponsesListener#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="method#valueChanged#0;class#PanReponsesListener#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="class#PanQuestionsListener#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="method#actionPerformed#0;class#PanQuestionsListener#0;class#InterfacePrincipale#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1120,18 +1123,30 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="method#InterfacePrincipale#0;class#InterfacePrincipale#0" expanded="false" />
             <element signature="method#loadImgBouton#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="method#createStatusBar#0;class#InterfacePrincipale#0" expanded="false" />
             <element signature="method#createPanelCategories#0;class#InterfacePrincipale#0" expanded="false" />
             <element signature="method#createPanelReponses#0;class#InterfacePrincipale#0" expanded="false" />
             <element signature="method#createPanelQuestion#0;class#InterfacePrincipale#0" expanded="false" />
-            <element signature="method#modem56k#0;class#InterfacePrincipale#0" expanded="false" />
             <element signature="method#nyan#0;class#InterfacePrincipale#0" expanded="false" />
             <element signature="method#configureBDD#0;class#InterfacePrincipale#0" expanded="false" />
             <element signature="method#tryToConnect#0;class#InterfacePrincipale#0" expanded="false" />
             <element signature="method#setStatusText#0;class#InterfacePrincipale#0" expanded="false" />
             <element signature="method#setStatusText#1;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="method#setReponsesPanelEnabled#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="method#setQuestionsPanelEnabled#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="method#reSelectCategorie#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="method#reSelectReponses#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="method#reSelectQuestion#0;class#InterfacePrincipale#0" expanded="false" />
             <element signature="method#getCategorieList#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="class#PanCategoriesListener#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="method#actionPerformed#0;class#PanCategoriesListener#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="method#valueChanged#0;class#PanCategoriesListener#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="class#PanReponsesListener#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="method#actionPerformed#0;class#PanReponsesListener#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="method#valueChanged#0;class#PanReponsesListener#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="class#PanQuestionsListener#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="method#actionPerformed#0;class#PanQuestionsListener#0;class#InterfacePrincipale#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1165,18 +1180,30 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="method#InterfacePrincipale#0;class#InterfacePrincipale#0" expanded="false" />
             <element signature="method#loadImgBouton#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="method#createStatusBar#0;class#InterfacePrincipale#0" expanded="false" />
             <element signature="method#createPanelCategories#0;class#InterfacePrincipale#0" expanded="false" />
             <element signature="method#createPanelReponses#0;class#InterfacePrincipale#0" expanded="false" />
             <element signature="method#createPanelQuestion#0;class#InterfacePrincipale#0" expanded="false" />
-            <element signature="method#modem56k#0;class#InterfacePrincipale#0" expanded="false" />
             <element signature="method#nyan#0;class#InterfacePrincipale#0" expanded="false" />
             <element signature="method#configureBDD#0;class#InterfacePrincipale#0" expanded="false" />
             <element signature="method#tryToConnect#0;class#InterfacePrincipale#0" expanded="false" />
             <element signature="method#setStatusText#0;class#InterfacePrincipale#0" expanded="false" />
             <element signature="method#setStatusText#1;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="method#setReponsesPanelEnabled#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="method#setQuestionsPanelEnabled#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="method#reSelectCategorie#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="method#reSelectReponses#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="method#reSelectQuestion#0;class#InterfacePrincipale#0" expanded="false" />
             <element signature="method#getCategorieList#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="class#PanCategoriesListener#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="method#actionPerformed#0;class#PanCategoriesListener#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="method#valueChanged#0;class#PanCategoriesListener#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="class#PanReponsesListener#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="method#actionPerformed#0;class#PanReponsesListener#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="method#valueChanged#0;class#PanReponsesListener#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="class#PanQuestionsListener#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="method#actionPerformed#0;class#PanQuestionsListener#0;class#InterfacePrincipale#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1210,18 +1237,30 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="method#InterfacePrincipale#0;class#InterfacePrincipale#0" expanded="false" />
             <element signature="method#loadImgBouton#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="method#createStatusBar#0;class#InterfacePrincipale#0" expanded="false" />
             <element signature="method#createPanelCategories#0;class#InterfacePrincipale#0" expanded="false" />
             <element signature="method#createPanelReponses#0;class#InterfacePrincipale#0" expanded="false" />
             <element signature="method#createPanelQuestion#0;class#InterfacePrincipale#0" expanded="false" />
-            <element signature="method#modem56k#0;class#InterfacePrincipale#0" expanded="false" />
             <element signature="method#nyan#0;class#InterfacePrincipale#0" expanded="false" />
             <element signature="method#configureBDD#0;class#InterfacePrincipale#0" expanded="false" />
             <element signature="method#tryToConnect#0;class#InterfacePrincipale#0" expanded="false" />
             <element signature="method#setStatusText#0;class#InterfacePrincipale#0" expanded="false" />
             <element signature="method#setStatusText#1;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="method#setReponsesPanelEnabled#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="method#setQuestionsPanelEnabled#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="method#reSelectCategorie#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="method#reSelectReponses#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="method#reSelectQuestion#0;class#InterfacePrincipale#0" expanded="false" />
             <element signature="method#getCategorieList#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="class#PanCategoriesListener#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="method#actionPerformed#0;class#PanCategoriesListener#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="method#valueChanged#0;class#PanCategoriesListener#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="class#PanReponsesListener#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="method#actionPerformed#0;class#PanReponsesListener#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="method#valueChanged#0;class#PanReponsesListener#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="class#PanQuestionsListener#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="method#actionPerformed#0;class#PanQuestionsListener#0;class#InterfacePrincipale#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1276,18 +1315,30 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="21" selection-start-line="0" selection-start-column="21" selection-end-line="0" selection-end-column="21" />
           <folding>
-            <element signature="method#InterfacePrincipale#0;class#InterfacePrincipale#0" expanded="false" />
             <element signature="method#loadImgBouton#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="method#createStatusBar#0;class#InterfacePrincipale#0" expanded="false" />
             <element signature="method#createPanelCategories#0;class#InterfacePrincipale#0" expanded="false" />
             <element signature="method#createPanelReponses#0;class#InterfacePrincipale#0" expanded="false" />
             <element signature="method#createPanelQuestion#0;class#InterfacePrincipale#0" expanded="false" />
-            <element signature="method#modem56k#0;class#InterfacePrincipale#0" expanded="false" />
             <element signature="method#nyan#0;class#InterfacePrincipale#0" expanded="false" />
             <element signature="method#configureBDD#0;class#InterfacePrincipale#0" expanded="false" />
             <element signature="method#tryToConnect#0;class#InterfacePrincipale#0" expanded="false" />
             <element signature="method#setStatusText#0;class#InterfacePrincipale#0" expanded="false" />
             <element signature="method#setStatusText#1;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="method#setReponsesPanelEnabled#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="method#setQuestionsPanelEnabled#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="method#reSelectCategorie#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="method#reSelectReponses#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="method#reSelectQuestion#0;class#InterfacePrincipale#0" expanded="false" />
             <element signature="method#getCategorieList#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="class#PanCategoriesListener#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="method#actionPerformed#0;class#PanCategoriesListener#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="method#valueChanged#0;class#PanCategoriesListener#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="class#PanReponsesListener#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="method#actionPerformed#0;class#PanReponsesListener#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="method#valueChanged#0;class#PanReponsesListener#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="class#PanQuestionsListener#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="method#actionPerformed#0;class#PanQuestionsListener#0;class#InterfacePrincipale#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1321,13 +1372,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MainAdminBddBurgerQuizz.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7044199">
-          <caret line="15" column="43" selection-start-line="15" selection-start-column="43" selection-end-line="15" selection-end-column="43" />
         </state>
       </provider>
     </entry>
@@ -1393,46 +1437,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GestionErreurs/BDDException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
-          <folding>
-            <element signature="e#109#110#0" expanded="true" />
-            <element signature="e#130#131#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GestionBddDAO/ConnexionBDD.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/InterfaceGraphique/InterfacePrincipale.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.9117646">
-          <caret line="479" column="24" selection-start-line="479" selection-start-column="20" selection-end-line="479" selection-end-column="24" />
-          <folding>
-            <element signature="method#InterfacePrincipale#0;class#InterfacePrincipale#0" expanded="false" />
-            <element signature="method#loadImgBouton#0;class#InterfacePrincipale#0" expanded="false" />
-            <element signature="method#createPanelCategories#0;class#InterfacePrincipale#0" expanded="false" />
-            <element signature="method#createPanelReponses#0;class#InterfacePrincipale#0" expanded="false" />
-            <element signature="method#createPanelQuestion#0;class#InterfacePrincipale#0" expanded="false" />
-            <element signature="method#modem56k#0;class#InterfacePrincipale#0" expanded="false" />
-            <element signature="method#nyan#0;class#InterfacePrincipale#0" expanded="false" />
-            <element signature="method#configureBDD#0;class#InterfacePrincipale#0" expanded="false" />
-            <element signature="method#tryToConnect#0;class#InterfacePrincipale#0" expanded="false" />
-            <element signature="method#setStatusText#0;class#InterfacePrincipale#0" expanded="false" />
-            <element signature="method#setStatusText#1;class#InterfacePrincipale#0" expanded="false" />
-            <element signature="method#getCategorieList#0;class#InterfacePrincipale#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Modele/Reponses.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1443,9 +1447,78 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Modele/Question.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6243094">
-          <caret line="63" column="30" selection-start-line="63" selection-start-column="30" selection-end-line="63" selection-end-column="30" />
+        <state vertical-scroll-proportion="1.0149254">
+          <caret line="48" column="29" selection-start-line="48" selection-start-column="29" selection-end-line="48" selection-end-column="29" />
+          <folding>
+            <element signature="method#toString#0;class#Question#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GestionErreurs/BDDException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.15858209">
+          <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GestionBddDAO/ConnexionBDD.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5391791">
+          <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MainAdminBddBurgerQuizz.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.65745854">
+          <caret line="16" column="52" selection-start-line="9" selection-start-column="8" selection-end-line="16" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/InterfaceGraphique/InterfacePrincipale.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.5882354">
+          <caret line="81" column="8" selection-start-line="81" selection-start-column="8" selection-end-line="81" selection-end-column="8" />
+          <folding>
+            <element signature="method#loadImgBouton#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="method#createStatusBar#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="method#createPanelCategories#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="method#createPanelReponses#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="method#createPanelQuestion#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="method#nyan#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="method#configureBDD#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="method#tryToConnect#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="method#setStatusText#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="method#setStatusText#1;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="method#setReponsesPanelEnabled#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="method#setQuestionsPanelEnabled#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="method#reSelectCategorie#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="method#reSelectReponses#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="method#reSelectQuestion#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="method#getCategorieList#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="class#PanCategoriesListener#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="method#actionPerformed#0;class#PanCategoriesListener#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="method#valueChanged#0;class#PanCategoriesListener#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="class#PanReponsesListener#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="method#actionPerformed#0;class#PanReponsesListener#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="method#valueChanged#0;class#PanReponsesListener#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="class#PanQuestionsListener#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="method#actionPerformed#0;class#PanQuestionsListener#0;class#InterfacePrincipale#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/InterfaceGraphique/SplashScreen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.08563536">
+          <caret line="32" column="67" selection-start-line="32" selection-start-column="67" selection-end-line="32" selection-end-column="67" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

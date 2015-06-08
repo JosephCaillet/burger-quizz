@@ -20,7 +20,6 @@ import java.awt.event.ActionListener;
 import java.util.Arrays;
 import java.util.Vector;
 
-import static java.lang.Thread.sleep;
 import static javax.swing.BoxLayout.*;
 
 public class InterfacePrincipale extends JFrame
@@ -68,23 +67,33 @@ public class InterfacePrincipale extends JFrame
 
 	public InterfacePrincipale()
 	{
+		SplashScreen splashScreen = new SplashScreen(this);
+
+		splashScreen.setLoadingProgress(SplashScreen.LOADING_BDD_CONF);
 		configBDD = new ConfigBDD();
 		configBDD.loadConf();
 		bdd = new ConnexionBDD();
 
+		splashScreen.setLoadingProgress(SplashScreen.LOADING_BDD_CONNECT);
 		tryToConnect();
 
 		setTitle("Administration base de données de l'aplication BurgerQuizz");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setIconImage(new ImageIcon("rsc/icon.png").getImage());
 		setLayout(new BorderLayout());
 
+		splashScreen.setLoadingProgress(SplashScreen.LOADING_RSC);
 		loadImgBouton();
+		splashScreen.setLoadingProgress(SplashScreen.LOADING_CREATE_STATUS_BAR);
 		createStatusBar();
+		splashScreen.setLoadingProgress(SplashScreen.LOADING_CREATE_PANEL_CATEGORIES);
 		createPanelCategories();
+		splashScreen.setLoadingProgress(SplashScreen.LOADING_CREATE_PANEL_REPONSES);
 		createPanelReponses();
+		splashScreen.setLoadingProgress(SplashScreen.LOADING_CREATE_PANEL_QUESTIONS);
 		createPanelQuestion();
 
-
+		splashScreen.setLoadingProgress(SplashScreen.LOADING_SETUP_UI);
 		JSplitPane sp2 = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT,true,panReponses,panQuestions);
 		JSplitPane sp1 = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT,true,panCategories,sp2);
 		sp1.setBorder(BorderFactory.createLineBorder(new Color(238,238,238),5));
@@ -112,6 +121,7 @@ public class InterfacePrincipale extends JFrame
 		sp2.setDividerLocation(0.50);
 
 		setLocationRelativeTo(null);
+		splashScreen.setLoadingProgress(SplashScreen.LOADING_READY);
 		setVisible(true);
 	}
 
@@ -313,7 +323,7 @@ public class InterfacePrincipale extends JFrame
 			this.setSize(1000, i);
 			try
 			{
-				sleep(100);
+				Thread.sleep(100);
 			}
 			catch(InterruptedException e)
 			{}
