@@ -24,6 +24,59 @@ header {
   padding-bottom: 10px;
 }
 
+section#responsive-navbar img {
+  margin-right:10px;
+  margin-top:8px;
+  float:right;
+  height: 1.3em;
+}
+
+section#responsive-navbar {
+  display: none;
+  margin-top:0px;
+  color: white;
+  background-color: #7e19ff;
+  font-size: 25px;
+}
+
+section#responsive-navbar ul {
+  margin-top:0px;
+  list-style-type:none;
+  padding-left:0px;
+}
+
+section#responsive-navbar ul li {
+  height: 2em;
+  line-height: 2em;
+  vertical-align: middle;
+  text-align:center;
+  width:100%;
+}
+
+section#responsive-navbar ul li a {
+  width:100%;
+}
+
+section#responsive-navbar ul li.play {
+  background: #ff9619;
+}
+
+section#responsive-navbar ul li.play:hover {
+  background: #ffab19;
+}
+
+section#responsive-navbar ul li:hover, section#responsive-navbar ul li.current {
+  background: #9556f9;
+}
+
+section#responsive-navbar ul li:first-child, section#responsive-navbar ul li:first-child:hover {
+  background-color: #7e19ff;
+  background-image: url('../assets/burger-menu.png');
+  background-size: 25px;
+  background-repeat: no-repeat;
+  background-position: 10px, 50%;
+}
+
 section#navbar {
   color: white;
   background-color: #7e19ff;
@@ -43,8 +96,8 @@ section#navbar li:first-child a {
 
 section#navbar a {
   padding-top:17px;
-  padding-left:50px;
-  padding-right:50px;
+  padding-left:30px;
+  padding-right:30px;
   padding-bottom:18px;
   margin-right: 10px;
 }
@@ -111,4 +164,22 @@ section#page p {
 
 article#jouer {
   margin:auto;
+}
+
+@media all and (max-width: 799px) {
+  section#responsive-navbar {
+    display: block;
+  }
+  section#navbar {
+    display: none;
+  }
+}
+
+@media all and (min-width: 800px) {
+  section#responsive-navbar {
+    display: none;
+  }
+  section#navbar {
+    display: block;
+  }
 }
