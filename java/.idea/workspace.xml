@@ -904,7 +904,13 @@
       <option name="project" value="LOCAL" />
       <updated>1433798635500</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="splashscreen créé">
+      <created>1433798659423</created>
+      <option name="number" value="00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1433798659423</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TodoView">
@@ -957,7 +963,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fin de journé" />
     <MESSAGE value="nyan cat operationel + look n felle susteme ajouté + chgm couleur" />
     <MESSAGE value="les boutons ecoutent" />
     <MESSAGE value="conexion bdd operationelle et avance classe de base" />
@@ -982,7 +987,8 @@
     <MESSAGE value="f,ekgfnje" />
     <MESSAGE value="barre de statut opérationelle" />
     <MESSAGE value="grisgae panneaux opérationel" />
-    <option name="LAST_COMMIT_MESSAGE" value="grisgae panneaux opérationel" />
+    <MESSAGE value="splashscreen créé" />
+    <option name="LAST_COMMIT_MESSAGE" value="splashscreen créé" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
