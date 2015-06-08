@@ -7,8 +7,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a647cb6a-4230-4101-a652-d7cfd0c21e24" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/InterfaceGraphique/SplashScreen.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/InterfaceGraphique/InterfacePrincipale.java" afterPath="$PROJECT_DIR$/src/InterfaceGraphique/InterfacePrincipale.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="java.iws" />
@@ -900,7 +898,13 @@
       <option name="project" value="LOCAL" />
       <updated>1433790020713</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="grisgae panneaux opérationel">
+      <created>1433798635500</created>
+      <option name="number" value="00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1433798635500</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TodoView">
