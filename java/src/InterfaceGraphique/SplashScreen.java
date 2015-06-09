@@ -72,9 +72,10 @@ public class SplashScreen extends JWindow
 		}
 
 		progressBar.setValue(status+1);
+
 		try
 		{
-			Thread.sleep(1000);
+			Thread.sleep(250);
 		}
 		catch (InterruptedException e)
 		{}

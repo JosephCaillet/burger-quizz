@@ -32,7 +32,7 @@ public class ConnexionBddDialog extends JDialog implements ActionListener
 	private void createInterface(String defNomBdd, int defPort, String defIP, String defLogin, String defPassword, boolean showExitButton)
 	{
 		nomBdd = new JTextField(defNomBdd, 30);
-		port = new JFormattedTextField(NumberFormat.getInstance());
+		port = new JFormattedTextField(NumberFormat.getIntegerInstance());
 		port.setValue(defPort);
 		ip = new JTextField(defIP, 30);
 		login = new JTextField(defLogin, 30);
@@ -122,7 +122,7 @@ public class ConnexionBddDialog extends JDialog implements ActionListener
 	}
 
 	public int getPort() {
-		return (int) port.getValue();
+		return Integer.parseInt(String.valueOf(port.getValue()));
 	}
 
 	public String getIp() {

@@ -62,7 +62,7 @@ public class ConfigBDD
 		return Integer.parseInt(conf.getProperty("port"));
 	}
 
-	public void setPort(int port) {
+	public void setPort(long port) {
 		conf.setProperty("port", String.valueOf(port));
 	}
 

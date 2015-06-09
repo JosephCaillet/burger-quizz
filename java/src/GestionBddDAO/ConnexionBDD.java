@@ -33,11 +33,12 @@ public class ConnexionBDD
 		}
 	}
 
-	public boolean connect(String nomBdd, int port, String ip, String login, String password)
+	public boolean connect(String nomBdd, long port, String ip, String login, String password)
 	{
 		try
 		{
 			String url = "jdbc:mysql://" + ip + ":" + port + "/" + nomBdd;
+			DriverManager.setLoginTimeout(5);
 			connexionbdd = DriverManager.getConnection(url, login, password);
 
 			gestionCategories = new GestionCategories(connexionbdd);
