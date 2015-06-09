@@ -4,6 +4,7 @@ var id_cat = 0, id_theme = 0, id_quest = 0;
 var json, category, theme;
 // Timer
 var timing = 5, secRestantes, timer;
+var questions = 0, currentQuestion = 1;
 var baseWidth;
 
 var score = 0;
@@ -11,9 +12,8 @@ var reponseUser = -1, bonneReponse;
 var canClick = true;
 
 function play() {
-  $("#play").remove();
-  $("#multi").remove();
   apiReq();
+  $("#play").remove();
   if(json.status != 1) {
     var message;
     switch(json.source) {
@@ -64,6 +64,12 @@ function apiReq() {
     dataType: 'json',
     success: function(data) {
       json = data;
+      json.cat1.themes.forEach(function(theme) {
+        questions += theme.questions.length;
+      });
+      json.cat2.themes.forEach(function(theme) {
+        questions += theme.questions.length;
+      });
     }
   });
 }
@@ -72,10 +78,10 @@ function loadCat(id) {
   if(id === 0) category = json.cat1;
   if(id === 1) category = json.cat2;
   console.log(category);
-  $("#game").html("<p id=\"category\">Catégorie : "+category.nom_cat+"</p>");
+  $("#game").html("<div id=\"timer\" style=\"width:100%;height:20px;background:green\"></div>");
+  $("#game").append("<div id=\"category\">Catégorie : "+category.nom_cat+"</div>");
   $("#game").append("<div id=\"theme\"></div>");
-  $("#game").append("<div id=\"timer\" style=\"width:100%;height:20px;background:green\"></div>");
-  $("#game").append("<div id=\"score\">Score : "+score+"</div>");
+  $(".current").html("<div id=\"score\">Score : "+score+" miam</div>");
   loadTheme(id_theme);
 }
 
@@ -83,7 +89,8 @@ function loadTheme(id) {
   theme = category.themes[id];
   $("#theme").html("<p id=\"question\"></p>");
   $("#theme").append("<ul id=\"answers\"><li id=\"rep1\">"+theme.reponse1+"</li>"
-    +"<li id=\"rep2\">"+theme.reponse2+"</li><li id=\"both\">Les deux</li></ul>");
+    +"<li id=\"rep2\">"+theme.reponse2+"</li><li id=\"both\">Les deux</li></ul>"
+    +"<p id=\"question-count\">Question 0/0</p>");
   quest(id_quest);
 }
 
@@ -91,8 +98,9 @@ function quest(id) {
   $("#question").html(theme.questions[id].intitule);
   startTimer();
   bonneReponse = parseInt(theme.questions[id].bonneReponse);
-  console.info('Question ' + (id_quest + 1) + '/' + theme.questions.length + ' : '
+  console.info('Question ' + currentQuestion + '/' + theme.questions.length + ' : '
     +theme.questions[id].intitule);
+  $("#question-count").html("Question "+currentQuestion+"/"+questions);
   if(canClick) {
     $("#rep1").off('click');
     $("#rep1").one("click", function() { reponseUser = 1; checkAnswer(); });
@@ -112,7 +120,11 @@ function checkAnswer() {
   if(reponseUser == bonneReponse) {
     score += secRestantes+1;
   }
-  $("#score").html("Score : "+score);
+  if(score > 1) {
+    $("#score").html("Score : "+score+" miams");
+  } else {
+    $("#score").html("Score : "+score+" miam");
+  }
   switch(bonneReponse) {
     case 0:   $("#rep1").addClass("wrong-answer");
               $("#rep2").addClass("wrong-answer");
@@ -135,6 +147,7 @@ function nextQuestion() {
   $("#rep2").removeClass();
   $("#both").removeClass();
   canClick = true;
+  currentQuestion++;
   // Dernière question du thème en cours
   if((id_quest+1) == theme.questions.length)  {
     // Dernier thème de la catégorie en cours
@@ -185,39 +198,60 @@ function endGame() {
 }
 
 function scoreConfirm() {
-  console.log("qsfd");
-  addScore($("#login").val(), score);
-  var message = json.message;
   $("#registerScore").fadeOut();
-  console.log(message);
-  if(message == "score_add_success") {
-    window.setTimeout(function() {
-      $("#registerScore").addClass("success");
-      $("#registerScore").html("Votre score a bien été enregistré<br />"+
-      "<a href=\"palmares.htm\">Voir les meilleurs scores</a>");
-    }, 400);
-  } else {
-    if(message === "higher_score_present") {
+  if($("#login").val() != "") {
+    addScore($("#login").val(), score);
+    var message = json.message;
+    if(message == "score_add_success") {
       window.setTimeout(function() {
-        $("#registerScore").addClass("error");
-        $("#registerScore").html("Un score supérieur ou égal existe déjà avec ce pseudonyme<br />"
-        +"Essayez avec un autre pseudonyme : <input type=\"text\" id=\"login\" placeholder=\"Nom ou pseudonyme\" />"
-        +"<input type=\"submit\" id=\"sendScore\" value=\"Valider\" /><br />"
-        +"<a href=\"palmares.htm\">Voir les meilleurs scores</a>");
-        $("#sendScore").on('click', scoreConfirm);
-        $("#login").on('keypress', function(event) {
-          if(event.which == 13) {
-            scoreConfirm();
-          }
-        });
-      }, 400);
-    } else {
-      window.setTimeout(function() {
-        $("#registerScore").addClass("error");
-        $("#registerScore").html("Une erreur est survenue ("+status.message+")<br />"+
+        $("#registerScore").removeClass();
+        $("#registerScore").addClass("success");
+        $("#registerScore").html("Votre score a bien été enregistré.<br />"+
         "<a href=\"palmares.htm\">Voir les meilleurs scores</a>");
       }, 400);
+    } else {
+      if(message === "higher_score_present") {
+        window.setTimeout(function() {
+          $("#registerScore").removeClass();
+          $("#registerScore").addClass("error");
+          $("#registerScore").html("Un score supérieur ou égal existe déjà avec ce pseudonyme.<br />"
+          +"Essayez avec un autre pseudonyme :<br />"
+          +"<input type=\"text\" id=\"login\" placeholder=\"Nom ou pseudonyme\" />"
+          +"<input type=\"submit\" id=\"sendScore\" value=\"Valider\" /><br />"
+          +"<a href=\"palmares.htm\">Voir les meilleurs scores</a>");
+          $("#sendScore").on('click', scoreConfirm);
+          $("#login").on('keypress', function(event) {
+            if(event.which == 13) {
+              scoreConfirm();
+            }
+          });
+        }, 400);
+      } else {
+        window.setTimeout(function() {
+          $("#registerScore").removeClass();
+          $("#registerScore").addClass("error");
+          $("#registerScore").html("Une erreur est survenue ("+status.message+")<br /> Réessayer :"
+          +"<input type=\"text\" id=\"login\" placeholder=\"Nom ou pseudonyme\" />"
+          +"<input type=\"submit\" id=\"sendScore\" value=\"Valider\" /><br />"
+          +"<a href=\"palmares.htm\">Voir les meilleurs scores</a>");
+        }, 400);
+      }
     }
+  } else {
+    window.setTimeout(function() {
+      $("#registerScore").removeClass();
+      $("#registerScore").addClass("error");
+      $("#registerScore").html("Merci de renseigner un pseudonyme : <br />"
+      +"<input type=\"text\" id=\"login\" placeholder=\"Nom ou pseudonyme\" />"
+      +"<input type=\"submit\" id=\"sendScore\" value=\"Valider\" /><br />"
+      +"<a href=\"palmares.htm\">Voir les meilleurs scores</a>");
+      $("#sendScore").on('click', scoreConfirm);
+      $("#login").on('keypress', function(event) {
+        if(event.which == 13) {
+          scoreConfirm();
+        }
+      });
+    }, 400);
   }
   $("#registerScore").fadeIn();
 }

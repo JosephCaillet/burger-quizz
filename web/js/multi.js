@@ -15,7 +15,7 @@ var reponseUser = -1, bonneReponse;
 
 function init() {
 
-    var hostname = $('script')[1]['src'].match(/http:\/\/(.+)\:/)[1];
+    var hostname = $('script')[$('script').length-3]['src'].match(/http:\/\/(.+)\:/)[1];
 
     // Connexion à socket.io
     socket = io.connect('http://'+hostname+':8000');
@@ -23,8 +23,12 @@ function init() {
     // Gestion des evenements
     setEventHandlers();
 
+    window.clearTimeout(refresh);
+
     // On demande le pseudo a l'utilisateur, on l'envoie au serveur et on l'affiche dans le titre
-    $("#game").html("<input type=\"text\" id=\"pseudo\" placeholder=\"Nom ou pseudonyme\" /><input type=\"submit\" id=\"start\" value=\"Valider\" />");
+    $("#game").html("<h2>Jeu multijoueur</h2>"
+    +"<p>Merci de rentrer un nom ou pseudonyme :</p>"
+    +"<input type=\"text\" id=\"pseudo\" placeholder=\"Nom ou pseudonyme\" /><input type=\"submit\" id=\"start\" value=\"Valider\" />");
     $("#start").on("click", function() {
       pseudo = $("#pseudo").val();
       socket.emit('nouveau', pseudo);
@@ -89,30 +93,20 @@ var id_cat = 0, id_theme = 0, id_quest = 0;
 var json, category, theme;
 // Timer
 var timing = 5, secRestantes, timer;
+var nbQuestions = 0, currentQuestion = 1;
 var baseWidth;
 
 var score = 0;
 var canClick = true;
 
-function apiReq() {
-  $.ajax({
-    async: false,
-    url: "../../api/",
-    dataType: 'json',
-    success: function(data) {
-      json = data;
-    }
-  });
-}
-
 function loadCat(id) {
   if(id === 0) category = json.cat1;
   if(id === 1) category = json.cat2;
   console.log(category);
-  $("#game").html("<p id=\"category\">Catégorie : "+category.nom_cat+"</p>");
+  $("#game").html("<div id=\"timer\" style=\"width:100%;height:20px;background:green\"></div>");
+  $("#game").append("<div id=\"category\">Catégorie : "+category.nom_cat+"</div>");
   $("#game").append("<div id=\"theme\"></div>");
-  $("#game").append("<div id=\"timer\" style=\"width:100%;height:20px;background:green\"></div>");
-  $("#game").append("<div id=\"score\"></div>");
+  $(".current").html("<div id=\"score\">Score : "+score+" miam</div>");
   loadTheme(id_theme);
 }
 
@@ -120,7 +114,8 @@ function loadTheme(id) {
   theme = category.themes[id];
   $("#theme").html("<p id=\"question\"></p>");
   $("#theme").append("<ul id=\"answers\"><li id=\"rep1\">"+theme.reponse1+"</li>"
-    +"<li id=\"rep2\">"+theme.reponse2+"</li><li id=\"both\">Les deux</li></ul>");
+    +"<li id=\"rep2\">"+theme.reponse2+"</li><li id=\"both\">Les deux</li></ul>"
+    +"<p id=\"question-count\">Question 0/0</p>");
   quest(id_quest);
 }
 
@@ -128,8 +123,9 @@ function quest(id) {
   $("#question").html(theme.questions[id].intitule);
   startTimer();
   bonneReponse = parseInt(theme.questions[id].bonneReponse);
-  console.info('Question ' + (id_quest + 1) + '/' + theme.questions.length + ' : '
+  console.info('Question ' + currentQuestion + '/' + theme.questions.length + ' : '
     +theme.questions[id].intitule);
+  $("#question-count").html("Question "+currentQuestion+"/"+nbQuestions);
   if(canClick) {
     $("#rep1").off('click');
     $("#rep1").one("click", function() { reponseUser = 1; checkAnswer(); socket.emit('nextQuestion'); });
@@ -149,7 +145,11 @@ function checkAnswer() {
   if(reponseUser == bonneReponse) {
     score += secRestantes+1;
   }
-  $("#score").html("Score : "+score);
+  if(score > 1) {
+    $("#score").html("Score : "+score+" miams");
+  } else {
+    $("#score").html("Score : "+score+" miam");
+  }
   switch(bonneReponse) {
     case 0:   $("#rep1").addClass("wrong-answer");
               $("#rep2").addClass("wrong-answer");
@@ -172,6 +172,7 @@ function nextQuestion() {
   $("#rep2").removeClass();
   $("#both").removeClass();
   canClick = true;
+  currentQuestion++;
   // Dernière question du thème en cours
   if((id_quest+1) == theme.questions.length)  {
     // Dernier thème de la catégorie en cours
@@ -198,6 +199,14 @@ function nextQuestion() {
 
 function play(questions) {
   json = questions;
+
+  json.cat1.themes.forEach(function(theme) {
+    nbQuestions += theme.questions.length;
+  });
+  json.cat2.themes.forEach(function(theme) {
+    nbQuestions += theme.questions.length;
+  });
+
   loadCat(id_cat);
 }
 
@@ -224,21 +233,22 @@ function pauseGame() {
 
 function endGame() {
   stopTimer();
-  $("#game").html("<h2 id=\"score\">Vous avez marqué "+score+" miams</h2>"
-  +"<p id=\"registerScore\">");
+  var str = "<h2 id=\"score\">Vous avez marqué "+score+" miams</h2>"
+    +"<p id=\"registerScore\">";
   if(disconnect) {
-    $("#game").append(gameInfos[0]+" s'est déconnecté.");
+    str += gameInfos[0]+" s'est déconnecté.";
+    stopTimer();
   } else {
-    $("#game").append("Votre adversaire a marqué "+scoreAdversaire+" miams.<br />Le gagnant est... ");
+    str += "Votre adversaire a marqué "+scoreAdversaire+" miams.<br />Le gagnant est... ";
     if(score > scoreAdversaire) {
-      $("#game").append(pseudo+" (vous).");
+      str += pseudo+" (vous).";
     } else if(score < scoreAdversaire) {
-      $("#game").append(gameInfos[0]+".");
+      str += gameInfos[0]+".";
     } else {
-      $("#game").append("personne (égalité).");
+      str += "personne (égalité).";
     }
   }
-  $("#game").append("</p>");
+  $("#game").html(str+"</p>");
 }
 
 function addScore(userLogin, userScore) {

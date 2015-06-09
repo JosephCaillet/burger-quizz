@@ -1,30 +1,59 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <title>Burger</title>
-        <style type="text/css">
-          .good-answer {
-            color:green;
-          }
-          .wrong-answer {
-            color:red;
-          }
-        </style>
-    </head>
-    <body>
-        <div id="game">
-          Connexion au serveur...
-        </div>
-        <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-        <?php
-          $params = file_get_contents("./params.cfg");
-    		  preg_match_all('/node_host\: (.+)/', $params, $matches);
-          echo '<script src="http://'.$matches[1][0].':8000/socket.io/socket.io.js"></script>';
-         ?>
-         <script src="js/multi.js"></script>
-         <script>
-          init();
-          </script>
-    </body>
+  <head>
+    <meta charset="utf-8">
+    <title>Burger Quizz - Jeu solo</title>
+    <link rel="stylesheet" href="css/game.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,400,300,700' rel='stylesheet' type='text/css'>
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/responsive.js"></script>
+    <meta name=viewport content="width=device-width, initial-scale=1"/>
+    <script>
+      var refresh;
+    </script>
+  </head>
+  <body>
+    <header>
+    </header>
+    <section id="navbar">
+      <ul>
+        <li><a href="index.htm">Accueil</a></li>
+        <li><a href="rules.htm">Règles</a></li>
+        <li><a href="palmares.htm">Meilleurs scores</a></li>
+        <li class="current"><a href="play.htm">Jouer</a></li>
+      </ul>
+    </section>
+    <section id="responsive-navbar">
+      <ul>
+        <li class="name"><a href="#">Menu</a></li>
+        <li><a href="index.htm">Accueil</a></li>
+        <li><a href="rules.htm">Règles</a></li>
+        <li><a href="palmares.htm">Meilleurs scores</a></li>
+        <li class="current"><a href="play.htm">Jouer</a></li>
+      </ul>
+    </section>
+    <section id="game">
+      <p id="conDenied" class="error">
+        Erreur :<br />
+        Connexion au serveur multijoueur impossible
+        <script>
+          refresh = window.setTimeout(function() {
+            window.location = "";
+          }, 5000);
+        </script>
+      </p>
+    </section>
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+      <?php
+        $params = file_get_contents("./params.cfg");
+    	   preg_match_all('/node_host\: (.+)/', $params, $matches);
+         echo '<script src="http://'.$matches[1][0].':8000/socket.io/socket.io.js"></script>';
+      ?>
+    <script src="js/multi.js"></script>
+    <script>
+      init();
+    </script>
+  </body>
 </html>

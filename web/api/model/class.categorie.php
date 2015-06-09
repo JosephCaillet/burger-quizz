@@ -43,28 +43,29 @@ class Categorie {
 
 	public static function randSelect() {
 		$bdd = new Connector();
-		$arrayCat = $bdd->Select("*", "categorie");
+		$options = array(
+			"order by" => array("rand()"),
+		);
+		$arrayCat = $bdd->Select("*", "categorie", $options);
 		$return = array();
 		$catIndex = -1;
 		$previousIndex = -1;
-		for($i = 0; $i < 2; $i++) {
-			do {
-				$filled = true;
-				$previousIndex = $catIndex;
-				$catIndex = rand(0, sizeof($arrayCat)-1);
-				$category = new Categorie($arrayCat[$catIndex]['nom_cat']);
-				if(sizeof($category->getArray()['themes']) >=2) {
-					foreach($category->getArray()['themes'] as $theme) {
-						if(sizeof($theme['questions']) < 3) {
-							$filled = false;
-						}
+		for($i = 0; $i < sizeof($arrayCat); $i++) {
+			$category = new Categorie($arrayCat[$i]['nom_cat']);
+			if(sizeof($category->getArray()['themes']) >=2) {
+				foreach($category->getArray()['themes'] as $theme) {
+					if(sizeof($theme['questions']) < 3) {
+						array_splice($arrayCat, $i, 1);
 					}
-				} else {
-					$filled = false;
 				}
-			} while(($catIndex == $previousIndex) || !$filled);
-			array_push($return, new Categorie($arrayCat[$catIndex]['nom_cat']));
+			} else {
+				array_splice($arrayCat, $i, 1);
+			}
 		}
+		for($i = 0; $i < 2; $i++) {
+			array_push($return, new Categorie($arrayCat[$i]['nom_cat']));
+		}
+
 		return $return;
 	}
 

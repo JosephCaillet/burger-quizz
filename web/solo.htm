@@ -2,11 +2,14 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Burger Quizz - Accueil</title>
+    <title>Burger Quizz - Jeu solo</title>
+    <link rel="stylesheet" href="css/game.css">
     <link rel="stylesheet" href="css/main.css">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,400,300,700' rel='stylesheet' type='text/css'>
     <script src="js/jquery-2.1.4.min.js"></script>
     <script src="js/responsive.js"></script>
+    <script src="js/game.js"></script>
     <meta name=viewport content="width=device-width, initial-scale=1"/>
   </head>
   <body>
@@ -29,26 +32,13 @@
         <li class="current"><a href="play.htm">Jouer</a></li>
       </ul>
     </section>
-    <section id="page">
-      <article id="jouer">
-        <h1>Jouer</h1>
-        <div class="button">
-          <a href="solo.htm">
-            <div class="firstword">
-              Solo
-            </div>
-            1 joueur
-          </a>
-        </div>
-        <div class="button">
-          <a href="multi.php">
-            <div class="firstword">
-              Multi
-            </div>
-            2 joueurs
-          </a>
-        </div>
-      </article>
+    <section id="game">
+      <h2>Jeu solo</h2>
+      <input type="submit" id="play" value="Lancer la partie !" />
     </section>
+
+    <script type="text/javascript">
+      $("#play").on("click", play);
+    </script>
   </body>
 </html>
