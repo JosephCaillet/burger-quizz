@@ -1,0 +1,105 @@
+section#navbar li.current:last-child #score {
+  display:inline;
+  padding-top:17px;
+  padding-left:30px;
+  padding-right:30px;
+  padding-bottom:18px;
+  background: #ffab19;
+}
+
+section#game input[type="submit"]#play {
+  border:none;
+  background-color:#09b22b;
+  color:white;
+  padding:20px;
+  font-size:170%;
+  cursor:pointer;
+}
+
+section#game {
+  text-align:center;
+}
+
+div#category {
+  font-size:170%;
+  font-family:'Lato';
+  font-weight:300;
+  margin-top:20px;
+}
+
+p#question {
+  font-size:120%;
+}
+
+ul#answers {
+  padding-left:0px;
+}
+
+ul#answers li {
+  display:inline-block;
+  background: #b087ff;
+  width:16%;
+  padding:20px;
+  padding-top:38px;
+  height:42px;
+  font-size:110%;
+  color:white;
+  font-weight:bold;
+  margin-right:20px;
+  line-height: 20px;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+ul#answers li.good-answer {
+  background: #57cc6b;
+}
+
+ul#answers li.wrong-answer {
+  background: #cc5757;
+}
+
+h2#score {
+  margin-top: 100px;
+  font-size:220%;
+  margin-bottom:10px;
+}
+
+p#registerScore, p#conDenied {
+  width: 40%;
+  margin: auto;
+}
+
+p.success {
+  padding-top: 30px;
+  background:#57cc6b;
+  padding-bottom: 30px;
+}
+
+p.error {
+  padding-top: 30px;
+  background:#cc5757;
+  padding-bottom: 30px;
+  color:white;
+}
+
+p#conDenied {
+  margin-top:70px;
+}
+
+@media all and (max-width: 799px) {
+  ul#answers li {
+    display:block;
+    margin:auto;
+    margin-bottom:10px;
+    width:80%;
+    padding-top:15px;
+    height: 20px;
+  }
+}
+
+@media all and (min-width: 800px) {
+  ul#answers li:last-child {
+    margin-right:0px;
+  }
+}

@@ -5,9 +5,18 @@ body {
   background: #fffdc6;
 }
 
+p a, #game a, p a:visited, p a:visited {
+  text-decoration: underline;
+  color:black;
+}
+
 a, a:visited {
   color: white;
   text-decoration: none;
+}
+
+a:active{
+  background:transparent
 }
 
 section#navbar a:hover {
@@ -24,13 +33,6 @@ header {
   padding-bottom: 10px;
 }
 
-section#responsive-navbar img {
-  margin-right:10px;
-  margin-top:8px;
-  float:right;
-  height: 1.3em;
-}
-
 section#responsive-navbar {
   display: none;
   margin-top:0px;
@@ -43,6 +45,8 @@ section#responsive-navbar ul {
   margin-top:0px;
   list-style-type:none;
   padding-left:0px;
+  width:100%;
+  margin-bottom:0px;
 }
 
 section#responsive-navbar ul li {
@@ -54,14 +58,19 @@ section#responsive-navbar ul li {
 }
 
 section#responsive-navbar ul li a {
+  display:block;
   width:100%;
 }
 
-section#responsive-navbar ul li.play {
+section#responsive-navbar ul li:last-child {
   background: #ff9619;
 }
 
-section#responsive-navbar ul li.play:hover {
+section#responsive-navbar ul li:last-child.current {
+  background: #ffab19;
+}
+
+section#responsive-navbar ul li:last-child:hover {
   background: #ffab19;
 }
 
@@ -69,7 +78,7 @@ section#responsive-navbar ul li:hover, section#responsive-navbar ul li.current {
   background: #9556f9;
 }
 
-section#responsive-navbar ul li:first-child, section#responsive-navbar ul li:first-child:hover {
+section#responsive-navbar ul li:first-child, section#responsive-navbar ul li:first-child:hover, section#responsive-navbar ul li:first-child:active {
   background-color: #7e19ff;
   background-image: url('../assets/burger-menu.png');
   background-size: 25px;
@@ -126,7 +135,7 @@ section#navbar li:last-child {
   background: #ff9619;
 }
 
-section#navbar li:last-child:hover a {
+section#navbar li:last-child:hover a, section#navbar li.current:last-child a {
   background: #ffab19;
 }
 
@@ -135,7 +144,12 @@ section#page {
   margin: auto;
 }
 
-section#page h2 {
+h1 {
+  text-align: center;
+  font-size: 400%;
+}
+
+h2 {
   text-align: center;
   font-size: 200%;
 }
@@ -166,7 +180,15 @@ article#jouer {
   margin:auto;
 }
 
+section#page ol {
+  text-align:center;
+  font-size: 120%;
+}
+
 @media all and (max-width: 799px) {
+  header {
+    background-size: 68%;
+  }
   section#responsive-navbar {
     display: block;
   }
