@@ -64,7 +64,6 @@ public class InterfacePrincipale extends JFrame
 	private static final Color ERROR_COLOR = Color.RED;
 	private static final Color INFO_COLOR = new Color(50,50,255);
 	private static final Color NORMAL_COLOR = new Color(50,50,50);
-	private static final Color WAITING_COLOR = Color.ORANGE;
 
 	public InterfacePrincipale()
 	{
@@ -76,7 +75,7 @@ public class InterfacePrincipale extends JFrame
 		bdd = new ConnexionBDD();
 
 		splashScreen.setLoadingProgress(SplashScreen.LOADING_BDD_CONNECT);
-		tryToConnect(false);
+		tryToConnect();
 
 		setTitle("Administration base de données de l'aplication BurgerQuizz");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -158,7 +157,7 @@ public class InterfacePrincipale extends JFrame
 			public void actionPerformed(ActionEvent actionEvent) {
 				if(configureBDD(false))
 				{
-					tryToConnect(true);
+					tryToConnect();
 					try
 					{
 						listC.setListData(bdd.getListeCategorie().toArray());
@@ -365,33 +364,13 @@ public class InterfacePrincipale extends JFrame
 		}
 	}
 
-	private class W extends JWindow
-	{
-		public W(Frame owner) {
-			super(owner);
-			JLabel t = new JLabel("Connexion en cours...", plusImg, SwingConstants.CENTER);
-			JPanel p = new JPanel();
-			p.add(t);
-			p.setBackground(Color.RED);
-			setContentPane(p);
-			pack();
-			setLocationRelativeTo(null);
-			setVisible(true);
-		}
-	}
-
-	private void tryToConnect(boolean showInStatusBar)
+	private void tryToConnect()
 	{
 		boolean conOK = false;
 		do
 		{
-			if(showInStatusBar)
-			{
-				//setStatusText("Tentative de connexion à la base de données...", WAITING_COLOR);
-			}
-			W  w = new W(this);
 			conOK = bdd.connect(configBDD.getNomBdd(), configBDD.getPort(), configBDD.getIp(), configBDD.getLogin(), configBDD.getPassword());
-			w.dispose();
+
 			if(conOK == false)
 			{
 				JOptionPane.showMessageDialog(this, "Impossible d'établir la connexion à la base de données.", "Erreur conexion base de données", JOptionPane.ERROR_MESSAGE);

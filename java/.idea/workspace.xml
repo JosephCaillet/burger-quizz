@@ -7,11 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a647cb6a-4230-4101-a652-d7cfd0c21e24" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GestionBddDAO/ConfigBDD.java" afterPath="$PROJECT_DIR$/src/GestionBddDAO/ConfigBDD.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GestionBddDAO/ConnexionBDD.java" afterPath="$PROJECT_DIR$/src/GestionBddDAO/ConnexionBDD.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/InterfaceGraphique/DialogBoxes/ConnexionBddDialog.java" afterPath="$PROJECT_DIR$/src/InterfaceGraphique/DialogBoxes/ConnexionBddDialog.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/InterfaceGraphique/InterfacePrincipale.java" afterPath="$PROJECT_DIR$/src/InterfaceGraphique/InterfacePrincipale.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/InterfaceGraphique/SplashScreen.java" afterPath="$PROJECT_DIR$/src/InterfaceGraphique/SplashScreen.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="java.iws" />
@@ -34,15 +31,15 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="InterfacePrincipale.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="InterfacePrincipale.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/InterfaceGraphique/InterfacePrincipale.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.15858209">
-              <caret line="367" column="35" selection-start-line="367" selection-start-column="35" selection-end-line="367" selection-end-column="35" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="65" column="61" selection-start-line="65" selection-start-column="61" selection-end-line="65" selection-end-column="61" />
               <folding>
                 <element signature="method#loadImgBouton#0;class#InterfacePrincipale#0" expanded="false" />
-                <element signature="e#4910#5380#0" expanded="true" />
-                <element signature="e#5379#5380#0" expanded="true" />
+                <element signature="e#4847#5313#0" expanded="true" />
+                <element signature="e#5312#5313#0" expanded="true" />
                 <element signature="method#createPanelCategories#0;class#InterfacePrincipale#0" expanded="false" />
                 <element signature="method#createPanelReponses#0;class#InterfacePrincipale#0" expanded="false" />
                 <element signature="method#createPanelQuestion#0;class#InterfacePrincipale#0" expanded="false" />
@@ -73,7 +70,7 @@
         <entry file="file://$PROJECT_DIR$/src/InterfaceGraphique/DialogBoxes/ConnexionBddDialog.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="124" column="64" selection-start-line="124" selection-start-column="64" selection-end-line="124" selection-end-column="64" />
+              <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
               <folding>
                 <element signature="e#3462#3463#0" expanded="true" />
                 <element signature="e#3525#3526#0" expanded="true" />
@@ -89,38 +86,16 @@
               <caret line="59" column="0" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#144#145#0" expanded="true" />
-                <element signature="e#174#175#0" expanded="true" />
-                <element signature="e#954#955#0" expanded="true" />
-                <element signature="e#994#995#0" expanded="true" />
-                <element signature="e#1035#1036#0" expanded="true" />
-                <element signature="e#1076#1077#0" expanded="true" />
-                <element signature="e#1101#1102#0" expanded="true" />
-                <element signature="e#1157#1158#0" expanded="true" />
-                <element signature="e#1192#1193#0" expanded="true" />
-                <element signature="e#1245#1246#0" expanded="true" />
-                <element signature="e#1271#1272#0" expanded="true" />
-                <element signature="e#1307#1308#0" expanded="true" />
-                <element signature="e#1340#1341#0" expanded="true" />
-                <element signature="e#1373#1374#0" expanded="true" />
-                <element signature="e#1402#1403#0" expanded="true" />
-                <element signature="e#1441#1442#0" expanded="true" />
-                <element signature="e#1480#1481#0" expanded="true" />
-                <element signature="e#1519#1520#0" expanded="true" />
-                <element signature="e#1551#1552#0" expanded="true" />
-                <element signature="e#1593#1594#0" expanded="true" />
-                <element signature="e#1638#1639#0" expanded="true" />
-                <element signature="e#1683#1684#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ConnexionBDD.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ConnexionBDD.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/GestionBddDAO/ConnexionBDD.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="40" column="43" selection-start-line="40" selection-start-column="43" selection-end-line="40" selection-end-column="43" />
+            <state vertical-scroll-proportion="0.31716418">
+              <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -192,9 +167,11 @@
         <option value="$PROJECT_DIR$/src/MainAdminBddBurgerQuizz.java" />
         <option value="$PROJECT_DIR$/src/InterfaceGraphique/SplashScreen.java" />
         <option value="$PROJECT_DIR$/src/GestionBddDAO/ConfigBDD.java" />
-        <option value="$PROJECT_DIR$/src/GestionBddDAO/ConnexionBDD.java" />
-        <option value="$PROJECT_DIR$/src/InterfaceGraphique/DialogBoxes/ConnexionBddDialog.java" />
+        <option value="$PROJECT_DIR$/src/InterfaceGraphique/W.java" />
+        <option value="$PROJECT_DIR$/src/InterfaceGraphique/WaitWindow.java" />
         <option value="$PROJECT_DIR$/src/InterfaceGraphique/InterfacePrincipale.java" />
+        <option value="$PROJECT_DIR$/src/InterfaceGraphique/DialogBoxes/ConnexionBddDialog.java" />
+        <option value="$PROJECT_DIR$/src/GestionBddDAO/ConnexionBDD.java" />
       </list>
     </option>
   </component>
@@ -313,7 +290,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -443,6 +419,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -466,12 +443,29 @@
     <property name="GenerateAntBuildDialog.generateIdeaHomeProperty" value="false" />
     <property name="GenerateAntBuildDialog.outputFileNameProperty" value="java" />
     <property name="SearchEverywhereHistoryKey" value="printStack&#9;null&#9;null" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="79" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="95" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="101" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="998" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder3" value="3" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="78" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder0" value="0" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="93" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="99" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="1003" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
   </component>
   <component name="RecentsManager">
     <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="" />
     </key>
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="InterfaceGraphique" />
       <recent name="" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -862,7 +856,13 @@
       <option name="project" value="LOCAL" />
       <updated>1433798842364</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="splashscreen créé + .jar compilé">
+      <created>1433860709572</created>
+      <option name="number" value="00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1433860709572</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TodoView">
@@ -899,8 +899,8 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -956,11 +956,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/mcd.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/java.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -972,8 +967,8 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="method#loadImgBouton#0;class#InterfacePrincipale#0" expanded="false" />
-            <element signature="e#4910#5380#0" expanded="true" />
-            <element signature="e#5379#5380#0" expanded="true" />
+            <element signature="e#4847#5313#0" expanded="true" />
+            <element signature="e#5312#5313#0" expanded="true" />
             <element signature="method#createPanelCategories#0;class#InterfacePrincipale#0" expanded="false" />
             <element signature="method#createPanelReponses#0;class#InterfacePrincipale#0" expanded="false" />
             <element signature="method#createPanelQuestion#0;class#InterfacePrincipale#0" expanded="false" />
@@ -1029,8 +1024,8 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="method#loadImgBouton#0;class#InterfacePrincipale#0" expanded="false" />
-            <element signature="e#4910#5380#0" expanded="true" />
-            <element signature="e#5379#5380#0" expanded="true" />
+            <element signature="e#4847#5313#0" expanded="true" />
+            <element signature="e#5312#5313#0" expanded="true" />
             <element signature="method#createPanelCategories#0;class#InterfacePrincipale#0" expanded="false" />
             <element signature="method#createPanelReponses#0;class#InterfacePrincipale#0" expanded="false" />
             <element signature="method#createPanelQuestion#0;class#InterfacePrincipale#0" expanded="false" />
@@ -1086,8 +1081,8 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="method#loadImgBouton#0;class#InterfacePrincipale#0" expanded="false" />
-            <element signature="e#4910#5380#0" expanded="true" />
-            <element signature="e#5379#5380#0" expanded="true" />
+            <element signature="e#4847#5313#0" expanded="true" />
+            <element signature="e#5312#5313#0" expanded="true" />
             <element signature="method#createPanelCategories#0;class#InterfacePrincipale#0" expanded="false" />
             <element signature="method#createPanelReponses#0;class#InterfacePrincipale#0" expanded="false" />
             <element signature="method#createPanelQuestion#0;class#InterfacePrincipale#0" expanded="false" />
@@ -1143,8 +1138,8 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="method#loadImgBouton#0;class#InterfacePrincipale#0" expanded="false" />
-            <element signature="e#4910#5380#0" expanded="true" />
-            <element signature="e#5379#5380#0" expanded="true" />
+            <element signature="e#4847#5313#0" expanded="true" />
+            <element signature="e#5312#5313#0" expanded="true" />
             <element signature="method#createPanelCategories#0;class#InterfacePrincipale#0" expanded="false" />
             <element signature="method#createPanelReponses#0;class#InterfacePrincipale#0" expanded="false" />
             <element signature="method#createPanelQuestion#0;class#InterfacePrincipale#0" expanded="false" />
@@ -1200,8 +1195,8 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="method#loadImgBouton#0;class#InterfacePrincipale#0" expanded="false" />
-            <element signature="e#4910#5380#0" expanded="true" />
-            <element signature="e#5379#5380#0" expanded="true" />
+            <element signature="e#4847#5313#0" expanded="true" />
+            <element signature="e#5312#5313#0" expanded="true" />
             <element signature="method#createPanelCategories#0;class#InterfacePrincipale#0" expanded="false" />
             <element signature="method#createPanelReponses#0;class#InterfacePrincipale#0" expanded="false" />
             <element signature="method#createPanelQuestion#0;class#InterfacePrincipale#0" expanded="false" />
@@ -1278,8 +1273,8 @@
           <caret line="0" column="21" selection-start-line="0" selection-start-column="21" selection-end-line="0" selection-end-column="21" />
           <folding>
             <element signature="method#loadImgBouton#0;class#InterfacePrincipale#0" expanded="false" />
-            <element signature="e#4910#5380#0" expanded="true" />
-            <element signature="e#5379#5380#0" expanded="true" />
+            <element signature="e#4847#5313#0" expanded="true" />
+            <element signature="e#5312#5313#0" expanded="true" />
             <element signature="method#createPanelCategories#0;class#InterfacePrincipale#0" expanded="false" />
             <element signature="method#createPanelReponses#0;class#InterfacePrincipale#0" expanded="false" />
             <element signature="method#createPanelQuestion#0;class#InterfacePrincipale#0" expanded="false" />
@@ -1421,65 +1416,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GestionBddDAO/ConfigBDD.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="59" column="0" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#144#145#0" expanded="true" />
-            <element signature="e#174#175#0" expanded="true" />
-            <element signature="e#954#955#0" expanded="true" />
-            <element signature="e#994#995#0" expanded="true" />
-            <element signature="e#1035#1036#0" expanded="true" />
-            <element signature="e#1076#1077#0" expanded="true" />
-            <element signature="e#1101#1102#0" expanded="true" />
-            <element signature="e#1157#1158#0" expanded="true" />
-            <element signature="e#1192#1193#0" expanded="true" />
-            <element signature="e#1245#1246#0" expanded="true" />
-            <element signature="e#1271#1272#0" expanded="true" />
-            <element signature="e#1307#1308#0" expanded="true" />
-            <element signature="e#1340#1341#0" expanded="true" />
-            <element signature="e#1373#1374#0" expanded="true" />
-            <element signature="e#1402#1403#0" expanded="true" />
-            <element signature="e#1441#1442#0" expanded="true" />
-            <element signature="e#1480#1481#0" expanded="true" />
-            <element signature="e#1519#1520#0" expanded="true" />
-            <element signature="e#1551#1552#0" expanded="true" />
-            <element signature="e#1593#1594#0" expanded="true" />
-            <element signature="e#1638#1639#0" expanded="true" />
-            <element signature="e#1683#1684#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GestionBddDAO/ConnexionBDD.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="40" column="43" selection-start-line="40" selection-start-column="43" selection-end-line="40" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/InterfaceGraphique/DialogBoxes/ConnexionBddDialog.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="124" column="64" selection-start-line="124" selection-start-column="64" selection-end-line="124" selection-end-column="64" />
-          <folding>
-            <element signature="e#3462#3463#0" expanded="true" />
-            <element signature="e#3525#3526#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/InterfaceGraphique/InterfacePrincipale.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.15858209">
-          <caret line="367" column="35" selection-start-line="367" selection-start-column="35" selection-end-line="367" selection-end-column="35" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="65" column="61" selection-start-line="65" selection-start-column="61" selection-end-line="65" selection-end-column="61" />
           <folding>
             <element signature="method#loadImgBouton#0;class#InterfacePrincipale#0" expanded="false" />
-            <element signature="e#4910#5380#0" expanded="true" />
-            <element signature="e#5379#5380#0" expanded="true" />
+            <element signature="e#4847#5313#0" expanded="true" />
+            <element signature="e#5312#5313#0" expanded="true" />
             <element signature="method#createPanelCategories#0;class#InterfacePrincipale#0" expanded="false" />
             <element signature="method#createPanelReponses#0;class#InterfacePrincipale#0" expanded="false" />
             <element signature="method#createPanelQuestion#0;class#InterfacePrincipale#0" expanded="false" />
@@ -1502,6 +1446,35 @@
             <element signature="class#PanQuestionsListener#0;class#InterfacePrincipale#0" expanded="false" />
             <element signature="method#actionPerformed#0;class#PanQuestionsListener#0;class#InterfacePrincipale#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/InterfaceGraphique/DialogBoxes/ConnexionBddDialog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding>
+            <element signature="e#3462#3463#0" expanded="true" />
+            <element signature="e#3525#3526#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GestionBddDAO/ConfigBDD.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="59" column="0" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GestionBddDAO/ConnexionBDD.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.31716418">
+          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
