@@ -20,7 +20,7 @@ public class SplashScreen extends JWindow
 	public SplashScreen(JFrame owner) {
 		super(owner);
 
-		JLabel img = new JLabel(new ImageIcon("rsc/splashscreen.png"));
+		JLabel img = new JLabel(new ImageIcon("rsc/splashscreen.gif"));
 		img.setBorder(BorderFactory.createMatteBorder(10,10,5,10,new Color(248,179,52)));
 		progressBar = new JProgressBar(0,9);
 		progressBar.setValue(0);
