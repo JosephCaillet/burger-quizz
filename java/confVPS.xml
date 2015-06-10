@@ -4,7 +4,7 @@
 <comment>Configuration de l'aplication de gestion du jeu BurgerQuizz</comment>
 <entry key="nomBdd">burgerquizz</entry>
 <entry key="port">3306</entry>
-<entry key="login">alain</entry>
-<entry key="password">chabat</entry>
-<entry key="ip">localhost</entry>
+<entry key="login">test</entry>
+<entry key="password">yolo</entry>
+<entry key="ip">149.91.82.239</entry>
 </properties>
