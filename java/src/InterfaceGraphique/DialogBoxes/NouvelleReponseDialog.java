@@ -35,7 +35,7 @@ public class NouvelleReponseDialog extends JDialog implements ActionListener
 		rep1.setBackground(Color.WHITE);
 		rep2.setBackground(Color.WHITE);
 
-		ok = new JButton("OK",  UIManager.getIcon("OptionPane.errorIcon"));
+		ok = new JButton("OK");
 		annuler = new JButton("Annuler");
 		ok.addActionListener(this);
 		annuler.addActionListener(this);
