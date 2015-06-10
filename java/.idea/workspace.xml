@@ -6,21 +6,87 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a647cb6a-4230-4101-a652-d7cfd0c21e24" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Modele/package-info.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/java/GestionErreurs/BDDException.class" afterPath="$PROJECT_DIR$/out/production/java/GestionErreurs/BDDException.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/java/InterfaceGraphique/Bouton.class" afterPath="$PROJECT_DIR$/out/production/java/InterfaceGraphique/Bouton.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/java/GestionBddDAO/ConfigBDD.class" afterPath="$PROJECT_DIR$/out/production/java/GestionBddDAO/ConfigBDD.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/java/GestionBddDAO/ConnexionBDD.class" afterPath="$PROJECT_DIR$/out/production/java/GestionBddDAO/ConnexionBDD.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/java/InterfaceGraphique/DialogBoxes/ConnexionBddDialog.class" afterPath="$PROJECT_DIR$/out/production/java/InterfaceGraphique/DialogBoxes/ConnexionBddDialog.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/java/GestionBddDAO/GestionCategories.class" afterPath="$PROJECT_DIR$/out/production/java/GestionBddDAO/GestionCategories.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/java/GestionBddDAO/GestionQuestions.class" afterPath="$PROJECT_DIR$/out/production/java/GestionBddDAO/GestionQuestions.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/java/GestionBddDAO/GestionReponses.class" afterPath="$PROJECT_DIR$/out/production/java/GestionBddDAO/GestionReponses.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/java/InterfaceGraphique/DialogBoxes/NouvelleQuestionDialog.class" afterPath="$PROJECT_DIR$/out/production/java/InterfaceGraphique/DialogBoxes/NouvelleQuestionDialog.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/java/InterfaceGraphique/DialogBoxes/NouvelleReponseDialog.class" afterPath="$PROJECT_DIR$/out/production/java/InterfaceGraphique/DialogBoxes/NouvelleReponseDialog.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/java/InterfaceGraphique/SplashScreen.class" afterPath="$PROJECT_DIR$/out/production/java/InterfaceGraphique/SplashScreen.class" />
+    <list default="true" id="a647cb6a-4230-4101-a652-d7cfd0c21e24" name="Default" comment="avancées javadoc6">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/InterfaceGraphique/package-info.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/java/Modele/Categorie.class" afterPath="$PROJECT_DIR$/out/production/java/Modele/Categorie.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/java/InterfaceGraphique/InterfacePrincipale$1.class" afterPath="$PROJECT_DIR$/out/production/java/InterfaceGraphique/InterfacePrincipale$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/java/InterfaceGraphique/InterfacePrincipale$PanCategoriesListener.class" afterPath="$PROJECT_DIR$/out/production/java/InterfaceGraphique/InterfacePrincipale$PanCategoriesListener.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/java/InterfaceGraphique/InterfacePrincipale$PanQuestionsListener.class" afterPath="$PROJECT_DIR$/out/production/java/InterfaceGraphique/InterfacePrincipale$PanQuestionsListener.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/java/InterfaceGraphique/InterfacePrincipale$PanReponsesListener.class" afterPath="$PROJECT_DIR$/out/production/java/InterfaceGraphique/InterfacePrincipale$PanReponsesListener.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/java/InterfaceGraphique/InterfacePrincipale.class" afterPath="$PROJECT_DIR$/out/production/java/InterfaceGraphique/InterfacePrincipale.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/java/MainAdminBddBurgerQuizz.class" afterPath="$PROJECT_DIR$/out/production/java/MainAdminBddBurgerQuizz.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/java/Modele/Question.class" afterPath="$PROJECT_DIR$/out/production/java/Modele/Question.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/java/Modele/Reponses.class" afterPath="$PROJECT_DIR$/out/production/java/Modele/Reponses.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java.jar" afterPath="$PROJECT_DIR$/java.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/GestionErreurs/BDDException.html" afterPath="$PROJECT_DIR$/javadoc/GestionErreurs/BDDException.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/InterfaceGraphique/Bouton.html" afterPath="$PROJECT_DIR$/javadoc/InterfaceGraphique/Bouton.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/Modele/Categorie.html" afterPath="$PROJECT_DIR$/javadoc/Modele/Categorie.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/GestionBddDAO/ConfigBDD.html" afterPath="$PROJECT_DIR$/javadoc/GestionBddDAO/ConfigBDD.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/GestionBddDAO/ConnexionBDD.html" afterPath="$PROJECT_DIR$/javadoc/GestionBddDAO/ConnexionBDD.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/InterfaceGraphique/DialogBoxes/ConnexionBddDialog.html" afterPath="$PROJECT_DIR$/javadoc/InterfaceGraphique/DialogBoxes/ConnexionBddDialog.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/GestionBddDAO/GestionCategories.html" afterPath="$PROJECT_DIR$/javadoc/GestionBddDAO/GestionCategories.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/GestionBddDAO/GestionQuestions.html" afterPath="$PROJECT_DIR$/javadoc/GestionBddDAO/GestionQuestions.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/GestionBddDAO/GestionReponses.html" afterPath="$PROJECT_DIR$/javadoc/GestionBddDAO/GestionReponses.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/InterfaceGraphique/InterfacePrincipale.PanCategoriesListener.html" afterPath="$PROJECT_DIR$/javadoc/InterfaceGraphique/InterfacePrincipale.PanCategoriesListener.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/InterfaceGraphique/InterfacePrincipale.PanQuestionsListener.html" afterPath="$PROJECT_DIR$/javadoc/InterfaceGraphique/InterfacePrincipale.PanQuestionsListener.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/InterfaceGraphique/InterfacePrincipale.PanReponsesListener.html" afterPath="$PROJECT_DIR$/javadoc/InterfaceGraphique/InterfacePrincipale.PanReponsesListener.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/InterfaceGraphique/InterfacePrincipale.html" afterPath="$PROJECT_DIR$/javadoc/InterfaceGraphique/InterfacePrincipale.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/InterfaceGraphique/InterfacePrincipale.java" afterPath="$PROJECT_DIR$/src/InterfaceGraphique/InterfacePrincipale.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/MainAdminBddBurgerQuizz.html" afterPath="$PROJECT_DIR$/javadoc/MainAdminBddBurgerQuizz.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MainAdminBddBurgerQuizz.java" afterPath="$PROJECT_DIR$/src/MainAdminBddBurgerQuizz.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/InterfaceGraphique/DialogBoxes/NouvelleQuestionDialog.html" afterPath="$PROJECT_DIR$/javadoc/InterfaceGraphique/DialogBoxes/NouvelleQuestionDialog.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/InterfaceGraphique/DialogBoxes/NouvelleReponseDialog.html" afterPath="$PROJECT_DIR$/javadoc/InterfaceGraphique/DialogBoxes/NouvelleReponseDialog.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/Modele/Question.html" afterPath="$PROJECT_DIR$/javadoc/Modele/Question.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Modele/Question.java" afterPath="$PROJECT_DIR$/src/Modele/Question.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/Modele/Reponses.html" afterPath="$PROJECT_DIR$/javadoc/Modele/Reponses.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Modele/Reponses.java" afterPath="$PROJECT_DIR$/src/Modele/Reponses.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/InterfaceGraphique/SplashScreen.html" afterPath="$PROJECT_DIR$/javadoc/InterfaceGraphique/SplashScreen.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/allclasses-frame.html" afterPath="$PROJECT_DIR$/javadoc/allclasses-frame.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/allclasses-noframe.html" afterPath="$PROJECT_DIR$/javadoc/allclasses-noframe.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/constant-values.html" afterPath="$PROJECT_DIR$/javadoc/constant-values.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/deprecated-list.html" afterPath="$PROJECT_DIR$/javadoc/deprecated-list.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/help-doc.html" afterPath="$PROJECT_DIR$/javadoc/help-doc.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/index-files/index-1.html" afterPath="$PROJECT_DIR$/javadoc/index-files/index-1.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/index-files/index-10.html" afterPath="$PROJECT_DIR$/javadoc/index-files/index-10.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/index-files/index-11.html" afterPath="$PROJECT_DIR$/javadoc/index-files/index-11.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/index-files/index-12.html" afterPath="$PROJECT_DIR$/javadoc/index-files/index-12.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/index-files/index-13.html" afterPath="$PROJECT_DIR$/javadoc/index-files/index-13.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/index-files/index-14.html" afterPath="$PROJECT_DIR$/javadoc/index-files/index-14.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/index-files/index-15.html" afterPath="$PROJECT_DIR$/javadoc/index-files/index-15.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/index-files/index-16.html" afterPath="$PROJECT_DIR$/javadoc/index-files/index-16.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/index-files/index-17.html" afterPath="$PROJECT_DIR$/javadoc/index-files/index-17.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/index-files/index-18.html" afterPath="$PROJECT_DIR$/javadoc/index-files/index-18.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/index-files/index-2.html" afterPath="$PROJECT_DIR$/javadoc/index-files/index-2.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/index-files/index-3.html" afterPath="$PROJECT_DIR$/javadoc/index-files/index-3.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/index-files/index-4.html" afterPath="$PROJECT_DIR$/javadoc/index-files/index-4.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/index-files/index-5.html" afterPath="$PROJECT_DIR$/javadoc/index-files/index-5.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/index-files/index-6.html" afterPath="$PROJECT_DIR$/javadoc/index-files/index-6.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/index-files/index-7.html" afterPath="$PROJECT_DIR$/javadoc/index-files/index-7.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/index-files/index-8.html" afterPath="$PROJECT_DIR$/javadoc/index-files/index-8.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/index-files/index-9.html" afterPath="$PROJECT_DIR$/javadoc/index-files/index-9.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/index.html" afterPath="$PROJECT_DIR$/javadoc/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/overview-frame.html" afterPath="$PROJECT_DIR$/javadoc/overview-frame.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/overview-summary.html" afterPath="$PROJECT_DIR$/javadoc/overview-summary.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/overview-tree.html" afterPath="$PROJECT_DIR$/javadoc/overview-tree.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/package-frame.html" afterPath="$PROJECT_DIR$/javadoc/package-frame.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/GestionBddDAO/package-frame.html" afterPath="$PROJECT_DIR$/javadoc/GestionBddDAO/package-frame.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/GestionErreurs/package-frame.html" afterPath="$PROJECT_DIR$/javadoc/GestionErreurs/package-frame.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/InterfaceGraphique/package-frame.html" afterPath="$PROJECT_DIR$/javadoc/InterfaceGraphique/package-frame.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/InterfaceGraphique/DialogBoxes/package-frame.html" afterPath="$PROJECT_DIR$/javadoc/InterfaceGraphique/DialogBoxes/package-frame.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/Modele/package-frame.html" afterPath="$PROJECT_DIR$/javadoc/Modele/package-frame.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/package-summary.html" afterPath="$PROJECT_DIR$/javadoc/package-summary.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/GestionBddDAO/package-summary.html" afterPath="$PROJECT_DIR$/javadoc/GestionBddDAO/package-summary.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/GestionErreurs/package-summary.html" afterPath="$PROJECT_DIR$/javadoc/GestionErreurs/package-summary.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/InterfaceGraphique/package-summary.html" afterPath="$PROJECT_DIR$/javadoc/InterfaceGraphique/package-summary.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/InterfaceGraphique/DialogBoxes/package-summary.html" afterPath="$PROJECT_DIR$/javadoc/InterfaceGraphique/DialogBoxes/package-summary.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/Modele/package-summary.html" afterPath="$PROJECT_DIR$/javadoc/Modele/package-summary.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/package-tree.html" afterPath="$PROJECT_DIR$/javadoc/package-tree.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/GestionBddDAO/package-tree.html" afterPath="$PROJECT_DIR$/javadoc/GestionBddDAO/package-tree.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/GestionErreurs/package-tree.html" afterPath="$PROJECT_DIR$/javadoc/GestionErreurs/package-tree.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/InterfaceGraphique/package-tree.html" afterPath="$PROJECT_DIR$/javadoc/InterfaceGraphique/package-tree.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/InterfaceGraphique/DialogBoxes/package-tree.html" afterPath="$PROJECT_DIR$/javadoc/InterfaceGraphique/DialogBoxes/package-tree.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/Modele/package-tree.html" afterPath="$PROJECT_DIR$/javadoc/Modele/package-tree.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/serialized-form.html" afterPath="$PROJECT_DIR$/javadoc/serialized-form.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="java.iws" />
@@ -43,22 +109,35 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="NouvelleReponseDialog.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/InterfaceGraphique/DialogBoxes/NouvelleReponseDialog.java">
+      <file leaf-file-name="InterfacePrincipale.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/InterfaceGraphique/InterfacePrincipale.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="162" column="28" selection-start-line="162" selection-start-column="28" selection-end-line="162" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="package-info.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Modele/package-info.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.063432835">
-              <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-              <folding />
+            <state vertical-scroll-proportion="0.09392265">
+              <caret line="778" column="36" selection-start-line="778" selection-start-column="36" selection-end-line="778" selection-end-column="36" />
+              <folding>
+                <element signature="method#InterfacePrincipale#0;class#InterfacePrincipale#0" expanded="false" />
+                <element signature="method#loadImgBouton#0;class#InterfacePrincipale#0" expanded="false" />
+                <element signature="method#createStatusBar#0;class#InterfacePrincipale#0" expanded="false" />
+                <element signature="method#createPanelCategories#0;class#InterfacePrincipale#0" expanded="false" />
+                <element signature="method#createPanelReponses#0;class#InterfacePrincipale#0" expanded="false" />
+                <element signature="method#createPanelQuestion#0;class#InterfacePrincipale#0" expanded="false" />
+                <element signature="method#modem56k#0;class#InterfacePrincipale#0" expanded="false" />
+                <element signature="method#nyan#0;class#InterfacePrincipale#0" expanded="false" />
+                <element signature="method#configureBDD#0;class#InterfacePrincipale#0" expanded="false" />
+                <element signature="method#tryToConnect#0;class#InterfacePrincipale#0" expanded="false" />
+                <element signature="method#setStatusText#0;class#InterfacePrincipale#0" expanded="false" />
+                <element signature="method#setStatusText#1;class#InterfacePrincipale#0" expanded="false" />
+                <element signature="method#setReponsesPanelEnabled#0;class#InterfacePrincipale#0" expanded="false" />
+                <element signature="method#setQuestionsPanelEnabled#0;class#InterfacePrincipale#0" expanded="false" />
+                <element signature="method#reSelectCategorie#0;class#InterfacePrincipale#0" expanded="false" />
+                <element signature="method#reSelectReponses#0;class#InterfacePrincipale#0" expanded="false" />
+                <element signature="method#reSelectQuestion#0;class#InterfacePrincipale#0" expanded="false" />
+                <element signature="method#getCategorieList#0;class#InterfacePrincipale#0" expanded="false" />
+                <element signature="method#actionPerformed#0;class#PanCategoriesListener#0;class#InterfacePrincipale#0" expanded="false" />
+                <element signature="method#valueChanged#0;class#PanCategoriesListener#0;class#InterfacePrincipale#0" expanded="false" />
+                <element signature="method#actionPerformed#0;class#PanReponsesListener#0;class#InterfacePrincipale#0" expanded="false" />
+                <element signature="method#actionPerformed#0;class#PanQuestionsListener#0;class#InterfacePrincipale#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -93,7 +172,6 @@
         <option value="$PROJECT_DIR$/src/Categorie.java" />
         <option value="$PROJECT_DIR$/src/Reponses.java" />
         <option value="$PROJECT_DIR$/src/GestionCategories.java" />
-        <option value="$PROJECT_DIR$/src/MainAdminBddBurgerQuizz.java" />
         <option value="$PROJECT_DIR$/src/Question.java" />
         <option value="$PROJECT_DIR$/src/GestionReponses.java" />
         <option value="$PROJECT_DIR$/src/ConnexionBDD.java" />
@@ -102,7 +180,6 @@
         <option value="$PROJECT_DIR$/src/NouvelleReponseDialog.java" />
         <option value="$PROJECT_DIR$/src/ConnexionBddDialog.java" />
         <option value="$PROJECT_DIR$/src/InterfacePrincipale.java" />
-        <option value="$PROJECT_DIR$/src/InterfaceGraphique/InterfacePrincipale.java" />
         <option value="$PROJECT_DIR$/src/GestionBddDAO/ConfigBDD.java" />
         <option value="$PROJECT_DIR$/src/GestionBddDAO/GestionQuestions.java" />
         <option value="$PROJECT_DIR$/src/GestionBddDAO/GestionCategories.java" />
@@ -118,9 +195,12 @@
         <option value="$PROJECT_DIR$/src/InterfaceGraphique/Bouton.java" />
         <option value="$PROJECT_DIR$/src/InterfaceGraphique/SplashScreen.java" />
         <option value="$PROJECT_DIR$/src/Modele/Categorie.java" />
+        <option value="$PROJECT_DIR$/src/Modele/package-info.java" />
+        <option value="$PROJECT_DIR$/src/InterfaceGraphique/package-info.java" />
         <option value="$PROJECT_DIR$/src/Modele/Question.java" />
         <option value="$PROJECT_DIR$/src/Modele/Reponses.java" />
-        <option value="$PROJECT_DIR$/src/Modele/package-info.java" />
+        <option value="$PROJECT_DIR$/src/MainAdminBddBurgerQuizz.java" />
+        <option value="$PROJECT_DIR$/src/InterfaceGraphique/InterfacePrincipale.java" />
       </list>
     </option>
   </component>
@@ -239,7 +319,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -368,6 +447,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
       <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
@@ -754,7 +834,13 @@
       <option name="project" value="LOCAL" />
       <updated>1433975034387</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="avancées javadoc6">
+      <created>1433976167488</created>
+      <option name="number" value="00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1433976167488</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TodoView">
@@ -768,7 +854,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="27" width="1368" height="712" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -791,8 +877,8 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -807,7 +893,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="evolution" />
     <MESSAGE value="evolution (pikachu evolue en raichu)" />
     <MESSAGE value="+mieux l'interface et easter egg ajouté" />
     <MESSAGE value="fin de journé" />
@@ -832,11 +917,12 @@
     <MESSAGE value="avancées javadoc3" />
     <MESSAGE value="avancées javadoc4" />
     <MESSAGE value="avancées javadoc5" />
-    <option name="LAST_COMMIT_MESSAGE" value="avancées javadoc5" />
+    <MESSAGE value="avancées javadoc6" />
+    <option name="LAST_COMMIT_MESSAGE" value="avancées javadoc6" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="6" />
+      <option name="time" value="8" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -845,6 +931,22 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/InterfaceGraphique/DialogBoxes/NouvelleReponseDialog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="162" column="28" selection-start-line="162" selection-start-column="28" selection-end-line="162" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Modele/package-info.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/GestionBddDAO/ConfigBDD.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -994,52 +1096,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/InterfaceGraphique/InterfacePrincipale.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="597" column="0" selection-start-line="597" selection-start-column="0" selection-end-line="597" selection-end-column="0" />
-          <folding>
-            <element signature="method#InterfacePrincipale#0;class#InterfacePrincipale#0" expanded="false" />
-            <element signature="method#loadImgBouton#0;class#InterfacePrincipale#0" expanded="false" />
-            <element signature="method#createStatusBar#0;class#InterfacePrincipale#0" expanded="false" />
-            <element signature="method#createPanelCategories#0;class#InterfacePrincipale#0" expanded="false" />
-            <element signature="method#createPanelReponses#0;class#InterfacePrincipale#0" expanded="false" />
-            <element signature="method#createPanelQuestion#0;class#InterfacePrincipale#0" expanded="false" />
-            <element signature="method#modem56k#0;class#InterfacePrincipale#0" expanded="false" />
-            <element signature="method#nyan#0;class#InterfacePrincipale#0" expanded="false" />
-            <element signature="method#configureBDD#0;class#InterfacePrincipale#0" expanded="false" />
-            <element signature="method#tryToConnect#0;class#InterfacePrincipale#0" expanded="false" />
-            <element signature="method#setStatusText#0;class#InterfacePrincipale#0" expanded="false" />
-            <element signature="method#setStatusText#1;class#InterfacePrincipale#0" expanded="false" />
-            <element signature="method#setReponsesPanelEnabled#0;class#InterfacePrincipale#0" expanded="false" />
-            <element signature="method#setQuestionsPanelEnabled#0;class#InterfacePrincipale#0" expanded="false" />
-            <element signature="method#reSelectCategorie#0;class#InterfacePrincipale#0" expanded="false" />
-            <element signature="method#reSelectReponses#0;class#InterfacePrincipale#0" expanded="false" />
-            <element signature="method#reSelectQuestion#0;class#InterfacePrincipale#0" expanded="false" />
-            <element signature="method#getCategorieList#0;class#InterfacePrincipale#0" expanded="false" />
-            <element signature="class#PanCategoriesListener#0;class#InterfacePrincipale#0" expanded="false" />
-            <element signature="method#actionPerformed#0;class#PanCategoriesListener#0;class#InterfacePrincipale#0" expanded="false" />
-            <element signature="method#valueChanged#0;class#PanCategoriesListener#0;class#InterfacePrincipale#0" expanded="false" />
-            <element signature="method#valueChanged#0;class#PanReponsesListener#0;class#InterfacePrincipale#0" expanded="false" />
-            <element signature="class#PanQuestionsListener#0;class#InterfacePrincipale#0" expanded="false" />
-            <element signature="method#actionPerformed#0;class#PanQuestionsListener#0;class#InterfacePrincipale#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/javadoc/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.2631579">
           <caret line="5" column="52" selection-start-line="5" selection-start-column="52" selection-end-line="5" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MainAdminBddBurgerQuizz.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.28544775">
-          <caret line="11" column="44" selection-start-line="11" selection-start-column="44" selection-end-line="11" selection-end-column="44" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1095,7 +1155,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.046961326">
           <caret line="1" column="92" selection-start-line="1" selection-start-column="92" selection-end-line="1" selection-end-column="92" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1103,10 +1162,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.42265195">
           <caret line="9" column="49" selection-start-line="9" selection-start-column="49" selection-end-line="9" selection-end-column="49" />
-          <folding>
-            <element signature="e#303#304#0" expanded="true" />
-            <element signature="e#324#325#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1146,7 +1201,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.09392265">
           <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1166,63 +1220,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Modele/Reponses.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.74626863">
-          <caret line="60" column="95" selection-start-line="60" selection-start-column="95" selection-end-line="60" selection-end-column="95" />
-          <folding>
-            <element signature="e#555#556#0" expanded="true" />
-            <element signature="e#577#578#0" expanded="true" />
-            <element signature="e#688#689#0" expanded="true" />
-            <element signature="e#719#720#0" expanded="true" />
-            <element signature="e#819#820#0" expanded="true" />
-            <element signature="e#841#842#0" expanded="true" />
-            <element signature="e#954#955#0" expanded="true" />
-            <element signature="e#985#986#0" expanded="true" />
-            <element signature="e#1164#1165#0" expanded="true" />
-            <element signature="e#1223#1224#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Modele/Question.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.048507463">
-          <caret line="100" column="31" selection-start-line="100" selection-start-column="31" selection-end-line="100" selection-end-column="31" />
-          <folding>
-            <element signature="e#873#874#0" expanded="true" />
-            <element signature="e#895#896#0" expanded="true" />
-            <element signature="e#1028#1029#0" expanded="true" />
-            <element signature="e#1059#1060#0" expanded="true" />
-            <element signature="e#1157#1158#0" expanded="true" />
-            <element signature="e#1179#1180#0" expanded="true" />
-            <element signature="e#1290#1291#0" expanded="true" />
-            <element signature="e#1321#1322#0" expanded="true" />
-            <element signature="e#1421#1422#0" expanded="true" />
-            <element signature="e#1443#1444#0" expanded="true" />
-            <element signature="e#1556#1557#0" expanded="true" />
-            <element signature="e#1587#1588#0" expanded="true" />
-            <element signature="e#1711#1712#0" expanded="true" />
-            <element signature="e#1732#1733#0" expanded="true" />
-            <element signature="e#1868#1869#0" expanded="true" />
-            <element signature="e#1897#1898#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Modele/Categorie.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.74626863">
           <caret line="40" column="7" selection-start-line="40" selection-start-column="7" selection-end-line="40" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/InterfaceGraphique/DialogBoxes/NouvelleReponseDialog.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="162" column="28" selection-start-line="162" selection-start-column="28" selection-end-line="162" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1231,6 +1232,91 @@
         <state vertical-scroll-proportion="0.063432835">
           <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Modele/Reponses.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.19060774">
+          <caret line="36" column="30" selection-start-line="36" selection-start-column="30" selection-end-line="36" selection-end-column="30" />
+          <folding>
+            <element signature="e#660#661#0" expanded="true" />
+            <element signature="e#691#692#0" expanded="true" />
+            <element signature="e#897#898#0" expanded="true" />
+            <element signature="e#928#929#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Modele/Question.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.1436464">
+          <caret line="78" column="31" selection-start-line="78" selection-start-column="31" selection-end-line="78" selection-end-column="31" />
+          <folding>
+            <element signature="e#989#990#0" expanded="true" />
+            <element signature="e#1020#1021#0" expanded="true" />
+            <element signature="e#1223#1224#0" expanded="true" />
+            <element signature="e#1254#1255#0" expanded="true" />
+            <element signature="e#1460#1461#0" expanded="true" />
+            <element signature="e#1491#1492#0" expanded="true" />
+            <element signature="e#1729#1730#0" expanded="true" />
+            <element signature="e#1758#1759#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/InterfaceGraphique/package-info.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.09392265">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MainAdminBddBurgerQuizz.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.14088398">
+          <caret line="12" column="52" selection-start-line="12" selection-start-column="52" selection-end-line="12" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/InterfaceGraphique/DialogBoxes/NouvelleReponseDialog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.058011">
+          <caret line="162" column="28" selection-start-line="162" selection-start-column="28" selection-end-line="162" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/InterfaceGraphique/InterfacePrincipale.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.09392265">
+          <caret line="778" column="36" selection-start-line="778" selection-start-column="36" selection-end-line="778" selection-end-column="36" />
+          <folding>
+            <element signature="method#InterfacePrincipale#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="method#loadImgBouton#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="method#createStatusBar#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="method#createPanelCategories#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="method#createPanelReponses#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="method#createPanelQuestion#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="method#modem56k#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="method#nyan#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="method#configureBDD#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="method#tryToConnect#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="method#setStatusText#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="method#setStatusText#1;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="method#setReponsesPanelEnabled#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="method#setQuestionsPanelEnabled#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="method#reSelectCategorie#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="method#reSelectReponses#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="method#reSelectQuestion#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="method#getCategorieList#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="method#actionPerformed#0;class#PanCategoriesListener#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="method#valueChanged#0;class#PanCategoriesListener#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="method#actionPerformed#0;class#PanReponsesListener#0;class#InterfacePrincipale#0" expanded="false" />
+            <element signature="method#actionPerformed#0;class#PanQuestionsListener#0;class#InterfacePrincipale#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

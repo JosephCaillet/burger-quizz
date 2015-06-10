@@ -22,6 +22,9 @@ import java.util.Vector;
 
 import static javax.swing.BoxLayout.*;
 
+/**
+ * Interface graphique principale
+ */
 public class InterfacePrincipale extends JFrame
 {
 	//Panel des catégories
@@ -60,11 +63,14 @@ public class InterfacePrincipale extends JFrame
 	private ConnexionBDD bdd;
 	private ConfigBDD configBDD;
 
-	//cst couleur
+	//constantes couleurs
 	private static final Color ERROR_COLOR = Color.RED;
 	private static final Color INFO_COLOR = new Color(50,50,255);
 	private static final Color NORMAL_COLOR = new Color(50,50,50);
 
+	/**
+	 * Constructeur lancant le splashcreen, la connexion à la base de donné, et la construction de l'interface principale.
+	 */
 	public InterfacePrincipale()
 	{
 		SplashScreen splashScreen = new SplashScreen(this);
@@ -125,6 +131,9 @@ public class InterfacePrincipale extends JFrame
 		setVisible(true);
 	}
 
+	/**
+	 * Charge les images pour les boutons.
+	 */
 	private void loadImgBouton()
 	{
 		plusImg = new ImageIcon("rsc/plus.png");
@@ -133,6 +142,9 @@ public class InterfacePrincipale extends JFrame
 		setupImg = new ImageIcon("rsc/cle.png");
 	}
 
+	/**
+	 * Initialise et configure la barre de statut.
+	 */
 	private void createStatusBar()
 	{
 		statusBar = new JPanel(new BorderLayout(0,0));
@@ -174,6 +186,9 @@ public class InterfacePrincipale extends JFrame
 		});
 	}
 
+	/**
+	 * Initialise et configure le panneaux de gestion des catégorie.
+	 */
 	private void createPanelCategories()
 	{
 		panCategories = new JPanel();
@@ -226,6 +241,9 @@ public class InterfacePrincipale extends JFrame
 		listC.addListSelectionListener(pcl);
 	}
 
+	/**
+	 * Initialise et configure le panneaux de gestion des réponses.
+	 */
 	private void createPanelReponses()
 	{
 		panReponses = new JPanel();
@@ -272,6 +290,9 @@ public class InterfacePrincipale extends JFrame
 		setReponsesPanelEnabled(false);
 	}
 
+	/**
+	 * Initialise et configure le panneaux de gestion des questions.
+	 */
 	private void createPanelQuestion()
 	{
 		panQuestions = new JPanel();
@@ -317,6 +338,9 @@ public class InterfacePrincipale extends JFrame
 		setQuestionsPanelEnabled(false);
 	}
 
+	/**
+	 * easter-egg
+	 */
 	public void modem56k()
 	{
 		int i =0;
@@ -333,6 +357,9 @@ public class InterfacePrincipale extends JFrame
 		}
 	}
 
+	/**
+	 * easter-egg
+	 */
 	public void nyan()
 	{
 		BorderLayout bl = (BorderLayout)getContentPane().getLayout();
@@ -342,6 +369,11 @@ public class InterfacePrincipale extends JFrame
 		pack();
 	}
 
+	/**
+	 * Affiche une boite de dialogue pour modifier et sauvegarder une nouvelle configuration.
+	 * @param showExitButton Si true, bouton annuler est remplacé par un bouton pour quitter l'aplication.
+	 * @return true si la configuration à été modifiée, false sinon.
+	 */
 	public boolean configureBDD(boolean showExitButton)
 	{
 		ConnexionBddDialog cbddd = new ConnexionBddDialog(configBDD.getNomBdd(), configBDD.getPort(),
@@ -364,6 +396,9 @@ public class InterfacePrincipale extends JFrame
 		}
 	}
 
+	/**
+	 * Essaye de se connecter à la base de données, et demande à modifier la configuration de la connexion si echec.
+	 */
 	private void tryToConnect()
 	{
 		boolean conOK = false;
@@ -379,18 +414,31 @@ public class InterfacePrincipale extends JFrame
 		}while(!conOK);
 	}
 
+	/**
+	 * Change le texte de la barre de statut.
+	 * @param message Message.
+	 * @param color Couleur;
+	 */
 	private void setStatusText(String message, Color color)
 	{
 		statusText.setForeground(color);
 		statusText.setText(message);
 	}
 
+	/**
+	 * Change le texte de la barre de statut et el met en noir.
+	 * @param message Message.
+	 */
 	private void setStatusText(String message)
 	{
 		statusText.setForeground(NORMAL_COLOR);
 		statusText.setText(message);
 	}
 
+	/**
+	 * Active ou désactive le panneaux de gestion des réponses.
+	 * @param active panneaux actif ou non.
+	 */
 	private void setReponsesPanelEnabled(boolean active)
 	{
 		addR.setEnabled(active);
@@ -400,6 +448,10 @@ public class InterfacePrincipale extends JFrame
 		listR.setListData(new Vector(0));
 	}
 
+	/**
+	 * Active ou désactive le panneaux de gestion des questions.
+	 * @param active panneaux actif ou non.
+	 */
 	private void setQuestionsPanelEnabled(boolean active)
 	{
 		addQ.setEnabled(active);
@@ -409,6 +461,11 @@ public class InterfacePrincipale extends JFrame
 		listQ.setListData(new Vector(0));
 	}
 
+	/**
+	 * Selectionne à nouveau une catégorie.
+	 * @param newCatName La catégorie à selectionner.
+	 * @throws BDDException Si une erreur SQL survient.
+	 */
 	private void reSelectCategorie(String newCatName) throws BDDException
 	{
 		Object[] tabObject = bdd.getListeCategorie().toArray();
@@ -425,6 +482,12 @@ public class InterfacePrincipale extends JFrame
 		}
 	}
 
+	/**
+	 * Selectionne à nouveau un jeu de reponses.
+	 * @param rep1 La réponse 1
+	 * @param rep2 La réponse 2
+	 * @throws BDDException Si une erreur SQL survient.
+	 */
 	private void reSelectReponses(String rep1, String rep2) throws BDDException
 	{
 		Object[] tabObject = bdd.getListeReponses(listC.getSelectedValue().toString()).toArray();
@@ -441,6 +504,11 @@ public class InterfacePrincipale extends JFrame
 		}
 	}
 
+	/**
+	 * Selectionne à nouveau une question.
+	 * @param intitule L'intitulé.
+	 * @throws BDDException Si une erreur SQL survient.
+	 */
 	private void reSelectQuestion(String intitule) throws BDDException
 	{
 		Reponses r = (Reponses) listR.getSelectedValue();
@@ -458,6 +526,10 @@ public class InterfacePrincipale extends JFrame
 		}
 	}
 
+	/**
+	 * Selectionne une liste des categories.
+	 * @return Un tableau de noms de catégories.
+	 */
 	private String[] getCategorieList()
 	{
 		ListModel model = listC.getModel();
@@ -471,8 +543,16 @@ public class InterfacePrincipale extends JFrame
 		return tabCategories;
 	}
 
+	/**
+	 * Classe interne pour l'ecoute d'événements sur le panneaux de gestion des catégories.
+	 * @author joseph
+	 */
 	private class PanCategoriesListener implements ActionListener, ListSelectionListener
 	{
+		/**
+		 * Réagit au clic sur un des boutons du panneux des catégories.
+		 * @param e Un evenement au clic sur un bouton.
+		 */
 		public void actionPerformed(ActionEvent e)
 		{
 			if(e.getSource() == addC)
@@ -572,6 +652,10 @@ public class InterfacePrincipale extends JFrame
 			}
 		}
 
+		/**
+		 * Réagit à la selection d'une catégorie.
+		 * @param e Un evenement a la selection d'une catégorie.
+		 */
 		public void valueChanged(ListSelectionEvent e)
 		{
 			if(!listC.isSelectionEmpty())
@@ -592,8 +676,16 @@ public class InterfacePrincipale extends JFrame
 		}
 	}
 
+	/**
+	 * Classe interne pour l'ecoute d'événements sur le panneaux de gestion des réponses.
+	 * @author joseph
+	 */
 	private class PanReponsesListener implements ActionListener, ListSelectionListener
 	{
+		/**
+		 * Réagit au clic sur un des boutons du panneux des réponses.
+		 * @param e Un evenement au clic sur un bouton.
+		 */
 		public void actionPerformed(ActionEvent e)
 		{
 			if(listC.isSelectionEmpty())
@@ -682,6 +774,10 @@ public class InterfacePrincipale extends JFrame
 			}
 		}
 
+		/**
+		 * Réagit à la selection d'un jeu de réponses.
+		 * @param listSelectionEvent Un evenement a la selection d'un jeu de réponses.
+		 */
 		public void valueChanged(ListSelectionEvent listSelectionEvent)
 		{
 			if(!listR.isSelectionEmpty())
@@ -702,8 +798,16 @@ public class InterfacePrincipale extends JFrame
 		}
 	}
 
+	/**
+	 * Classe interne pour l'ecoute d'événements sur le panneaux de gestion des questions.
+	 * @author joseph
+	 */
 	private class PanQuestionsListener implements ActionListener
 	{
+		/**
+		 * Réagit au clic sur un des boutons du panneux des questions.
+		 * @param e Un evenement au clic sur un bouton.
+		 */
 		public void actionPerformed(ActionEvent e)
 		{
 			if(listR.isSelectionEmpty())

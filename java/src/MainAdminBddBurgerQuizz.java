@@ -2,8 +2,16 @@ import InterfaceGraphique.InterfacePrincipale;
 
 import javax.swing.*;
 
+/**
+ * Classe Main lancant l'application.
+ * @author joseph
+ */
 public class MainAdminBddBurgerQuizz
 {
+	/**
+	 * Méthode main lancant l'IHM principale.
+	 * @param args Argument de la ligne de commande.
+	 */
 	public static void main(String[] args)
 	{
 		//https://docs.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html

@@ -35,7 +35,6 @@ public class Reponses
 
 	/**
 	 * Modifie la réponse une.
-	 * @return la réponse une.
 	 */
 	public void setReponse1(String reponse1) {
 		this.reponse1 = reponse1;
@@ -51,7 +50,6 @@ public class Reponses
 
 	/**
 	 * Modifie la réponse deux.
-	 * @return la réponse deux.
 	 */
 	public void setReponse2(String reponse2) {
 		this.reponse2 = reponse2;
