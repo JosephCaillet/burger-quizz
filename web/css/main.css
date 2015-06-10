@@ -19,7 +19,7 @@ a:active{
   background:transparent
 }
 
-section#navbar a:hover {
+#navbar a:hover {
   text-decoration:none;
 }
 
@@ -33,7 +33,7 @@ header {
   padding-bottom: 10px;
 }
 
-section#responsive-navbar {
+#responsive-navbar {
   display: none;
   margin-top:0px;
   color: white;
@@ -41,7 +41,7 @@ section#responsive-navbar {
   font-size: 25px;
 }
 
-section#responsive-navbar ul {
+#responsive-navbar ul {
   margin-top:0px;
   list-style-type:none;
   padding-left:0px;
@@ -49,7 +49,7 @@ section#responsive-navbar ul {
   margin-bottom:0px;
 }
 
-section#responsive-navbar ul li {
+#responsive-navbar ul li {
   height: 2em;
   line-height: 2em;
   vertical-align: middle;
@@ -57,28 +57,28 @@ section#responsive-navbar ul li {
   width:100%;
 }
 
-section#responsive-navbar ul li a {
+#responsive-navbar ul li a {
   display:block;
   width:100%;
 }
 
-section#responsive-navbar ul li:last-child {
+#responsive-navbar ul li:last-child {
   background: #ff9619;
 }
 
-section#responsive-navbar ul li:last-child.current {
+#responsive-navbar ul li:last-child.current {
   background: #ffab19;
 }
 
-section#responsive-navbar ul li:last-child:hover {
+#responsive-navbar ul li:last-child:hover {
   background: #ffab19;
 }
 
-section#responsive-navbar ul li:hover, section#responsive-navbar ul li.current {
+#responsive-navbar ul li:hover, #responsive-navbar ul li.current {
   background: #9556f9;
 }
 
-section#responsive-navbar ul li:first-child, section#responsive-navbar ul li:first-child:hover, section#responsive-navbar ul li:first-child:active {
+#responsive-navbar ul li:first-child, #responsive-navbar ul li:first-child:hover, #responsive-navbar ul li:first-child:active {
   background-color: #7e19ff;
   background-image: url('../assets/burger-menu.png');
   background-size: 25px;
@@ -86,24 +86,24 @@ section#responsive-navbar ul li:first-child, section#responsive-navbar ul li:fir
   background-position: 10px, 50%;
 }
 
-section#navbar {
+#navbar {
   color: white;
   background-color: #7e19ff;
   height: 70px;
   font-size: 25px;
 }
 
-section#navbar ul {
+#navbar ul {
   padding-top: 35px;
   display: inline;
   vertical-align: middle;
 }
 
-section#navbar li:first-child a {
+#navbar li:first-child a {
   margin-left:20px;
 }
 
-section#navbar a {
+#navbar a {
   padding-top:17px;
   padding-left:30px;
   padding-right:30px;
@@ -111,35 +111,35 @@ section#navbar a {
   margin-right: 10px;
 }
 
-section#navbar li {
+#navbar li {
   display: block;
   float:left;
   padding-top:17px;
   height: 53px;
 }
 
-section#navbar li:hover a, section#navbar li.current a {
+#navbar li:hover a, #navbar li.current a {
   background: #9556f9;
 }
 
-section#navbar li:last-child a {
+#navbar li:last-child a {
   margin-right:0px;
   padding-right:70px;
   padding-left:70px;
 }
 
-section#navbar li:last-child {
+#navbar li:last-child {
   display: block;
   float: right;
   text-align:right;
   background: #ff9619;
 }
 
-section#navbar li:last-child:hover a, section#navbar li.current:last-child a {
+#navbar li:last-child:hover a, #navbar li.current:last-child a {
   background: #ffab19;
 }
 
-section#page {
+#page {
   width: 60%;
   margin: auto;
 }
@@ -154,8 +154,18 @@ h2 {
   font-size: 200%;
 }
 
-section#page p {
+#page p {
   text-indent: 30px;
+}
+
+#button_container
+{
+	text-align: center;
+}
+
+.button
+{
+	display: inline-block;
 }
 
 .button a {
@@ -180,7 +190,7 @@ article#jouer {
   margin:auto;
 }
 
-section#page ol {
+#page ol {
   text-align:center;
   font-size: 120%;
 }
@@ -189,19 +199,19 @@ section#page ol {
   header {
     background-size: 68%;
   }
-  section#responsive-navbar {
+  #responsive-navbar {
     display: block;
   }
-  section#navbar {
+  #navbar {
     display: none;
   }
 }
 
 @media all and (min-width: 800px) {
-  section#responsive-navbar {
+  #responsive-navbar {
     display: none;
   }
-  section#navbar {
+  #navbar {
     display: block;
   }
 }

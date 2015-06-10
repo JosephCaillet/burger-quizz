@@ -4,23 +4,23 @@
     <meta charset="utf-8">
     <title>Burger Quizz - Accueil</title>
     <link rel="stylesheet" href="css/main.css">
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
     <script src="js/jquery-2.1.4.min.js"></script>
     <script src="js/responsive.js"></script>
-    <meta name=viewport content="width=device-width, initial-scale=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
   </head>
   <body>
     <header>
     </header>
-    <section id="navbar">
+    <div id="navbar">
       <ul>
         <li class="current"><a href="index.htm">Accueil</a></li>
         <li><a href="rules.htm">Règles</a></li>
         <li><a href="palmares.htm">Meilleurs scores</a></li>
         <li><a href="play.htm">Jouer</a></li>
       </ul>
-    </section>
-    <section id="responsive-navbar">
+    </div>
+    <div id="responsive-navbar">
       <ul>
         <li class="name"><a href="#">Menu</a></li>
         <li class="current"><a href="index.htm">Accueil</a></li>
@@ -28,8 +28,8 @@
         <li><a href="palmares.htm">Meilleurs scores</a></li>
         <li><a href="play.htm">Jouer</a></li>
       </ul>
-    </section>
-    <section id="page">
+    </div>
+    <div id="page">
       <article>
         <h2>Accueil</h2>
         <p>Créé dans le cadre du projet de fin d'année de la promo 2018 de CIR2 de l'ISEN Brest/Rennes, le Burger Quizz est une adaptation numérique du jeu télévisé éponyme, plus précisément d'une épreuve spécifique de ce jeu : le "Sel ou Poivre".</p>
@@ -37,23 +37,25 @@
       </article>
       <article id="jouer">
         <h2>Jouer</h2>
-        <div class="button">
-          <a href="solo.htm">
-            <div class="firstword">
-              Solo
-            </div>
-            1 joueur
-          </a>
-        </div>
-        <div class="button">
-          <a href="multi.php">
-            <div class="firstword">
-              Multi
-            </div>
-            2 joueurs
-          </a>
-        </div>
+        <div id="button_container">
+			<div class="button">
+			  <a href="solo.htm">
+				<div class="firstword">
+				  Solo
+				</div>
+				1 joueur
+			  </a>
+			</div>
+			<div class="button">
+			  <a href="multi.php">
+				<div class="firstword">
+				  Multi
+				</div>
+				2 joueurs
+			  </a>
+			</div>
+     	</div>
       </article>
-    </section>
+    </div>
   </body>
 </html>
