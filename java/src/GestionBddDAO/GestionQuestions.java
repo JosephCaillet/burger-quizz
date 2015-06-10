@@ -8,17 +8,37 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+/**
+ * Classe effectuant les modifications en base de données pour les questions.
+ * @author joseph
+ */
 public class GestionQuestions
 {
+	/**
+	 * Connexion à la base de données.
+	 */
 	private Connection bdd;
+	/**
+	 * Tableau contenant la liste de toutes les questions stockées en base de données.
+	 */
 	private ArrayList<Question> listeQuestions;
 
+	/**
+	 * Constructeur donnant accées à la base de données.
+	 * @param bdd La connexion à la base de données.
+	 */
 	public GestionQuestions(Connection bdd)
 	{
 		this.bdd = bdd;
 		this.listeQuestions = new ArrayList<Question>();
 	}
 
+	/**
+	 * Remplis le tableau interne des questions liées à un jeu de réponses depuis la base de données.
+	 * @param reponse1 La réponse une du jeu de réponses lié.
+	 * @param reponse2 la réponse deux du jeu de réponses lié.
+	 * @throws SQLException Si une erreur SQL survient.
+	 */
 	public void readQuestions(String reponse1, String reponse2) throws SQLException
 	{
 		PreparedStatement preparedStatement = null;
@@ -57,6 +77,14 @@ public class GestionQuestions
 		}
 	}
 
+	/**
+	 * Crée une nouvelle question.
+	 * @param intitule Intitulé de la question.
+	 * @param reponse1 Réponse une du jeu de question lié.
+	 * @param reponse2 Réponse une du jeu de question lié.
+	 * @param num_reponse Numéro de la bonne réponses (1: reponse1, 2: réponse2, 0: les deux)
+	 * @throws SQLException Si une erreur mysql survient.
+	 */
 	public void createQuestion(String intitule, String reponse1, String reponse2, int num_reponse) throws SQLException
 	{
 		PreparedStatement preparedStatement = null;
@@ -84,6 +112,13 @@ public class GestionQuestions
 		}
 	}
 
+	/**
+	 * Supprime une question de la base de données.
+	 * @param intitule Intitulé de la question à supprimer.
+	 * @param reponse1 Réponse une du jeu de question lié à la question à supprimer.
+	 * @param reponse2 Réponse deux du jeu de question lié à la question à supprimer.
+	 * @throws SQLException Si une erreur SQL survient.
+	 */
 	public void deleteQuestion(String intitule, String reponse1, String reponse2) throws SQLException
 	{
 		PreparedStatement preparedStatement = null;
@@ -110,6 +145,15 @@ public class GestionQuestions
 		}
 	}
 
+	/**
+	 * Modifie une question.
+	 * @param oldIntitule Ancien intitulé de la question à modifier.
+	 * @param newIntitule Nouvel intitulé de la question à modifier.
+	 * @param reponse1 Réponse une du jeu de question lié.
+	 * @param reponse2 Réponse deux du jeu de question lié.
+	 * @param newNum_reponse Nouveau numéro de la bonne réponse (1: reponse1, 2: réponse2, 0: les deux)
+	 * @throws SQLException
+	 */
 	public void updateQuestion(String oldIntitule, String newIntitule, String reponse1, String reponse2, int newNum_reponse) throws SQLException
 	{
 		PreparedStatement preparedStatement = null;
@@ -139,6 +183,10 @@ public class GestionQuestions
 		}
 	}
 
+	/**
+	 * Renvoie le tableau interne contenant les questions.
+	 * @return Un tableau d'objets Question.
+	 */
 	public ArrayList<Question> getListeQuestions() {
 		return listeQuestions;
 	}

@@ -20,7 +20,7 @@ public class GestionCategories
 	 */
 	private Connection bdd;
 	/**
-	 * Tableau contenant la liste de toutes le categories stockées en base de données.
+	 * Tableau contenant la liste de toutes les categories stockées en base de données.
 	 */
 	private ArrayList<Categorie> listCategories;
 
@@ -164,7 +164,7 @@ public class GestionCategories
 
 	/**
 	 * Renvoie le tableau interne contenant les catégories.
-	 * @return Un tableau d'objets catégorie.
+	 * @return Un tableau d'objets Catégorie.
 	 */
 	public ArrayList<Categorie> getListCategories()
 	{

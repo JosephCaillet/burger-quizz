@@ -216,7 +216,7 @@ public class ConnexionBDD
 	}
 
 	/**
-	 * Modifie un jeu de question.
+	 * Modifie un jeu de réponses.
 	 * @param categorie Nouvelle catégorie.
 	 * @param oldRep1 Ancienne réponse une.
 	 * @param oldRep2 Ancienne réponse deux.

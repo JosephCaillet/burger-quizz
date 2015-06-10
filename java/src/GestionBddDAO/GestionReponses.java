@@ -10,15 +10,30 @@ import java.util.ArrayList;
 
 public class GestionReponses
 {
+	/**
+	 * Connexion à la base de données.
+	 */
 	private Connection bdd;
+	/**
+	 * Tableau contenant la liste de toutes les réponses stockées en base de données.
+	 */
 	private ArrayList<Reponses> listReponses;
 
+	/**
+	 * Constructeur donnant accées à la base de données.
+	 * @param bdd La connexion à la base de données.
+	 */
 	public GestionReponses(Connection bdd)
 	{
 		this.bdd = bdd;
 		listReponses = new ArrayList<Reponses>();
 	}
 
+	/**
+	 * Remplis le tableau interne avec la liste des jeux de réponses depuis la base de données.
+	 * @param nomCategorie La catégorie des jeux de réponses à récupérer.
+	 * @throws SQLException Si une erreur SQL survient.
+	 */
 	public void readReponses(String nomCategorie) throws SQLException
 	{
 		PreparedStatement preparedStatement = null;
@@ -56,6 +71,13 @@ public class GestionReponses
 		}
 	}
 
+	/**
+	 * Crée un nouveau jeu de réponses.
+	 * @param nomCategorie La catégorie du jeu de réponses.
+	 * @param reponse1 La réponse une du jeu à créer.
+	 * @param reponse2 La réponse deux du jeu à créer.
+	 * @throws SQLException Si une erreur SQL survient.
+	 */
 	public void createReponses(String nomCategorie, String reponse1, String reponse2) throws SQLException
 	{
 		PreparedStatement preparedStatement = null;
@@ -82,7 +104,13 @@ public class GestionReponses
 		}
 	}
 
-	public void deleteReponses(String rep1, String rep2) throws SQLException
+	/**
+	 * Supprime un jeu de réponses.
+	 * @param reponse1 La réponse une du jeu à supprimer.
+	 * @param reponse2 La réponse deux du jeu à supprimer.
+	 * @throws SQLException Si une erreur SQL survient.
+	 */
+	public void deleteReponses(String reponse1, String reponse2) throws SQLException
 	{
 		PreparedStatement preparedStatement = null;
 		String rq ="DELETE FROM reponses" +
@@ -90,8 +118,8 @@ public class GestionReponses
 		try
 		{
 			preparedStatement = bdd.prepareStatement(rq);
-			preparedStatement.setString(1, rep1);
-			preparedStatement.setString(2, rep2);
+			preparedStatement.setString(1, reponse1);
+			preparedStatement.setString(2, reponse2);
 			preparedStatement.executeUpdate();
 		}
 		catch (SQLException e)
@@ -107,6 +135,15 @@ public class GestionReponses
 		}
 	}
 
+	/**
+	 * Modifie un jeu de réponses.
+	 * @param categorie Nouvelle catégorie.
+	 * @param oldRep1 Ancienne réponse une.
+	 * @param oldRep2 Ancienne réponse deux.
+	 * @param newRep1 Nouvelle réponse une.
+	 * @param newRep2 Nouvelle réponse deux.
+	 * @throws SQLException Si une erreur SQL survient.
+	 */
 	public void updateReponses(String categorie, String oldRep1, String oldRep2, String newRep1, String newRep2) throws SQLException
 	{
 		PreparedStatement preparedStatement = null;
@@ -136,6 +173,10 @@ public class GestionReponses
 		}
 	}
 
+	/**
+	 * Renvoie le tableau interne contenant les réponses.
+	 * @return Un tableau d'objets Réponses.
+	 */
 	public ArrayList<Reponses> getListReponses()
 	{
 		return listReponses;
