@@ -90,12 +90,12 @@ function onSocketConnection(client) {
       });
     });
 
-    client.on('nextQuestion', function() {
+    client.on('nextQuestion', function(isRight) {
       games.forEach(function(row) {
         if(row.joueur1.socket.id === client.id) {
-          row.joueur2.socket.emit('qpass');
+          row.joueur2.socket.emit('qpass', !isRight);
         } else if(row.joueur2.socket.id === client.id) {
-          row.joueur1.socket.emit('qpass');
+          row.joueur1.socket.emit('qpass', !isRight);
         }
       });
     })

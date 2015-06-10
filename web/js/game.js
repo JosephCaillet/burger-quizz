@@ -13,6 +13,7 @@ var canClick = true;
 
 function play() {
   apiReq();
+  console.log(json);
   $("#play").remove();
   if(json.status != 1) {
     var message;

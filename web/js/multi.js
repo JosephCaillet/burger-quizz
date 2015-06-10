@@ -12,6 +12,7 @@ var disconnect = true;
 var scoreAdversaire = 0;
 var pseudo ='';
 var reponseUser = -1, bonneReponse;
+var againstLoser = false;
 
 function init() {
 
@@ -55,8 +56,9 @@ var setEventHandlers = function() {
   socket.on("questions", play);
   socket.on("lolheded", endGame);
   socket.on("end", onEnd);
-  socket.on("qpass", function() {
+  socket.on("qpass", function(gotAPoint) {
     reponseUser = -1;
+    againstLoser = gotAPoint;
     checkAnswer();
   })
 };
@@ -128,11 +130,11 @@ function quest(id) {
   $("#question-count").html("Question "+currentQuestion+"/"+nbQuestions);
   if(canClick) {
     $("#rep1").off('click');
-    $("#rep1").one("click", function() { reponseUser = 1; checkAnswer(); socket.emit('nextQuestion'); });
+    $("#rep1").one("click", function() { reponseUser = 1; checkAnswer(); socket.emit('nextQuestion', reponseUser == bonneReponse); });
     $("#rep2").off('click');
-    $("#rep2").one("click", function() { reponseUser = 2; checkAnswer(); socket.emit('nextQuestion'); });
+    $("#rep2").one("click", function() { reponseUser = 2; checkAnswer(); socket.emit('nextQuestion', reponseUser == bonneReponse); });
     $("#both").off('click');
-    $("#both").one("click", function() { reponseUser = 0; checkAnswer(); socket.emit('nextQuestion'); });
+    $("#both").one("click", function() { reponseUser = 0; checkAnswer(); socket.emit('nextQuestion', reponseUser == bonneReponse); });
   }
 }
 
@@ -142,8 +144,9 @@ function checkAnswer() {
   $("#rep2").off('click');
   $("#both").off('click');
   stopTimer();
-  if(reponseUser == bonneReponse) {
+  if(reponseUser == bonneReponse || againstLoser) {
     score += secRestantes+1;
+    againstLoser = false;
   }
   if(score > 1) {
     $("#score").html("Score : "+score+" miams");
