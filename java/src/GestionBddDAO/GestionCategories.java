@@ -9,17 +9,35 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+/**
+ * Classe effectuant les modifications en base de données pour les catégories.
+ * @author joseph
+ */
 public class GestionCategories
 {
+	/**
+	 * Connexion à la base de données.
+	 */
 	private Connection bdd;
+	/**
+	 * Tableau contenant la liste de toutes le categories stockées en base de données.
+	 */
 	private ArrayList<Categorie> listCategories;
 
+	/**
+	 * Constructeur donnant accées à la base de données.
+	 * @param bdd La connexion à la base de données.
+	 */
 	public GestionCategories(Connection bdd)
 	{
 		this.bdd = bdd;
 		listCategories = new ArrayList<Categorie>();
 	}
 
+	/**
+	 * Remplis le tableau interne avec les catégorie trouvées en base de données.
+	 * @throws SQLException Si une erreur SQL survient.
+	 */
 	public void readCategorie() throws SQLException
 	{
 		PreparedStatement preparedStatement = null;
@@ -54,6 +72,11 @@ public class GestionCategories
 		}
 	}
 
+	/**
+	 * Crée une nouvelle catégorie.
+	 * @param categorieName Le nom de la catégorie à créer.
+	 * @throws SQLException Si une erreur SQL survient.
+	 */
 	public void createCategorie(String categorieName) throws SQLException
 	{
 		PreparedStatement preparedStatement = null;
@@ -78,6 +101,11 @@ public class GestionCategories
 		}
 	}
 
+	/**
+	 * Supprime une catégorie.
+	 * @param categorieName Le nom de la catégorie à supprimer.
+	 * @throws SQLException Si une erreur SQL survient.
+	 */
 	public void deleteCategorie(String categorieName) throws SQLException
 	{
 		PreparedStatement preparedStatement = null;
@@ -102,6 +130,12 @@ public class GestionCategories
 		}
 	}
 
+	/**
+	 * Rennome une catégorie.
+	 * @param oldCategorieName Le nom de la catégorie à rennomer.
+	 * @param newCategorieName Le nouveau nom de la catégorie.
+	 * @throws SQLException Si une erreur SQL survient.
+	 */
 	public void updateCategorie(String oldCategorieName, String newCategorieName) throws SQLException
 	{
 		PreparedStatement preparedStatement = null;
@@ -128,6 +162,10 @@ public class GestionCategories
 		}
 	}
 
+	/**
+	 * Renvoie le tableau interne contenant les catégories.
+	 * @return Un tableau d'objets catégorie.
+	 */
 	public ArrayList<Categorie> getListCategories()
 	{
 		return listCategories;

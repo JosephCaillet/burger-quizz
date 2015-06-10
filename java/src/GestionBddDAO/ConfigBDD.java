@@ -73,6 +73,7 @@ public class ConfigBDD
 	}
 
 	/**
+	 * Retourne le nom de la base de données.
 	 * @return Le nom de la base de données.
 	 */
 	public String getNomBdd() {
@@ -88,6 +89,7 @@ public class ConfigBDD
 	}
 
 	/**
+	 * Retourne le port de connexion à la base de données.
 	 * @return Le port de connexion à la base de données.
 	 */
 	public int getPort() {
@@ -103,6 +105,7 @@ public class ConfigBDD
 	}
 
 	/**
+	 * Retourne l'adresse IP du serveur de la base de données.
 	 * @return L'adresse IP du serveur de la base de données.
 	 */
 	public String getIp() {
@@ -118,6 +121,7 @@ public class ConfigBDD
 	}
 
 	/**
+	 * Retourne le login de l'utilisateur pour la base de données.
 	 * @return Login de l'utilisateur pour la base de données.
 	 */
 	public String getLogin() {
@@ -133,6 +137,7 @@ public class ConfigBDD
 	}
 
 	/**
+	 * Retourne le mot de passe de l'utilisateur pour la base de données.
 	 * @return Mot de passe de l'utilisateur pour la base de données.
 	 */
 	public String getPassword() {

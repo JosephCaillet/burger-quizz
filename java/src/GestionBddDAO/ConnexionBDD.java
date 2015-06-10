@@ -88,9 +88,9 @@ public class ConnexionBDD
 	//Gestion catégorie
 
 	/**
-	 * Permet d'obtenir la liste des catégorie depuis la base de données.
+	 * Récupére la liste des catégorie depuis la base de données.
 	 * @return Un tableau d'objet catégorie.
-	 * @throws BDDException Si une erreur survient.
+	 * @throws BDDException Si une erreur SQL survient.
 	 */
 	public ArrayList<Categorie> getListeCategorie() throws BDDException
 	{
@@ -105,6 +105,11 @@ public class ConnexionBDD
 		return gestionCategories.getListCategories();
 	}
 
+	/**
+	 * Crée une nouvelle catégorie.
+	 * @param categorieName Le nom de la catégorie à créer.
+	 * @throws BDDException Si une erreur SQL survient.
+	 */
 	public void createCategorie(String categorieName) throws BDDException
 	{
 		try
@@ -117,6 +122,11 @@ public class ConnexionBDD
 		}
 	}
 
+	/**
+	 * Supprime une catégorie.
+	 * @param categorieName Le nom de la catégorie à supprimer.
+	 * @throws BDDException Si une erreur SQL survient.
+	 */
 	public void deleteCategorie(String categorieName) throws BDDException
 	{
 		try
@@ -129,6 +139,12 @@ public class ConnexionBDD
 		}
 	}
 
+	/**
+	 * Rennome une catégorie.
+	 * @param oldCategorieName Le nom de la catégorie à rennomer.
+	 * @param newCategorieName Le nouveau nom de la catégorie.
+	 * @throws BDDException Si une erreur SQL survient.
+	 */
 	public void renameCategorie(String oldCategorieName, String newCategorieName) throws BDDException
 	{
 		try
@@ -142,6 +158,13 @@ public class ConnexionBDD
 	}
 
 	//Gestion réponses
+
+	/**
+	 * Permet d'obtenir la liste des jeux de réponses depuis la base de données.
+	 * @param catName La catégorie des jeux de réponses à récupérer.
+	 * @return Un tableau d'objet Réponses.
+	 * @throws BDDException Si une erreur SQL survient.
+	 */
 	public ArrayList<Reponses> getListeReponses(String catName) throws BDDException
 	{
 		try
@@ -155,6 +178,13 @@ public class ConnexionBDD
 		return gestionReponses.getListReponses();
 	}
 
+	/**
+	 * Crée un nouveau jeu de réponses.
+	 * @param nomCategorie La catégorie du jeu de réponses.
+	 * @param reponse1 La réponse une du jeu à créer.
+	 * @param reponse2 La réponse deux du jeu à créer.
+	 * @throws BDDException Si une erreur SQL survient.
+	 */
 	public void createReponses(String nomCategorie, String reponse1, String reponse2) throws BDDException
 	{
 		try
@@ -167,6 +197,12 @@ public class ConnexionBDD
 		}
 	}
 
+	/**
+	 * Supprime un jeu de réponses.
+	 * @param reponse1 La réponse une du jeu à supprimer.
+	 * @param reponse2 La réponse deux du jeu à supprimer.
+	 * @throws BDDException Si une erreur SQL survient.
+	 */
 	public void deleteReponses(String reponse1, String reponse2) throws BDDException
 	{
 		try
@@ -179,6 +215,15 @@ public class ConnexionBDD
 		}
 	}
 
+	/**
+	 * Modifie un jeu de question.
+	 * @param categorie Nouvelle catégorie.
+	 * @param oldRep1 Ancienne réponse une.
+	 * @param oldRep2 Ancienne réponse deux.
+	 * @param newRep1 Nouvelle réponse une.
+	 * @param newRep2 Nouvelle réponse deux.
+	 * @throws BDDException Si une erreur SQL survient.
+	 */
 	public void modifyReponses(String categorie, String oldRep1, String oldRep2, String newRep1, String newRep2) throws BDDException
 	{
 		try
@@ -192,6 +237,14 @@ public class ConnexionBDD
 	}
 
 	//Gestion questions
+
+	/**
+	 * Récupére la liste des questions liées à un jeu de réponses depuis la base de données.
+	 * @param reponse1 La réponse une du jeu de réponses lié.
+	 * @param reponse2 la réponse deux du jeu de réponses lié.
+	 * @return Un tableau d'objet Question.
+	 * @throws BDDException Si une erreur SQL survient.
+	 */
 	public ArrayList<Question> getListeQuestions(String reponse1, String reponse2) throws BDDException
 	{
 		try
@@ -205,6 +258,14 @@ public class ConnexionBDD
 		return gestionQuestions.getListeQuestions();
 	}
 
+	/**
+	 * Crée une nouvelle question.
+	 * @param intitule Intitulé de la question.
+	 * @param reponse1 Réponse une du jeu de question lié.
+	 * @param reponse2 Réponse une du jeu de question lié.
+	 * @param num_reponse Numéro de la bonne réponses (1: reponse1, 2: réponse2, 0: les deux)
+	 * @throws BDDException Si une erreur mysql survient.
+	 */
 	public void createQuestion(String intitule, String reponse1, String reponse2, int num_reponse) throws BDDException
 	{
 		try
@@ -217,6 +278,13 @@ public class ConnexionBDD
 		}
 	}
 
+	/**
+	 * Supprime une question de la base de données.
+	 * @param intitule Intitulé de la question à supprimer.
+	 * @param reponse1 Réponse une du jeu de question lié à la question à supprimer.
+	 * @param reponse2 Réponse deux du jeu de question lié à la question à supprimer.
+	 * @throws BDDException Si une erreur SQL survient.
+	 */
 	public void deleteQuestion(String intitule, String reponse1, String reponse2) throws BDDException
 	{
 		try
@@ -229,6 +297,15 @@ public class ConnexionBDD
 		}
 	}
 
+	/**
+	 * Modifie une question.
+	 * @param oldIntitule Ancien intitulé de la question à modifier.
+	 * @param newIntitule Nouvel intitulé de la question à modifier.
+	 * @param reponse1 Réponse une du jeu de question lié.
+	 * @param reponse2 Réponse deux du jeu de question lié.
+	 * @param newNum_reponse Nouveau numéro de la bonne réponse (1: reponse1, 2: réponse2, 0: les deux)
+	 * @throws BDDException
+	 */
 	public void modifyQuestion(String oldIntitule, String newIntitule, String reponse1, String reponse2, int newNum_reponse) throws BDDException
 	{
 		try
