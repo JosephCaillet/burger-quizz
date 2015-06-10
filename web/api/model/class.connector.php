@@ -1,9 +1,34 @@
 <?php
 
+/*******************************************************************************
+* Classe Connector																														 *
+*	Auteur : Brendan Abolivier																									 *
+* Fonction : Permettre une gestion plus facile et plus claire de la connexion  *
+*						 au serveur MySQL																									 *
+*																																							 *
+*	Attribut :																																	 *
+*		$bdd : objet PDO																													 *
+*																																							 *
+* Méthodes :																																	 *
+*		__construct()																															 *
+*		Select()																																	 *
+*		Insert()																																	 *
+*		Update()																																	 *
+*******************************************************************************/
 class Connector {
 
 	private $bdd;
 
+	/*****************************************************************************
+	* Méthode __construct()                                                      *
+	*	Fonction : Constructeur, initie la connexion à la base de données via PDO, *
+	*					   en utilisant les paramètres définis dans le fichier params.cfg  *
+	*						 par l'utilisateur                                               *
+	*																																						 *
+	*	Paramètres : Aucun																												 *
+	*																																						 *
+	*	Retour : Aucun																														 *
+	*****************************************************************************/
 	function __construct() {
 		$params = file_get_contents("../params.cfg");
 		preg_match_all('/db_(.+)\: (.+)/', $params, $matches);
@@ -12,22 +37,46 @@ class Connector {
 			$dbconnect[$matches[1][$i]] = $matches[2][$i];
 		}
 
-		$this->bdd = new PDO("mysql:host=".$dbconnect["host"].";dbname=".$dbconnect["dbname"], $dbconnect["user"], $dbconnect["pass"]);
+		$this->bdd = new PDO("mysql:host=".$dbconnect["host"].";dbname="
+								.$dbconnect["dbname"], $dbconnect["user"], $dbconnect["pass"]);
 		$this->bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	}
 
-	/*
-		Exemple de $options :
-
-		$options = array(
-			"where" => array(
-				array("foo", "=", "bar"),
-				array("blbl", ">", 5)
-			),
-			"order by" => array("foo", "desc"),
-			"limit" => array(0, 10) // Ou array(10)
-		);
-	*/
+	/*****************************************************************************
+	*	Méthode Select()																													 *
+	*	Fonction : Effectue une insertion dans la base de données									 *
+	*																																						 *
+	* Paramètres :																															 *
+	* 	$fields (String) : Champs à sélectionner, séparés par une virgule				 *
+	*		$tables (String) : Tables dans lesquelles effectuer les champs, séparées *
+	*											 par une virgule																			 *
+	*		$options (Array (mixed)) : Tableau contenant les différentes clauses de  *
+	*		 (mixed : Array, String) | la requête.																	 *
+	*															 Exemple de tableau :													 *
+	*																$options = array(														 *
+	*																	"where" => array(													 *
+	*																		array("foo", "=", "bar"),								 *
+	*																		array("blbl", ">", 5)										 *
+	*																	),																				 *
+	*																	"order by" => array("foo", "desc"),				 *
+	*																	"limit" => array(0, 10) // Ou array(10)		 *
+	*																);																					 *
+	*											 Si cet argument n'est pas passé, la méthode s'exécute *
+	*											 avec un tableau vide.																 *
+	*																																						 *
+	*	Retour :																																	 *
+	*		Tableau contenant les résultats renvoyés par la base de données					 *
+	*		null si la requête a renvoyé un ensemble vide														 *
+	*																																						 *
+	*	Exceptions :																															 *
+	*		wrong_arg_nmbr_where : Nombre d'arguments insuffisant sur une partie de  *
+	*													 la clause WHERE																	 *
+	*		wrong_arg_nmbr_order_by : Nombre d'arguments insuffisant sur la clause   *
+	*															ORDER BY																			 *
+	*		wrong_arg_numbr_limit : Nombre d'arguments insuffisant sur la clause     *
+	*														LIMIT                                            *
+	*		unknown_arg : Le tableau contient une clause inconnue ou non supportée   *
+	*****************************************************************************/
 	function Select($fields, $tables, $options = array()) {
 		$request = "SELECT $fields FROM $tables ";
 		$arrayVerif = array();
@@ -76,6 +125,17 @@ class Connector {
 		}
 	}
 
+	/*****************************************************************************
+	*	Méthode Insert()																													 *
+	*	Fonction : Effectue une insertion dans la base de données									 *
+	*																																						 *
+	*	Paramètres :																															 *
+	* 	$table (String) : Table dans laquelle effectuer l'insertion							 *
+	*		$values (Array (String)) : Valeurs à insérer dans la table (tableau   	 *
+	*															 associatif)																	 *
+	*																																						 *
+	*	Retour : Aucun																														 *
+	*****************************************************************************/
 	function Insert($table, $values) {
 		$request = "INSERT INTO $table(";
 		$valeurs = "VALUES(";
@@ -93,6 +153,17 @@ class Connector {
 		$stmt->execute($arrayVerif);
 	}
 
+	/*****************************************************************************
+	*	Méthode Update()																													 *
+	*	Fonction : Modifie une ou plusieurs valeur(s) dans la base de données			 *
+	*																																						 *
+	*	Paramètres :																															 *
+	* 	$table (String) : Table dans laquelle effectuer la mise à jour					 *
+	*		$update (Array (mixed)) : Tableau contenant la (ou les)	valeur(s) à	  	 *
+	*  	 (mixed : Array, String)| modifier et la clause WHERE correspondante		 *
+	*																																						 *
+	*	Retour : Aucun																														 *
+	*****************************************************************************/
 	function Update($table, $update) {
 		$request = "UPDATE $table SET ";
 		$arrayVerif = array();
@@ -111,10 +182,27 @@ class Connector {
 		$stmt->execute($arrayVerif);
 	}
 
+	/*****************************************************************************
+	*	Méthode beginTransaction()																								 *
+	*	Fonction : Initie une transaction MySQL																		 *
+	*																																						 *
+	*	Paramètres : Aucun																												 *
+	*																																						 *
+	* Retour : Aucun																														 *
+	*****************************************************************************/
 	function beginTransaction() {
 		$this->bdd->beginTransaction();
 	}
 
+	/*****************************************************************************
+	*	Méthode commit()																								 					 *
+	*	Fonction : Publie les modifications sur le serveur MySQL et ferme la			 *
+	*						 transaction en cours																						 *
+	*																																						 *
+	*	Paramètres : Aucun																												 *
+	*																																						 *
+	* Retour : Aucun																														 *
+	*****************************************************************************/
 	function commit() {
 		$this->bdd->commit();
 	}

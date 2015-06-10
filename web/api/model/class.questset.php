@@ -1,10 +1,38 @@
 <?php
 
+/*******************************************************************************
+* Classe Questset																														 *
+*	Auteur : Brendan Abolivier																									 *
+* Fonction : Créer un objet représentatif d'un jeu de questions (thème)				 *
+*																																							 *
+*	Attribut :																																	 *
+*		$reponse1 : String																												 *
+*		$reponse2 : String																												 *
+*		$questions : Array (Question)																							 *
+*																																							 *
+* Méthodes :																																	 *
+*		__construct()																															 *
+*		getArray()																																 *
+*******************************************************************************/
 class Questset {
 	private $reponse1;
 	private $reponse2;
 	private $questions;
 
+	/*****************************************************************************
+	* Méthode __construct()                                                      *
+	*	Fonction : Constructeur, crée un objet Questset (thème) à partir de ses 	 *
+	*						 réponses   																										 *
+	*																																						 *
+	*	Paramètres :																															 *
+	*		$reponses (Array (String)) : Tableau associatif contenant les deux   		 *
+	*												 				 réponses du thème													 *
+	*																																						 *
+	*	Retour : Aucun																														 *
+	*																																						 *
+	*	Exceptions :																															 *
+	*		expected_questset_array : Le paramètre n'est pas un tableau							 *
+	*****************************************************************************/
 	function __construct($reponses) {
 		if(is_array($reponses)) {
 			$this->questions = array();
@@ -35,14 +63,16 @@ class Questset {
 		}
 	}
 
-	function getQuestions() {
-		return $this->questions;
-	}
-
-	function getLength() {
-		return sizeof($this->questions);
-	}
-
+	/*****************************************************************************
+	* Méthode getArray()                                               		       *
+	*	Fonction : Renvoie un tableau associatif représentant l'objet courant  		 *
+	*																																						 *
+	*	Paramètres : Aucun																												 *
+	*																																						 *
+	*	Retour :																														 			 *
+	*		Tableau contenant les deux réponses identifiant le thème ainsi qu'un		 *
+	*			tableau de questions (voir classe Question)														 *
+	*****************************************************************************/
 	function getArray() {
 		$questions = array();
 		foreach($this->questions as $question) {

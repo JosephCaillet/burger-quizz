@@ -8,12 +8,23 @@
 	100%{width: 0;background-color: #cc5757;}
 }
 
-#timer
-{
+#timer {
 	height: 20px;
 	display: block;
 	margin: auto;
+}
+
+.timer
+{
 	animation: timebar 5s linear;
+}
+
+.pause {
+	animation-play-state: paused;
+}
+
+.clearTimer {
+	animation: none;
 }
 
 #navbar li.current:last-child #score {

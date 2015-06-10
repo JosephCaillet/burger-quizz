@@ -211,15 +211,18 @@ function play(questions) {
 }
 
 function startTimer() {
-  $("#timer").css("width", "100%");
   baseWidth = $("#timer").width();
-  $("#timer").animate({'width' : '0%'}, timing*1000);
+  $("#timer").removeClass();
+  var elm = document.getElementById("timer"),
+      newone = elm.cloneNode(true);
+  elm.parentNode.replaceChild(newone, elm);
+  $("#timer").addClass("timer");
   timer = window.setTimeout(checkAnswer, timing*1000);
 }
 
 function stopTimer() {
   window.clearTimeout(timer);
-  $("#timer").stop();
+  $("#timer").addClass("pause");
   secRestantes = Math.round($("#timer").width()/baseWidth*timing);
 }
 

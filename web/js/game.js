@@ -78,7 +78,7 @@ function loadCat(id) {
   if(id === 0) category = json.cat1;
   if(id === 1) category = json.cat2;
   console.log(category);
-  $("#game").html("<div id=\"timer\" style=\"width:100%;height:20px;background:green\"></div>");
+  $("#game").html("<div id=\"timer\"></div>");
   $("#game").append("<div id=\"category\">Catégorie : "+category.nom_cat+"</div>");
   $("#game").append("<div id=\"theme\"></div>");
   $(".current").html("<div id=\"score\">Score : "+score+" miam</div>");
@@ -173,15 +173,18 @@ function nextQuestion() {
 }
 
 function startTimer() {
-  $("#timer").css("width", "100%");
   baseWidth = $("#timer").width();
-  $("#timer").animate({'width' : '0%'}, timing*1000);
+  $("#timer").removeClass();
+  var elm = document.getElementById("timer"),
+      newone = elm.cloneNode(true);
+  elm.parentNode.replaceChild(newone, elm);
+  $("#timer").addClass("timer");
   timer = window.setTimeout(checkAnswer, timing*1000);
 }
 
 function stopTimer() {
   window.clearTimeout(timer);
-  $("#timer").stop();
+  $("#timer").addClass("pause");
   secRestantes = Math.round($("#timer").width()/baseWidth*timing);
 }
 
