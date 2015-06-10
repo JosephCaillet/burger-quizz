@@ -1,3 +1,12 @@
+@-webkit-keyframes timebar
+{
+	0%{width: 100%;background-color: #57cc6b;}
+	30%{background-color: #57cc6b;}
+	40%{background-color: #e3a55c;}
+	60%{background-color: #e3a55c;}
+	70%{background-color: #cc5757;}
+	100%{width: 0;background-color: #cc5757;}
+}
 @keyframes timebar
 {
 	0%{width: 100%;background-color: #57cc6b;}
@@ -16,14 +25,17 @@
 
 .timer
 {
+	-webkit-animation: timebar 5s linear;
 	animation: timebar 5s linear;
 }
 
 .pause {
+	-webkit-animation-play-state: paused;
 	animation-play-state: paused;
 }
 
 .clearTimer {
+	-webkit-animation: none;
 	animation: none;
 }
 
