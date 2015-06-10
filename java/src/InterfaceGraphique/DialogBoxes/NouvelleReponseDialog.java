@@ -5,15 +5,46 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * Boite de dialogue modale pour renseigner un nouveau jeu de réponses.
+ * @author joseph
+ */
 public class NouvelleReponseDialog extends JDialog implements ActionListener
 {
+	/**
+	 * Réponses une.
+	 */
 	private JTextField rep1;
+	/**
+	 * Réponse deux.
+	 */
 	private JTextField rep2;
+	/**
+	 * Validation.
+	 */
 	private JButton ok;
+	/**
+	 * Annulation.
+	 */
 	private JButton annuler;
+	/**
+	 * Booléen determinant si les paramétre ont été modifié ou non.
+	 */
 	private boolean mofidEffectues;
+	/**
+	 * Liste des catégorie
+	 */
 	private JComboBox comboCat;
 
+	/**
+	 * Constructeur préremplissant les champs de la boite de dialogue.
+	 * @param title Titre
+	 * @param defRep1 Réponse une par défaut.
+	 * @param defRep2 Réponse deux par défaut.
+	 * @param defCategorie Catégorie par défaut
+	 * @param tabCategorie Tableau des catégories existantes.
+	 * @param parent Parent.
+	 */
 	public NouvelleReponseDialog(String title, String defRep1, String defRep2, String defCategorie, String[] tabCategorie,JFrame parent)
 	{
 		super(parent, title, true);
@@ -24,6 +55,13 @@ public class NouvelleReponseDialog extends JDialog implements ActionListener
 		setResizable(false);
 	}
 
+	/**
+	 * Construit l'interface de la boite de dialogue.
+	 * @param defRep1 Réponse une par défaut.
+	 * @param defRep2 Réponse deux par défaut.
+	 * @param defCategorie Catégorie par défaut
+	 * @param tabCategorie Tableau des catégories existantes.
+	 */
 	private void createInterface(String defRep1, String defRep2, String defCategorie, String[] tabCategorie)
 	{
 		JPanel champs = new JPanel();
@@ -72,12 +110,20 @@ public class NouvelleReponseDialog extends JDialog implements ActionListener
 		getContentPane().add(boutons, BorderLayout.SOUTH);
 	}
 
+	/**
+	 * Affiche la boite de dialogue.
+	 * @return Un booléen indiquant si la configuration à été modifié ou non (clic sur le bouton OK ou annuler).
+	 */
 	public boolean afficher()
 	{
 		setVisible(true);
 		return mofidEffectues;
 	}
 
+	/**
+	 * Répond au clic sur les bouton: confirme/infirme que des changements on eu lieu, aprés vérification de la conformité des valeurs rentrées dans les champs.
+	 * @param e Un ActionEvent au clic sur un bouton.
+	 */
 	public void actionPerformed(ActionEvent e)
 	{
 		if(e.getSource() == annuler)
@@ -86,9 +132,9 @@ public class NouvelleReponseDialog extends JDialog implements ActionListener
 			setVisible(false);
 		}
 		else if(e.getSource() == ok) {
-			if(rep1.getText().isEmpty() || rep2.getText().isEmpty())
+			if(rep1.getText().isEmpty() || rep2.getText().isEmpty() || rep1.getText().equals(rep2.getText()))
 			{
-				JOptionPane.showMessageDialog(this, "Les champs ne doivent pas être vide.", "Champs non remplis", JOptionPane.WARNING_MESSAGE);
+				JOptionPane.showMessageDialog(this, "Les champs ne doivent être ni vides, ni égaux.", "Champs non remplis", JOptionPane.WARNING_MESSAGE);
 				return;
 			}
 			mofidEffectues = true;
@@ -96,14 +142,26 @@ public class NouvelleReponseDialog extends JDialog implements ActionListener
 		}
 	}
 
-	public String getRep2() {
-		return rep2.getText();
-	}
-
+	/**
+	 * Renvoie la réponse une.
+	 * @return la réponse une.
+	 */
 	public String getRep1() {
 		return rep1.getText();
 	}
 
+	/**
+	 * Renvoie la réponse deux.
+	 * @return la réponse deux.
+	 */
+	public String getRep2() {
+		return rep2.getText();
+	}
+
+	/**
+	 * Renvoie la catégorie.
+	 * @return la catégorie.
+	 */
 	public String getCat() {
 		return comboCat.getSelectedItem().toString();
 	}
