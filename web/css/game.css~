@@ -13,7 +13,7 @@
 	height: 20px;
 	display: block;
 	margin: auto;
-	animation: timebar 5s linear;
+	animation: timebar 5s infinite linear;
 }
 
 #navbar li.current:last-child #score {
