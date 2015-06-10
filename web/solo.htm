@@ -5,25 +5,25 @@
     <title>Burger Quizz - Jeu solo</title>
     <link rel="stylesheet" href="css/game.css">
     <link rel="stylesheet" href="css/main.css">
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Lato:100,400,300,700' rel='stylesheet' type='text/css'>
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lato:100,400,300,700" rel="stylesheet" type="text/css">
     <script src="js/jquery-2.1.4.min.js"></script>
     <script src="js/responsive.js"></script>
     <script src="js/game.js"></script>
-    <meta name=viewport content="width=device-width, initial-scale=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
   </head>
   <body>
     <header>
     </header>
-    <section id="navbar">
+    <div id="navbar">
       <ul>
         <li><a href="index.htm">Accueil</a></li>
         <li><a href="rules.htm">Règles</a></li>
         <li><a href="palmares.htm">Meilleurs scores</a></li>
         <li class="current"><a href="play.htm">Jouer</a></li>
       </ul>
-    </section>
-    <section id="responsive-navbar">
+    </div>
+    <div id="responsive-navbar">
       <ul>
         <li class="name"><a href="#">Menu</a></li>
         <li><a href="index.htm">Accueil</a></li>
@@ -31,11 +31,11 @@
         <li><a href="palmares.htm">Meilleurs scores</a></li>
         <li class="current"><a href="play.htm">Jouer</a></li>
       </ul>
-    </section>
-    <section id="game">
+    </div>
+    <div id="game">
       <h2>Jeu solo</h2>
       <input type="submit" id="play" value="Lancer la partie !" />
-    </section>
+    </div>
 
     <script type="text/javascript">
       $("#play").on("click", play);

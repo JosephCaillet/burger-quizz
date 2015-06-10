@@ -1,4 +1,22 @@
-section#navbar li.current:last-child #score {
+@keyframes timebar
+{
+	0%{width: 100%;background-color: #57cc6b;}
+	30%{background-color: #57cc6b;}
+	40%{background-color: #e3a55c;}
+	60%{background-color: #e3a55c;}
+	70%{background-color: #cc5757;}
+	100%{width: 0;background-color: #cc5757;}
+}
+
+div
+{
+	height: 20px;
+	display: block;
+	margin: auto;
+	animation: timebar 5s infinite linear;
+}
+
+#navbar li.current:last-child #score {
   display:inline;
   padding-top:17px;
   padding-left:30px;
@@ -7,7 +25,7 @@ section#navbar li.current:last-child #score {
   background: #ffab19;
 }
 
-section#game input[type="submit"]#play {
+#game input[type="submit"]#play {
   border:none;
   background-color:#09b22b;
   color:white;
@@ -16,7 +34,7 @@ section#game input[type="submit"]#play {
   cursor:pointer;
 }
 
-section#game {
+#game {
   text-align:center;
 }
 
