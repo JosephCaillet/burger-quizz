@@ -1,5 +1,9 @@
 package Modele;
 
+/**
+ * Modéle représentant une question.
+ * @author joseph
+ */
 public class Question
 {
 	protected String intitule;
