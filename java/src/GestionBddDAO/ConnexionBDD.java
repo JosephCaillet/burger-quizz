@@ -13,13 +13,35 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+/**
+ * Classe DAO offrant une surcouche pour l'interaction avec la base de données.
+ * @author joseph
+ */
 public class ConnexionBDD
 {
-	Connection connexionbdd;
-	GestionCategories gestionCategories;
-	GestionReponses gestionReponses;
-	GestionQuestions gestionQuestions;
+	/**
+	 * Represente la connexion à la base de données.
+	 */
+	private Connection connexionbdd;
 
+	/**
+	 * Objet permettant la gestion des catégories dans la base de données.
+	 */
+	private GestionCategories gestionCategories;
+
+	/**
+	 * Objet permettant la gestion des réponses dans la base de données.
+	 */
+	private GestionReponses gestionReponses;
+
+	/**
+	 * Objet permettant la gestion des questions dans la base de données.
+	 */
+	private GestionQuestions gestionQuestions;
+
+	/**
+	 * Constructeur par defaut. Charge le driver mysql. Arret du programme si il n'est pas trouvé.
+	 */
 	public ConnexionBDD()
 	{
 		try
@@ -33,6 +55,15 @@ public class ConnexionBDD
 		}
 	}
 
+	/**
+	 * Initie la connexion à la base de données, avec un time-out de 5 secondes.
+	 * @param nomBdd Le nom de la base.
+	 * @param port Le port du serveur.
+	 * @param ip L'adresse IP du serveur.
+	 * @param login Le login de l'utilisateur sur le serveur.
+	 * @param password Le mot de passe de l'utilisateur sur le serveur.
+	 * @return true si la connexion est effectué, false sinon.
+	 */
 	public boolean connect(String nomBdd, long port, String ip, String login, String password)
 	{
 		try
@@ -55,6 +86,12 @@ public class ConnexionBDD
 	}
 
 	//Gestion catégorie
+
+	/**
+	 * Permet d'obtenir la liste des catégorie depuis la base de données.
+	 * @return Un tableau d'objet catégorie.
+	 * @throws BDDException Si une erreur survient.
+	 */
 	public ArrayList<Categorie> getListeCategorie() throws BDDException
 	{
 		try
