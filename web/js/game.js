@@ -120,9 +120,11 @@ function checkAnswer() {
   $("#rep2").off('click');
   $("#both").off('click');
   stopTimer();
+  console.log(reponseUser == bonneReponse);
   if(reponseUser == bonneReponse) {
     score += secRestantes+1;
   }
+  console.log(score);
   if(score > 1) {
     $("#score").html("Score : "+score+" miams");
     $("#score-responsive").html(score+" miams");
@@ -191,6 +193,7 @@ function stopTimer() {
   window.clearTimeout(timer);
   $("#timer").addClass("pause");
   secRestantes = Math.round($("#timer").width()/baseWidth*timing);
+  console.log(secRestantes);
 }
 
 function endGame() {
