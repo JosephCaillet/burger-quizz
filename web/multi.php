@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Burger Quizz - Jeu solo</title>
+    <title>Burger Quizz - Jeu multi</title>
     <link rel="stylesheet" href="css/game.css">
     <link rel="stylesheet" href="css/main.css">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
