@@ -1,7 +1,7 @@
 var io = require('socket.io'); // Chargement du module pour mettre en place les websockets
 var http = require('http');
 var fs = require('fs'), cfgFilePath = '';
-var httpHost = 'localhost', httpPath = '/burger-quizz/web/api/';
+var httpHost = 'localhost', httpPath = '/burger-quizz/web/api/', nodePort = 8000;
 
 // Lecture du fichier de configuration
 if(process.argv.length > 2) {
@@ -14,6 +14,7 @@ var params = fs.readFileSync(cfgFilePath).toString();
 
 var httpHost = params.match(/http_host: (.+)/)[1];
 var httpPath = params.match(/http_path: (.+)/)[1];
+var nodePort = params.match(/node_port: (.+)/)[1];
 
 console.log("Serveur initialisé sur l'URL "+httpHost+httpPath);
 
@@ -121,7 +122,7 @@ function onSocketConnection(client) {
 // Initialisation
 function init() {
     // Le server temps réel écoute sur le port 8000
-    server = io.listen(8000);
+    server = io.listen(nodePort);
 
     // Gestion des évènements
     setEventHandlers();
