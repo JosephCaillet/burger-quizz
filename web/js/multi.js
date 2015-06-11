@@ -108,7 +108,6 @@ function loadCat(id) {
   $("#game").html("<div id=\"timer\" style=\"width:100%;height:20px;background:green\"></div>");
   $("#game").append("<div id=\"category\">Catégorie : "+category.nom_cat+"</div>");
   $("#game").append("<div id=\"theme\"></div>");
-  $(".current").html("<div id=\"score\">Score : "+score+" miam</div>");
   loadTheme(id_theme);
 }
 
@@ -150,8 +149,10 @@ function checkAnswer() {
   }
   if(score > 1) {
     $("#score").html("Score : "+score+" miams");
+    $("#score-responsive").html(score+" miams");
   } else {
     $("#score").html("Score : "+score+" miam");
+    $("#score-responsive").html(score+" miam");
   }
   switch(bonneReponse) {
     case 0:   $("#rep1").addClass("wrong-answer");
@@ -203,14 +204,56 @@ function nextQuestion() {
 function play(questions) {
   json = questions;
 
-  json.cat1.themes.forEach(function(theme) {
-    nbQuestions += theme.questions.length;
-  });
-  json.cat2.themes.forEach(function(theme) {
-    nbQuestions += theme.questions.length;
-  });
+  if(json.status != 1) {
+    var message;
+    switch(json.source) {
+      case 'PDO':
+        message = "Erreur lors de la connexion à la base de donnée : "+json.message;
+        break;
+      case 'Connector':
+        message = "Erreur de requête SQL : "
+        switch(json.message) {
+          case 'wrong_arg_nmbr_where':
+            message += "Mauvais nombre d'arguments dans la clause WHERE.";
+            break;
+          case 'wrong_arg_nmbr_order_by':
+            message += "Mauvais nombre d'arguments dans la clause ORDER BY.";
+            break;
+          case 'wrong_arg_numbr_limit':
+            message += "Mauvais nombre d'arguments dans la clause LIMIT.";
+            break;
+          case 'unknown_arg':
+            message += "Argument inconnu détecté.";
+            break;
+        }
+        break;
+      case 'Questset':
+        message = "Erreur dans le chargement du jeu de questions : "
+        if(json.message == 'expected_questset_array') {
+          message += "Un tableau de réponses est attendu."
+        }
+        break;
+      case 'Categorie':
+        if(json.message == 'cant_find_cat') {
+          message = "Erreur dans le chargement de la catégorie : Impossible de trouver la catégorie.";
+        }
+        break;
+    }
 
-  loadCat(id_cat);
+    $("#game").addClass("error");
+    $("#game").html(message);
+  } else {
+    json.cat1.themes.forEach(function(theme) {
+      nbQuestions += theme.questions.length;
+    });
+    json.cat2.themes.forEach(function(theme) {
+      nbQuestions += theme.questions.length;
+    });
+    $("#navbar .current").html("<div id=\"score\">Score : "+score+" miam</div>");
+    $("#responsive-navbar .name a").css("display", "inline");
+    $(".name").append("<div id=\"score-responsive\">"+score+" miam</div>");
+    loadCat(id_cat);
+  }
 }
 
 function startTimer() {

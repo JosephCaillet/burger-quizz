@@ -54,6 +54,9 @@ function play() {
     $("#game").addClass("error");
     $("#game").html(message);
   } else {
+    $("#navbar .current").html("<div id=\"score\">Score : "+score+" miam</div>");
+    $("#responsive-navbar .name a").css("display", "inline");
+    $(".name").append("<div id=\"score-responsive\">"+score+" miam</div>");
     loadCat(id_cat);
   }
 }
@@ -82,7 +85,6 @@ function loadCat(id) {
   $("#game").html("<div id=\"timer\"></div>");
   $("#game").append("<div id=\"category\">Catégorie : "+category.nom_cat+"</div>");
   $("#game").append("<div id=\"theme\"></div>");
-  $(".current").html("<div id=\"score\">Score : "+score+" miam</div>");
   loadTheme(id_theme);
 }
 
@@ -123,8 +125,10 @@ function checkAnswer() {
   }
   if(score > 1) {
     $("#score").html("Score : "+score+" miams");
+    $("#score-responsive").html(score+" miams");
   } else {
     $("#score").html("Score : "+score+" miam");
+    $("#score-responsive").html(score+" miam");
   }
   switch(bonneReponse) {
     case 0:   $("#rep1").addClass("wrong-answer");

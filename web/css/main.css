@@ -86,6 +86,15 @@ header {
   background-position: 10px, 50%;
 }
 
+#responsive-navbar #score-responsive {
+  text-align: right;
+  float: right;
+  left: 0px;
+  padding-right: 10px;
+  padding-left: 10px;
+  background: #FFAB19;
+}
+
 #navbar {
   color: white;
   background-color: #7e19ff;

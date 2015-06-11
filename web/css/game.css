@@ -137,6 +137,9 @@ p#conDenied {
     padding-top:15px;
     height: 20px;
   }
+	.error, .success, p#registerScore, p#conDenied {
+		width:80%;
+	}
 }
 
 @media all and (min-width: 800px) {
