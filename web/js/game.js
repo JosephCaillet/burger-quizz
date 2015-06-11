@@ -3,7 +3,7 @@ var id_cat = 0, id_theme = 0, id_quest = 0;
 // Shortcuts
 var json, category, theme;
 // Timer
-var timing = 5, secRestantes, timer;
+var timing = 5, secRestantes = 0, timer;
 var questions = 0, currentQuestion = 1;
 var baseWidth;
 
@@ -13,7 +13,6 @@ var canClick = true;
 
 function play() {
   apiReq();
-  console.log(json);
   $("#play").remove();
   if(json.status != 1) {
     var message;
@@ -81,7 +80,6 @@ function apiReq() {
 function loadCat(id) {
   if(id === 0) category = json.cat1;
   if(id === 1) category = json.cat2;
-  console.log(category);
   $("#game").html("<div id=\"timer\"></div>");
   $("#game").append("<div id=\"category\">Catégorie : "+category.nom_cat+"</div>");
   $("#game").append("<div id=\"theme\"></div>");
@@ -120,11 +118,9 @@ function checkAnswer() {
   $("#rep2").off('click');
   $("#both").off('click');
   stopTimer();
-  console.log(reponseUser == bonneReponse);
   if(reponseUser == bonneReponse) {
     score += secRestantes+1;
   }
-  console.log(score);
   if(score > 1) {
     $("#score").html("Score : "+score+" miams");
     $("#score-responsive").html(score+" miams");
@@ -180,12 +176,12 @@ function nextQuestion() {
 }
 
 function startTimer() {
-  baseWidth = $("#timer").width();
   $("#timer").removeClass();
   var elm = document.getElementById("timer"),
       newone = elm.cloneNode(true);
   elm.parentNode.replaceChild(newone, elm);
   $("#timer").addClass("timer");
+  baseWidth = $("#timer").width();
   timer = window.setTimeout(checkAnswer, timing*1000);
 }
 
@@ -193,7 +189,6 @@ function stopTimer() {
   window.clearTimeout(timer);
   $("#timer").addClass("pause");
   secRestantes = Math.round($("#timer").width()/baseWidth*timing);
-  console.log(secRestantes);
 }
 
 function endGame() {

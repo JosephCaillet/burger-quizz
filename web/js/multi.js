@@ -94,7 +94,7 @@ var id_cat = 0, id_theme = 0, id_quest = 0;
 // Shortcuts
 var json, category, theme;
 // Timer
-var timing = 5, secRestantes, timer;
+var timing = 5, secRestantes = 0, timer;
 var nbQuestions = 0, currentQuestion = 1;
 var baseWidth;
 
@@ -104,7 +104,6 @@ var canClick = true;
 function loadCat(id) {
   if(id === 0) category = json.cat1;
   if(id === 1) category = json.cat2;
-  console.log(category);
   $("#game").html("<div id=\"timer\" style=\"width:100%;height:20px;background:green\"></div>");
   $("#game").append("<div id=\"category\">Catégorie : "+category.nom_cat+"</div>");
   $("#game").append("<div id=\"theme\"></div>");
@@ -257,12 +256,12 @@ function play(questions) {
 }
 
 function startTimer() {
-  baseWidth = $("#timer").width();
   $("#timer").removeClass();
   var elm = document.getElementById("timer"),
       newone = elm.cloneNode(true);
   elm.parentNode.replaceChild(newone, elm);
   $("#timer").addClass("timer");
+  baseWidth = $("#timer").width();
   timer = window.setTimeout(checkAnswer, timing*1000);
 }
 
