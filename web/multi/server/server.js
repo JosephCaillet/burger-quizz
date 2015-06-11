@@ -12,8 +12,8 @@ if(process.argv.length > 2) {
 
 var params = fs.readFileSync(cfgFilePath).toString();
 
-var httpHost = params.match(/http_host: (.+)/)[0];
-var httpPath = params.match(/http_path: (.+)/)[0];
+var httpHost = params.match(/http_host: (.+)/)[1];
+var httpPath = params.match(/http_path: (.+)/)[1];
 
 console.log("Serveur initialisé sur l'URL "+httpHost+httpPath);
 
@@ -59,7 +59,7 @@ function onSocketConnection(client) {
       console.log(err);
     });
     client.on('start', function(gameID) {
-      http.get("http://"+httpHost+httpPath"/api/", function(res) {
+      http.get("http://"+httpHost+httpPath+"/api/", function(res) {
         var data = "";
         res.on("data", function(returned) {
           data += returned;
