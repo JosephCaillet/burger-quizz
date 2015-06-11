@@ -1,8 +1,9 @@
-# VIM temp files
+# temp files
 .*.swp
-
-test*
-
 *~
 
-*/node_modules/*
+# test files
+test*
+
+# Node.js modules
+multi/server/node_modules/*
