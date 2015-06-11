@@ -43,4 +43,5 @@ Génération de la Javadoc
 ------------------------
 0. Avoir un JDK Java installé
 1. Allez dans le repertoire `src`
-2. Lancer la commande `javadoc -private -d ./REPERTOIRE_OU_STOCKER_LA_DOCUMENTATION -sourcepath . -subpackages GestionBddDAO InterfaceGraphique InterfaceGraphique.DialogBoxes GestionErreurs Modele MainAdminBddBurgerQuizz.java -encoding "utf8" -docencoding "utf8" -charset utf8`
+2. Lancer la commande `javadoc -private -d ./REPERTOIRE_OU_STOCKER_LA_DOCUMENTATION -sourcepath . -subpackages GestionBddDAO InterfaceGraphique InterfaceGraphique.DialogBoxes GestionErreurs Modele MainAdminBddBurgerQuizz.java -encoding "utf8" -docencoding "utf8" -charset "utf8"`
+3. Ouvrir le fichier REPERTOIRE_OU_STOCKER_LA_DOCUMENTATION/index.html
