@@ -7,3 +7,6 @@ test*
 
 # Node.js modules
 multi/server/node_modules/*
+
+# Sonar files
+sonar-project.properties
