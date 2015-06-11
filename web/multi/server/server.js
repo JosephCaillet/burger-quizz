@@ -1,5 +1,22 @@
 var io = require('socket.io'); // Chargement du module pour mettre en place les websockets
 var http = require('http');
+var fs = require('fs'), cfgFilePath = '';
+var httpHost = 'localhost', httpPath = '/burger-quizz/web/api/';
+
+// Lecture du fichier de configuration
+if(process.argv.length > 2) {
+  cfgFilePath = process.argv[2];
+} else {
+  cfgFilePath = '../../params.cfg';
+}
+
+var params = fs.readFileSync(cfgFilePath).toString();
+
+var httpHost = params.match(/http_host: (.+)/)[0];
+var httpPath = params.match(/http_path: (.+)/)[0];
+
+console.log("Serveur initialisé sur l'URL "+httpHost+httpPath);
+
 var json;
 // Variables
 var server; // Le socket
@@ -42,7 +59,7 @@ function onSocketConnection(client) {
       console.log(err);
     });
     client.on('start', function(gameID) {
-      http.get("http://localhost/burger-quizz/web/api/", function(res) {
+      http.get("http://"+httpHost+httpPath"/api/", function(res) {
         var data = "";
         res.on("data", function(returned) {
           data += returned;
