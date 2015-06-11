@@ -104,7 +104,7 @@ var canClick = true;
 function loadCat(id) {
   if(id === 0) category = json.cat1;
   if(id === 1) category = json.cat2;
-  $("#game").html("<div id=\"timer\" style=\"width:100%;height:20px;background:green\"></div>");
+  $("#game").html("<div id=\"timer\"></div>");
   $("#game").append("<div id=\"category\">Catégorie : "+category.nom_cat+"</div>");
   $("#game").append("<div id=\"theme\"></div>");
   loadTheme(id_theme);
