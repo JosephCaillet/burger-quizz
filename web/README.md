@@ -43,7 +43,10 @@ Configuration
 
 Vous trouverez à la racine du présent dossier un fichier nommé `params.cfg`. Ce dernier contient différents paramètres permettant la configuration du Burger Quizz sur votre serveur :
 
-* `node_host` vous permet de définir l'adresse de l'hôte sur lequel est hébergé le serveur Node.js (qui peut être le même que celui hébergeant le Burger Quizz). Pensez bien à indiquer une adresse joignable par d'autres machines si vous voulez activer le multijoueur autrement qu'en local. (Typiquement, evitez `localhost` et `127.0.0.1`. Vous pouvez obtenir votre ip grâce à la commande `ifconfig`.)
+* `http_host` vous permet d'indiquer le nom d'hôte auquel joindre l'application Web
+* `http_path` vous permet d'indiquer le chemin d'accès absolu (commençant par un slash) vers l'application Web (typiquement `/` pour la racine de votre hébergement, ou `/rep/web` si votre application est hébergée dans le sous-dossier `web/` du dossier `rep/`).
+* `node_host` vous permet de définir l'adresse de l'hôte sur lequel est hébergé le serveur Node.js (qui peut être le même que celui hébergeant le Burger Quizz). Pensez bien à indiquer une adresse joignable par d'autres machines si vous voulez activer le multijoueur autrement qu'en local. (Typiquement, evitez `localhost` et `127.0.0.1`. Vous pouvez obtenir votre adresse IP grâce à la commande `ifconfig`).
+* `node_port` vous permet d'indiquer le port sur lequel écoutera le serveur Node.js.
 * `db_host` vous permet de définir l'hôte auquel se connecter afin d'accéder à la base de données.
 * `db_name` vous permet d'indiquer la base de données dans laquelle sont stockées les données du Burger Quizz.
 * `db_user` vous permet de définir le nom de l'utilisateur se connectant à la base de données.
@@ -63,6 +66,16 @@ ou
 `$ node server.js`
 
 selon votre installation.
+
+**Attention :** Le serveur Node.js nécessitant le fichier de configuration `params.cfg`, la commande à exécuter est légèrement différente si vous avez choisi de déplacer ce dernier dans un répertoire ou hébergement différent de l'architecture initiale de l'application :
+
+`$ nodejs server.js FICHIER_DE_CONFIGURATION`
+
+ou
+
+`$ node server.js FICHIER_DE_CONFIGURATION`
+
+selon votre installation, en prenant bien soin de remplacer `FICHIER_DE_CONFIGURATION` par un chemin d'accès au fichier de configuration `params.cfg`.
 
 Vous pouvez maintenant profiter en toute tranquilité du Burger Quizz.
 

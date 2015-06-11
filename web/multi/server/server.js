@@ -12,6 +12,11 @@ if(process.argv.length > 2) {
 
 var params = fs.readFileSync(cfgFilePath).toString();
 
+if(params === "") {
+  console.error("Fichier params.cfg introuvable.");
+  process.exit(1);
+}
+
 var httpHost = params.match(/http_host: (.+)/)[1];
 var httpPath = params.match(/http_path: (.+)/)[1];
 var nodePort = params.match(/node_port: (.+)/)[1];
