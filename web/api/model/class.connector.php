@@ -37,8 +37,13 @@ class Connector {
 			$dbconnect[$matches[1][$i]] = $matches[2][$i];
 		}
 
+		$options = array(
+		    PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8',
+		);
+
 		$this->bdd = new PDO("mysql:host=".$dbconnect["host"].";dbname="
-								.$dbconnect["dbname"], $dbconnect["user"], $dbconnect["pass"]);
+								.$dbconnect["dbname"], $dbconnect["user"], $dbconnect["pass"],
+																																		$options);
 		$this->bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	}
 

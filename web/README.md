@@ -28,7 +28,7 @@ Le dossier `sql/` situé à la racine du présent dossier contient trois fichier
 * `ITbq.sql` contient le contenu de la base de données, sans son squelette
 * `CTITbq.sql` contient le squelette et le contenu de la base de données
 
-En fonction de vos besoins, exécutez l'un des scripts sur votre serveur MySQL (via PhpMyAdmin, par exemple).
+En fonction de vos besoins, exécutez l'un des scripts sur votre serveur MySQL (via PhpMyAdmin, par exemple). Il vous faudra au préalable créer une base de données (que vous pouvez nommer à votre guise) en utilisant le jeu de caractères (collation) `utf8_general_ci`.
 
 ### Installation du mode multijoueur
 

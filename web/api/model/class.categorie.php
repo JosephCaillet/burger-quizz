@@ -121,7 +121,7 @@ class Categorie {
 			array_push($questsets, $questset->getArray());
 		}
 		return array(
-			"nom_cat" => utf8_encode($this->nomCat),
+			"nom_cat" => $this->nomCat,
 			"themes" => $questsets
 		);
 	}

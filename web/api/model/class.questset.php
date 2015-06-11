@@ -80,8 +80,8 @@ class Questset {
 		}
 
 		return array(
-			"reponse1" => utf8_encode($this->reponse1),
-			"reponse2" => utf8_encode($this->reponse2),
+			"reponse1" => $this->reponse1,
+			"reponse2" => $this->reponse2,
 			"questions" => $questions
 		);
 	}

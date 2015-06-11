@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE IF NOT EXISTS `categorie` (
   `nom_cat` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `categorie`
@@ -50,7 +50,7 @@ CREATE TABLE IF NOT EXISTS `questions` (
   `num_reponse` tinyint(4) NOT NULL,
   `reponse1` varchar(50) NOT NULL DEFAULT '',
   `reponse2` varchar(50) NOT NULL DEFAULT ''
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `questions`
@@ -86,7 +86,7 @@ CREATE TABLE IF NOT EXISTS `reponses` (
   `reponse1` varchar(50) NOT NULL,
   `reponse2` varchar(50) NOT NULL,
   `nom_cat` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `reponses`
@@ -109,7 +109,7 @@ INSERT INTO `reponses` (`reponse1`, `reponse2`, `nom_cat`) VALUES
 CREATE TABLE IF NOT EXISTS `scores` (
   `login` varchar(20) NOT NULL,
   `score` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `scores`
@@ -123,7 +123,7 @@ INSERT INTO `scores` (`login`, `score`) VALUES
 ('Joseph', 42),
 ('K.S.', 20),
 ('Loic', 10),
-('Marc F.', 0), 
+('Marc F.', 0),
 ('Patrick', 24),
 ('Thomas', 33);
 
