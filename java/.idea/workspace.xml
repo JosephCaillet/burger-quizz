@@ -7,73 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a647cb6a-4230-4101-a652-d7cfd0c21e24" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/java/GestionBddDAO/ConfigBDD.class" afterPath="$PROJECT_DIR$/out/production/java/GestionBddDAO/ConfigBDD.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/java_jar/java.jar" afterPath="$PROJECT_DIR$/out/artifacts/java_jar/java.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/GestionErreurs/BDDException.html" afterPath="$PROJECT_DIR$/javadoc/GestionErreurs/BDDException.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/InterfaceGraphique/Bouton.html" afterPath="$PROJECT_DIR$/javadoc/InterfaceGraphique/Bouton.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/Modele/Categorie.html" afterPath="$PROJECT_DIR$/javadoc/Modele/Categorie.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/GestionBddDAO/ConfigBDD.html" afterPath="$PROJECT_DIR$/javadoc/GestionBddDAO/ConfigBDD.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/GestionBddDAO/ConnexionBDD.html" afterPath="$PROJECT_DIR$/javadoc/GestionBddDAO/ConnexionBDD.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/InterfaceGraphique/DialogBoxes/ConnexionBddDialog.html" afterPath="$PROJECT_DIR$/javadoc/InterfaceGraphique/DialogBoxes/ConnexionBddDialog.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/GestionBddDAO/GestionCategories.html" afterPath="$PROJECT_DIR$/javadoc/GestionBddDAO/GestionCategories.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/GestionBddDAO/GestionQuestions.html" afterPath="$PROJECT_DIR$/javadoc/GestionBddDAO/GestionQuestions.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/GestionBddDAO/GestionReponses.html" afterPath="$PROJECT_DIR$/javadoc/GestionBddDAO/GestionReponses.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/InterfaceGraphique/InterfacePrincipale.PanCategoriesListener.html" afterPath="$PROJECT_DIR$/javadoc/InterfaceGraphique/InterfacePrincipale.PanCategoriesListener.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/InterfaceGraphique/InterfacePrincipale.PanQuestionsListener.html" afterPath="$PROJECT_DIR$/javadoc/InterfaceGraphique/InterfacePrincipale.PanQuestionsListener.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/InterfaceGraphique/InterfacePrincipale.PanReponsesListener.html" afterPath="$PROJECT_DIR$/javadoc/InterfaceGraphique/InterfacePrincipale.PanReponsesListener.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/InterfaceGraphique/InterfacePrincipale.html" afterPath="$PROJECT_DIR$/javadoc/InterfaceGraphique/InterfacePrincipale.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/MainAdminBddBurgerQuizz.html" afterPath="$PROJECT_DIR$/javadoc/MainAdminBddBurgerQuizz.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/InterfaceGraphique/DialogBoxes/NouvelleQuestionDialog.html" afterPath="$PROJECT_DIR$/javadoc/InterfaceGraphique/DialogBoxes/NouvelleQuestionDialog.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/InterfaceGraphique/DialogBoxes/NouvelleReponseDialog.html" afterPath="$PROJECT_DIR$/javadoc/InterfaceGraphique/DialogBoxes/NouvelleReponseDialog.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/Modele/Question.html" afterPath="$PROJECT_DIR$/javadoc/Modele/Question.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/Modele/Reponses.html" afterPath="$PROJECT_DIR$/javadoc/Modele/Reponses.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/InterfaceGraphique/SplashScreen.html" afterPath="$PROJECT_DIR$/javadoc/InterfaceGraphique/SplashScreen.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/allclasses-frame.html" afterPath="$PROJECT_DIR$/javadoc/allclasses-frame.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/allclasses-noframe.html" afterPath="$PROJECT_DIR$/javadoc/allclasses-noframe.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/constant-values.html" afterPath="$PROJECT_DIR$/javadoc/constant-values.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/deprecated-list.html" afterPath="$PROJECT_DIR$/javadoc/deprecated-list.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/help-doc.html" afterPath="$PROJECT_DIR$/javadoc/help-doc.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/index-files/index-1.html" afterPath="$PROJECT_DIR$/javadoc/index-files/index-1.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/index-files/index-10.html" afterPath="$PROJECT_DIR$/javadoc/index-files/index-10.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/index-files/index-11.html" afterPath="$PROJECT_DIR$/javadoc/index-files/index-11.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/index-files/index-12.html" afterPath="$PROJECT_DIR$/javadoc/index-files/index-12.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/index-files/index-13.html" afterPath="$PROJECT_DIR$/javadoc/index-files/index-13.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/index-files/index-14.html" afterPath="$PROJECT_DIR$/javadoc/index-files/index-14.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/index-files/index-15.html" afterPath="$PROJECT_DIR$/javadoc/index-files/index-15.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/index-files/index-16.html" afterPath="$PROJECT_DIR$/javadoc/index-files/index-16.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/index-files/index-17.html" afterPath="$PROJECT_DIR$/javadoc/index-files/index-17.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/index-files/index-18.html" afterPath="$PROJECT_DIR$/javadoc/index-files/index-18.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/index-files/index-2.html" afterPath="$PROJECT_DIR$/javadoc/index-files/index-2.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/index-files/index-3.html" afterPath="$PROJECT_DIR$/javadoc/index-files/index-3.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/index-files/index-4.html" afterPath="$PROJECT_DIR$/javadoc/index-files/index-4.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/index-files/index-5.html" afterPath="$PROJECT_DIR$/javadoc/index-files/index-5.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/index-files/index-6.html" afterPath="$PROJECT_DIR$/javadoc/index-files/index-6.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/index-files/index-7.html" afterPath="$PROJECT_DIR$/javadoc/index-files/index-7.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/index-files/index-8.html" afterPath="$PROJECT_DIR$/javadoc/index-files/index-8.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/index-files/index-9.html" afterPath="$PROJECT_DIR$/javadoc/index-files/index-9.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/index.html" afterPath="$PROJECT_DIR$/javadoc/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/overview-frame.html" afterPath="$PROJECT_DIR$/javadoc/overview-frame.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/overview-summary.html" afterPath="$PROJECT_DIR$/javadoc/overview-summary.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/overview-tree.html" afterPath="$PROJECT_DIR$/javadoc/overview-tree.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/package-frame.html" afterPath="$PROJECT_DIR$/javadoc/package-frame.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/GestionBddDAO/package-frame.html" afterPath="$PROJECT_DIR$/javadoc/GestionBddDAO/package-frame.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/GestionErreurs/package-frame.html" afterPath="$PROJECT_DIR$/javadoc/GestionErreurs/package-frame.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/InterfaceGraphique/package-frame.html" afterPath="$PROJECT_DIR$/javadoc/InterfaceGraphique/package-frame.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/InterfaceGraphique/DialogBoxes/package-frame.html" afterPath="$PROJECT_DIR$/javadoc/InterfaceGraphique/DialogBoxes/package-frame.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/Modele/package-frame.html" afterPath="$PROJECT_DIR$/javadoc/Modele/package-frame.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/package-summary.html" afterPath="$PROJECT_DIR$/javadoc/package-summary.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/GestionBddDAO/package-summary.html" afterPath="$PROJECT_DIR$/javadoc/GestionBddDAO/package-summary.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/GestionErreurs/package-summary.html" afterPath="$PROJECT_DIR$/javadoc/GestionErreurs/package-summary.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/InterfaceGraphique/package-summary.html" afterPath="$PROJECT_DIR$/javadoc/InterfaceGraphique/package-summary.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/InterfaceGraphique/DialogBoxes/package-summary.html" afterPath="$PROJECT_DIR$/javadoc/InterfaceGraphique/DialogBoxes/package-summary.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/Modele/package-summary.html" afterPath="$PROJECT_DIR$/javadoc/Modele/package-summary.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/package-tree.html" afterPath="$PROJECT_DIR$/javadoc/package-tree.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/GestionBddDAO/package-tree.html" afterPath="$PROJECT_DIR$/javadoc/GestionBddDAO/package-tree.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/GestionErreurs/package-tree.html" afterPath="$PROJECT_DIR$/javadoc/GestionErreurs/package-tree.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/InterfaceGraphique/package-tree.html" afterPath="$PROJECT_DIR$/javadoc/InterfaceGraphique/package-tree.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/InterfaceGraphique/DialogBoxes/package-tree.html" afterPath="$PROJECT_DIR$/javadoc/InterfaceGraphique/DialogBoxes/package-tree.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/Modele/package-tree.html" afterPath="$PROJECT_DIR$/javadoc/Modele/package-tree.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadoc/serialized-form.html" afterPath="$PROJECT_DIR$/javadoc/serialized-form.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/README.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="java.iws" />
@@ -962,7 +896,13 @@
       <option name="project" value="LOCAL" />
       <updated>1434009313049</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="ajout readme complet">
+      <created>1434011190513</created>
+      <option name="number" value="00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1434011190513</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1015,7 +955,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fin de journé" />
     <MESSAGE value="nyan cat operationel + look n felle susteme ajouté + chgm couleur" />
     <MESSAGE value="les boutons ecoutent" />
     <MESSAGE value="conexion bdd operationelle et avance classe de base" />
@@ -1040,7 +979,8 @@
     <MESSAGE value="avancées javadoc6" />
     <MESSAGE value="avancées javadoc7" />
     <MESSAGE value="ajout readme" />
-    <option name="LAST_COMMIT_MESSAGE" value="ajout readme" />
+    <MESSAGE value="ajout readme complet" />
+    <option name="LAST_COMMIT_MESSAGE" value="ajout readme complet" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
