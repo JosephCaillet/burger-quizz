@@ -1,3 +1,0 @@
-javac MainAdminBddBurgerQuizz.java
-java -cp mysql-connector-java-5.1.35-bin.jar:. MainAdminBddBurgerQuizz
--encoding "utf8" -docencoding "utf8" -charset utf8

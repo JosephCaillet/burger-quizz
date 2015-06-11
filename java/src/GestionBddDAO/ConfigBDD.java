@@ -77,7 +77,7 @@ public class ConfigBDD
 	 * @return Le nom de la base de données.
 	 */
 	public String getNomBdd() {
-		return conf.getProperty("nomBdd");
+		return conf.getProperty("nomBdd", "burgerquizz");
 	}
 
 	/**
@@ -93,7 +93,7 @@ public class ConfigBDD
 	 * @return Le port de connexion à la base de données.
 	 */
 	public int getPort() {
-		return Integer.parseInt(conf.getProperty("port"));
+		return Integer.parseInt(conf.getProperty("port", "3306"));
 	}
 
 	/**
@@ -109,7 +109,7 @@ public class ConfigBDD
 	 * @return L'adresse IP du serveur de la base de données.
 	 */
 	public String getIp() {
-		return conf.getProperty("ip");
+		return conf.getProperty("ip", "localhost");
 	}
 
 	/**
@@ -125,7 +125,7 @@ public class ConfigBDD
 	 * @return Login de l'utilisateur pour la base de données.
 	 */
 	public String getLogin() {
-		return conf.getProperty("login");
+		return conf.getProperty("login", "alain");
 	}
 
 	/**
@@ -141,7 +141,7 @@ public class ConfigBDD
 	 * @return Mot de passe de l'utilisateur pour la base de données.
 	 */
 	public String getPassword() {
-		return conf.getProperty("password");
+		return conf.getProperty("password", "chabat");
 	}
 
 	/**
