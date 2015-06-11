@@ -43,7 +43,7 @@ Configuration
 
 Vous trouverez à la racine du présent dossier un fichier nommé `params.cfg`. Ce dernier contient différents paramètres permettant la configuration du Burger Quizz sur votre serveur :
 
-* `node_host` vous permet de définir l'adresse de l'hôte sur lequel est hébergé le serveur Node.js (qui peut être le même que celui hébergeant le Burger Quizz).
+* `node_host` vous permet de définir l'adresse de l'hôte sur lequel est hébergé le serveur Node.js (qui peut être le même que celui hébergeant le Burger Quizz). Pensez bien à indiquer une adresse joignable par d'autres machines si vous voulez activer le multijoueur autrement qu'en local. (Typiquement, evitez `localhost` et `127.0.0.1`. Vous pouvez obtenir votre ip grâce à la commande `ifconfig`.)
 * `db_host` vous permet de définir l'hôte auquel se connecter afin d'accéder à la base de données.
 * `db_name` vous permet d'indiquer la base de données dans laquelle sont stockées les données du Burger Quizz.
 * `db_user` vous permet de définir le nom de l'utilisateur se connectant à la base de données.
