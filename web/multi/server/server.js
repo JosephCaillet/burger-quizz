@@ -21,7 +21,7 @@ var httpHost = params.match(/http_host: (.+)/)[1];
 var httpPath = params.match(/http_path: (.+)/)[1];
 var nodePort = params.match(/node_port: (.+)/)[1];
 
-console.log("Serveur initialisé sur l'URL "+httpHost+httpPath);
+console.log("Serveur initialisé sur l'URL "+httpHost+":"+nodePort+httpPath);
 
 var json;
 // Variables
