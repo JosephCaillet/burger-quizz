@@ -17,10 +17,10 @@ var againstLoser = false;
 function init() {
 
     var hostname = $('script')[$('script').length-3]['src'].match(/http:\/\/(.+)\:/)[1];
-    var hostname = $('script')[$('script').length-3]['src'].match(/http:\/\/(.+)\:(.+)\//)[1];
+    var port = $('script')[$('script').length-3]['src'].match(/http:\/\/(.+)\:(.+)\//)[2];
 
     // Connexion à socket.io
-    socket = io.connect('http://'+hostname+':8000');
+    socket = io.connect('http://'+hostname+':'+port);
 
     // Gestion des evenements
     setEventHandlers();
