@@ -17,6 +17,7 @@ var againstLoser = false;
 function init() {
 
     var hostname = $('script')[$('script').length-3]['src'].match(/http:\/\/(.+)\:/)[1];
+    var hostname = $('script')[$('script').length-3]['src'].match(/http:\/\/(.+)\:(.+)\//)[1];
 
     // Connexion à socket.io
     socket = io.connect('http://'+hostname+':8000');

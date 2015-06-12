@@ -66,7 +66,7 @@ INSERT INTO `scores` (`login`, `score`) VALUES
 ('azerty', 28),
 ('David', 19),
 ('Dragavnir', 666),
-('Finistère', 29),
+('Finistere', 29),
 ('Joseph', 42),
 ('K.S.', 20),
 ('Loic', 10),
