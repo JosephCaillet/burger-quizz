@@ -10,3 +10,5 @@ multi/server/node_modules/*
 
 # Sonar files
 sonar-project.properties
+
+.idea/
